@@ -1,0 +1,1 @@
+wget -r -k -p -E -e robots=off --no-check-certificate --span-hosts --domains=ai-bot.cn -o "WGet Log - Site: ai-bot.cn" "https://ai-bot.cn/"

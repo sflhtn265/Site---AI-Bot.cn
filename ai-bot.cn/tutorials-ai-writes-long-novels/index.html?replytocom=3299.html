@@ -1,0 +1,2052 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="io-grey-mode">
+<head> 
+<script>
+    var default_c = "io-grey-mode";
+    var night = document.cookie.replace(/(?:(?:^|.*;\s*)io_night_mode\s*\=\s*([^;]*).*$)|^.*$/, "$1"); 
+    try {
+        if (night === "0") {
+            document.documentElement.classList.add("io-black-mode");
+            document.documentElement.classList.remove(default_c);
+        } else {
+            document.documentElement.classList.remove("io-black-mode");
+            document.documentElement.classList.add(default_c);
+        }
+    } catch (_) {}
+</script><meta charset="UTF-8">
+<meta name="renderer" content="webkit"/>
+<meta name="force-rendering" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>如何用AI写长篇小说，1小时自动生成100章 | AI工具集</title>
+<meta name="theme-color" content="#f9f9f9" />
+<meta name="description" content="今天聊一个群友们关注度很高的话题：怎么用AI搞钱。
+
+很有友友表示想把日常的空闲时间利用起来，做点副业增加收入。送外卖、跑滴滴又需要先投入一些成本，还很累。这时一位群友晒出来用AI自动1000章长篇小说的截图，让大家思路大开。" />
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ai-bot.cn/tutorials-ai-writes-long-novels/"/> 
+<meta property="og:title" content="如何用AI写长篇小说，1小时自动生成100章 | AI工具集">
+<meta property="og:description" content="今天聊一个群友们关注度很高的话题：怎么用AI搞钱。
+
+很有友友表示想把日常的空闲时间利用起来，做点副业增加收入。送外卖、跑滴滴又需要先投入一些成本，还很累。这时一位群友晒出来用AI自动1000章长篇小说的截图，让大家思路大开。">
+<meta property="og:image" content="https://ai-bot.cn/wp-content/uploads/2025/05/ai-writes-long-novels-website.png">
+<meta property="og:site_name" content="AI工具集">
+<meta property="og:updated_time" content="2026-06-10T19:41:02+08:00">
+<meta property="article:published_time" content="2025-05-22T13:07:33+08:00">
+<meta property="article:modified_time" content="2026-06-10T19:41:02+08:00">
+<link rel="shortcut icon" href="../wp-content/uploads/2023/03/ai-bot-square-logo.png">
+<link href="../wp-content/uploads/2023/07/ai-bot-favicon.png" rel="icon" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../wp-content/uploads/2023/04/ai-bot-baidu-logo.png">
+<!--[if IE]><script src="https://ai-bot.cn/wp-content/themes/onenav/js/html5.min.js"></script><![endif]-->
+<meta name='robots' content='max-image-preview:large, noindex, follow' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='../wp-includes/css/classic-themes.min.css%3Fver=6.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='iconfont-css' href='../wp-content/themes/onenav/css/iconfont.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css' href='../wp-content/themes/onenav/css/all.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome4-css' href='../wp-content/themes/onenav/css/v4-shims.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css' href='../wp-content/themes/onenav/css/bootstrap.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='lightbox-css' href='../wp-content/themes/onenav/css/jquery.fancybox.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css' href='../wp-content/themes/onenav/css/style.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-content/themes/onenav/js/jquery.min.js%3Fver=4.0331' id='jquery-js'></script>
+<script type='text/javascript' id='jquery-js-after'>
+/* <![CDATA[ */ 
+        function loadFunc(func) {if (document.all){window.attachEvent("onload",func);}else{window.addEventListener("load",func,false);}}   
+        /* ]]> */
+</script>
+<link rel="canonical" href="index.html" />
+<style>body:before {
+  content: '';
+  position: absolute;
+  top: 0 !important;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 550px;
+  background-image: url(../wp-content/uploads/2023/07/blury-shape-bg-light.png);
+  background-size: cover;
+  z-index: -1;
+}
+
+.io-black-mode body:before {
+	background-image: url(../wp-content/uploads/2024/01/blury-shape-bg-dark.png);
+}
+
+.page-header {
+	background: none !important;
+  position: absolute;
+}
+
+
+.io-black-mode .page-header {
+	background: rgba(44,46,47,0.7) !important;
+}
+
+.url-card .max .url-img {
+	width: 40px;
+  height: 40px;
+}
+
+.card-body .url-img img {
+	border: none !important;
+}
+
+.panel-body.single.mt-2 img {
+	border-radius: 6px;
+  border: 2px solid #eee;
+}
+
+.meta-media {
+  position: relative;
+  margin-bottom: 30px;
+  float: left;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+}
+.video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.table-bordered {
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+a.underline {
+    border-bottom: 3px solid #5961f9;
+}
+
+a.underline:hover {
+    border-bottom: 3px solid #ee9ae5;
+}
+
+.io-edit-post-card-content .mx-auto {
+	margin-left: 0!important;
+}
+
+.panel-body .url-card.shortcode-url .card {
+	background: white;
+}
+.io-black-mode .panel-body .url-card.shortcode-url .card {
+	background: #2c2e2f;
+}
+
+@media screen and (min-width: 768px) {
+  .header-big {
+		padding-top: 80px;
+	}
+}
+
+/* 快讯页面样式开始 */
+.news-content h2{
+  border: none;
+}
+.news-list .news-date {
+    padding: 32px 20px 12px 20px;
+    font-size: 20px;
+    line-height: 26px;
+    position: relative;
+    font-weight: 700;
+    color: #5961f9;
+}
+.news-list .news-item {
+    padding: 20px 0 5px 20px;
+}
+.news-list .news-date, .news-list .news-item {
+    position: relative;
+    margin-left: 15px;
+    border-left: 1px dashed #c3c8fe;
+}
+.news-list .news-time {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.news-list .news-hour {
+    position: relative;
+    display: block;
+    padding-top: 10px;
+    padding-left: 12px;
+    margin-left: 15px;
+    border-left: 1px dashed #c3c8fe;
+}
+.news-list .news-date:after, .news-list .news-date:before {
+    position: absolute;
+    left: -8px;
+    top: 38px;
+    width: 16px;
+    height: 16px;
+    content: "";
+    border-radius: 1px;
+    background: #5961f9;
+}
+.news-list .news-time:before {
+    border: 4px solid #5961f9;
+    opacity: 1;
+}
+.news-list .news-content h2 {
+    position: relative;
+    font-size: 18px;
+    line-height: 1.4;
+}
+.news-list .news-content p {
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.65;
+}
+.news-list h2:after, .news-list h2:before {
+    position: absolute;
+    left: -3.5px;
+    top: 10px;
+    width: 4px;
+    height: 4px;
+    border-radius: 6px;
+    border: 4px solid #5961f9;
+    box-sizing: initial;
+    background: #fff;
+    content: "";
+}
+.panel-body.single.mt-2 .news-time img {
+    border-radius: 2px;
+    border: none;
+}
+.panel-body.single.mt-2 img.news-banner {
+    border-radius: 0px;
+    border: none;
+}
+.panel-body .news-content h2 a:not(.no-c) {
+    color: #282a2d;
+}
+.io-black-mode .panel-body .news-content h2 a:not(.no-c) {
+    color: #c6c9cf;
+}
+.panel-body .news-content h2 a:not(.no-c):hover {
+    color: #5961f9;
+}
+.news-content .external:after {
+    content: "";
+}
+.news-content h2 .badge-danger {
+    background-color: #F1404B;
+}
+/* 快讯页面样式结束 */
+.tab-widget-content .img-post .media-content {
+    -webkit-transform: none;
+    transform: none;
+}
+.img-post .media-content {
+    -webkit-transform: none;
+    transform: none;
+}
+.io-black-mode .panel-body .table td {
+    color: #eee;
+}
+/* 滚动条 */
+@media screen and (min-width: 768px) {
+  .sidebar-nav-inner .flex-fill {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sidebar-nav-inner .flex-fill:hover {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+/* 备案查询页面黑暗模式颜色修改 */
+.io-black-mode .theme--light.v-application {
+    background: #2c2e2f;
+    color: white;
+}
+.io-black-mode .theme--light.v-sheet {
+    background-color: #2c2e2f;
+    border-color: #5e6063 !important;
+    color: white;
+}
+.io-black-mode .theme--light.v-label {
+    color: rgb(255 255 255 / 60%);
+}
+.io-black-mode .theme--light.v-icon {
+    color: rgb(255 255 255 / 60%);
+}
+.io-black-mode .theme--light.v-text-field>.v-input__control>.v-input__slot:before {
+    border-color: rgb(255 255 255 / 42%);
+}
+.io-black-mode .theme--light.v-data-table {
+		background-color: #2c2e2f;
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:last-child, .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:not(.v-data-table__mobile-row), .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>th:last-child, .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>th:not(.v-data-table__mobile-row), .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr:last-child>th {
+    border-bottom: thin solid rgb(255 255 255 / 12%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr:last-child>th {
+    border-bottom: thin solid rgb(255 255 255 / 12%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:not(.v-data-table__mobile-row) {
+		border-bottom: thin solid rgb(255 255 255 / 12%);
+}
+th.text-start, td.text-start {
+		border-left: none;
+  	border-right: none;
+}
+th.text-start {
+		border-top: none;
+}
+.io-black-mode .theme--light.v-data-table .v-data-table-header th.sortable:hover {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr>th {
+		color: rgba(255,255,255,.6);
+}
+.io-black-mode .theme--light.v-data-table .v-data-table-header th.sortable .v-data-table-header__icon {
+    color: rgb(255 255 255 / 58%);
+}
+.io-black-mode .theme--light.v-btn.v-btn--disabled, .theme--light.v-btn.v-btn--disabled .v-btn__loading, .theme--light.v-btn.v-btn--disabled .v-icon {
+    color: rgb(255 255 255 / 26%)!important;
+}
+.io-black-mode .v-btn>.v-btn__content .v-icon {
+    color: #fff;
+}
+.io-black-mode .theme--light.v-select .v-select__selections {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper) {
+    background: #222;
+}
+.io-black-mode .theme--light.v-input input {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table .v-data-table__empty-wrapper {
+    color: rgb(255 255 255 / 38%);
+}
+div.card-app > div.card-body {
+	padding: 0.8rem;
+}
+.app-rounded {
+	border-radius: 22% !important;
+}
+div.card-app.card {
+  border-radius: .45rem !important;
+}
+.screenshot-carousel .img_wrapper {
+	height: 360px !important;
+}
+.io-black-mode .enlighter-t-enlighter .enlighter-text {
+    color: #99a;
+}
+.site-content a img.alignnone {
+    border-radius: .3rem;
+    border: 1px solid #ddd;
+}.customize-width{max-width:1900px}.sidebar-nav{width:220px}@media (min-width: 768px){.main-content{margin-left:220px;}.main-content .page-header{left:220px;}}</style><meta name="redi-version" content="1.2.7" /><style>.panel-body a:not(.no-c){color:#5961f9}.panel-body a:not(.no-c):hover{color:#ee9ae5}a:hover,.io-grey-mode .sidebar-show,.io-grey-mode .sidebar-item>a:hover,.io-grey-mode .sidebar-item li>a:hover,.home-like:hover,
+        .io-grey-mode .sidebar-popup>div>ul>li>a:hover{color:#5961f9}
+        .header-mini-btn label:hover path{ stroke:#5961f9}
+        .url-card .max .tga a:not(.no-tag):hover,.card-app.card .tga a:not(.no-tag):hover{background:#5961f9}
+        .sidebar .url-card .card:hover{border: 1px solid #5961f9!important;}.tags i{color:#5961f9}.custom-piece_c_b{background:#5961f9!important}.custom-piece_c{color:#5961f9!important}.slider_menu[sliderTab] .anchor,.customize-menu .btn-edit,.badge-danger,.comment-list .rank,.sidebar .card-header:after{background:#5961f9}.badge-outline-primary{color:#5961f9;border:#5961f9 solid 1px}.posts-nav .page-numbers.current,.posts-nav .page-numbers:not(.dots):hover,#comments-navi>a:hover,#comments-navi>.current,.page-nav>a:hover span,.page-nav>.current span{background-color:#5961f9;box-shadow: 0px 5px 20px -3px rgba(89,97,249,.6);}     
+.custom-control-input:not(:disabled):active~.custom-control-label::before{background-color:rgba(89,97,249,.15);border-color:rgba(89,97,249,.15);}
+.custom-control-input:focus~.custom-control-label::before{box-shadow:0 0 0 .2rem rgba(89,97,249,.25)}
+.custom-control-input:focus:not(:checked)~.custom-control-label::before{border-color:#5961f9}
+.custom-control-input:checked~.custom-control-label::before{border-color:#5961f9;background-color:#5961f9}
+.btn-search:hover,.btn-search.current{background-color:#5961f9;box-shadow: 0 5px 20px -3px rgba(89,97,249,.6)}.btn-search.current:after{border-top-color:#5961f9}.panel-body h2,.panel-body h3 {border-color:#5961f9}.custom_btn-outline {color: #5961f9;background-color: transparent;border-color: #5961f9;}
+.custom_btn-outline:hover {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.custom_btn-outline:focus, .custom_btn-outline.focus {color: #14171B;box-shadow: 0 0 0 0 transparent!important;background-color: transparent;}
+.custom_btn-outline.disabled, .custom_btn-outline:disabled {color: #5961f9;background-color: transparent!important;}
+.custom_btn-outline:not(:disabled):not(.disabled):active, .custom_btn-outline:not(:disabled):not(.disabled).active,.show > .custom_btn-outline.dropdown-toggle {color: #fff;background-color: #5961f9;border-color: #5961f9;}
+.custom_btn-outline:not(:disabled):not(.disabled):active:focus, .custom_btn-outline:not(:disabled):not(.disabled).active:focus,.show > .custom_btn-outline.dropdown-toggle:focus {box-shadow: 0 0 0 0 transparent!important;}
+.custom_btn-d {color: #ffffff;background-color: #5961f9;border-color: #5961f9;}
+.custom_btn-d:hover {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.custom_btn-d:focus,.custom_btn-d.focus {color: #ffffff;background-color: #14171B;border-color: #14171B;box-shadow: 0 0 0 0 transparent!important;}
+.custom_btn-d.disabled,.custom_btn-d:disabled {color: #ffffff;background-color:#5961f9;border-color: #5961f9;}
+.custom_btn-d:not(:disabled):not(.disabled):active,.custom_btn-d:not(:disabled):not(.disabled).active{color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.custom_btn-d:not(:disabled):not(.disabled):active:focus,.custom_btn-d:not(:disabled):not(.disabled).active:focus{box-shadow: 0 0 0 0 transparent!important;}
+.btn.custom_btn-d {color: #ffffff;background-color: #5961f9;border-color: #5961f9;}
+.btn.custom_btn-d:hover {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.btn.custom_btn-d:focus,.btn.custom_btn-d.focus {color: #ffffff;background-color: #14171B;border-color: #14171B;box-shadow: 0 0 0 0 transparent!important;}
+.btn.custom_btn-d.disabled,.btn.custom_btn-d:disabled {color: #ffffff;background-color:#5961f9;border-color: #5961f9;}
+.btn.custom_btn-d:not(:disabled):not(.disabled):active,.btn.custom_btn-d:not(:disabled):not(.disabled).active,.show > .custom_btn-d.dropdown-toggle {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.btn.custom_btn-d:not(:disabled):not(.disabled):active:focus,.btn.custom_btn-d:not(:disabled):not(.disabled).active:focus,.show > .custom_btn-d.dropdown-toggle:focus {box-shadow: 0 0 0 0 transparent!important;}
+.btn-dark:hover{background-color:#5961f9;border-color:#5961f9}
+.sidebar .card .searchform input[type='submit']{border: 1px solid #5961f9;background-color:#5961f9}
+.sidebar .card .searchform input[type='submit']:hover{border: 1px solid #14171B;background-color:#14171B}</style><!-- 自定义代码 -->
+<meta name="baidu-site-verification" content="codeva-P9RvmeAUoM" />
+<meta name="msvalidate.01" content="92B2C43DC49DA55D7E2C4AE6B1CC1A81" />
+<meta name="sogou_site_verification" content="Zo3i06YCJh" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7941312752144276"
+     crossorigin="anonymous"></script>
+<script>
+(function(){
+var el = document.createElement("script");
+el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?555fccf68561b344c2292bef2655dc990da3031c125e7429fc5275c9527fda6e4a4d40de0dd5fa9b5c2c10f69a3b501dc430e831103b45ce33654fb9f95b006c";
+el.id = "ttzz";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(el, s);
+})(window)
+</script><!-- end 自定义代码 -->
+</head> 
+<body class="post-template-default single single-post postid-52108 single-format-standard sidebar_right post">
+        <div id="sidebar" class="sticky sidebar-nav fade">
+            <div class="modal-dialog h-100  sidebar-nav-inner">
+                <div class="sidebar-logo border-bottom border-color">
+                    <!-- logo -->
+                    <div class="logo overflow-hidden">
+                                                <a href="../gpt-image-2/index.html" class="logo-expanded">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-black.png" height="40" class="logo-light" alt="AI工具集">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-white.png" height="40" class="logo-dark d-none" alt="AI工具集">
+                        </a>
+                        <a href="../gpt-image-2/index.html" class="logo-collapsed">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-square-logo.png" height="40" class="logo-light" alt="AI工具集">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-square-logo.png" height="40" class="logo-dark d-none" alt="AI工具集">
+                        </a>
+                    </div>
+                    <!-- logo end -->
+                </div>
+                <div class="sidebar-menu flex-fill">
+                    <div class="sidebar-scroll" >
+                        <div class="sidebar-menu-inner">
+                            <ul> 
+                                                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-7" class="">
+                                                <i class="fas fa-feather icon-fw icon-lg"></i>
+                                                <span>AI写作工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-2" class="" data-change="https://ai-bot.cn/#term-2">
+                                                <i class="fas fa-images icon-fw icon-lg"></i>
+                                                <span>AI图像工具</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-37" class=""><span>常用AI图像工具</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-33" class=""><span>AI图片插画生成</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-32" class=""><span>AI图片背景移除</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-35" class=""><span>AI图片物体抹除</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-34" class=""><span>AI图片无损放大</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-36" class=""><span>AI图片优化修复</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-78" class=""><span>AI商品图生成</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-83" class=""><span>AI 3D模型生成</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-4" class="">
+                                                <i class="fas fa-video icon-fw icon-lg"></i>
+                                                <span>AI视频工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-38" class="" data-change="https://ai-bot.cn/#term-38">
+                                                <i class="fas fa-folder-open icon-fw icon-lg"></i>
+                                                <span>AI办公工具</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-45" class=""><span>AI幻灯片和演示</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-46" class=""><span>AI表格数据处理</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-48" class=""><span>AI思维导图</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-47" class=""><span>AI文档工具</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-49" class=""><span>AI会议工具</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-85" class=""><span>AI招聘求职</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-77" class=""><span>AI法律助手</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-52" class=""><span>AI语言翻译</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-51" class=""><span>AI效率提升</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-16" class="">
+                                                <i class="fas fa-comments icon-fw icon-lg"></i>
+                                                <span>AI聊天助手</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-97" class="" data-change="https://ai-bot.cn/#term-97">
+                                                <i class="fas fa-brain icon-fw icon-lg"></i>
+                                                <span>AI智能体</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-97-86" class=""><span>AI智能体</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-97-96" class=""><span>插件与Skills</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-13" class="">
+                                                <i class="fas fa-code icon-fw icon-lg"></i>
+                                                <span>AI编程工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-15" class="">
+                                                <i class="fas fa-laptop-code icon-fw icon-lg"></i>
+                                                <span>AI开发平台</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-19" class="">
+                                                <i class="fas fa-palette icon-fw icon-lg"></i>
+                                                <span>AI设计工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-6" class="">
+                                                <i class="fas fa-music icon-fw icon-lg"></i>
+                                                <span>AI音频工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-61" class="">
+                                                <i class="fas fa-search icon-fw icon-lg"></i>
+                                                <span>AI搜索引擎</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-12" class="">
+                                                <i class="fas fa-graduation-cap icon-fw icon-lg"></i>
+                                                <span>AI学习网站</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-14" class="">
+                                                <i class="fas fa-cubes icon-fw icon-lg"></i>
+                                                <span>AI训练模型</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-56" class="">
+                                                <i class="fas fa-crown icon-fw icon-lg"></i>
+                                                <span>AI模型评测</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-95" class="" data-change="https://ai-bot.cn/#term-95">
+                                                <i class="iconfont icon-instructions icon-fw icon-lg"></i>
+                                                <span>AI内容检测</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-95-20" class=""><span>内容检测</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-95-94" class=""><span>降AI/AIGC率</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-42" class="">
+                                                <i class="fab fa-product-hunt icon-fw icon-lg"></i>
+                                                <span>AI提示指令</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-98" class="">
+                                                <i class="iconfont icon-related icon-fw icon-lg"></i>
+                                                <span>AI副业工具</span>
+                                            </a>
+                                        </li> 
+                                     
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top py-2 border-color">
+                    <div class="flex-bottom">
+                        <ul> 
+                             
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content flex-fill">    <div class=" header-nav">
+        <div id="header" class="page-header sticky">
+            <div class="navbar navbar-expand-md">
+                <div class="container-fluid p-0 position-relative">
+                    <div class="">
+                        <a href="../gpt-image-2/index.html" class="navbar-brand d-md-none m-0" title="AI工具集">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-black.png" class="logo-light" alt="AI工具集" height="30">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-white.png" class="logo-dark d-none" alt="AI工具集" height="30">
+                        </a>
+                    </div>
+                                        <div class="collapse navbar-collapse order-2 order-md-1">
+                        <div class="header-mini-btn">
+                            <label>
+                                <input id="mini-button" type="checkbox" checked="checked">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"> 
+                                    <path class="line--1" d="M0 40h62c18 0 18-20-17 5L31 55"></path>
+                                    <path class="line--2" d="M0 50h80"></path>
+                                    <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45"></path>
+                                </svg>
+                            </label>
+                        
+                        </div>
+                                                <ul class="navbar-nav navbar-top site-menu mr-4">
+                            <li id="menu-item-55865" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-55865"><a href="../gpt-image-2/index.html">AI工具集</a>
+<ul class="sub-menu">
+	<li id="menu-item-55866" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55866"><a href="../favorites/ai-writing-tools/index.html">AI写作工具</a></li>
+	<li id="menu-item-55868" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55868"><a href="../favorites/ai-image-tools/index.html">AI图像工具</a></li>
+	<li id="menu-item-55869" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55869"><a href="../favorites/ai-video-tools/index.html">AI视频工具</a></li>
+	<li id="menu-item-55867" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55867"><a href="../favorites/ai-office-tools/index.html">AI办公工具</a></li>
+	<li id="menu-item-55870" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55870"><a href="../favorites/ai-agent/index.html">AI智能体</a></li>
+	<li id="menu-item-55871" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55871"><a href="../favorites/ai-chatbots/index.html">AI聊天助手</a></li>
+	<li id="menu-item-55872" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55872"><a href="../favorites/ai-programming-tools/index.html">AI编程工具</a></li>
+	<li id="menu-item-55873" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55873"><a href="../favorites/ai-design-tools/index.html">AI设计工具</a></li>
+	<li id="menu-item-55874" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55874"><a href="../favorites/ai-audio-tools/index.html">AI音频工具</a></li>
+	<li id="menu-item-55876" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55876"><a href="../favorites/ai-search-engines/index.html">AI搜索引擎</a></li>
+	<li id="menu-item-55875" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55875"><a href="../favorites/ai-frameworks/index.html">AI开发平台</a></li>
+	<li id="menu-item-55878" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55878"><a href="../favorites/websites-to-learn-ai/index.html">AI学习网站</a></li>
+	<li id="menu-item-55880" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55880"><a href="../favorites/ai-models/index.html">AI训练模型</a></li>
+	<li id="menu-item-67873" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-67873"><a href="../favorites/ai-content-detection-and-optimization-tools/index.html">AI内容检测</a></li>
+	<li id="menu-item-67442" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-67442"><a href="../favorites/ai-prompt-tools/index.html">AI提示指令</a></li>
+</ul>
+</li>
+<li id="menu-item-54113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54113"><a target="_blank" rel="noopener" href="../ai-app-store/index.html">
+        <i class="fab fa-app-store-ios icon-fw icon-lg"></i>
+                <span>AI应用集</span></a></li>
+<li id="menu-item-54115" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54115"><a target="_blank" rel="noopener" href="../daily-ai-news/index.html">
+        <i class="iconfont icon-chart-pc icon-fw icon-lg"></i>
+                <span>每日AI资讯</span></a></li>
+<li id="menu-item-54116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-54116"><a target="_blank" rel="noopener" href="../ai-project-20250614/index.html">最新AI项目</a>
+<ul class="sub-menu">
+	<li id="menu-item-54117" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54117"><a target="_blank" rel="noopener" href="../ai-tools/index.html">AI工具</a></li>
+	<li id="menu-item-54118" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54118"><a target="_blank" rel="noopener" href="../ai-research/index.html">AI项目和框架</a></li>
+</ul>
+</li>
+<li id="menu-item-54944" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-54944"><a target="_blank" rel="noopener" href="../ai-tutorials/index.html">AI教程资源</a>
+<ul class="sub-menu">
+	<li id="menu-item-54940" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54940"><a target="_blank" rel="noopener" href="../ai-column/index.html">AI专栏</a></li>
+	<li id="menu-item-56311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56311"><a target="_blank" rel="noopener" href="../ai-question-and-answer/index.html">AI问答</a></li>
+	<li id="menu-item-54119" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54119"><a target="_blank" rel="noopener" href="../ai-encyclopedia/index.html">AI百科</a></li>
+	<li id="menu-item-54122" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54122"><a target="_blank" rel="noopener" href="../ai-hall-of-fame/index.html">AI名人堂</a></li>
+</ul>
+</li>
+<li id="menu-item-54114" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54114"><a target="_blank" rel="noopener" href="../about-us/index.html">关于我们</a></li>
+ 
+                        </ul>
+                    </div>
+                    <ul class="nav navbar-menu text-xs order-1 order-md-2 position-relative">
+                                                                                                <li class="nav-item d-md-none mobile-menu ml-3 ml-md-4"><a href="javascript:" id="sidebar-switch" data-toggle="modal" data-target="#sidebar"><i class="iconfont icon-classification icon-lg"></i></a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="placeholder"></div>
+            </div>
+  <div id="content" class="container my-3 my-md-4">
+    <nav class="text-xs mb-3 mb-md-4"  aria-label="breadcrumb"><i class="iconfont icon-home"></i> <a class="crumbs" href="../gpt-image-2/index.html">首页</a><i class="text-danger px-1">•</i><a href="../ai-tutorials/index.html" rel="category tag">AI教程</a><i class="text-danger px-1">•</i><span aria-current="page">如何用AI写长篇小说，1小时自动生成100章</span></nav>    <main class="content" role="main">
+    <div class="content-wrap">
+        <div class="content-layout">
+                <div class="panel card">
+        <div class="card-body">
+        <div class="panel-header mb-4"><h1 class="h3 mb-3">如何用AI写长篇小说，1小时自动生成100章</h1><div class="d-flex flex-fill text-muted text-sm pb-4 border-bottom border-t"><span class="mr-3 d-none d-sm-block"><a href="../ai-tutorials/index.html"><i class="iconfont icon-classification"></i> AI教程</a></span><span class="mr-3"><i class="iconfont icon-time"></i><span title="2025年5月22日 13:07发布">1个月前更新</span></span><span class="mr-3"><a href="https://ai-bot.cn/author/5/" title="AI小集"><i class="iconfont icon-user-circle"></i> AI小集</a></span><div class="flex-fill"></div><span class="mr-3"><a class="smooth-n" href="index.html%3Freplytocom=3299.html#comments"> <i class="iconfont icon-comment"></i> 30</a></span>
+                <span class="mr-3"><a class="btn-like btn-link-like " href="javascript:;" data-action="post_like" data-id="52108"><i class="iconfont icon-like"></i> <span class="like-count">9</span></a></span></div></div>                <div class="panel-body single mt-2"> 
+                        <img decoding="async" class="wp-image-52136 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/ai-writes-long-novels-website.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="646" height="431" />
+<p>今天聊一个群友们关注度很高的话题：怎么用AI搞钱。</p>
+<p>很有友友表示想把日常的空闲时间利用起来，做点副业增加收入。</p>
+<p>送外卖、跑滴滴又需要先投入一些成本，还很累。</p>
+<p>这时一位群友晒出来用AI自动完成1000章长篇小说的截图，让大家思路大开。</p>
+<img decoding="async" class=" wp-image-52120 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/ai-writes-long-novels2.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="490" height="232" />
+<p>另一位友友直接化身天蚕土豆，新小说立马就<strong>投稿上架</strong>了。</p>
+<img decoding="async" class=" wp-image-52122 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/ai-writes-long-novels3.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="491" height="326" />
+<p>不过，还有不少友友表示，没看懂，求教程。。。</p>
+<img decoding="async" class=" wp-image-52121 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/ai-writes-long-novels4.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="439" height="146" />
+<p>这篇内容给大家整理了用AI写长篇小说的详细步骤，0成本、时间灵活，0基础的友友们也能快速上架自己的小说。</p>
+<p>如果小说热度不错，收益也是非常可观的。</p>
+<img decoding="async" class="alignnone size-full wp-image-51306" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/640-5.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="1080" height="166" />
+<h1 style="text-align: center;">用AI辅助写小说</h1>
+<p>很多人觉得，用AI写小说，比自己动笔简单得多。</p>
+<p>实际用起来却发现：</p>
+<ul class="list-paddingleft-1">
+<li>明明给了提示词，但是AI输出的文案总是篇幅不够。</li>
+<li>写到一半剧情崩了，或者AI味太重，自己都读不下去。</li>
+</ul>
+<p>但<a href="../sites/11395.html" target="_blank" rel="noopener">Flowith</a>最新推出的创新智能体 <a href="../agent-neo/index.html" target="_blank" rel="noopener"><strong>Agent Neo </strong></a>是真能写啊！</p>
+<p><strong>给它一个选题，喝杯咖啡的时间，它就哐哐输出几万字了，后台自动运行，自写自查，你可以放心去做其他事情</strong>。</p>
+<p>我们<strong>打开Agent模式</strong>，把<strong>输出长度拉到最大（无限）</strong>。</p>
+<img decoding="async" class="wp-image-52125 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/ai-writes-long-novels5-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="630" height="456" />
+<p>提示词可以参考友友 @你的名字🔒 的分享，大概要包含这些方面：</p>
+<p><strong>创建一本XXX主题的小说+故事主线+整体要求。</strong></p>
+<img decoding="async" class=" wp-image-52124 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/ai-writes-long-novels6-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="483" height="293" />
+<p>比如，我想写一篇快穿女频文，输入提示词：</p>
+<p style="padding-left: 40px;"><span style="color: #808080;">创建一篇女频快穿长篇小说，爽文，故事主线是：主人公顾清霜，通过快穿体验不同人生，完成个人成长。</span></p>
+<p style="padding-left: 40px;"><span style="color: #808080;">我希望你帮我完成大纲、章节规划和小说内容创作，直至情节完整收官，坚决不能烂尾。最终篇幅目标为约1000章或更多。</span></p>
+<p style="padding-left: 40px;"><span style="color: #808080;">根据我的指示，我希望系统从第1章开始写作，严格按照之前的规划和既定要求进行： </span></p>
+<p style="padding-left: 40px;"><span style="color: #808080;">1. 每一章节的字数目标为2000+字。</span></p>
+<p style="padding-left: 40px;"><span style="color: #808080;">2. 章节之间需要合理衔接，分章依据要吸引眼球，能够吸引读者追更。 </span></p>
+<p style="padding-left: 40px;"><span style="color: #808080;">3. 情节必须跌宕起伏，扣人心弦，早期埋下伏笔并在后期有呼应。 </span></p>
+<p style="padding-left: 40px;"><span style="color: #808080;">4. 人物设定好坏分明，好人极致善良，坏人极致邪恶。</span></p>
+<p style="padding-left: 40px;"><span style="color: #808080;">5.模仿人类的表达方式，长短句结合，减少使用列表和总结，减少连接词，贴近人类表达方式。</span></p>
+<p>Agent Neo不到十分钟，就已经完成了好几章，这效率10个我也比不上.。。。</p>
+<img decoding="async" class="wp-image-52123 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/ai-writes-long-novels7-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="662" height="504" />
+<p>我们一起看看它生成的内容：</p>
+<p>第一个节点中，它按照我们的要求完成了<strong>小说创作规划书</strong>：包含<strong>整体故事大纲</strong>、<strong>快穿世界的初步构想</strong>、<strong>情节规划</strong>、<strong>章节规划</strong>等等。</p>
+<img decoding="async" class="wp-image-52126 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/ai-writes-long-novels8-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="661" height="471" />
+<p>根据章节的规划，在完成部分章节的输出后，它还会<strong>自动审阅内容</strong>，总结评估前面已经生成的内容，再做出<strong>后续内容的规划</strong>。</p>
+<p><strong>一边思考、一边规划、一边写、一边审核，Neo真的非常严谨了。</strong></p>
+<img decoding="async" class="wp-image-52127 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/ai-writes-long-novels9-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="656" height="377" />
+<p>如果对生成的内容不满意，可以点击内容上方的<strong>重新运行节点</strong>。</p>
+<p>它就会根据前文，再次生成内容。</p>
+<img decoding="async" class="size-full wp-image-52128 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/ai-writes-long-novels10-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="634" height="195" />
+<p>我们一起看一下生成的小说内容：</p>
+<img decoding="async" class="wp-image-52130 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/ai-writes-long-novels11-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="661" height="1610" />
+<p>可读性还是非常不错的，就在我写教程的时间，它已经<strong>自动更新了一百多章</strong>！这样的写作方式也太轻松了~</p>
+<img decoding="async" class="alignnone size-full wp-image-51308" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/640-1-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="1080" height="166" />
+<h1 style="text-align: center;">投稿发布</h1>
+<p>创作的小说内容，我们可以投稿到一些小说平台，获得稿费。</p>
+<p>越热门的内容，稿费越高。</p>
+<p>稳定更新的优质创作者，还有机会直接与平台签约，获得一些额外的奖励。</p>
+<p>这里以番茄小说为例，我们进入<strong>番茄小说作家专区</strong>，创建一个账号。（其他平台也可以参考这个流程~）</p>
+<img decoding="async" class="wp-image-52129 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/ai-writes-long-novels12-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="659" height="433" />
+<p>审核通过后，可以在首页<strong>创建新书</strong>。</p>
+<img decoding="async" class="wp-image-52134 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/ai-writes-long-novels13-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="649" height="200" />
+<p>完成<strong>书名</strong>、<strong>简介</strong>的填写。</p>
+<img decoding="async" class="wp-image-52133 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/ai-writes-long-novels14-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="646" height="423" />
+<p>点击<strong>创建章节</strong>，把刚才的小说内容完整的复制过来，上传，就搞定啦。</p>
+<img decoding="async" class="wp-image-52132 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/ai-writes-long-novels15-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="654" height="298" />
+<p>内容审核通过后，会直接上架到番茄小说。</p>
+<p>更新达到2万字后，可以在平台上进行签约评估。</p>
+<img decoding="async" class="wp-image-52131 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/ai-writes-long-novels16-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="652" height="286" />
+<img decoding="async" class="alignnone size-full wp-image-51307" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/640-2-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="1080" height="166" />
+<h1 style="text-align: center;">一些分享</h1>
+<p>用一句提示词，就能让AI生成几十万字的长篇小说，这效率真没得说！</p>
+<p>我们可以快速表达出脑海中的故事构想。</p>
+<p>即使是0基础的普通人，也有机会创作出爆文变现。</p>
+<p>感兴趣的友友可以直接去Flowith官网体验：<a href="../agent-neo/index.html" target="_blank" rel="noopener">Agent-Neo</a></p>
+<img decoding="async" class="aligncenter wp-image-79275" data-src="https://ai-bot.cn/wp-content/uploads/2026/06/wawagithub.jpg" src="../wp-content/themes/onenav/images/t.png"  alt="挖挖GitHub" width="250" height="250" />
+<p style="text-align: center;">扫码关注回复口令 “<strong>AI Agent</strong>” 入群，<strong>一起交流如何写小说</strong></p>
+<p>原文链接：<a href="https://mp.weixin.qq.com/s/tvnfWZBJToZKE84tbTUiuQ" target="_blank" rel="noopener nofollow" rel="nofollow noopener"  class="external" >AI副业教学，1小时肝完100章小说！</a></p>
+                    </div>
+        <div class="post-tags my-3"><i class="iconfont icon-tags mr-2"></i><a href="../ai-tutorials/index.html" class="btn vc-l-violet btn-sm text-xs text-height-xs m-1 rounded-pill"  rel="tag" title="查看更多文章"># AI教程</a></div><div class="text-xs text-muted"><div><span>©</span> 版权声明</div><div class="posts-copyright">本站文章版权归 <a href="../gpt-image-2/index.html" target="_blank" rel="noopener"><span style="color: #3366ff">AI工具集 </span></a>所有，未经允许禁止任何形式的转载。</div></div> 
+        <div class="post-apd"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7941312752144276"
+     crossorigin="anonymous"></script>
+<!-- 文章-底部-横幅 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7941312752144276"
+     data-ad-slot="7362582675"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>        </div>
+    </div>
+        <div class="near-navigation rounded mt-4 py-2">
+                        <div class="nav previous border-right border-color">
+            <a class="near-permalink" href="../ai-tutorials-windsurf-system-prompt-words/index.html">
+            <span>上一篇</span>
+            <h4 class="near-title">Windsurf 最新系统提示词（中英文） - AI教程资料</h4>
+            </a>
+        </div>
+                        <div class="nav next border-left border-color">
+            <a class="near-permalink" href="../tutorials-ai-designed-logo/index.html">
+            <span>下一篇</span>
+            <h4 class="near-title">如何用AI设计LOGO，DeepSeek+豆包免费批量生成</h4>
+        </a>
+        </div>
+            </div>
+                <h4 class="text-gray text-lg my-4"><i class="site-tag iconfont icon-book icon-lg mr-1" ></i>相关文章</h4>
+            <div class="row mb-n4"> 
+                                <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../ai-tutorials-2026010801/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2026/01/Build-with-Andrew-website.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../ai-tutorials-2026010801/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        吴恩达推出免费的AI编程入门课程《Build with Andrew》                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/7/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='' src='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/7/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../ai-tutorials-2026010801/index.html"><i class="iconfont icon-heart mr-1"></i>3</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../leewow-ai-tshirt-30-seconds/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2026/03/11-2.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../leewow-ai-tshirt-30-seconds/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        Leewow实测：30秒用AI做一件T恤，周边定制一句话搞定                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/7/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='' src='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/7/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../leewow-ai-tshirt-30-seconds/index.html"><i class="iconfont icon-heart mr-1"></i>3</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../glm-5-2-review/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2026/06/Loop-Engineering-6-1.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../glm-5-2-review/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        GLM-5.2 实测 &#8211; 代码生成能力跻身全球第一梯队                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/7/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='' src='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/7/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../glm-5-2-review/index.html"><i class="iconfont icon-heart mr-1"></i>3</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../openclaw-orange-paper/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2026/03/OpenClaw-website-1-1.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../openclaw-orange-paper/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        OpenClaw橙皮书 &#8211; 从入门到精通一站式完整手册（PDF文件）                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/7/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='' src='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/7/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../openclaw-orange-paper/index.html"><i class="iconfont icon-heart mr-1"></i>4</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../ai-tutorials-2025091101/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2025/09/Seedream-4.0-26-1.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../ai-tutorials-2025091101/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        字节Seedream 4.0教程和玩法，比 Nano Banana 更懂中文                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/5/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='Avatar photo' src='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/5/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../ai-tutorials-2025091101/index.html"><i class="iconfont icon-heart mr-1"></i>6</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../ai-tutorials-aminer-research-writing-papers-and-conducting-research/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2025/06/aminer-research-1-1-1-1.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../ai-tutorials-aminer-research-writing-papers-and-conducting-research/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        如何用AI写论文、做科研，AMiner沉思一站式辅助                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/5/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='Avatar photo' src='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/5/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../ai-tutorials-aminer-research-writing-papers-and-conducting-research/index.html"><i class="iconfont icon-heart mr-1"></i>3</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                        </div>
+            
+<!-- comments -->
+<div class="post-apd mt-4"><a href="https://jimeng.jianying.com/ai-tool/home/?utm_medium=aitools&utm_source=aibot&utm_campaign=null&utm_content=hw_jm_aibot" rel="nofollow sponsored" target="_blank"><img class="rounded" src="../wp-content/uploads/2025/09/jimeng-ai-banner-0912.png" alt="即梦AI" /></a></div><div id="comments" class="comments">
+	<h2 id="comments-list-title" class="comments-title h5 mx-1 my-4">
+		<i class="iconfont icon-comment"></i>
+		<span class="noticom">
+			<a href="index.html#comments" class="comments-title" >30 条评论</a> 
+		</span>
+	</h2> 
+	<div class="card">
+		<div class="card-body"> 
+						<div id="respond_box">
+				<div id="respond" class="comment-respond">
+										<form id="commentform" class="text-sm mb-4">	
+						<div class="visitor-avatar d-flex flex-fill mb-2">
+														<img class="v-avatar rounded-circle" src="../wp-content/themes/onenav/images/gravatar.jpg">
+													</div> 
+						<div class="comment-textarea mb-3">
+							<textarea name="comment" id="comment" class="form-control" placeholder="输入评论内容..." tabindex="4" cols="50" rows="3"></textarea>
+						</div>
+							
+						<div id="comment-author-info" class="row  row-sm">
+							<div class="col-sm-6 col-lg-4 mb-3"><input type="text" name="author" id="author" class="form-control" value="" size="22" placeholder="昵称" tabindex="2"/></div>	
+							<div class="col-sm-6 col-lg-4 mb-3"><input type="text" name="email" id="email" class="form-control" value="" size="22" placeholder="邮箱" tabindex="3" /></div>
+							<div class="col-sm-12 col-lg-4 mb-3"><input type="text" name="url" id="url" class="form-control" value="" size="22"placeholder="网址"  tabindex="4" /></div>
+						</div>
+																		<div class="com-footer d-flex justify-content-end flex-wrap">
+							<input type="hidden" id="_wpnonce" name="_wpnonce" value="205d8d8222" /><input type="hidden" name="_wp_http_referer" value="/tutorials-ai-writes-long-novels/?replytocom=3299" />							<a rel="nofollow" id="cancel-comment-reply-link" style="display: none;" href="javascript:;" class="btn btn-light custom_btn-outline mx-2">再想想</a>
+														<button class="btn btn-dark custom_btn-d ml-2" type="submit" id="submit">发表评论</button>
+							<input type="hidden" name="action" value="ajax_comment"/>
+							<input type='hidden' name='comment_post_ID' value='52108' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='3299' />
+						</div>
+					</form>
+					<div class="clear"></div>
+									</div>
+			</div>	
+						<div id="loading-comments"><span></span></div>
+						<ul class="comment-list">
+				        <li class="comment even thread-even depth-1 comment" id="li-comment-3161">
+            <div id="comment-3161" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='思也眉弯' src='https://cravatar.cn/avatar/e2084645ea4e228b8e048d225ec7ac9a?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/e2084645ea4e228b8e048d225ec7ac9a?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">思也眉弯                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>已关注</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-05-23T22:59:13+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3161.html#respond' data-commentid="3161" data-postid="52108" data-belowelement="comment-3161" data-respondelement="respond" data-replyto="回复给思也眉弯" aria-label='回复给思也眉弯'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment byuser odd alt depth-2 comment" id="li-comment-3188">
+            <div id="comment-3188" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='AI小集' src='../wp-content/uploads/2023/04/ai-bot-baidu-logo-96x96.png' srcset='../wp-content/uploads/2023/04/ai-bot-baidu-logo.png 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">AI小集                        <span class="is-author"  data-toggle="tooltip" data-placement="right" title="博主"><i class="iconfont icon-user icon-fw"></i></span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>TCI6M2SH，每个码仅可使用一次</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-05-27T09:04:41+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3188.html#respond' data-commentid="3188" data-postid="52108" data-belowelement="comment-3188" data-respondelement="respond" data-replyto="回复给AI小集" aria-label='回复给AI小集'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1 comment" id="li-comment-3165">
+            <div id="comment-3165" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='清风明月' src='https://cravatar.cn/avatar/fd02f6091497681676cbca2babb82ae7?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/fd02f6091497681676cbca2babb82ae7?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">清风明月                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>已经关注咯</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-05-24T15:33:16+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3165.html#respond' data-commentid="3165" data-postid="52108" data-belowelement="comment-3165" data-respondelement="respond" data-replyto="回复给清风明月" aria-label='回复给清风明月'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment byuser odd alt depth-2 comment" id="li-comment-3189">
+            <div id="comment-3189" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='AI小集' src='../wp-content/uploads/2023/04/ai-bot-baidu-logo-96x96.png' srcset='../wp-content/uploads/2023/04/ai-bot-baidu-logo.png 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">AI小集                        <span class="is-author"  data-toggle="tooltip" data-placement="right" title="博主"><i class="iconfont icon-user icon-fw"></i></span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>W4W2G80B，每个码仅可使用一次</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-05-27T09:05:02+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3189.html#respond' data-commentid="3189" data-postid="52108" data-belowelement="comment-3189" data-respondelement="respond" data-replyto="回复给AI小集" aria-label='回复给AI小集'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment even depth-2 comment" id="li-comment-3199">
+            <div id="comment-3199" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='名勉勉强强' src='https://cravatar.cn/avatar/89b032f56b6886ffa016eb497312f7af?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/89b032f56b6886ffa016eb497312f7af?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">名勉勉强强                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>不好意思用掉了你的，补一个：JKK5P334</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-05-27T15:43:24+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3199.html#respond' data-commentid="3199" data-postid="52108" data-belowelement="comment-3199" data-respondelement="respond" data-replyto="回复给名勉勉强强" aria-label='回复给名勉勉强强'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment odd alt depth-3 comment" id="li-comment-3299">
+            <div id="comment-3299" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='清风明月' src='https://cravatar.cn/avatar/fd02f6091497681676cbca2babb82ae7?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/fd02f6091497681676cbca2babb82ae7?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">清风明月                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>谢谢</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-06-09T14:25:21+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3299.html#respond' data-commentid="3299" data-postid="52108" data-belowelement="comment-3299" data-respondelement="respond" data-replyto="回复给清风明月" aria-label='回复给清风明月'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1 comment" id="li-comment-3166">
+            <div id="comment-3166" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='qqq' src='https://cravatar.cn/avatar/5355964a4dde084f606b627a653affa3?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/5355964a4dde084f606b627a653affa3?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">qqq                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>已关注</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-05-24T15:51:19+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3166.html#respond' data-commentid="3166" data-postid="52108" data-belowelement="comment-3166" data-respondelement="respond" data-replyto="回复给qqq" aria-label='回复给qqq'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment byuser odd alt depth-2 comment" id="li-comment-3190">
+            <div id="comment-3190" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='AI小集' src='../wp-content/uploads/2023/04/ai-bot-baidu-logo-96x96.png' srcset='../wp-content/uploads/2023/04/ai-bot-baidu-logo.png 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">AI小集                        <span class="is-author"  data-toggle="tooltip" data-placement="right" title="博主"><i class="iconfont icon-user icon-fw"></i></span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>7YCT5CXI，每个码仅可使用一次</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-05-27T09:05:20+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3190.html#respond' data-commentid="3190" data-postid="52108" data-belowelement="comment-3190" data-respondelement="respond" data-replyto="回复给AI小集" aria-label='回复给AI小集'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1 comment" id="li-comment-3186">
+            <div id="comment-3186" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='醉月' src='https://cravatar.cn/avatar/6185f59c3ed37146f4b52269d6fcb58b?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/6185f59c3ed37146f4b52269d6fcb58b?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">醉月                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>已关注</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-05-26T21:21:58+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3186.html#respond' data-commentid="3186" data-postid="52108" data-belowelement="comment-3186" data-respondelement="respond" data-replyto="回复给醉月" aria-label='回复给醉月'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment byuser odd alt depth-2 comment" id="li-comment-3191">
+            <div id="comment-3191" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='AI小集' src='../wp-content/uploads/2023/04/ai-bot-baidu-logo-96x96.png' srcset='../wp-content/uploads/2023/04/ai-bot-baidu-logo.png 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">AI小集                        <span class="is-author"  data-toggle="tooltip" data-placement="right" title="博主"><i class="iconfont icon-user icon-fw"></i></span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>2E20G6GS，每个码仅可使用一次</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-05-27T09:05:40+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3191.html#respond' data-commentid="3191" data-postid="52108" data-belowelement="comment-3191" data-respondelement="respond" data-replyto="回复给AI小集" aria-label='回复给AI小集'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1 comment" id="li-comment-3194">
+            <div id="comment-3194" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='sugar' src='https://cravatar.cn/avatar/6629bd82962eb28e9aa6c6666aa1622d?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/6629bd82962eb28e9aa6c6666aa1622d?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">sugar                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>已关注啦</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-05-27T09:38:41+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3194.html#respond' data-commentid="3194" data-postid="52108" data-belowelement="comment-3194" data-respondelement="respond" data-replyto="回复给sugar" aria-label='回复给sugar'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment byuser odd alt depth-2 comment" id="li-comment-3196">
+            <div id="comment-3196" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='AI小集' src='../wp-content/uploads/2023/04/ai-bot-baidu-logo-96x96.png' srcset='../wp-content/uploads/2023/04/ai-bot-baidu-logo.png 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">AI小集                        <span class="is-author"  data-toggle="tooltip" data-placement="right" title="博主"><i class="iconfont icon-user icon-fw"></i></span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>5O9N4PDY，每个码仅可使用一次</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-05-27T10:28:18+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3196.html#respond' data-commentid="3196" data-postid="52108" data-belowelement="comment-3196" data-respondelement="respond" data-replyto="回复给AI小集" aria-label='回复给AI小集'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1 comment" id="li-comment-3198">
+            <div id="comment-3198" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='名勉勉强强' src='https://cravatar.cn/avatar/89b032f56b6886ffa016eb497312f7af?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/89b032f56b6886ffa016eb497312f7af?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">名勉勉强强                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>已关注</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-05-27T15:16:48+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3198.html#respond' data-commentid="3198" data-postid="52108" data-belowelement="comment-3198" data-respondelement="respond" data-replyto="回复给名勉勉强强" aria-label='回复给名勉勉强强'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment byuser odd alt depth-2 comment" id="li-comment-3205">
+            <div id="comment-3205" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='AI小集' src='../wp-content/uploads/2023/04/ai-bot-baidu-logo-96x96.png' srcset='../wp-content/uploads/2023/04/ai-bot-baidu-logo.png 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">AI小集                        <span class="is-author"  data-toggle="tooltip" data-placement="right" title="博主"><i class="iconfont icon-user icon-fw"></i></span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>IC2O15GU，每个码仅可使用一次</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-05-28T10:30:42+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3205.html#respond' data-commentid="3205" data-postid="52108" data-belowelement="comment-3205" data-respondelement="respond" data-replyto="回复给AI小集" aria-label='回复给AI小集'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1 comment" id="li-comment-3200">
+            <div id="comment-3200" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='SIim.fan' src='https://cravatar.cn/avatar/142577310cb9224e72eb27d7cad8aab6?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/142577310cb9224e72eb27d7cad8aab6?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">SIim.fan                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>已关注</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-05-27T19:05:22+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3200.html#respond' data-commentid="3200" data-postid="52108" data-belowelement="comment-3200" data-respondelement="respond" data-replyto="回复给SIim.fan" aria-label='回复给SIim.fan'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment byuser odd alt depth-2 comment" id="li-comment-3206">
+            <div id="comment-3206" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='AI小集' src='../wp-content/uploads/2023/04/ai-bot-baidu-logo-96x96.png' srcset='../wp-content/uploads/2023/04/ai-bot-baidu-logo.png 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">AI小集                        <span class="is-author"  data-toggle="tooltip" data-placement="right" title="博主"><i class="iconfont icon-user icon-fw"></i></span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>去公众号私信小编领取吧～</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-05-28T10:32:52+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3206.html#respond' data-commentid="3206" data-postid="52108" data-belowelement="comment-3206" data-respondelement="respond" data-replyto="回复给AI小集" aria-label='回复给AI小集'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1 comment" id="li-comment-3204">
+            <div id="comment-3204" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='SenKnight' src='https://cravatar.cn/avatar/12450b71bae91281c49195168e5ea030?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/12450b71bae91281c49195168e5ea030?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">SenKnight                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>已关注</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-05-28T09:32:16+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3204.html#respond' data-commentid="3204" data-postid="52108" data-belowelement="comment-3204" data-respondelement="respond" data-replyto="回复给SenKnight" aria-label='回复给SenKnight'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment byuser odd alt depth-2 comment" id="li-comment-3207">
+            <div id="comment-3207" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='AI小集' src='../wp-content/uploads/2023/04/ai-bot-baidu-logo-96x96.png' srcset='../wp-content/uploads/2023/04/ai-bot-baidu-logo.png 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">AI小集                        <span class="is-author"  data-toggle="tooltip" data-placement="right" title="博主"><i class="iconfont icon-user icon-fw"></i></span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>去公众号私信小编领取吧～</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-05-28T10:32:59+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3207.html#respond' data-commentid="3207" data-postid="52108" data-belowelement="comment-3207" data-respondelement="respond" data-replyto="回复给AI小集" aria-label='回复给AI小集'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1 comment" id="li-comment-3229">
+            <div id="comment-3229" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='清者自清清清清' src='https://cravatar.cn/avatar/f9bd3f3ceb1505ded662d9b3bbea05a3?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/f9bd3f3ceb1505ded662d9b3bbea05a3?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">清者自清清清清                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>已关注</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-05-30T16:45:33+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3229.html#respond' data-commentid="3229" data-postid="52108" data-belowelement="comment-3229" data-respondelement="respond" data-replyto="回复给清者自清清清清" aria-label='回复给清者自清清清清'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment byuser odd alt depth-2 comment" id="li-comment-3230">
+            <div id="comment-3230" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='AI小集' src='../wp-content/uploads/2023/04/ai-bot-baidu-logo-96x96.png' srcset='../wp-content/uploads/2023/04/ai-bot-baidu-logo.png 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">AI小集                        <span class="is-author"  data-toggle="tooltip" data-placement="right" title="博主"><i class="iconfont icon-user icon-fw"></i></span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>去公众号私信小编领取吧～</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-05-30T16:54:47+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3230.html#respond' data-commentid="3230" data-postid="52108" data-belowelement="comment-3230" data-respondelement="respond" data-replyto="回复给AI小集" aria-label='回复给AI小集'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1 comment" id="li-comment-3273">
+            <div id="comment-3273" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='微笑' src='https://cravatar.cn/avatar/eafe5704c487d325cef9daa0040394c8?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/eafe5704c487d325cef9daa0040394c8?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">微笑                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>已关注，领取Agent Neo 邀请码</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-06-05T02:35:43+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3273.html#respond' data-commentid="3273" data-postid="52108" data-belowelement="comment-3273" data-respondelement="respond" data-replyto="回复给微笑" aria-label='回复给微笑'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment byuser odd alt depth-2 comment" id="li-comment-3276">
+            <div id="comment-3276" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='AI小集' src='../wp-content/uploads/2023/04/ai-bot-baidu-logo-96x96.png' srcset='../wp-content/uploads/2023/04/ai-bot-baidu-logo.png 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">AI小集                        <span class="is-author"  data-toggle="tooltip" data-placement="right" title="博主"><i class="iconfont icon-user icon-fw"></i></span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>现在已经开放了，无需邀请码。</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-06-05T14:57:01+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3276.html#respond' data-commentid="3276" data-postid="52108" data-belowelement="comment-3276" data-respondelement="respond" data-replyto="回复给AI小集" aria-label='回复给AI小集'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1 comment" id="li-comment-3303">
+            <div id="comment-3303" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='蛋蛋' src='https://cravatar.cn/avatar/e6a49fa3d4f1d8ee3258d278a7a4b5b5?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/e6a49fa3d4f1d8ee3258d278a7a4b5b5?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">蛋蛋                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>已关注</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-06-11T13:45:40+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3303.html#respond' data-commentid="3303" data-postid="52108" data-belowelement="comment-3303" data-respondelement="respond" data-replyto="回复给蛋蛋" aria-label='回复给蛋蛋'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment byuser odd alt depth-2 comment" id="li-comment-3304">
+            <div id="comment-3304" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='AI小集' src='../wp-content/uploads/2023/04/ai-bot-baidu-logo-96x96.png' srcset='../wp-content/uploads/2023/04/ai-bot-baidu-logo.png 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">AI小集                        <span class="is-author"  data-toggle="tooltip" data-placement="right" title="博主"><i class="iconfont icon-user icon-fw"></i></span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>现在不需要邀请码了，开放啦~</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-06-11T17:08:10+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3304.html#respond' data-commentid="3304" data-postid="52108" data-belowelement="comment-3304" data-respondelement="respond" data-replyto="回复给AI小集" aria-label='回复给AI小集'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment even depth-3 comment" id="li-comment-3359">
+            <div id="comment-3359" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='马上就好' src='https://cravatar.cn/avatar/080745e6ff22c87bb68e9cae67f1d9d6?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/080745e6ff22c87bb68e9cae67f1d9d6?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">马上就好                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>关注领取邀请码</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-06-18T06:56:16+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3359.html#respond' data-commentid="3359" data-postid="52108" data-belowelement="comment-3359" data-respondelement="respond" data-replyto="回复给马上就好" aria-label='回复给马上就好'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment byuser odd alt depth-4 comment" id="li-comment-3360">
+            <div id="comment-3360" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='AI小集' src='../wp-content/uploads/2023/04/ai-bot-baidu-logo-96x96.png' srcset='../wp-content/uploads/2023/04/ai-bot-baidu-logo.png 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">AI小集                        <span class="is-author"  data-toggle="tooltip" data-placement="right" title="博主"><i class="iconfont icon-user icon-fw"></i></span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>已经开放使用了，无需邀请码</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-06-18T07:27:42+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3360.html#respond' data-commentid="3360" data-postid="52108" data-belowelement="comment-3360" data-respondelement="respond" data-replyto="回复给AI小集" aria-label='回复给AI小集'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1 comment" id="li-comment-3363">
+            <div id="comment-3363" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='最咸的鱼' src='https://cravatar.cn/avatar/d2ffe22dd73c6eeecda74dbf09ed3331?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/d2ffe22dd73c6eeecda74dbf09ed3331?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">最咸的鱼                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>已关注</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-06-18T17:56:31+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3363.html#respond' data-commentid="3363" data-postid="52108" data-belowelement="comment-3363" data-respondelement="respond" data-replyto="回复给最咸的鱼" aria-label='回复给最咸的鱼'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-even depth-1 comment" id="li-comment-3489">
+            <div id="comment-3489" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='ABCD' src='https://cravatar.cn/avatar/54044d0336c61b3df02c6a1e65a4fe54?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/54044d0336c61b3df02c6a1e65a4fe54?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">ABCD                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>根本就不行啊，输出着就烂尾，且积分用的很快，400块可能都出不来一篇完整网文，如果输出的中间存在全英文的章节，就算删了，他并不会从全英文的章节开始输出，而是从最新的章节开始输出，总之很难用</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-07-01T21:12:04+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3489.html#respond' data-commentid="3489" data-postid="52108" data-belowelement="comment-3489" data-respondelement="respond" data-replyto="回复给ABCD" aria-label='回复给ABCD'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1 comment" id="li-comment-3527">
+            <div id="comment-3527" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='默默' src='https://cravatar.cn/avatar/9bb20b9b0de03562fe67b9f03eac475b?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/9bb20b9b0de03562fe67b9f03eac475b?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">默默                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>已关注</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-07-05T23:58:56+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3527.html#respond' data-commentid="3527" data-postid="52108" data-belowelement="comment-3527" data-respondelement="respond" data-replyto="回复给默默" aria-label='回复给默默'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment byuser odd alt depth-2 comment" id="li-comment-3529">
+            <div id="comment-3529" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='AI小集' src='../wp-content/uploads/2023/04/ai-bot-baidu-logo-96x96.png' srcset='../wp-content/uploads/2023/04/ai-bot-baidu-logo.png 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">AI小集                        <span class="is-author"  data-toggle="tooltip" data-placement="right" title="博主"><i class="iconfont icon-user icon-fw"></i></span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>直接可以用哦，无需邀请码了~</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2025-07-06T09:30:58+08:00">1年前 (2025)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='index.html%3Freplytocom=3529.html#respond' data-commentid="3529" data-postid="52108" data-belowelement="comment-3529" data-respondelement="respond" data-replyto="回复给AI小集" aria-label='回复给AI小集'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	
+			</ul>
+									
+		</div>	
+	</div>
+</div><!-- comments end -->
+        </div> 
+    </div> 
+    <div class="sidebar sidebar-tools d-none d-lg-block">
+				<div id="advert-8" class="card io-sidebar-widget advert">
+        <div id="advert_widget">
+        <div class="p-2 rounded"><a href="https://updream.cgref.cn/aibotbanner" target="_blank" rel="nofollow sponsored"><img src="../wp-content/uploads/2026/07/updream-banner.jpg" alt="updream" width="100%" class="rounded" /></a></div>    </div>
+    
+    </div><div id="advert-3" class="card io-sidebar-widget advert">
+        <div id="advert_widget">
+        <div class="p-2 rounded"><a href="https://itab.link/?ref=aibot" target="_blank" rel="nofollow sponsored"><img src="../wp-content/uploads/2024/07/itab-detail-ad3.png.png" alt="iTab广告" width="100%" class="rounded" /></a></div>    </div>
+    
+    </div><div id="ranking_post-3" class="card io-sidebar-widget io-widget-ranking-list"><div class="d-flex sidebar-header"><div class="card-header widget-header"><h3 class="text-md mb-0"><i class="mr-2 fas fa-fire"></i>热门工具</h3></div></div><div class="card-body"><div class="row row-sm my-n1"><div class="url-card col-6  my-1"><a href="../sites/4189.html" target='_blank'  class="card post-min m-0" data-url="https://www.doubao.com/chat/?channel=hw_db_aibot&amp;source=hw_db_aibot" data-id="4189"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/03/doubao-icon.png"  height="auto" width="auto"  alt="豆包"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">豆包</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/73776.html" target='_blank'  class="card post-min m-0" data-url="https://libtv.cgref.cn/aibot" data-id="73776"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/04/libtv-icon.png"  height="auto" width="auto"  alt="LibTV"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">LibTV</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/9195.html" target='_blank'  class="card post-min m-0" data-url="https://ihuiwa.paluai.com/aibot" data-id="9195"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2024/03/ihuiwa-icon.png"  height="auto" width="auto"  alt="绘蛙AI"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">绘蛙AI</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/2644.html" target='_blank'  class="card post-min m-0" data-url="https://www.aippt.cn/?utm_type=Navweb&amp;utm_source=ai-bot&amp;utm_page=aippt&amp;utm_plan=ppt&amp;utm_unit=AIPPT&amp;utm_keyword=50608" data-id="2644"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/06/AiPPT-logo.png"  height="auto" width="auto"  alt="AiPPT"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">AiPPT</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/9499.html" target='_blank'  class="card post-min m-0" data-url="https://metaso.cn/?s=aibot1&amp;referrer_s=aibot1" data-id="9499"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2024/06/metaso-ai-search-icon.png"  height="auto" width="auto"  alt="秘塔AI搜索"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">秘塔AI搜索</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/39108.html" target='_blank'  class="card post-min m-0" data-url="https://ai-bot.cn/sites/65814.html" data-id="39108"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2025/07/trae.ai-logo.png"  height="auto" width="auto"  alt="TRAE编程"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">TRAE编程</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/5507.html" target='_blank'  class="card post-min m-0" data-url="https://d.design/agent?from=ab13" data-id="5507"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/04/duiyou-icon-1.png"  height="auto" width="auto"  alt="堆友Agent"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">堆友Agent</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/2400.html" target='_blank'  class="card post-min m-0" data-url="https://www.designkit.cn/?channel=10026" data-id="2400"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2023/04/meitu-ai-ppt.jpg"  height="auto" width="auto"  alt="美图设计室"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">美图设计室</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../seko/index.html" target='_blank'  class="card post-min m-0" data-url="https://seko.cgref.cn/s/1oe7lzgn23" data-id="58360"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2025/07/Seko-logo-1.png"  height="auto" width="auto"  alt="Seko"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">Seko</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../updream/index.html" target='_blank'  class="card post-min m-0" data-url="https://updream.cgref.cn/s/1oe71vme23" data-id="80357"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/06/updream-logo1.png"  height="auto" width="auto"  alt="updream"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">updream</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../miaoda/index.html" target='_blank'  class="card post-min m-0" data-url="https://www.miaoda.cn/?invitecode=user-1pb0xv8cighs" data-id="65909"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2025/02/miaoda-logo.png"  height="auto" width="auto"  alt="秒哒"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">秒哒</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/8516.html" target='_blank'  class="card post-min m-0" data-url="https://www.xiaohuanxiong.com/login?utm_source=blmay1" data-id="8516"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2023/12/sensetime-raccoon-code-icon.png"  height="auto" width="auto"  alt="办公小浣熊"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">办公小浣熊</div></div></div></div></a></div></div></div></div><div id="hot_sites-6" class="card io-sidebar-widget io-widget-sites-list"><div class="card-header widget-header"><h3 class="text-md mb-0"><i class="mr-2 iconfont icon-chart-pc"></i>最新收录</h3></div><div class="card-body"><div class="row row-sm my-n1"><div class="url-card col-6  my-1"><a href="../sites/81968.html" target='_blank'  class="card post-min m-0" data-url="https://paopaoai.art/?utm_source=aibot" data-id="81968"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/paopaoai-logo.png"  height="auto" width="auto"  alt="泡泡AI"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">泡泡AI</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/81942.html" target='_blank'  class="card post-min m-0" data-url="https://xiangpiai.cn/workspace?from=gjjxiangpi" data-id="81942"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/xiangpiai-logo.png"  height="auto" width="auto"  alt="小橡皮"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">小橡皮</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/81921.html" target='_blank'  class="card post-min m-0" data-url="https://waclaw.ihuiwa.com/workspace?huiwaInviteCode=IZD5VL&amp;target=waclaw" data-id="81921"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2024/03/ihuiwa-icon.png"  height="auto" width="auto"  alt="WaClaw"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">WaClaw</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/81881.html" target='_blank'  class="card post-min m-0" data-url="https://learningbuddy.tencent.com/?utm_source=ai-bot.cn" data-id="81881"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/LearnBuddy-logo.png"  height="auto" width="auto"  alt="LearnBuddy"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">LearnBuddy</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/81764.html" target='_blank'  class="card post-min m-0" data-url="https://agnes-ai.com/agnescode?utm_source=ai-bot.cn" data-id="81764"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2025/08/Agnes-AI-logo.png"  height="auto" width="auto"  alt="AgnesCode"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">AgnesCode</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/81535.html" target='_blank'  class="card post-min m-0" data-url="https://jobright.ai/?utm_source=ai-bot.cn" data-id="81535"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/Jobright-logo.png"  height="auto" width="auto"  alt="Jobright"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">Jobright</div></div></div></div></a></div></div></div></div><div id="new_cat-2" class="card io-sidebar-widget new_cat"><div class="card-header widget-header"><h3 class="text-md mb-0"><i class="mr-2 iconfont icon-category"></i>最新文章</h3></div> 
+    <div class="card-body"> 
+        <div class="list-grid list-rounded my-n2">
+                                    <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../vipcheap-banner-0210/index.html" target='_blank' title="ChatGPT Plus 和 Claude Pro 会员代充值 &#8211; 支持支付宝" data-src="https://ai-bot.cn/wp-content/uploads/2026/02/vipcheap-banner-0210.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../vipcheap-banner-0210/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">ChatGPT Plus 和 Claude Pro 会员代充值 &#8211; 支持支付宝</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">2小时前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../inkling/index.html" target='_blank' title="Inkling &#8211; Thinking Machines Lab 推出的多模态基础模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/Inkling-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../inkling/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">Inkling &#8211; Thinking Machines Lab 推出的多模态基础模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">7小时前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../edu-360/index.html" target='_blank' title="备果 &#8211; 360旗下推出的K12中小学教师 AI 备课平台" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/edu.360-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../edu-360/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">备果 &#8211; 360旗下推出的K12中小学教师 AI 备课平台</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">7小时前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../colibri/index.html" target='_blank' title="Colibrì &#8211; 开源的轻量级本地推理引擎，分层存储推理" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/Colibri-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../colibri/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">Colibrì &#8211; 开源的轻量级本地推理引擎，分层存储推理</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">11小时前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../minimax-code/index.html" target='_blank' title="MiniMax Code &#8211; MiniMax 推出的桌面端 AI Agent 编程工具" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/MiniMax-Code-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../minimax-code/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">MiniMax Code &#8211; MiniMax 推出的桌面端 AI Agent 编程工具</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">11小时前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../qwen-audio-3-0-realtime/index.html" target='_blank' title="Qwen-Audio-3.0-Realtime &#8211; 阿里推出的实时语音交互模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/Qwen-Audio-3.0-Realtime-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../qwen-audio-3-0-realtime/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">Qwen-Audio-3.0-Realtime &#8211; 阿里推出的实时语音交互模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">1天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../x2-0/index.html" target='_blank' title="X2.0 &#8211; Xmax AI 推出的全球首个实时交互视频生成模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/X2.0-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../x2-0/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">X2.0 &#8211; Xmax AI 推出的全球首个实时交互视频生成模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">1天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../xiaomi-robotics-u0/index.html" target='_blank' title="Xiaomi-Robotics-U0 &#8211; 小米推出的统一具身合成模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/Xiaomi-Robotics-U0-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../xiaomi-robotics-u0/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">Xiaomi-Robotics-U0 &#8211; 小米推出的统一具身合成模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">1天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../moss-vl-realtime/index.html" target='_blank' title="MOSS-VL-Realtime &#8211; OpenMOSS 开源的视觉语言模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/MOSS-VL-Realtime-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../moss-vl-realtime/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">MOSS-VL-Realtime &#8211; OpenMOSS 开源的视觉语言模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">1天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../ovisocr2/index.html" target='_blank' title="OvisOCR2 &#8211; 阿里ATH-MaaS团队推出的端到端文档解析模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/OvisOCR2-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../ovisocr2/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">OvisOCR2 &#8211; 阿里ATH-MaaS团队推出的端到端文档解析模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">2天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../abot-world-studio/index.html" target='_blank' title="ABot-World Studio &#8211; 高德推出的通用世界模型工坊" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/ABot-World-Studio-website1.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../abot-world-studio/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">ABot-World Studio &#8211; 高德推出的通用世界模型工坊</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">2天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../anysearch/index.html" target='_blank' title="AnySearch &#8211; 专为 AI Agent 推出的实时结构化搜索引擎" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/AnySearch-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../anysearch/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">AnySearch &#8211; 专为 AI Agent 推出的实时结构化搜索引擎</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">2天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../stepamoo/index.html" target='_blank' title="StepAmoo &#8211; 阶跃星辰推出的新一代个人智能体" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/StepAmoo-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../stepamoo/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">StepAmoo &#8211; 阶跃星辰推出的新一代个人智能体</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">2天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../wan-dancer/index.html" target='_blank' title="Wan-Dancer &#8211; 阿里通义开源的人像舞蹈视频生成模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/Wan-Dancer-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../wan-dancer/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">Wan-Dancer &#8211; 阿里通义开源的人像舞蹈视频生成模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">2天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../libtv-agent/index.html" target='_blank' title="LibTV Agent &#8211; LibTV 推出的专业级视频创作智能体" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/LibTV-Agent-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../libtv-agent/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">LibTV Agent &#8211; LibTV 推出的专业级视频创作智能体</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">2天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                                </div>
+    </div>
+
+    </div>	
+	
+	</div>
+    </main>
+</div>
+ 
+<div class="main-footer footer-stick container container-fluid customize-width pt-4 pb-3 footer-type-big">
+
+    <div class="footer-inner card rounded-xl m-0">
+        <div class="footer-text card-body text-muted text-center text-md-left">
+                        <div class="row my-4">
+                                <div class="col-12 col-md-4 mb-4 mb-md-0">
+                    <a class="footer-logo" href="../gpt-image-2/index.html" title="AI工具集">
+                        <img src="../wp-content/uploads/2023/03/ai-bot-logo-black.png" class="logo-light mb-3" alt="AI工具集" height="40">
+                        <img src="../wp-content/uploads/2023/03/ai-bot-logo-white.png" class="logo-dark d-none mb-3" alt="AI工具集" height="40">
+                    </a>
+                    <div class="text-sm">AI工具集导航收录了国内外数百个不同类型的AI工具，每日更新和添加最新AI工具，AI工具集还推荐了AI学习开发的常用网站、框架和模型，帮助你加入人工智能浪潮，自动化高效完成任务！
+
+Ctrl + D 或 ⌘ + D 收藏本站到浏览器书签栏。</div>
+                </div>
+                                <div class="col-12 col-md-5 mb-4 mb-md-0"> 
+                    <p class="footer-links text-sm mb-3"><a href="../gpt-image-2/index.html">AI工具集导航</a>
+<a href="../about-us/index.html" target="_blank">关于我们</a>
+<a href="../disclaimer/index.html" target="_blank">免责声明</a>
+<a href="../ai-project-20250614/index.html" target="_blank">最新AI项目</a>
+<a href="../ai-app-store/index.html" target="_blank">AI应用商店</a>
+<a href="https://www.ghxi.com/" target="_blank">果核剥壳</a>
+<a href="https://cakegrowth.cn/" target="_blank">CakeGrowth</a>
+<a href="../vipcheap-banner-0210/index.html" target="_blank">VipCheap</a>
+<a href="https://gongke.net/" target="_blank">攻壳智能体</a>
+<a href="https://www.yjpoo.com/" target="_blank">映技派</a>
+<a href="../sites/4189.html" target="_blank">豆包</a>
+<a href="../sites/6242.html" target="_blank">讯飞绘文</a>
+<a href="../sites/9195.html" target="_blank">绘蛙</a>
+<a href="../sites/17772.html" target="_blank">即梦</a>
+<a href="../sites/8204.html" target="_blank">蛙蛙写作</a>
+<a href="../sites/13065.html" target="_blank">白日梦</a>
+<a href="../sites/44612.html" target="_blank">咔片PPT</a>
+<a href="../sites/8516.html" target="_blank">办公小浣熊</a>
+<a href="../trae/index.html" target="_blank">TRAE</a>
+<a href="../codeflying/index.html" target="_blank">码上飞</a>
+<a href="../sites/5507.html" target="_blank">堆友AI</a>
+<a href="../sites/66771.html" target="_blank">LiblibAI</a>
+<a href="../xingliu-art/index.html" target="_blank">星流AI</a>
+<a href="../miaoda/index.html" target="_blank">秒哒</a>
+<a href="../updream/index.html" target="_blank">updream</a>
+<a href="../seko/index.html" target="_blank">Seko</a>
+<a href="../sites/73776.html" target="_blank">LibTV</a></p>                                        <div class="footer-social">
+                        <a class="rounded-circle bg-light" href="mailto:info@ai-bot.cn" target="_blank"  data-toggle="tooltip" data-placement="top" title="联系邮箱" rel="external noopener nofollow">
+                                    <i class="iconfont icon-email"></i>
+                                </a>                    </div>
+                </div>
+                                <div class="col-12 col-md-3 text-md-right mb-4 mb-md-0">
+                                </div>
+                            </div>
+                        <div class="footer-copyright text-xs">
+            Copyright © 2026 <a href="../gpt-image-2/index.html" title="AI工具集" class="" rel="home">AI工具集</a>&nbsp;<a href="https://beian.miit.gov.cn/" target="_blank" class="" rel="link noopener">蜀ICP备2022019184号-2</a>&nbsp; <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51010702003349" target="_blank" class="" rel="noopener"><img style="margin-bottom: 3px;" src="../wp-content/themes/onenav/images/gaba.png"> 川公网安备 51010702003349号</a>&nbsp;            </div>
+        </div>
+    </div>
+</div>
+</div><!-- main-content end -->
+
+<footer>
+    <div id="footer-tools" class="d-flex flex-column">
+        <a href="javascript:" id="go-to-up" class="btn rounded-circle go-up m-1" rel="go-top">
+            <i class="iconfont icon-to-up"></i>
+        </a>
+                                                <a href="javascript:" id="switch-mode" class="btn rounded-circle switch-dark-mode m-1" data-toggle="tooltip" data-placement="left" title="夜间模式">
+            <i class="mode-ico iconfont icon-light"></i>
+        </a>
+            </div>
+</footer>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/clipboard.min.js%3Fver=4.0331' id='clipboard-mini-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/popper.min.js%3Fver=4.0331' id='popper-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/bootstrap.min.js%3Fver=4.0331' id='bootstrap-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/theia-sticky-sidebar.js%3Fver=4.0331' id='sidebar-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/lazyload.min.js%3Fver=4.0331' id='lazyload-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/jquery.fancybox.min.js%3Fver=4.0331' id='lightbox-js-js'></script>
+<script type='text/javascript' id='appjs-js-extra'>
+/* <![CDATA[ */
+var theme = {"ajaxurl":"https:\/\/ai-bot.cn\/wp-admin\/admin-ajax.php","uri":"https:\/\/ai-bot.cn\/wp-content\/themes\/onenav","addico":"https:\/\/ai-bot.cn\/wp-content\/themes\/onenav\/images\/add.png","order":"asc","formpostion":"top","defaultclass":"io-grey-mode","isCustomize":"0","icourl":"https:\/\/besticon-demo.herokuapp.com\/icon?size=32..120..256&url=","icopng":"","urlformat":"1","customizemax":"10","newWindow":"1","lazyload":"1","minNav":"","loading":"","hotWords":"baidu","classColumns":" col-2a col-sm-2a col-md-2a col-lg-3a col-xl-6a col-xxl-6a ","apikey":"TWpBeU1USTJNemd4TWpZM0d6RS9oTVZCa2RqWk5aRGxtVG1jeGVEaHNVbW8zTnpCNGNGUldVVEZsYjNoTA==","isHome":"","version":"4.0331"};
+var localize = {"liked":"\u60a8\u5df2\u7ecf\u8d5e\u8fc7\u4e86!","like":"\u8c22\u8c22\u70b9\u8d5e!","networkerror":"\u7f51\u7edc\u9519\u8bef --.","selectCategory":"\u4e3a\u4ec0\u4e48\u4e0d\u9009\u5206\u7c7b\u3002","addSuccess":"\u6dfb\u52a0\u6210\u529f\u3002","timeout":"\u8bbf\u95ee\u8d85\u65f6\uff0c\u8bf7\u518d\u8bd5\u8bd5\uff0c\u6216\u8005\u624b\u52a8\u586b\u5199\u3002","lightMode":"\u65e5\u95f4\u6a21\u5f0f","nightMode":"\u591c\u95f4\u6a21\u5f0f","editBtn":"\u7f16\u8f91","okBtn":"\u786e\u5b9a","urlExist":"\u8be5\u7f51\u5740\u5df2\u7ecf\u5b58\u5728\u4e86 --.","cancelBtn":"\u53d6\u6d88","successAlert":"\u6210\u529f","infoAlert":"\u4fe1\u606f","warningAlert":"\u8b66\u544a","errorAlert":"\u9519\u8bef","extractionCode":"\u7f51\u76d8\u63d0\u53d6\u7801\u5df2\u590d\u5236\uff0c\u70b9\u201c\u786e\u5b9a\u201d\u8fdb\u5165\u4e0b\u8f7d\u9875\u9762\u3002","wait":"\u8bf7\u7a0d\u5019","loading":"\u6b63\u5728\u5904\u7406\u8bf7\u7a0d\u540e...","userAgreement":"\u8bf7\u5148\u9605\u8bfb\u5e76\u540c\u610f\u7528\u6237\u534f\u8bae","reSend":"\u79d2\u540e\u91cd\u65b0\u53d1\u9001","weChatPay":"\u5fae\u4fe1\u652f\u4ed8","alipay":"\u652f\u4ed8\u5b9d","scanQRPay":"\u8bf7\u626b\u7801\u652f\u4ed8","payGoto":"\u652f\u4ed8\u6210\u529f\uff0c\u9875\u9762\u8df3\u8f6c\u4e2d"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/app.min.js%3Fver=4.0331' id='appjs-js'></script>
+<script type='text/javascript' id='appjs-js-after'>
+/* <![CDATA[ */ 
+    $(document).ready(function(){if($("#search-text")[0]){$("#search-text").focus();}});
+    /* ]]> */
+</script>
+<script type='text/javascript' src='../wp-includes/js/comment-reply.min.js%3Fver=6.2' id='comment-reply-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/comments-ajax.js%3Fver=4.0331' id='comments-ajax-js'></script>
+<script type='text/javascript' id='wp-postviews-cache-js-extra'>
+/* <![CDATA[ */
+var viewsCacheL10n = {"admin_ajax_url":"https:\/\/ai-bot.cn\/wp-admin\/admin-ajax.php","post_id":"52108"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/themes/onenav/inc/postviews/postviews-cache.js%3Fver=6.2' id='wp-postviews-cache-js'></script>
+ 
+<!-- 自定义代码 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?55906d9c57011d694d405f963a90648b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KV0VT5CMJ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KV0VT5CMJ6');
+</script>
+<!-- end 自定义代码 -->
+</body>
+</html>

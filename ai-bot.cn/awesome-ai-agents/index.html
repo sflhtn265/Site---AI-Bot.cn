@@ -1,0 +1,2280 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="io-grey-mode">
+<head> 
+<script>
+    var default_c = "io-grey-mode";
+    var night = document.cookie.replace(/(?:(?:^|.*;\s*)io_night_mode\s*\=\s*([^;]*).*$)|^.*$/, "$1"); 
+    try {
+        if (night === "0") {
+            document.documentElement.classList.add("io-black-mode");
+            document.documentElement.classList.remove(default_c);
+        } else {
+            document.documentElement.classList.remove("io-black-mode");
+            document.documentElement.classList.add(default_c);
+        }
+    } catch (_) {}
+</script><meta charset="UTF-8">
+<meta name="renderer" content="webkit"/>
+<meta name="force-rendering" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Awesome AI Agents - e2b-dev推出的AI Agent大合集GitHub | AI工具集</title>
+<meta name="theme-color" content="#f9f9f9" />
+<meta name="description" content="Awesome AI Agents是e2b-dev维护的GitHub仓库，汇集和展示各种人工智能代理（AI Agents）相关的开源项目、闭源项目以及相关公司。仓库内容分为两部分：开源项目和闭源项目及公司。涵盖了从通用目的到特定领域（如编码、数据处理、商业智能等）的各种AI代理工具和框架。" />
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ai-bot.cn/awesome-ai-agents/"/> 
+<meta property="og:title" content="Awesome AI Agents - e2b-dev推出的AI Agent大合集GitHub | AI工具集">
+<meta property="og:description" content="Awesome AI Agents是e2b-dev维护的GitHub仓库，汇集和展示各种人工智能代理（AI Agents）相关的开源项目、闭源项目以及相关公司。仓库内容分为两部分：开源项目和闭源项目及公司。涵盖了从通用目的到特定领域（如编码、数据处理、商业智能等）的各种AI代理工具和框架。">
+<meta property="og:image" content="https://ai-bot.cn/wp-content/uploads/2025/08/Awesome-AI-Agents-website.png">
+<meta property="og:site_name" content="AI工具集">
+<meta property="og:updated_time" content="2025-08-08T19:23:43+08:00">
+<meta property="article:published_time" content="2025-08-08T19:14:30+08:00">
+<meta property="article:modified_time" content="2025-08-08T19:23:43+08:00">
+<link rel="shortcut icon" href="../wp-content/uploads/2023/03/ai-bot-square-logo.png">
+<link href="../wp-content/uploads/2023/07/ai-bot-favicon.png" rel="icon" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../wp-content/uploads/2023/04/ai-bot-baidu-logo.png">
+<!--[if IE]><script src="https://ai-bot.cn/wp-content/themes/onenav/js/html5.min.js"></script><![endif]-->
+<meta name='robots' content='max-image-preview:large' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='../wp-includes/css/classic-themes.min.css%3Fver=6.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='iconfont-css' href='../wp-content/themes/onenav/css/iconfont.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css' href='../wp-content/themes/onenav/css/all.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome4-css' href='../wp-content/themes/onenav/css/v4-shims.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css' href='../wp-content/themes/onenav/css/bootstrap.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='lightbox-css' href='../wp-content/themes/onenav/css/jquery.fancybox.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css' href='../wp-content/themes/onenav/css/style.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-content/themes/onenav/js/jquery.min.js%3Fver=4.0331' id='jquery-js'></script>
+<script type='text/javascript' id='jquery-js-after'>
+/* <![CDATA[ */ 
+        function loadFunc(func) {if (document.all){window.attachEvent("onload",func);}else{window.addEventListener("load",func,false);}}   
+        /* ]]> */
+</script>
+<link rel="canonical" href="index.html" />
+<style>body:before {
+  content: '';
+  position: absolute;
+  top: 0 !important;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 550px;
+  background-image: url(../wp-content/uploads/2023/07/blury-shape-bg-light.png);
+  background-size: cover;
+  z-index: -1;
+}
+
+.io-black-mode body:before {
+	background-image: url(../wp-content/uploads/2024/01/blury-shape-bg-dark.png);
+}
+
+.page-header {
+	background: none !important;
+  position: absolute;
+}
+
+
+.io-black-mode .page-header {
+	background: rgba(44,46,47,0.7) !important;
+}
+
+.url-card .max .url-img {
+	width: 40px;
+  height: 40px;
+}
+
+.card-body .url-img img {
+	border: none !important;
+}
+
+.panel-body.single.mt-2 img {
+	border-radius: 6px;
+  border: 2px solid #eee;
+}
+
+.meta-media {
+  position: relative;
+  margin-bottom: 30px;
+  float: left;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+}
+.video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.table-bordered {
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+a.underline {
+    border-bottom: 3px solid #5961f9;
+}
+
+a.underline:hover {
+    border-bottom: 3px solid #ee9ae5;
+}
+
+.io-edit-post-card-content .mx-auto {
+	margin-left: 0!important;
+}
+
+.panel-body .url-card.shortcode-url .card {
+	background: white;
+}
+.io-black-mode .panel-body .url-card.shortcode-url .card {
+	background: #2c2e2f;
+}
+
+@media screen and (min-width: 768px) {
+  .header-big {
+		padding-top: 80px;
+	}
+}
+
+/* 快讯页面样式开始 */
+.news-content h2{
+  border: none;
+}
+.news-list .news-date {
+    padding: 32px 20px 12px 20px;
+    font-size: 20px;
+    line-height: 26px;
+    position: relative;
+    font-weight: 700;
+    color: #5961f9;
+}
+.news-list .news-item {
+    padding: 20px 0 5px 20px;
+}
+.news-list .news-date, .news-list .news-item {
+    position: relative;
+    margin-left: 15px;
+    border-left: 1px dashed #c3c8fe;
+}
+.news-list .news-time {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.news-list .news-hour {
+    position: relative;
+    display: block;
+    padding-top: 10px;
+    padding-left: 12px;
+    margin-left: 15px;
+    border-left: 1px dashed #c3c8fe;
+}
+.news-list .news-date:after, .news-list .news-date:before {
+    position: absolute;
+    left: -8px;
+    top: 38px;
+    width: 16px;
+    height: 16px;
+    content: "";
+    border-radius: 1px;
+    background: #5961f9;
+}
+.news-list .news-time:before {
+    border: 4px solid #5961f9;
+    opacity: 1;
+}
+.news-list .news-content h2 {
+    position: relative;
+    font-size: 18px;
+    line-height: 1.4;
+}
+.news-list .news-content p {
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.65;
+}
+.news-list h2:after, .news-list h2:before {
+    position: absolute;
+    left: -3.5px;
+    top: 10px;
+    width: 4px;
+    height: 4px;
+    border-radius: 6px;
+    border: 4px solid #5961f9;
+    box-sizing: initial;
+    background: #fff;
+    content: "";
+}
+.panel-body.single.mt-2 .news-time img {
+    border-radius: 2px;
+    border: none;
+}
+.panel-body.single.mt-2 img.news-banner {
+    border-radius: 0px;
+    border: none;
+}
+.panel-body .news-content h2 a:not(.no-c) {
+    color: #282a2d;
+}
+.io-black-mode .panel-body .news-content h2 a:not(.no-c) {
+    color: #c6c9cf;
+}
+.panel-body .news-content h2 a:not(.no-c):hover {
+    color: #5961f9;
+}
+.news-content .external:after {
+    content: "";
+}
+.news-content h2 .badge-danger {
+    background-color: #F1404B;
+}
+/* 快讯页面样式结束 */
+.tab-widget-content .img-post .media-content {
+    -webkit-transform: none;
+    transform: none;
+}
+.img-post .media-content {
+    -webkit-transform: none;
+    transform: none;
+}
+.io-black-mode .panel-body .table td {
+    color: #eee;
+}
+/* 滚动条 */
+@media screen and (min-width: 768px) {
+  .sidebar-nav-inner .flex-fill {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sidebar-nav-inner .flex-fill:hover {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+/* 备案查询页面黑暗模式颜色修改 */
+.io-black-mode .theme--light.v-application {
+    background: #2c2e2f;
+    color: white;
+}
+.io-black-mode .theme--light.v-sheet {
+    background-color: #2c2e2f;
+    border-color: #5e6063 !important;
+    color: white;
+}
+.io-black-mode .theme--light.v-label {
+    color: rgb(255 255 255 / 60%);
+}
+.io-black-mode .theme--light.v-icon {
+    color: rgb(255 255 255 / 60%);
+}
+.io-black-mode .theme--light.v-text-field>.v-input__control>.v-input__slot:before {
+    border-color: rgb(255 255 255 / 42%);
+}
+.io-black-mode .theme--light.v-data-table {
+		background-color: #2c2e2f;
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:last-child, .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:not(.v-data-table__mobile-row), .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>th:last-child, .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>th:not(.v-data-table__mobile-row), .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr:last-child>th {
+    border-bottom: thin solid rgb(255 255 255 / 12%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr:last-child>th {
+    border-bottom: thin solid rgb(255 255 255 / 12%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:not(.v-data-table__mobile-row) {
+		border-bottom: thin solid rgb(255 255 255 / 12%);
+}
+th.text-start, td.text-start {
+		border-left: none;
+  	border-right: none;
+}
+th.text-start {
+		border-top: none;
+}
+.io-black-mode .theme--light.v-data-table .v-data-table-header th.sortable:hover {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr>th {
+		color: rgba(255,255,255,.6);
+}
+.io-black-mode .theme--light.v-data-table .v-data-table-header th.sortable .v-data-table-header__icon {
+    color: rgb(255 255 255 / 58%);
+}
+.io-black-mode .theme--light.v-btn.v-btn--disabled, .theme--light.v-btn.v-btn--disabled .v-btn__loading, .theme--light.v-btn.v-btn--disabled .v-icon {
+    color: rgb(255 255 255 / 26%)!important;
+}
+.io-black-mode .v-btn>.v-btn__content .v-icon {
+    color: #fff;
+}
+.io-black-mode .theme--light.v-select .v-select__selections {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper) {
+    background: #222;
+}
+.io-black-mode .theme--light.v-input input {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table .v-data-table__empty-wrapper {
+    color: rgb(255 255 255 / 38%);
+}
+div.card-app > div.card-body {
+	padding: 0.8rem;
+}
+.app-rounded {
+	border-radius: 22% !important;
+}
+div.card-app.card {
+  border-radius: .45rem !important;
+}
+.screenshot-carousel .img_wrapper {
+	height: 360px !important;
+}
+.io-black-mode .enlighter-t-enlighter .enlighter-text {
+    color: #99a;
+}
+.site-content a img.alignnone {
+    border-radius: .3rem;
+    border: 1px solid #ddd;
+}.customize-width{max-width:1900px}.sidebar-nav{width:220px}@media (min-width: 768px){.main-content{margin-left:220px;}.main-content .page-header{left:220px;}}</style><meta name="redi-version" content="1.2.7" /><style>.panel-body a:not(.no-c){color:#5961f9}.panel-body a:not(.no-c):hover{color:#ee9ae5}a:hover,.io-grey-mode .sidebar-show,.io-grey-mode .sidebar-item>a:hover,.io-grey-mode .sidebar-item li>a:hover,.home-like:hover,
+        .io-grey-mode .sidebar-popup>div>ul>li>a:hover{color:#5961f9}
+        .header-mini-btn label:hover path{ stroke:#5961f9}
+        .url-card .max .tga a:not(.no-tag):hover,.card-app.card .tga a:not(.no-tag):hover{background:#5961f9}
+        .sidebar .url-card .card:hover{border: 1px solid #5961f9!important;}.tags i{color:#5961f9}.custom-piece_c_b{background:#5961f9!important}.custom-piece_c{color:#5961f9!important}.slider_menu[sliderTab] .anchor,.customize-menu .btn-edit,.badge-danger,.comment-list .rank,.sidebar .card-header:after{background:#5961f9}.badge-outline-primary{color:#5961f9;border:#5961f9 solid 1px}.posts-nav .page-numbers.current,.posts-nav .page-numbers:not(.dots):hover,#comments-navi>a:hover,#comments-navi>.current,.page-nav>a:hover span,.page-nav>.current span{background-color:#5961f9;box-shadow: 0px 5px 20px -3px rgba(89,97,249,.6);}     
+.custom-control-input:not(:disabled):active~.custom-control-label::before{background-color:rgba(89,97,249,.15);border-color:rgba(89,97,249,.15);}
+.custom-control-input:focus~.custom-control-label::before{box-shadow:0 0 0 .2rem rgba(89,97,249,.25)}
+.custom-control-input:focus:not(:checked)~.custom-control-label::before{border-color:#5961f9}
+.custom-control-input:checked~.custom-control-label::before{border-color:#5961f9;background-color:#5961f9}
+.btn-search:hover,.btn-search.current{background-color:#5961f9;box-shadow: 0 5px 20px -3px rgba(89,97,249,.6)}.btn-search.current:after{border-top-color:#5961f9}.panel-body h2,.panel-body h3 {border-color:#5961f9}.custom_btn-outline {color: #5961f9;background-color: transparent;border-color: #5961f9;}
+.custom_btn-outline:hover {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.custom_btn-outline:focus, .custom_btn-outline.focus {color: #14171B;box-shadow: 0 0 0 0 transparent!important;background-color: transparent;}
+.custom_btn-outline.disabled, .custom_btn-outline:disabled {color: #5961f9;background-color: transparent!important;}
+.custom_btn-outline:not(:disabled):not(.disabled):active, .custom_btn-outline:not(:disabled):not(.disabled).active,.show > .custom_btn-outline.dropdown-toggle {color: #fff;background-color: #5961f9;border-color: #5961f9;}
+.custom_btn-outline:not(:disabled):not(.disabled):active:focus, .custom_btn-outline:not(:disabled):not(.disabled).active:focus,.show > .custom_btn-outline.dropdown-toggle:focus {box-shadow: 0 0 0 0 transparent!important;}
+.custom_btn-d {color: #ffffff;background-color: #5961f9;border-color: #5961f9;}
+.custom_btn-d:hover {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.custom_btn-d:focus,.custom_btn-d.focus {color: #ffffff;background-color: #14171B;border-color: #14171B;box-shadow: 0 0 0 0 transparent!important;}
+.custom_btn-d.disabled,.custom_btn-d:disabled {color: #ffffff;background-color:#5961f9;border-color: #5961f9;}
+.custom_btn-d:not(:disabled):not(.disabled):active,.custom_btn-d:not(:disabled):not(.disabled).active{color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.custom_btn-d:not(:disabled):not(.disabled):active:focus,.custom_btn-d:not(:disabled):not(.disabled).active:focus{box-shadow: 0 0 0 0 transparent!important;}
+.btn.custom_btn-d {color: #ffffff;background-color: #5961f9;border-color: #5961f9;}
+.btn.custom_btn-d:hover {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.btn.custom_btn-d:focus,.btn.custom_btn-d.focus {color: #ffffff;background-color: #14171B;border-color: #14171B;box-shadow: 0 0 0 0 transparent!important;}
+.btn.custom_btn-d.disabled,.btn.custom_btn-d:disabled {color: #ffffff;background-color:#5961f9;border-color: #5961f9;}
+.btn.custom_btn-d:not(:disabled):not(.disabled):active,.btn.custom_btn-d:not(:disabled):not(.disabled).active,.show > .custom_btn-d.dropdown-toggle {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.btn.custom_btn-d:not(:disabled):not(.disabled):active:focus,.btn.custom_btn-d:not(:disabled):not(.disabled).active:focus,.show > .custom_btn-d.dropdown-toggle:focus {box-shadow: 0 0 0 0 transparent!important;}
+.btn-dark:hover{background-color:#5961f9;border-color:#5961f9}
+.sidebar .card .searchform input[type='submit']{border: 1px solid #5961f9;background-color:#5961f9}
+.sidebar .card .searchform input[type='submit']:hover{border: 1px solid #14171B;background-color:#14171B}</style><!-- 自定义代码 -->
+<meta name="baidu-site-verification" content="codeva-P9RvmeAUoM" />
+<meta name="msvalidate.01" content="92B2C43DC49DA55D7E2C4AE6B1CC1A81" />
+<meta name="sogou_site_verification" content="Zo3i06YCJh" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7941312752144276"
+     crossorigin="anonymous"></script>
+<script>
+(function(){
+var el = document.createElement("script");
+el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?555fccf68561b344c2292bef2655dc990da3031c125e7429fc5275c9527fda6e4a4d40de0dd5fa9b5c2c10f69a3b501dc430e831103b45ce33654fb9f95b006c";
+el.id = "ttzz";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(el, s);
+})(window)
+</script><!-- end 自定义代码 -->
+</head> 
+<body class="post-template-default single single-post postid-59532 single-format-standard sidebar_no">
+        <div id="sidebar" class="sticky sidebar-nav fade">
+            <div class="modal-dialog h-100  sidebar-nav-inner">
+                <div class="sidebar-logo border-bottom border-color">
+                    <!-- logo -->
+                    <div class="logo overflow-hidden">
+                                                <a href="../gpt-image-2/index.html" class="logo-expanded">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-black.png" height="40" class="logo-light" alt="AI工具集">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-white.png" height="40" class="logo-dark d-none" alt="AI工具集">
+                        </a>
+                        <a href="../gpt-image-2/index.html" class="logo-collapsed">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-square-logo.png" height="40" class="logo-light" alt="AI工具集">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-square-logo.png" height="40" class="logo-dark d-none" alt="AI工具集">
+                        </a>
+                    </div>
+                    <!-- logo end -->
+                </div>
+                <div class="sidebar-menu flex-fill">
+                    <div class="sidebar-scroll" >
+                        <div class="sidebar-menu-inner">
+                            <ul> 
+                                                                                                <li class="sidebar-item top-menu">
+                                    <a href="javascript:;" class="  change-href">
+                                        <i class="iconfont icon-category icon-fw icon-lg"></i>
+                                        <span>站点推荐</span>
+                                    </a>
+                                    <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                    <ul>
+                                        <li id="menu-item-55865" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-55865"><a href="../gpt-image-2/index.html">AI工具集</a>
+<ul class="sub-menu">
+	<li id="menu-item-55866" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55866"><a href="../favorites/ai-writing-tools/index.html">AI写作工具</a></li>
+	<li id="menu-item-55868" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55868"><a href="../favorites/ai-image-tools/index.html">AI图像工具</a></li>
+	<li id="menu-item-55869" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55869"><a href="../favorites/ai-video-tools/index.html">AI视频工具</a></li>
+	<li id="menu-item-55867" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55867"><a href="../favorites/ai-office-tools/index.html">AI办公工具</a></li>
+	<li id="menu-item-55870" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55870"><a href="../favorites/ai-agent/index.html">AI智能体</a></li>
+	<li id="menu-item-55871" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55871"><a href="../favorites/ai-chatbots/index.html">AI聊天助手</a></li>
+	<li id="menu-item-55872" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55872"><a href="../favorites/ai-programming-tools/index.html">AI编程工具</a></li>
+	<li id="menu-item-55873" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55873"><a href="../favorites/ai-design-tools/index.html">AI设计工具</a></li>
+	<li id="menu-item-55874" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55874"><a href="../favorites/ai-audio-tools/index.html">AI音频工具</a></li>
+	<li id="menu-item-55876" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55876"><a href="../favorites/ai-search-engines/index.html">AI搜索引擎</a></li>
+	<li id="menu-item-55875" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55875"><a href="../favorites/ai-frameworks/index.html">AI开发平台</a></li>
+	<li id="menu-item-55878" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55878"><a href="../favorites/websites-to-learn-ai/index.html">AI学习网站</a></li>
+	<li id="menu-item-55880" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55880"><a href="../favorites/ai-models/index.html">AI训练模型</a></li>
+	<li id="menu-item-67873" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-67873"><a href="../favorites/ai-content-detection-and-optimization-tools/index.html">AI内容检测</a></li>
+	<li id="menu-item-67442" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-67442"><a href="../favorites/ai-prompt-tools/index.html">AI提示指令</a></li>
+</ul>
+</li>
+<li id="menu-item-54113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54113"><a target="_blank" rel="noopener" href="../ai-app-store/index.html">
+        <i class="fab fa-app-store-ios icon-fw icon-lg"></i>
+                <span>AI应用集</span></a></li>
+<li id="menu-item-54115" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54115"><a target="_blank" rel="noopener" href="../daily-ai-news/index.html">
+        <i class="iconfont icon-chart-pc icon-fw icon-lg"></i>
+                <span>每日AI资讯</span></a></li>
+<li id="menu-item-54116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-54116"><a target="_blank" rel="noopener" href="../ai-project-20250614/index.html">最新AI项目</a>
+<ul class="sub-menu">
+	<li id="menu-item-54117" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-54117"><a target="_blank" rel="noopener" href="../ai-tools/index.html">AI工具</a></li>
+	<li id="menu-item-54118" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-54118"><a target="_blank" rel="noopener" href="../ai-research/index.html">AI项目和框架</a></li>
+</ul>
+</li>
+<li id="menu-item-54944" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-54944"><a target="_blank" rel="noopener" href="../ai-tutorials/index.html">AI教程资源</a>
+<ul class="sub-menu">
+	<li id="menu-item-54940" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54940"><a target="_blank" rel="noopener" href="../ai-column/index.html">AI专栏</a></li>
+	<li id="menu-item-56311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56311"><a target="_blank" rel="noopener" href="../ai-question-and-answer/index.html">AI问答</a></li>
+	<li id="menu-item-54119" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54119"><a target="_blank" rel="noopener" href="../ai-encyclopedia/index.html">AI百科</a></li>
+	<li id="menu-item-54122" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54122"><a target="_blank" rel="noopener" href="../ai-hall-of-fame/index.html">AI名人堂</a></li>
+</ul>
+</li>
+<li id="menu-item-54114" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54114"><a target="_blank" rel="noopener" href="../about-us/index.html">关于我们</a></li>
+                                    </ul>
+                                </li> 
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-7" class="">
+                                                <i class="fas fa-feather icon-fw icon-lg"></i>
+                                                <span>AI写作工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-2" class="" data-change="https://ai-bot.cn/#term-2">
+                                                <i class="fas fa-images icon-fw icon-lg"></i>
+                                                <span>AI图像工具</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-37" class=""><span>常用AI图像工具</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-33" class=""><span>AI图片插画生成</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-32" class=""><span>AI图片背景移除</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-35" class=""><span>AI图片物体抹除</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-34" class=""><span>AI图片无损放大</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-36" class=""><span>AI图片优化修复</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-78" class=""><span>AI商品图生成</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-83" class=""><span>AI 3D模型生成</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-4" class="">
+                                                <i class="fas fa-video icon-fw icon-lg"></i>
+                                                <span>AI视频工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-38" class="" data-change="https://ai-bot.cn/#term-38">
+                                                <i class="fas fa-folder-open icon-fw icon-lg"></i>
+                                                <span>AI办公工具</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-45" class=""><span>AI幻灯片和演示</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-46" class=""><span>AI表格数据处理</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-48" class=""><span>AI思维导图</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-47" class=""><span>AI文档工具</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-49" class=""><span>AI会议工具</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-85" class=""><span>AI招聘求职</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-77" class=""><span>AI法律助手</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-52" class=""><span>AI语言翻译</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-51" class=""><span>AI效率提升</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-16" class="">
+                                                <i class="fas fa-comments icon-fw icon-lg"></i>
+                                                <span>AI聊天助手</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-97" class="" data-change="https://ai-bot.cn/#term-97">
+                                                <i class="fas fa-brain icon-fw icon-lg"></i>
+                                                <span>AI智能体</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-97-86" class=""><span>AI智能体</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-97-96" class=""><span>插件与Skills</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-13" class="">
+                                                <i class="fas fa-code icon-fw icon-lg"></i>
+                                                <span>AI编程工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-15" class="">
+                                                <i class="fas fa-laptop-code icon-fw icon-lg"></i>
+                                                <span>AI开发平台</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-19" class="">
+                                                <i class="fas fa-palette icon-fw icon-lg"></i>
+                                                <span>AI设计工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-6" class="">
+                                                <i class="fas fa-music icon-fw icon-lg"></i>
+                                                <span>AI音频工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-61" class="">
+                                                <i class="fas fa-search icon-fw icon-lg"></i>
+                                                <span>AI搜索引擎</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-12" class="">
+                                                <i class="fas fa-graduation-cap icon-fw icon-lg"></i>
+                                                <span>AI学习网站</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-14" class="">
+                                                <i class="fas fa-cubes icon-fw icon-lg"></i>
+                                                <span>AI训练模型</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-56" class="">
+                                                <i class="fas fa-crown icon-fw icon-lg"></i>
+                                                <span>AI模型评测</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-95" class="" data-change="https://ai-bot.cn/#term-95">
+                                                <i class="iconfont icon-instructions icon-fw icon-lg"></i>
+                                                <span>AI内容检测</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-95-20" class=""><span>内容检测</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-95-94" class=""><span>降AI/AIGC率</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-42" class="">
+                                                <i class="fab fa-product-hunt icon-fw icon-lg"></i>
+                                                <span>AI提示指令</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-98" class="">
+                                                <i class="iconfont icon-related icon-fw icon-lg"></i>
+                                                <span>AI副业工具</span>
+                                            </a>
+                                        </li> 
+                                     
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top py-2 border-color">
+                    <div class="flex-bottom">
+                        <ul> 
+                             
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content flex-fill">    <div class=" header-nav">
+        <div id="header" class="page-header sticky">
+            <div class="navbar navbar-expand-md">
+                <div class="container-fluid p-0 position-relative">
+                    <div class="">
+                        <a href="../gpt-image-2/index.html" class="navbar-brand d-md-none m-0" title="AI工具集">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-black.png" class="logo-light" alt="AI工具集" height="30">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-white.png" class="logo-dark d-none" alt="AI工具集" height="30">
+                        </a>
+                    </div>
+                                        <div class="collapse navbar-collapse order-2 order-md-1">
+                        <div class="header-mini-btn">
+                            <label>
+                                <input id="mini-button" type="checkbox" checked="checked">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"> 
+                                    <path class="line--1" d="M0 40h62c18 0 18-20-17 5L31 55"></path>
+                                    <path class="line--2" d="M0 50h80"></path>
+                                    <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45"></path>
+                                </svg>
+                            </label>
+                        
+                        </div>
+                                                <ul class="navbar-nav navbar-top site-menu mr-4">
+                            <li id="menu-item-55865" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-55865"><a href="../gpt-image-2/index.html">AI工具集</a>
+<ul class="sub-menu">
+	<li id="menu-item-55866" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55866"><a href="../favorites/ai-writing-tools/index.html">AI写作工具</a></li>
+	<li id="menu-item-55868" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55868"><a href="../favorites/ai-image-tools/index.html">AI图像工具</a></li>
+	<li id="menu-item-55869" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55869"><a href="../favorites/ai-video-tools/index.html">AI视频工具</a></li>
+	<li id="menu-item-55867" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55867"><a href="../favorites/ai-office-tools/index.html">AI办公工具</a></li>
+	<li id="menu-item-55870" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55870"><a href="../favorites/ai-agent/index.html">AI智能体</a></li>
+	<li id="menu-item-55871" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55871"><a href="../favorites/ai-chatbots/index.html">AI聊天助手</a></li>
+	<li id="menu-item-55872" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55872"><a href="../favorites/ai-programming-tools/index.html">AI编程工具</a></li>
+	<li id="menu-item-55873" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55873"><a href="../favorites/ai-design-tools/index.html">AI设计工具</a></li>
+	<li id="menu-item-55874" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55874"><a href="../favorites/ai-audio-tools/index.html">AI音频工具</a></li>
+	<li id="menu-item-55876" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55876"><a href="../favorites/ai-search-engines/index.html">AI搜索引擎</a></li>
+	<li id="menu-item-55875" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55875"><a href="../favorites/ai-frameworks/index.html">AI开发平台</a></li>
+	<li id="menu-item-55878" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55878"><a href="../favorites/websites-to-learn-ai/index.html">AI学习网站</a></li>
+	<li id="menu-item-55880" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55880"><a href="../favorites/ai-models/index.html">AI训练模型</a></li>
+	<li id="menu-item-67873" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-67873"><a href="../favorites/ai-content-detection-and-optimization-tools/index.html">AI内容检测</a></li>
+	<li id="menu-item-67442" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-67442"><a href="../favorites/ai-prompt-tools/index.html">AI提示指令</a></li>
+</ul>
+</li>
+<li id="menu-item-54113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54113"><a target="_blank" rel="noopener" href="../ai-app-store/index.html">
+        <i class="fab fa-app-store-ios icon-fw icon-lg"></i>
+                <span>AI应用集</span></a></li>
+<li id="menu-item-54115" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54115"><a target="_blank" rel="noopener" href="../daily-ai-news/index.html">
+        <i class="iconfont icon-chart-pc icon-fw icon-lg"></i>
+                <span>每日AI资讯</span></a></li>
+<li id="menu-item-54116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-54116"><a target="_blank" rel="noopener" href="../ai-project-20250614/index.html">最新AI项目</a>
+<ul class="sub-menu">
+	<li id="menu-item-54117" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-54117"><a target="_blank" rel="noopener" href="../ai-tools/index.html">AI工具</a></li>
+	<li id="menu-item-54118" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-54118"><a target="_blank" rel="noopener" href="../ai-research/index.html">AI项目和框架</a></li>
+</ul>
+</li>
+<li id="menu-item-54944" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-54944"><a target="_blank" rel="noopener" href="../ai-tutorials/index.html">AI教程资源</a>
+<ul class="sub-menu">
+	<li id="menu-item-54940" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54940"><a target="_blank" rel="noopener" href="../ai-column/index.html">AI专栏</a></li>
+	<li id="menu-item-56311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56311"><a target="_blank" rel="noopener" href="../ai-question-and-answer/index.html">AI问答</a></li>
+	<li id="menu-item-54119" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54119"><a target="_blank" rel="noopener" href="../ai-encyclopedia/index.html">AI百科</a></li>
+	<li id="menu-item-54122" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54122"><a target="_blank" rel="noopener" href="../ai-hall-of-fame/index.html">AI名人堂</a></li>
+</ul>
+</li>
+<li id="menu-item-54114" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54114"><a target="_blank" rel="noopener" href="../about-us/index.html">关于我们</a></li>
+ 
+                        </ul>
+                    </div>
+                    <ul class="nav navbar-menu text-xs order-1 order-md-2 position-relative">
+                                                                                                <li class="nav-item d-md-none mobile-menu ml-3 ml-md-4"><a href="javascript:" id="sidebar-switch" data-toggle="modal" data-target="#sidebar"><i class="iconfont icon-classification icon-lg"></i></a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="placeholder"></div>
+            </div>
+  <div id="content" class="container my-3 my-md-4">
+    <nav class="text-xs mb-3 mb-md-4"  aria-label="breadcrumb"><i class="iconfont icon-home"></i> <a class="crumbs" href="../gpt-image-2/index.html">首页</a><i class="text-danger px-1">•</i><a href="../ai-tools/index.html" rel="category tag">AI工具</a><i class="text-danger px-1">•</i><a href="../ai-research/index.html" rel="category tag">AI项目和框架</a><i class="text-danger px-1">•</i><span aria-current="page">正文</span></nav>    <main class="content" role="main">
+    <div class="content-wrap">
+        <div class="content-layout">
+                <div class="panel card">
+        <div class="card-body">
+        <div class="panel-header mb-4"><h1 class="h3 mb-3">Awesome AI Agents &#8211; e2b-dev推出的AI Agent大合集GitHub</h1><div class="d-flex flex-fill text-muted text-sm pb-4 border-bottom border-t"><span class="mr-3 d-none d-sm-block"><a href="../ai-tools/index.html"><i class="iconfont icon-classification"></i> AI工具</a></span><span class="mr-3"><i class="iconfont icon-time"></i><span title="2025年8月8日 19:14发布">11个月前更新</span></span><span class="mr-3"><a href="https://ai-bot.cn/author/5/" title="AI小集"><i class="iconfont icon-user-circle"></i> AI小集</a></span><div class="flex-fill"></div><span class="mr-3"><a class="smooth-n" href="index.html#comments"> <i class="iconfont icon-comment"></i> 0</a></span>
+                <span class="mr-3"><a class="btn-like btn-link-like " href="javascript:;" data-action="post_like" data-id="59532"><i class="iconfont icon-like"></i> <span class="like-count">5</span></a></span></div></div>                <div class="panel-body single mt-2"> 
+                        <h2>Awesome AI Agents是什么</h2>
+<p>Awesome AI Agents是e2b-dev维护的GitHub仓库，汇集和展示各种人工智能代理（AI Agents）相关的开源项目、闭源项目以及相关公司。仓库内容分为两部分：开源项目和闭源项目及公司。涵盖了从通用目的到特定领域（如编码、数据处理、商业智能等）的各种AI代理工具和框架。为开发者和研究人员提供了一个探索AI代理的平台，鼓励社区通过Pull Request或填写表单来提交新的产品或项目，以丰富和完善这个列表。</p>
+<img decoding="async" class="alignnone wp-image-59537" data-src="https://ai-bot.cn/wp-content/uploads/2025/08/Awesome-AI-Agents-website.png" src="../wp-content/themes/onenav/images/t.png"  alt="Awesome AI Agents" width="741" height="417" />
+<h2>Awesome AI Agents的主要功能</h2>
+<ul>
+<li><strong class="">资源汇总与分类</strong>：将AI代理工具和框架分为开源项目和闭源项目及公司两类，方便用户根据需求快速定位。</li>
+<li>
+<div class="paragraph"><strong class="">按用途分类</strong>：进一步将AI代理按用途（如通用目的、编码、数据处理、商业智能、生产力等）进行分类，便于用户快速找到适合特定任务的工具。</div>
+</li>
+<li><strong class="">项目展示与描述</strong>：为每个AI代理提供详细的描述，包括其功能、特点、适用场景以及支持的模型或技术栈。</li>
+<li>
+<div class="paragraph"><strong class="">链接与资源</strong>：提供项目链接、文档、GitHub页面、网站等资源，方便用户深入了解和使用。</div>
+</li>
+<li>
+<div class="paragraph"><strong class="">Pull Request支持</strong>：鼓励用户通过Pull Request提交新的项目或工具，丰富列表内容。</div>
+</li>
+<li>
+<div class="paragraph"><strong class="">表单提交</strong>：提供在线表单，方便用户提交新项目或反馈，促进社区互动。</div>
+</li>
+<li>
+<div class="paragraph"><strong class="">E2B集成</strong>：推荐使用E2B（Code Interpreter SDK）为AI应用提供代码解释功能，支持在沙盒环境中安全执行代码。</div>
+</li>
+<li>
+<div class="paragraph"><strong class="">Web UI支持</strong>：提供Web版本，支持按类别和用例筛选产品，提升用户体验。</div>
+</li>
+<li>
+<div class="paragraph"><strong class="">多领域支持</strong>：涵盖从数据处理、编码、商业智能到生产力工具等多个领域的AI代理，满足不同用户的需求。</div>
+</li>
+<li>
+<div class="paragraph"><strong class="">多语言支持</strong>：部分工具支持多种编程语言和框架，如Python、JavaScript、TypeScript等。</div>
+</li>
+<li>
+<div class="paragraph"><strong>定期更新</strong>：仓库会定期更新，添加新的项目和工具，确保内容的时效性和实用性。</div>
+</li>
+<li>
+<div class="paragraph"><strong>社区反馈</strong>：通过社区反馈和讨论，不断优化和改进列表内容。</div>
+</li>
+<li>
+<div class="paragraph"><strong class="">文档与教程</strong>：提供相关文档和教程，帮助用户更好地理解和使用AI代理。</div>
+</li>
+<li>
+<div class="paragraph"><strong>示例与用例</strong>：通过示例和用例展示AI代理的实际应用场景，为开发者提供参考。</div>
+</li>
+</ul>
+<h2>Awesome AI Agents的特色Agent</h2>
+<table data-v-0909cf3c="">
+<thead data-v-0909cf3c="">
+<tr data-v-0909cf3c="">
+<th align="left" data-v-0909cf3c="">Agent名称</th>
+<th align="left" data-v-0909cf3c="">Agent描述</th>
+<th class="" align="left" data-v-0909cf3c="">框架</th>
+</tr>
+</thead>
+<tbody data-v-0909cf3c="">
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c=""><a href="../sites/1623.html" target="_blank" rel="noopener">AgentGPT</a></td>
+<td class="" align="left" data-v-0909cf3c="">部署AI代理以自主完成复杂任务</td>
+<td class="" align="left" data-v-0909cf3c="">OpenAI, GPT</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c=""><a href="../sites/1626.html" target="_blank" rel="noopener">Auto-GPT</a></td>
+<td class="" align="left" data-v-0909cf3c="">一个实验性的开源项目，展示了GPT-4的能力</td>
+<td class="" align="left" data-v-0909cf3c="">OpenAI, Python</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">BabyAGI</td>
+<td class="" align="left" data-v-0909cf3c="">任务驱动的自主AI代理</td>
+<td class="" align="left" data-v-0909cf3c="">Python</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c=""><a href="../claude-3-7-sonnet/index.html" target="_blank" rel="noopener">Claude 3.7 Sonnet</a></td>
+<td class="" align="left" data-v-0909cf3c="">具有混合推理能力的AI模型，用于解决问题和编码任务</td>
+<td class="" align="left" data-v-0909cf3c="">Anthropic</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c=""><a href="../gemini-code-assist/index.html" target="_blank" rel="noopener">Gemini Code Assist</a></td>
+<td class="" align="left" data-v-0909cf3c="">Google的AI编码工具，用于多语言代码生成和完成</td>
+<td class="" align="left" data-v-0909cf3c="">Google AI</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c=""><a href="../sites/45.html" target="_blank" rel="noopener">GitHub Copilot Agent</a></td>
+<td class="" align="left" data-v-0909cf3c="">AI驱动的开发者编码助手</td>
+<td class="" align="left" data-v-0909cf3c="">OpenAI, GitHub</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">DeepSeek R1</td>
+<td class="" align="left" data-v-0909cf3c="">与Azure集成的AI助手，提供高级AI能力</td>
+<td class="" align="left" data-v-0909cf3c="">Microsoft AI</td>
+</tr>
+</tbody>
+</table>
+<h2>Awesome AI Agents的开源项目</h2>
+<table data-v-0909cf3c="">
+<thead data-v-0909cf3c="">
+<tr data-v-0909cf3c="">
+<th align="left" data-v-0909cf3c="">工具类型</th>
+<th align="left" data-v-0909cf3c="">AI Agent名称</th>
+<th class="" align="left" data-v-0909cf3c="">工具介绍描述</th>
+</tr>
+</thead>
+<tbody data-v-0909cf3c="">
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">数据处理</td>
+<td class="" align="left" data-v-0909cf3c="">Adala</td>
+<td class="" align="left" data-v-0909cf3c="">自主数据（标注）代理框架，提供可靠、可定制的输出，专注于数据处理任务。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">推荐系统</td>
+<td class="" align="left" data-v-0909cf3c="">Agent4Rec</td>
+<td class="" align="left" data-v-0909cf3c="">利用1,000个LLM驱动的生成代理进行个性化电影推荐的模拟器。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代理构建</td>
+<td class="" align="left" data-v-0909cf3c="">AgentForge</td>
+<td class="" align="left" data-v-0909cf3c="">低代码框架，支持多种LLM模型，便于快速创建、测试和迭代AI驱动的自主代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">无代码平台</td>
+<td class="" align="left" data-v-0909cf3c="">AgentGPT</td>
+<td class="" align="left" data-v-0909cf3c="">基于浏览器的无代码平台，使用OpenAI功能实现任务分解和执行。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">桌面应用</td>
+<td class="" align="left" data-v-0909cf3c="">AgentPilot</td>
+<td class="" align="left" data-v-0909cf3c="">集成Open Interpreter和MemGPT，支持群组聊天功能的桌面应用。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">语言代理</td>
+<td class="" align="left" data-v-0909cf3c="">Agents</td>
+<td class="" align="left" data-v-0909cf3c="">具备长期记忆和短期记忆的语言代理库，支持多代理通信和人类交互。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">任务解决</td>
+<td class="" align="left" data-v-0909cf3c="">AgentVerse</td>
+<td class="" align="left" data-v-0909cf3c="">支持多代理协作完成任务的平台，允许自定义环境进行观察或交互。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">多代理任务解决</td>
+<td align="left" data-v-0909cf3c="">AI Legion</td>
+<td class="" align="left" data-v-0909cf3c="">类似于AutoGPT的多代理任务解决平台，支持团队协作完成任务。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码编辑</td>
+<td class="" align="left" data-v-0909cf3c="">Aider</td>
+<td class="" align="left" data-v-0909cf3c="">与GPT-3.5/GPT-4配对编程的命令行工具，支持本地代码库编辑。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">任务执行</td>
+<td class="" align="left" data-v-0909cf3c="">AIlice</td>
+<td class="" align="left" data-v-0909cf3c="">以聊天形式创建任务执行树的代理，支持故障容错和自我扩展。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">多代理框架</td>
+<td class="" align="left" data-v-0909cf3c="">AutoGen</td>
+<td class="" align="left" data-v-0909cf3c="">支持多代理协作的LLM应用框架，简化复杂工作流，提升自动化能力。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">自主尝试</td>
+<td class="" align="left" data-v-0909cf3c="">AutoGPT</td>
+<td class="" align="left" data-v-0909cf3c="">使GPT-4完全自主的实验尝试，支持互联网搜索和长期记忆管理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码生成</td>
+<td class="" align="left" data-v-0909cf3c="">Automata</td>
+<td class="" align="left" data-v-0909cf3c="">基于项目上下文生成代码的工具，支持多种LLM模型。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">拉取请求</td>
+<td class="" align="left" data-v-0909cf3c="">AutoPR</td>
+<td class="" align="left" data-v-0909cf3c="">基于AI生成拉取请求的代理，修复问题并优化代码。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">HR查询</td>
+<td align="left" data-v-0909cf3c="">Autonomous HR Chatbot</td>
+<td class="" align="left" data-v-0909cf3c="">基于GPT-3.5的HR查询代理，支持时间管理、员工数据查询等功能。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">任务管理</td>
+<td class="" align="left" data-v-0909cf3c="">BabyAGI</td>
+<td class="" align="left" data-v-0909cf3c="">基于任务结果和预定义目标创建新任务的简单框架。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">功能扩展</td>
+<td class="" align="left" data-v-0909cf3c="">BabyBeeAGI</td>
+<td class="" align="left" data-v-0909cf3c="">BabyAGI的扩展版本，支持更复杂的任务管理提示。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">修改版</td>
+<td align="left" data-v-0909cf3c="">BabyCatAGI</td>
+<td class="" align="left" data-v-0909cf3c="">BabyBeeAGI的轻量级版本，专注于任务依赖和结果汇总。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码简洁</td>
+<td class="" align="left" data-v-0909cf3c="">BabyDeerAGI</td>
+<td class="" align="left" data-v-0909cf3c="">仅350行代码的BabyAGI修改版，支持并行任务和用户输入工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">功能丰富</td>
+<td class="" align="left" data-v-0909cf3c="">BabyElfAGI</td>
+<td class="" align="left" data-v-0909cf3c="">BabyDeerAGI的扩展版本，支持技能创建和动态任务列表。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">CLI和LLM测试</td>
+<td class="" align="left" data-v-0909cf3c="">BabyCommandAGI</td>
+<td class="" align="left" data-v-0909cf3c="">结合CLI和LLM进行测试的AI代理，支持自动编程和环境设置。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">UI面板</td>
+<td class="" align="left" data-v-0909cf3c="">BabyFoxAGI</td>
+<td class="" align="left" data-v-0909cf3c="">具有新并行UI面板的BabyAGI修改版，支持多种技能。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">数据探索</td>
+<td class="" align="left" data-v-0909cf3c="">BambooAI</td>
+<td class="" align="left" data-v-0909cf3c="">非程序员的数据探索和分析工具，支持本地交互和隐私保护。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">多任务代理</td>
+<td class="" align="left" data-v-0909cf3c="">BeeBot</td>
+<td class="" align="left" data-v-0909cf3c="">早期阶段的多任务代理项目，仍在开发中。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码搜索</td>
+<td class="" align="left" data-v-0909cf3c="">Bloop</td>
+<td class="" align="left" data-v-0909cf3c="">Rust和Typescript代码搜索工具，支持自然语言查询和代码片段搜索。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码解释器</td>
+<td class="" align="left" data-v-0909cf3c="">BondAI</td>
+<td class="" align="left" data-v-0909cf3c="">支持CLI和RESTful/WebSocket API的代码解释器，提供强大的代码执行功能。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">依赖更新</td>
+<td class="" align="left" data-v-0909cf3c="">bumpgen</td>
+<td class="" align="left" data-v-0909cf3c="">保持npm依赖最新的AI代理，支持gpt-4-turbo。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">调度助手</td>
+<td class="" align="left" data-v-0909cf3c="">Cal.ai</td>
+<td class="" align="left" data-v-0909cf3c="">基于Cal.com的开源调度助手，支持自然语言任务调度。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代理“思维”探索</td>
+<td class="" align="left" data-v-0909cf3c="">CAMEL</td>
+<td class="" align="left" data-v-0909cf3c="">研究自主和沟通代理的开源库，支持社区交流。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">多代理互动</td>
+<td class="" align="left" data-v-0909cf3c="">ChatArena</td>
+<td class="" align="left" data-v-0909cf3c="">支持多代理语言游戏环境的聊天工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">软件开发</td>
+<td class="" align="left" data-v-0909cf3c="">ChatDev</td>
+<td class="" align="left" data-v-0909cf3c="">由多个智能代理驱动的虚拟软件公司，支持多种角色协作。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">化学任务处理</td>
+<td class="" align="left" data-v-0909cf3c="">ChemCrow</td>
+<td class="" align="left" data-v-0909cf3c="">处理化学相关任务的LangChain代理，集成13个专家设计工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码操作</td>
+<td class="" align="left" data-v-0909cf3c="">Clippy</td>
+<td class="" align="left" data-v-0909cf3c="">可以计划、编写、调试和测试代码的代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">软件开发生命周期</td>
+<td class="" align="left" data-v-0909cf3c="">CodeFuse-ChatBot</td>
+<td class="" align="left" data-v-0909cf3c="">服务于整个软件开发生命周期的智能助手。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码库查询</td>
+<td class="" align="left" data-v-0909cf3c="">Cody by ajhous44</td>
+<td class="" align="left" data-v-0909cf3c="">基于自然语言查询代码库的AI助手。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码编写与问题回答</td>
+<td class="" align="left" data-v-0909cf3c="">Cody by Sourcegraph</td>
+<td class="" align="left" data-v-0909cf3c="">基于代码库和代码图谱编写代码和回答问题的AI助手。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">软件开发自动驾驶仪</td>
+<td class="" align="left" data-v-0909cf3c="">Continue</td>
+<td class="" align="left" data-v-0909cf3c="">为VS Code带来ChatGPT功能的开源自动驾驶仪。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">角色扮演代理编排</td>
+<td class="" align="left" data-v-0909cf3c="">CrewAI</td>
+<td class="" align="left" data-v-0909cf3c="">支持多代理协作的框架，旨在提升团队协作效率。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">无代码聊天机器人构建</td>
+<td class="" align="left" data-v-0909cf3c="">Databerry</td>
+<td class="" align="left" data-v-0909cf3c="">无代码平台，用于创建基于用户数据的AI聊天机器人。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">应用程序演示生成</td>
+<td class="" align="left" data-v-0909cf3c="">DemoGPT</td>
+<td class="" align="left" data-v-0909cf3c="">利用LLM快速生成应用程序演示的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">虚拟开发者团队</td>
+<td class="" align="left" data-v-0909cf3c="">DevGPT</td>
+<td class="" align="left" data-v-0909cf3c="">由虚拟产品经理、开发者和运维人员组成的AI团队。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代理AI软件工程师</td>
+<td class="" align="left" data-v-0909cf3c="">Devika</td>
+<td class="" align="left" data-v-0909cf3c="">能够理解高级指令、分解任务并编写代码的AI软件工程师。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">Devin替代品</td>
+<td class="" align="left" data-v-0909cf3c="">Devon</td>
+<td class="" align="left" data-v-0909cf3c="">开源的Devin替代品，支持多种任务。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">软件开发自动化</td>
+<td class="" align="left" data-v-0909cf3c="">DevOpsGPT</td>
+<td class="" align="left" data-v-0909cf3c="">结合LLM和DevOps工具，将自然语言需求转化为可运行软件的解决方案。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代理部署</td>
+<td class="" align="left" data-v-0909cf3c="">dotagent</td>
+<td class="" align="left" data-v-0909cf3c="">支持在多种平台上部署代理的管理系统。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">多代理SDK</td>
+<td class="" align="left" data-v-0909cf3c="">Eidolon</td>
+<td class="" align="left" data-v-0909cf3c="">支持AI代理的开源SDK，提供可插拔模块化组件。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">规格转换</td>
+<td class="" align="left" data-v-0909cf3c="">English Compiler</td>
+<td class="" align="left" data-v-0909cf3c="">将markdown规格转换为功能代码的AI编译器。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">角色适应</td>
+<td class="" align="left" data-v-0909cf3c="">evo.ninja</td>
+<td class="" align="left" data-v-0909cf3c="">能够根据任务实时调整角色的AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">快速代理构建</td>
+<td class="" align="left" data-v-0909cf3c="">FastAgency</td>
+<td class="" align="left" data-v-0909cf3c="">加速多代理工作流从原型到生产的开源框架。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">低代码代理构建器</td>
+<td class="" align="left" data-v-0909cf3c="">Flowise</td>
+<td class="" align="left" data-v-0909cf3c="">开源低代码工具，用于构建定制的LLM编排流程和AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">AI开发助手</td>
+<td class="" align="left" data-v-0909cf3c="">Friday</td>
+<td class="" align="left" data-v-0909cf3c="">支持Node.js项目的AI开发助手。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">工程平台</td>
+<td class="" align="left" data-v-0909cf3c="">GeniA</td>
+<td class="" align="left" data-v-0909cf3c="">能够与您并肩工作的工程平台工程AI团队成员。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">Godmode</td>
+<td class="" align="left" data-v-0909cf3c="">Godmode</td>
+<td class="" align="left" data-v-0909cf3c="">受AutoGPT和BabyAGI启发，具有美观UI的通用代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">Discord集成</td>
+<td align="left" data-v-0909cf3c="">GPT Discord</td>
+<td class="" align="left" data-v-0909cf3c="">为Discord提供强大的GPT接口，支持多种功能。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码库生成</td>
+<td class="" align="left" data-v-0909cf3c="">GPT Engineer</td>
+<td class="" align="left" data-v-0909cf3c="">基于提示生成整个代码库的AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码库迁移</td>
+<td class="" align="left" data-v-0909cf3c="">GPT Migrate</td>
+<td class="" align="left" data-v-0909cf3c="">在框架/语言之间迁移代码库的AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">应用程序编写</td>
+<td class="" align="left" data-v-0909cf3c="">GPT Pilot</td>
+<td class="" align="left" data-v-0909cf3c="">从头开始编写整个可扩展应用程序的AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">主题研究</td>
+<td class="" align="left" data-v-0909cf3c="">GPT Researcher</td>
+<td class="" align="left" data-v-0909cf3c="">在互联网上对任何主题进行研究的AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">文件对话</td>
+<td class="" align="left" data-v-0909cf3c="">GPT Runner</td>
+<td class="" align="left" data-v-0909cf3c="">与文件对话的AI代理，支持多种语言。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">图形语言代理</td>
+<td class="" align="left" data-v-0909cf3c="">GPTSwarm</td>
+<td class="" align="left" data-v-0909cf3c="">基于图的语言代理框架，支持自优化和自组织。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代理开发平台</td>
+<td class="" align="left" data-v-0909cf3c="">IX</td>
+<td class="" align="left" data-v-0909cf3c="">支持构建和部署协作代理的平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">系统连接</td>
+<td class="" align="left" data-v-0909cf3c="">JARVIS</td>
+<td class="" align="left" data-v-0909cf3c="">连接LLM与ML社区的系统，支持任务规划和模型选择。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">LLM应用程序框架</td>
+<td class="" align="left" data-v-0909cf3c="">Langroid</td>
+<td class="" align="left" data-v-0909cf3c="">用于构建LLM应用的Python框架，支持多代理协作。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">工作流自动化</td>
+<td class="" align="left" data-v-0909cf3c="">Lemon Agent</td>
+<td class="" align="left" data-v-0909cf3c="">计划-验证-解决代理，支持任务自动化和人类交互。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代理构建库</td>
+<td align="left" data-v-0909cf3c="">LLM Agents</td>
+<td class="" align="left" data-v-0909cf3c="">用于构建代理、使用工具和计划的库。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">LLM代理构建平台</td>
+<td class="" align="left" data-v-0909cf3c="">LLM Stack</td>
+<td class="" align="left" data-v-0909cf3c="">用于构建LLM代理的无代码平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">私密文件互动</td>
+<td class="" align="left" data-v-0909cf3c="">Local GPT</td>
+<td class="" align="left" data-v-0909cf3c="">与本地文件进行私密互动的工具，支持多种模型。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">Python包实现</td>
+<td align="left" data-v-0909cf3c="">Loop GPT</td>
+<td class="" align="left" data-v-0909cf3c="">作为Python包重新实现的AutoGPT项目。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码库和书籍生成</td>
+<td class="" align="left" data-v-0909cf3c="">L2MAC</td>
+<td class="" align="left" data-v-0909cf3c="">能够生成大型复杂代码库和整本书的代理框架。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">自然语言工作流</td>
+<td align="left" data-v-0909cf3c="">Maige</td>
+<td class="" align="left" data-v-0909cf3c="">支持自然语言工作流的代码库代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">AIDE工具</td>
+<td align="left" data-v-0909cf3c="">Magick</td>
+<td class="" align="left" data-v-0909cf3c="">用于创建、部署、扩展和货币化AI代理的AIDE。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">AI搜索引擎</td>
+<td class="" align="left" data-v-0909cf3c="">MemFree</td>
+<td class="" align="left" data-v-0909cf3c="">开源混合AI搜索引擎，支持多种数据源。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">内存管理系统</td>
+<td class="" align="left" data-v-0909cf3c="">MemGPT</td>
+<td class="" align="left" data-v-0909cf3c="">为LLM提供上下文的内存管理系统。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">编码任务助手</td>
+<td class="" align="left" data-v-0909cf3c="">Mentat</td>
+<td class="" align="left" data-v-0909cf3c="">从命令行协助编码任务的AI工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">多代理框架</td>
+<td class="" align="left" data-v-0909cf3c="">MetaGPT</td>
+<td class="" align="left" data-v-0909cf3c="">多代理框架，根据需求返回设计、任务或代码库。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">通用代理</td>
+<td class="" align="left" data-v-0909cf3c="">Mini AGI</td>
+<td class="" align="left" data-v-0909cf3c="">基于GPT-3.5/GPT-4的通用代理，支持多种任务。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">多代理辩论实现</td>
+<td align="left" data-v-0909cf3c="">Multiagent Debate</td>
+<td class="" align="left" data-v-0909cf3c="">实现多代理辩论的论文，提升事实性和推理能力。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">多代理系统</td>
+<td class="" align="left" data-v-0909cf3c="">Multi GPT</td>
+<td class="" align="left" data-v-0909cf3c="">支持多个“专家GPT”协作完成任务的系统。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">AI开发工具</td>
+<td class="" align="left" data-v-0909cf3c="">MutahunterAI</td>
+<td align="left" data-v-0909cf3c="">生成针对代码库漏洞的单元测试的AI工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">自然语言心智社会</td>
+<td align="left" data-v-0909cf3c="">NLSOM</td>
+<td align="left" data-v-0909cf3c="">基于自然语言的心智社会概念，支持多代理协作。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">通用多代理平台</td>
+<td align="left" data-v-0909cf3c="">OpenAgents</td>
+<td class="" align="left" data-v-0909cf3c="">通用多代理平台，支持用户自定义代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">研发代理平台</td>
+<td class="" align="left" data-v-0909cf3c="">OpenAGI</td>
+<td class="" align="left" data-v-0909cf3c="">支持基准任务和开放式任务的AGI研发平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码与功能实现</td>
+<td class="" align="left" data-v-0909cf3c="">OpenDevin</td>
+<td class="" align="left" data-v-0909cf3c="">开源项目，旨在复制和改进Devin模型。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码解释器</td>
+<td class="" align="left" data-v-0909cf3c="">Open Interpreter</td>
+<td class="" align="left" data-v-0909cf3c="">允许LLM在本地运行代码以完成任务的代码解释器。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">提示管理工具</td>
+<td class="" align="left" data-v-0909cf3c="">Pezzo</td>
+<td class="" align="left" data-v-0909cf3c="">用于提示设计、版本管理、发布等的开发工具包。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">私密文档互动</td>
+<td class="" align="left" data-v-0909cf3c="">Private GPT</td>
+<td class="" align="left" data-v-0909cf3c="">与文档进行私密互动的工具，支持本地运行。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">营养目标助手</td>
+<td class="" align="left" data-v-0909cf3c="">PromethAI</td>
+<td class="" align="left" data-v-0909cf3c="">分解问题、提供解决方案并自动化的AI助手。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">React.js代理</td>
+<td align="left" data-v-0909cf3c="">React Agent</td>
+<td class="" align="left" data-v-0909cf3c="">基于GPT-4的React.js自主LLM代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">计算机操作代理</td>
+<td class="" align="left" data-v-0909cf3c="">Self-operating computer</td>
+<td class="" align="left" data-v-0909cf3c="">让多模态模型操作计算机的代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">个人初级开发者</td>
+<td class="" align="left" data-v-0909cf3c="">Smol developer</td>
+<td class="" align="left" data-v-0909cf3c="">通过E2B UI部署的个人初级AI开发者。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">VSCode扩展</td>
+<td class="" align="left" data-v-0909cf3c="">Stackwise</td>
+<td class="" align="left" data-v-0909cf3c="">为VSCode扩展，自动生成和导入nodejs函数。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代理构建工具</td>
+<td class="" align="left" data-v-0909cf3c="">Superagent</td>
+<td class="" align="left" data-v-0909cf3c="">无需编码即可创建代理的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代理开发框架</td>
+<td class="" align="left" data-v-0909cf3c="">SuperAGI</td>
+<td class="" align="left" data-v-0909cf3c="">用于开发和部署AI代理的框架。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">不完全信息游戏研究</td>
+<td class="" align="left" data-v-0909cf3c="">Suspicion Agent</td>
+<td class="" align="left" data-v-0909cf3c="">关于不完全信息游戏的研究论文。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">Devin替代品</td>
+<td class="" align="left" data-v-0909cf3c="">SWE Agent</td>
+<td class="" align="left" data-v-0909cf3c="">开源的Devin替代品，支持多种任务。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">GitHub助手</td>
+<td class="" align="left" data-v-0909cf3c="">Sweep</td>
+<td class="" align="left" data-v-0909cf3c="">修复问题并编写代码的GitHub助手。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">浏览器自动化</td>
+<td class="" align="left" data-v-0909cf3c="">Taxy AI</td>
+<td class="" align="left" data-v-0909cf3c="">使用GPT-4控制浏览器并执行任务的AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">无限记忆代理</td>
+<td class="" align="left" data-v-0909cf3c="">Teenage AGI</td>
+<td class="" align="left" data-v-0909cf3c="">受BabyAGI启发，能够回忆无限记忆的代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">UI代理</td>
+<td class="" align="left" data-v-0909cf3c="">UFO</td>
+<td class="" align="left" data-v-0909cf3c="">专注于Windows操作系统的UI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">Python AI SQL代理</td>
+<td class="" align="left" data-v-0909cf3c="">Vanna.AI</td>
+<td class="" align="left" data-v-0909cf3c="">基于用户模式训练的Python AI SQL代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">终身学习代理</td>
+<td class="" align="left" data-v-0909cf3c="">Voyager</td>
+<td class="" align="left" data-v-0909cf3c="">在Minecraft中基于LLM的终身学习代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">智能合约部署</td>
+<td class="" align="left" data-v-0909cf3c="">Web3 GPT</td>
+<td class="" align="left" data-v-0909cf3c="">编写并部署智能合约到EVM区块链的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">多代理环境模拟</td>
+<td class="" align="left" data-v-0909cf3c="">“Westworld” simulation</td>
+<td class="" align="left" data-v-0909cf3c="">多代理环境模拟库，支持多种交互。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">API调用框架</td>
+<td class="" align="left" data-v-0909cf3c="">WorkGPT</td>
+<td class="" align="left" data-v-0909cf3c="">用于调用API的GPT代理框架。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">任务解决代理</td>
+<td class="" align="left" data-v-0909cf3c="">XAgent</td>
+<td class="" align="left" data-v-0909cf3c="">解决各种任务的实验性LLM代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">工具设计与调试</td>
+<td class="" align="left" data-v-0909cf3c="">yAgents</td>
+<td class="" align="left" data-v-0909cf3c="">能够设计、编码和调试工具的代理构建器。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">Swift实现</td>
+<td class="" align="left" data-v-0909cf3c="">Yourgoal</td>
+<td class="" align="left" data-v-0909cf3c="">BabyAGI的Swift实现，支持任务管理和执行。</td>
+</tr>
+</tbody>
+</table>
+<h2>Awesome AI Agents的闭源项目</h2>
+<table data-v-0909cf3c="">
+<thead data-v-0909cf3c="">
+<tr data-v-0909cf3c="">
+<th align="left" data-v-0909cf3c="">工具类型</th>
+<th align="left" data-v-0909cf3c="">AI Agent工具名称</th>
+<th class="" align="left" data-v-0909cf3c="">工具介绍描述</th>
+</tr>
+</thead>
+<tbody data-v-0909cf3c="">
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">安全自主代理</td>
+<td class="" align="left" data-v-0909cf3c="">Ability AI</td>
+<td class="" align="left" data-v-0909cf3c="">提供安全、以人为中心的自主AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">智能构建</td>
+<td class="" align="left" data-v-0909cf3c="">Adept AI</td>
+<td class="" align="left" data-v-0909cf3c="">构建智能的ML研究和产品实验室，支持人类与计算机的协作。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">AI代理平台</td>
+<td class="" align="left" data-v-0909cf3c="">AGENTS.inc</td>
+<td class="" align="left" data-v-0909cf3c="">提供多种特定任务的AI代理，如新闻雷达、公司识别等。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">个人助理</td>
+<td class="" align="left" data-v-0909cf3c="">AgentScale</td>
+<td class="" align="left" data-v-0909cf3c="">个人助理、邮件撰写器、日程安排器和互联网浏览器。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">AI代码解释器</td>
+<td class="" align="left" data-v-0909cf3c="">Aide by Codestory</td>
+<td class="" align="left" data-v-0909cf3c="">支持JS/TS的AI代码解释器，能够修复代码并生成测试。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">无代码平台</td>
+<td class="" align="left" data-v-0909cf3c="">AilaFlow</td>
+<td class="" align="left" data-v-0909cf3c="">无代码平台，用于构建AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代理构建平台</td>
+<td class="" align="left" data-v-0909cf3c="">Airkit.ai</td>
+<td class="" align="left" data-v-0909cf3c="">用于构建、测试和部署代理的平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">Autopilot</td>
+<td class="" align="left" data-v-0909cf3c="">Airplane Autopilot</td>
+<td class="" align="left" data-v-0909cf3c="">开发者为中心的内部UI和工作流构建工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">商业智能代理</td>
+<td class="" align="left" data-v-0909cf3c="">Aomni</td>
+<td class="" align="left" data-v-0909cf3c="">为商业智能设计的AI代理，支持多种工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">API集成平台</td>
+<td class="" align="left" data-v-0909cf3c="">APIDNA</td>
+<td class="" align="left" data-v-0909cf3c="">支持API集成的多代理平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">数字工作者</td>
+<td class="" align="left" data-v-0909cf3c="">Artisian AI</td>
+<td class="" align="left" data-v-0909cf3c="">创建类似人类的数字工作者，支持多种角色。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">知识引擎</td>
+<td class="" align="left" data-v-0909cf3c="">Ask Pandi</td>
+<td class="" align="left" data-v-0909cf3c="">搜索和生成知识的答案引擎。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">销售代理平台</td>
+<td class="" align="left" data-v-0909cf3c="">AskToSell</td>
+<td class="" align="left" data-v-0909cf3c="">部署和管理能够关闭交易的自主AI销售代理的平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">数据库交互</td>
+<td class="" align="left" data-v-0909cf3c="">AskYourDatabase</td>
+<td class="" align="left" data-v-0909cf3c="">与SQL数据库交互，探索和可视化数据的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">企业数据分析</td>
+<td class="" align="left" data-v-0909cf3c="">Athena Intelligence</td>
+<td class="" align="left" data-v-0909cf3c="">24/7企业AI数据分析师。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">投资组合风险代理</td>
+<td class="" align="left" data-v-0909cf3c="">Avanzai</td>
+<td class="" align="left" data-v-0909cf3c="">帮助用户构建计算投资组合风险的自主AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">任务自动化代理</td>
+<td class="" align="left" data-v-0909cf3c="">Bardeen</td>
+<td class="" align="left" data-v-0909cf3c="">用于自动化重复任务的AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">工作流自动化</td>
+<td class="" align="left" data-v-0909cf3c="">Beam</td>
+<td class="" align="left" data-v-0909cf3c="">提供多种行业工作流自动化的AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">软件构建工具</td>
+<td class="" align="left" data-v-0909cf3c="">Blackbox AI</td>
+<td class="" align="left" data-v-0909cf3c="">旨在改变软件构建方式的编码LLM。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">商业助手</td>
+<td class="" align="left" data-v-0909cf3c="">Blobr</td>
+<td class="" align="left" data-v-0909cf3c="">连接所有工具的AI商业助手。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">AI团队构建器</td>
+<td class="" align="left" data-v-0909cf3c="">BrainSoup</td>
+<td class="" align="left" data-v-0909cf3c="">在PC上构建AI团队的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">无代码平台</td>
+<td class="" align="left" data-v-0909cf3c="">broadn</td>
+<td class="" align="left" data-v-0909cf3c="">帮助非技术人员快速构建AI产品的无代码平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">网站构建器</td>
+<td class="" align="left" data-v-0909cf3c="">Butternut AI</td>
+<td class="" align="left" data-v-0909cf3c="">创建完全功能、准备发布的网站的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">个人助理</td>
+<td class="" align="left" data-v-0909cf3c="">B2 AI</td>
+<td class="" align="left" data-v-0909cf3c="">帮助完成任务的自主AI个人助理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">多功能助手</td>
+<td class="" align="left" data-v-0909cf3c="">ChatHelp</td>
+<td class="" align="left" data-v-0909cf3c="">支持多种语言和数据源的AI助手。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">个人购物助手</td>
+<td class="" align="left" data-v-0909cf3c="">Claros AI Shopper</td>
+<td class="" align="left" data-v-0909cf3c="">根据用户口味推荐产品的AI个人购物助手。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">网络爬虫</td>
+<td class="" align="left" data-v-0909cf3c="">Claygent</td>
+<td class="" align="left" data-v-0909cf3c="">能够搜索和浏览网络以查找信息的AI网络爬虫。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">项目助手</td>
+<td class="" align="left" data-v-0909cf3c="">Code Autopilot</td>
+<td class="" align="left" data-v-0909cf3c="">为GitHub问题和拉取请求提供AI助手。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码生成器</td>
+<td class="" align="left" data-v-0909cf3c="">Codegen</td>
+<td class="" align="left" data-v-0909cf3c="">使用GPT-4自动解决票务、编写测试并提升开发流程的代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">WordPress代理</td>
+<td class="" align="left" data-v-0909cf3c="">CodeWP</td>
+<td class="" align="left" data-v-0909cf3c="">为WordPress网站提供AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">编码助手</td>
+<td class="" align="left" data-v-0909cf3c="">Codium AI</td>
+<td class="" align="left" data-v-0909cf3c="">为开发者提供编码多功能AI助手。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">职业助手</td>
+<td class="" align="left" data-v-0909cf3c="">Commit</td>
+<td class="" align="left" data-v-0909cf3c="">为软件开发者提供职业搜索和AI驱动的自动申请。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">AI代理平台</td>
+<td class="" align="left" data-v-0909cf3c="">Cognosys</td>
+<td class="" align="left" data-v-0909cf3c="">基于Web的AutoGPT或BabyAGI版本。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">软件测试代理</td>
+<td class="" align="left" data-v-0909cf3c="">ContextQA</td>
+<td class="" align="left" data-v-0909cf3c="">用于软件测试的AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码编辑器</td>
+<td class="" align="left" data-v-0909cf3c="">Cursor</td>
+<td class="" align="left" data-v-0909cf3c="">支持AI的代码编辑器，类似VSCode界面。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">多模态代理</td>
+<td class="" align="left" data-v-0909cf3c="">Cykel</td>
+<td class="" align="left" data-v-0909cf3c="">能够与任何UI、网站或API交互的AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">AI软件工程师</td>
+<td align="left" data-v-0909cf3c="">Devin</td>
+<td class="" align="left" data-v-0909cf3c="">能够学习新技术、构建和部署应用并修复代码的AI软件工程师。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">设计工具</td>
+<td class="" align="left" data-v-0909cf3c="">Diagram</td>
+<td class="" align="left" data-v-0909cf3c="">被Figma收购的AI设计工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">销售工程师</td>
+<td class="" align="left" data-v-0909cf3c="">Docket AI</td>
+<td class="" align="left" data-v-0909cf3c="">为复杂B2B销售提供AI销售工程师的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">GitHub代理</td>
+<td align="left" data-v-0909cf3c="">Dosu</td>
+<td class="" align="left" data-v-0909cf3c="">帮助响应问题、分类错误并构建更好文档的GitHub代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">数据分析助手</td>
+<td align="left" data-v-0909cf3c="">Dot</td>
+<td class="" align="left" data-v-0909cf3c="">与数据仓库或语义层交互的虚拟助手。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">软件开发伙伴</td>
+<td class="" align="left" data-v-0909cf3c="">Duckie AI</td>
+<td class="" align="left" data-v-0909cf3c="">管理AI软件开发伙伴团队的平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码审查工具</td>
+<td class="" align="left" data-v-0909cf3c="">Ellipsis</td>
+<td class="" align="left" data-v-0909cf3c="">自动化代码审查和错误修复的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">编码工具</td>
+<td class="" align="left" data-v-0909cf3c="">encode</td>
+<td class="" align="left" data-v-0909cf3c="">与团队合作完成工作的完全自主AI软件工程师。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">软件开发工具</td>
+<td align="left" data-v-0909cf3c="">Factory</td>
+<td class="" align="left" data-v-0909cf3c="">能够从头到尾构建软件的编码工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">AI代理构建器</td>
+<td align="left" data-v-0909cf3c="">Fine</td>
+<td class="" align="left" data-v-0909cf3c="">构建、管理和运行AI代理的平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">无代码平台</td>
+<td align="left" data-v-0909cf3c="">Fine Tuner</td>
+<td class="" align="left" data-v-0909cf3c="">无需技术技能或编码即可构建AI代理的无代码平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">代理构建平台</td>
+<td class="" align="left" data-v-0909cf3c="">Fixie</td>
+<td class="" align="left" data-v-0909cf3c="">用于构建LLM驱动的AI应用的平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">通信自动化代理</td>
+<td class="" align="left" data-v-0909cf3c="">Floode</td>
+<td align="left" data-v-0909cf3c="">自动化通信任务的执行代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">AI开发工具</td>
+<td class="" align="left" data-v-0909cf3c="">GitHub Copilot X</td>
+<td class="" align="left" data-v-0909cf3c="">AI驱动的软件开发工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">DevSecOps工具</td>
+<td class="" align="left" data-v-0909cf3c="">GitLab Duo</td>
+<td class="" align="left" data-v-0909cf3c="">为DevSecOps工作流提供AI支持的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码生成工具</td>
+<td align="left" data-v-0909cf3c="">GitWit</td>
+<td class="" align="left" data-v-0909cf3c="">使用AI生成代码并跟踪文件更改的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">多模态内容创作代理</td>
+<td align="left" data-v-0909cf3c="">GoCharlie</td>
+<td class="" align="left" data-v-0909cf3c="">多模态内容创作自主代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">数据平台</td>
+<td align="left" data-v-0909cf3c="">Graphlit</td>
+<td class="" align="left" data-v-0909cf3c="">构建AI应用的API优先数据平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码迁移工具</td>
+<td class="" align="left" data-v-0909cf3c="">Grit</td>
+<td class="" align="left" data-v-0909cf3c="">使用机器学习和静态分析自动生成清理技术债务的拉取请求。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">自动化工作流平台</td>
+<td class="" align="left" data-v-0909cf3c="">Gumloop</td>
+<td class="" align="left" data-v-0909cf3c="">构建和托管LLM驱动自动化的平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">生产力工具</td>
+<td class="" align="left" data-v-0909cf3c="">Heights Platform</td>
+<td class="" align="left" data-v-0909cf3c="">为课程创建者、社区建设者和教练提供服务的平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">数据增强工具</td>
+<td class="" align="left" data-v-0909cf3c="">Hex Magic</td>
+<td class="" align="left" data-v-0909cf3c="">为数据人员提供强大AI功能的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">个人助理</td>
+<td align="left" data-v-0909cf3c="">Heymoon.ai</td>
+<td class="" align="left" data-v-0909cf3c="">帮助管理日历、任务和信息的个人助理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">浏览器任务自动化</td>
+<td class="" align="left" data-v-0909cf3c="">iMean.AI</td>
+<td align="left" data-v-0909cf3c="">自动化浏览器任务的AI个人助理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码协作工具</td>
+<td align="left" data-v-0909cf3c="">Input</td>
+<td align="left" data-v-0909cf3c="">允许邀请团队成员与AI协作的AI助手。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代理交互环境</td>
+<td align="left" data-v-0909cf3c="">Instrukt</td>
+<td align="left" data-v-0909cf3c="">支持与AI代理交互的终端环境。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">代理构建框架</td>
+<td class="" align="left" data-v-0909cf3c="">Invicta</td>
+<td align="left" data-v-0909cf3c="">构建自主AI代理的框架。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">数据处理工具</td>
+<td align="left" data-v-0909cf3c="">Julius</td>
+<td class="" align="left" data-v-0909cf3c="">基于聊天的数据分析和AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">Web Scraping工具</td>
+<td class="" align="left" data-v-0909cf3c="">Kadoa</td>
+<td class="" align="left" data-v-0909cf3c="">使用LLM生成Web爬虫和数据处理步骤的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">用户研究平台</td>
+<td class="" align="left" data-v-0909cf3c="">Juno</td>
+<td class="" align="left" data-v-0909cf3c="">AI引导的用户访谈平台，收集人类洞察。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">定制对话代理</td>
+<td class="" align="left" data-v-0909cf3c="">Kompas AI</td>
+<td align="left" data-v-0909cf3c="">选择LLM并构建自定义对话代理的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">API测试代理</td>
+<td align="left" data-v-0909cf3c="">Kusho</td>
+<td class="" align="left" data-v-0909cf3c="">为API测试生成和运行测试套件的AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">招聘语音代理</td>
+<td align="left" data-v-0909cf3c="">Kwal</td>
+<td align="left" data-v-0909cf3c="">招聘领域的语音代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">日常任务助手</td>
+<td align="left" data-v-0909cf3c="">Lindy</td>
+<td class="" align="left" data-v-0909cf3c="">帮助管理日常任务的AI助手。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">AI工作流平台</td>
+<td class="" align="left" data-v-0909cf3c="">Lutra AI</td>
+<td class="" align="left" data-v-0909cf3c="">创建个人AI工作流和应用的平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">个人自动化工具</td>
+<td class="" align="left" data-v-0909cf3c="">Magic Loops</td>
+<td class="" align="left" data-v-0909cf3c="">通过结合生成式AI和代码，简化重复任务和自动化工作流的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">HTML组件生成器</td>
+<td class="" align="left" data-v-0909cf3c="">Makedraft</td>
+<td class="" align="left" data-v-0909cf3c="">根据文本提示生成和编辑HTML组件的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">工作流自动化工具</td>
+<td class="" align="left" data-v-0909cf3c="">Manaflow</td>
+<td class="" align="left" data-v-0909cf3c="">非技术团队用于自动化重复工作流的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">AI加速软件开发</td>
+<td align="left" data-v-0909cf3c="">Mutable AI</td>
+<td class="" align="left" data-v-0909cf3c="">加速软件开发的AI工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">AI代理构建器</td>
+<td class="" align="left" data-v-0909cf3c="">Naut</td>
+<td class="" align="left" data-v-0909cf3c="">构建自己的AI代理的平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">AI代理构建器</td>
+<td class="" align="left" data-v-0909cf3c="">NexusGPT</td>
+<td class="" align="left" data-v-0909cf3c="">无需编码即可构建AI代理的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">Chrome扩展</td>
+<td class="" align="left" data-v-0909cf3c="">Hyperwrite</td>
+<td class="" align="left" data-v-0909cf3c="">能够控制浏览器完成高级任务的AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">个人编程助手</td>
+<td class="" align="left" data-v-0909cf3c="">Phind</td>
+<td class="" align="left" data-v-0909cf3c="">AI搜索引擎和配对程序员。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">数据分析工具</td>
+<td class="" align="left" data-v-0909cf3c="">Powerdrill AI</td>
+<td class="" align="left" data-v-0909cf3c="">使用自然语言与数据集交互的AI SaaS服务。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">AI代理构建器</td>
+<td class="" align="left" data-v-0909cf3c="">Proficient AI</td>
+<td class="" align="left" data-v-0909cf3c="">用于构建AI代理的交互式API和SDK。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">生成式AI平台</td>
+<td class="" align="left" data-v-0909cf3c="">Promptly</td>
+<td class="" align="left" data-v-0909cf3c="">无需编码即可构建定制的生成式AI代理和应用的平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">Slack中的AI劳动力</td>
+<td class="" align="left" data-v-0909cf3c="">Q, ChatGPT for Slack</td>
+<td class="" align="left" data-v-0909cf3c="">在Slack中提供类似ChatGPT功能的AI劳动力。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">自主AI工作市场</td>
+<td align="left" data-v-0909cf3c="">Questflow</td>
+<td align="left" data-v-0909cf3c="">为中小企业提供自主AI工作者的市场。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">多AI代理构建平台</td>
+<td align="left" data-v-0909cf3c="">Rebyte</td>
+<td class="" align="left" data-v-0909cf3c="">为GenAI应用构建多AI代理的平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">AI劳动力平台</td>
+<td class="" align="left" data-v-0909cf3c="">Relevance AI</td>
+<td class="" align="left" data-v-0909cf3c="">构建和部署AI应用和代理的平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">数字AI助手</td>
+<td align="left" data-v-0909cf3c="">Saga</td>
+<td class="" align="left" data-v-0909cf3c="">用于笔记、任务和工具的数字AI助手。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">代码迁移工具</td>
+<td class="" align="left" data-v-0909cf3c="">Second</td>
+<td class="" align="left" data-v-0909cf3c="">自动化代码迁移和升级的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">企业代理平台</td>
+<td class="" align="left" data-v-0909cf3c="">Sentius</td>
+<td class="" align="left" data-v-0909cf3c="">企业级的高负载自主代理平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">AI购物助手</td>
+<td class="" align="left" data-v-0909cf3c="">ShopPal</td>
+<td class="" align="left" data-v-0909cf3c="">提供个性化购物体验的AI购物助手。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">AutoGPT代理</td>
+<td class="" align="left" data-v-0909cf3c="">Spell</td>
+<td class="" align="left" data-v-0909cf3c="">具有插件的AutoGPT代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">产品数据仪表板的AI副驾驶</td>
+<td class="" align="left" data-v-0909cf3c="">Superluminal</td>
+<td class="" align="left" data-v-0909cf3c="">为产品数据仪表板提供AI支持的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">数据发现工具</td>
+<td class="" align="left" data-v-0909cf3c="">TalktoData</td>
+<td class="" align="left" data-v-0909cf3c="">与CSV、Excel、Google Sheets和SQL数据库交互的AI数据分析师。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">AI代理构建器</td>
+<td class="" align="left" data-v-0909cf3c="">Taskade</td>
+<td class="" align="left" data-v-0909cf3c="">创建、训练和运行自定义AI代理的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">金融AI代理平台</td>
+<td class="" align="left" data-v-0909cf3c="">ThinkChain AI</td>
+<td class="" align="left" data-v-0909cf3c="">提供多种高级AI代理的金融平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">质量保证代理</td>
+<td class="" align="left" data-v-0909cf3c="">Test Driver</td>
+<td class="" align="left" data-v-0909cf3c="">在GitHub中进行质量保证的AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">AI工程师</td>
+<td align="left" data-v-0909cf3c="">Tusk</td>
+<td class="" align="left" data-v-0909cf3c="">帮助产品经理快速发布前端更改的AI工程师。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">保险销售和理赔AI代理</td>
+<td align="left" data-v-0909cf3c="">Vortic</td>
+<td class="" align="left" data-v-0909cf3c="">提供定制化工具包的保险销售和理赔AI代理。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">React代码生成器</td>
+<td class="" align="left" data-v-0909cf3c="">v0 by Vercel</td>
+<td class="" align="left" data-v-0909cf3c="">基于Shadcn UI和Tailwind CSS生成React代码的工具。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">内容创作工具</td>
+<td class="" align="left" data-v-0909cf3c="">Wispy</td>
+<td class="" align="left" data-v-0909cf3c="">能够总结内容、创作内容或为学习主题创建测验的AI助手。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">语言模型应用平台</td>
+<td class="" align="left" data-v-0909cf3c="">Wordware</td>
+<td class="" align="left" data-v-0909cf3c="">部署LLM应用的平台。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td class="" align="left" data-v-0909cf3c="">AI平台</td>
+<td align="left" data-v-0909cf3c="">WorkBot</td>
+<td class="" align="left" data-v-0909cf3c="">隐私中心的对话式AI平台，支持商业和开源LLM。</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">AI工作空间</td>
+<td align="left" data-v-0909cf3c="">Zapier Central</td>
+<td class="" align="left" data-v-0909cf3c="">与6,000多个应用协作的AI工作空间。</td>
+</tr>
+</tbody>
+</table>
+<h2>Awesome AI Agents的项目地址</h2>
+<ul>
+<li><strong>Github仓库</strong>：https://github.com/e2b-dev/awesome-ai-agents</li>
+</ul>
+<h2>Awesome AI Agents的适用人群</h2>
+<ul>
+<li><strong class="">软件开发者</strong><strong class="">：</strong>如AgentGPT适合需要快速实现任务分解和执行的开发者，希望减少手动编码工作量的人。</li>
+<li><strong>数据分析师</strong>：如Adala适合需要可靠数据处理的分析师，处理大量标注数据的人。</li>
+<li>
+<div class="paragraph"><strong>产品经理</strong>：如Superagent适合需要快速构建和部署自动化工作流的产品经理，希望减少手动工作的人。</div>
+</li>
+<li>
+<div class="paragraph"><strong>研究人员</strong>：如data-to-paper适合需要完整研究流程的研究人员，处理数据到论文转换的人。</div>
+</li>
+</ul>
+                    </div>
+        <div class="post-tags my-3"><i class="iconfont icon-tags mr-2"></i><a href="../ai-tools/index.html" class="btn vc-l-gray btn-sm text-xs text-height-xs m-1 rounded-pill"  rel="tag" title="查看更多文章"># AI工具</a><a href="../ai-research/index.html" class="btn  btn-sm text-xs text-height-xs m-1 rounded-pill"  rel="tag" title="查看更多文章"># AI项目和框架</a></div><div class="text-xs text-muted"><div><span>©</span> 版权声明</div><div class="posts-copyright">本站文章版权归 <a href="../gpt-image-2/index.html" target="_blank" rel="noopener"><span style="color: #3366ff">AI工具集 </span></a>所有，未经允许禁止任何形式的转载。</div></div> 
+        <div class="post-apd"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7941312752144276"
+     crossorigin="anonymous"></script>
+<!-- 文章-底部-横幅 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7941312752144276"
+     data-ad-slot="7362582675"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>        </div>
+    </div>
+        <div class="near-navigation rounded mt-4 py-2">
+                        <div class="nav previous border-right border-color">
+            <a class="near-permalink" href="../heyphoto/index.html">
+            <span>上一篇</span>
+            <h4 class="near-title">HeyPhoto - AI照片编辑工具，轻松改变人物面部特征</h4>
+            </a>
+        </div>
+                        <div class="nav next border-left border-color">
+            <a class="near-permalink" href="../article-forge/index.html">
+            <span>下一篇</span>
+            <h4 class="near-title">Article Forge - AI内容生成工具，输入关键词和文章长度自动撰写</h4>
+        </a>
+        </div>
+            </div>
+                <h4 class="text-gray text-lg my-4"><i class="site-tag iconfont icon-book icon-lg mr-1" ></i>相关文章</h4>
+            <div class="row mb-n4"> 
+                                <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../eapo/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2026/04/EAPO-website.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../eapo/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        EAPO &#8211; 阿里通义推出的全新强化学习框架                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/7/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='' src='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/7/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../eapo/index.html"><i class="iconfont icon-heart mr-1"></i>2</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../video-use/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/video-use-website.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../video-use/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        video-use &#8211; Browser Use 团队开源的 AI 视频剪辑 Agent                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/7/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='' src='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/7/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../video-use/index.html"><i class="iconfont icon-heart mr-1"></i>2</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../songgeneration-2/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2026/03/SongGeneration-2-website.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../songgeneration-2/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        SongGeneration 2 &#8211; 腾讯联合清华开源的音乐生成模型                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/7/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='' src='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/7/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../songgeneration-2/index.html"><i class="iconfont icon-heart mr-1"></i>2</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../nemotron-mini-4b-instruct/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2024/09/Nemotron-Mini-4B-Instruct-website.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../nemotron-mini-4b-instruct/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        Nemotron-Mini-4B-Instruct &#8211; 英伟达推出的开源小型语言模型                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/7/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='' src='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/7/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../nemotron-mini-4b-instruct/index.html"><i class="iconfont icon-heart mr-1"></i>2</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../fastapi-mcp/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2025/04/FastAPI-MCP-website.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../fastapi-mcp/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        FastAPI-MCP &#8211; 一键将 FastAPI 转换为 MCP 服务器的开源工具                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/5/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='Avatar photo' src='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/5/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../fastapi-mcp/index.html"><i class="iconfont icon-heart mr-1"></i>3</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../kaida/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2024/11/kaida-website-1.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../kaida/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        开搭 &#8211; AI应用开发平台，无需编程拖拽式构建个性化AI机器人                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/7/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='' src='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/7/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../kaida/index.html"><i class="iconfont icon-heart mr-1"></i>3</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                        </div>
+            
+<!-- comments -->
+<div class="post-apd mt-4"><a href="https://jimeng.jianying.com/ai-tool/home/?utm_medium=aitools&utm_source=aibot&utm_campaign=null&utm_content=hw_jm_aibot" rel="nofollow sponsored" target="_blank"><img class="rounded" src="../wp-content/uploads/2025/09/jimeng-ai-banner-0912.png" alt="即梦AI" /></a></div><div id="comments" class="comments">
+	<h2 id="comments-list-title" class="comments-title h5 mx-1 my-4">
+		<i class="iconfont icon-comment"></i>
+		<span class="noticom">
+			<a href="index.html#respond" class="comments-title" >暂无评论</a> 
+		</span>
+	</h2> 
+	<div class="card">
+		<div class="card-body"> 
+						<div id="respond_box">
+				<div id="respond" class="comment-respond">
+										<form id="commentform" class="text-sm mb-4">	
+						<div class="visitor-avatar d-flex flex-fill mb-2">
+														<img class="v-avatar rounded-circle" src="../wp-content/themes/onenav/images/gravatar.jpg">
+													</div> 
+						<div class="comment-textarea mb-3">
+							<textarea name="comment" id="comment" class="form-control" placeholder="输入评论内容..." tabindex="4" cols="50" rows="3"></textarea>
+						</div>
+							
+						<div id="comment-author-info" class="row  row-sm">
+							<div class="col-sm-6 col-lg-4 mb-3"><input type="text" name="author" id="author" class="form-control" value="" size="22" placeholder="昵称" tabindex="2"/></div>	
+							<div class="col-sm-6 col-lg-4 mb-3"><input type="text" name="email" id="email" class="form-control" value="" size="22" placeholder="邮箱" tabindex="3" /></div>
+							<div class="col-sm-12 col-lg-4 mb-3"><input type="text" name="url" id="url" class="form-control" value="" size="22"placeholder="网址"  tabindex="4" /></div>
+						</div>
+																		<div class="com-footer d-flex justify-content-end flex-wrap">
+							<input type="hidden" id="_wpnonce" name="_wpnonce" value="205d8d8222" /><input type="hidden" name="_wp_http_referer" value="/awesome-ai-agents/" />							<a rel="nofollow" id="cancel-comment-reply-link" style="display: none;" href="javascript:;" class="btn btn-light custom_btn-outline mx-2">再想想</a>
+														<button class="btn btn-dark custom_btn-d ml-2" type="submit" id="submit">发表评论</button>
+							<input type="hidden" name="action" value="ajax_comment"/>
+							<input type='hidden' name='comment_post_ID' value='59532' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+						</div>
+					</form>
+					<div class="clear"></div>
+									</div>
+			</div>	
+						<div id="loading-comments"><span></span></div>
+						<div class="not-comment card"><div class="card-body nothing text-center color-d">暂无评论...</div></div>
+					
+		</div>	
+	</div>
+</div><!-- comments end -->
+        </div> 
+    </div> 
+        </main>
+</div>
+ 
+<div class="main-footer footer-stick container container-fluid customize-width pt-4 pb-3 footer-type-big">
+
+    <div class="footer-inner card rounded-xl m-0">
+        <div class="footer-text card-body text-muted text-center text-md-left">
+                        <div class="row my-4">
+                                <div class="col-12 col-md-4 mb-4 mb-md-0">
+                    <a class="footer-logo" href="../gpt-image-2/index.html" title="AI工具集">
+                        <img src="../wp-content/uploads/2023/03/ai-bot-logo-black.png" class="logo-light mb-3" alt="AI工具集" height="40">
+                        <img src="../wp-content/uploads/2023/03/ai-bot-logo-white.png" class="logo-dark d-none mb-3" alt="AI工具集" height="40">
+                    </a>
+                    <div class="text-sm">AI工具集导航收录了国内外数百个不同类型的AI工具，每日更新和添加最新AI工具，AI工具集还推荐了AI学习开发的常用网站、框架和模型，帮助你加入人工智能浪潮，自动化高效完成任务！
+
+Ctrl + D 或 ⌘ + D 收藏本站到浏览器书签栏。</div>
+                </div>
+                                <div class="col-12 col-md-5 mb-4 mb-md-0"> 
+                    <p class="footer-links text-sm mb-3"><a href="../gpt-image-2/index.html">AI工具集导航</a>
+<a href="../about-us/index.html" target="_blank">关于我们</a>
+<a href="../disclaimer/index.html" target="_blank">免责声明</a>
+<a href="../ai-project-20250614/index.html" target="_blank">最新AI项目</a>
+<a href="../ai-app-store/index.html" target="_blank">AI应用商店</a>
+<a href="https://www.ghxi.com/" target="_blank">果核剥壳</a>
+<a href="https://cakegrowth.cn/" target="_blank">CakeGrowth</a>
+<a href="../vipcheap-banner-0210/index.html" target="_blank">VipCheap</a>
+<a href="https://gongke.net/" target="_blank">攻壳智能体</a>
+<a href="https://www.yjpoo.com/" target="_blank">映技派</a>
+<a href="../sites/4189.html" target="_blank">豆包</a>
+<a href="../sites/6242.html" target="_blank">讯飞绘文</a>
+<a href="../sites/9195.html" target="_blank">绘蛙</a>
+<a href="../sites/17772.html" target="_blank">即梦</a>
+<a href="../sites/8204.html" target="_blank">蛙蛙写作</a>
+<a href="../sites/13065.html" target="_blank">白日梦</a>
+<a href="../sites/44612.html" target="_blank">咔片PPT</a>
+<a href="../sites/8516.html" target="_blank">办公小浣熊</a>
+<a href="../trae/index.html" target="_blank">TRAE</a>
+<a href="../codeflying/index.html" target="_blank">码上飞</a>
+<a href="../sites/5507.html" target="_blank">堆友AI</a>
+<a href="../sites/66771.html" target="_blank">LiblibAI</a>
+<a href="../xingliu-art/index.html" target="_blank">星流AI</a>
+<a href="../miaoda/index.html" target="_blank">秒哒</a>
+<a href="../updream/index.html" target="_blank">updream</a>
+<a href="../seko/index.html" target="_blank">Seko</a>
+<a href="../sites/73776.html" target="_blank">LibTV</a></p>                                        <div class="footer-social">
+                        <a class="rounded-circle bg-light" href="mailto:info@ai-bot.cn" target="_blank"  data-toggle="tooltip" data-placement="top" title="联系邮箱" rel="external noopener nofollow">
+                                    <i class="iconfont icon-email"></i>
+                                </a>                    </div>
+                </div>
+                            </div>
+                        <div class="footer-copyright text-xs">
+            Copyright © 2026 <a href="../gpt-image-2/index.html" title="AI工具集" class="" rel="home">AI工具集</a>&nbsp;<a href="https://beian.miit.gov.cn/" target="_blank" class="" rel="link noopener">蜀ICP备2022019184号-2</a>&nbsp; <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51010702003349" target="_blank" class="" rel="noopener"><img style="margin-bottom: 3px;" src="../wp-content/themes/onenav/images/gaba.png"> 川公网安备 51010702003349号</a>&nbsp;            </div>
+        </div>
+    </div>
+</div>
+</div><!-- main-content end -->
+
+<footer>
+    <div id="footer-tools" class="d-flex flex-column">
+        <a href="javascript:" id="go-to-up" class="btn rounded-circle go-up m-1" rel="go-top">
+            <i class="iconfont icon-to-up"></i>
+        </a>
+                                                <a href="javascript:" id="switch-mode" class="btn rounded-circle switch-dark-mode m-1" data-toggle="tooltip" data-placement="left" title="夜间模式">
+            <i class="mode-ico iconfont icon-light"></i>
+        </a>
+            </div>
+</footer>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/clipboard.min.js%3Fver=4.0331' id='clipboard-mini-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/popper.min.js%3Fver=4.0331' id='popper-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/bootstrap.min.js%3Fver=4.0331' id='bootstrap-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/theia-sticky-sidebar.js%3Fver=4.0331' id='sidebar-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/lazyload.min.js%3Fver=4.0331' id='lazyload-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/jquery.fancybox.min.js%3Fver=4.0331' id='lightbox-js-js'></script>
+<script type='text/javascript' id='appjs-js-extra'>
+/* <![CDATA[ */
+var theme = {"ajaxurl":"https:\/\/ai-bot.cn\/wp-admin\/admin-ajax.php","uri":"https:\/\/ai-bot.cn\/wp-content\/themes\/onenav","addico":"https:\/\/ai-bot.cn\/wp-content\/themes\/onenav\/images\/add.png","order":"asc","formpostion":"top","defaultclass":"io-grey-mode","isCustomize":"0","icourl":"https:\/\/besticon-demo.herokuapp.com\/icon?size=32..120..256&url=","icopng":"","urlformat":"1","customizemax":"10","newWindow":"1","lazyload":"1","minNav":"","loading":"","hotWords":"baidu","classColumns":" col-2a col-sm-2a col-md-2a col-lg-3a col-xl-6a col-xxl-6a ","apikey":"TWpBeU1USTJNemd4TWpZM0d6RS9oTVZCa2RqWk5aRGxtVG1jeGVEaHNVbW8zTnpCNGNGUldVVEZsYjNoTA==","isHome":"","version":"4.0331"};
+var localize = {"liked":"\u60a8\u5df2\u7ecf\u8d5e\u8fc7\u4e86!","like":"\u8c22\u8c22\u70b9\u8d5e!","networkerror":"\u7f51\u7edc\u9519\u8bef --.","selectCategory":"\u4e3a\u4ec0\u4e48\u4e0d\u9009\u5206\u7c7b\u3002","addSuccess":"\u6dfb\u52a0\u6210\u529f\u3002","timeout":"\u8bbf\u95ee\u8d85\u65f6\uff0c\u8bf7\u518d\u8bd5\u8bd5\uff0c\u6216\u8005\u624b\u52a8\u586b\u5199\u3002","lightMode":"\u65e5\u95f4\u6a21\u5f0f","nightMode":"\u591c\u95f4\u6a21\u5f0f","editBtn":"\u7f16\u8f91","okBtn":"\u786e\u5b9a","urlExist":"\u8be5\u7f51\u5740\u5df2\u7ecf\u5b58\u5728\u4e86 --.","cancelBtn":"\u53d6\u6d88","successAlert":"\u6210\u529f","infoAlert":"\u4fe1\u606f","warningAlert":"\u8b66\u544a","errorAlert":"\u9519\u8bef","extractionCode":"\u7f51\u76d8\u63d0\u53d6\u7801\u5df2\u590d\u5236\uff0c\u70b9\u201c\u786e\u5b9a\u201d\u8fdb\u5165\u4e0b\u8f7d\u9875\u9762\u3002","wait":"\u8bf7\u7a0d\u5019","loading":"\u6b63\u5728\u5904\u7406\u8bf7\u7a0d\u540e...","userAgreement":"\u8bf7\u5148\u9605\u8bfb\u5e76\u540c\u610f\u7528\u6237\u534f\u8bae","reSend":"\u79d2\u540e\u91cd\u65b0\u53d1\u9001","weChatPay":"\u5fae\u4fe1\u652f\u4ed8","alipay":"\u652f\u4ed8\u5b9d","scanQRPay":"\u8bf7\u626b\u7801\u652f\u4ed8","payGoto":"\u652f\u4ed8\u6210\u529f\uff0c\u9875\u9762\u8df3\u8f6c\u4e2d"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/app.min.js%3Fver=4.0331' id='appjs-js'></script>
+<script type='text/javascript' id='appjs-js-after'>
+/* <![CDATA[ */ 
+    $(document).ready(function(){if($("#search-text")[0]){$("#search-text").focus();}});
+    /* ]]> */
+</script>
+<script type='text/javascript' src='../wp-includes/js/comment-reply.min.js%3Fver=6.2' id='comment-reply-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/comments-ajax.js%3Fver=4.0331' id='comments-ajax-js'></script>
+<script type='text/javascript' id='wp-postviews-cache-js-extra'>
+/* <![CDATA[ */
+var viewsCacheL10n = {"admin_ajax_url":"https:\/\/ai-bot.cn\/wp-admin\/admin-ajax.php","post_id":"59532"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/themes/onenav/inc/postviews/postviews-cache.js%3Fver=6.2' id='wp-postviews-cache-js'></script>
+ 
+<!-- 自定义代码 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?55906d9c57011d694d405f963a90648b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KV0VT5CMJ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KV0VT5CMJ6');
+</script>
+<!-- end 自定义代码 -->
+</body>
+</html><!-- Cache Enabler by KeyCDN @ Thu, 16 Jul 2026 13:05:15 GMT (https-index.html) -->

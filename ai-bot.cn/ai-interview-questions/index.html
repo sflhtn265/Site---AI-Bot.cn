@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="io-grey-mode">
+<head> 
+<script>
+    var default_c = "io-grey-mode";
+    var night = document.cookie.replace(/(?:(?:^|.*;\s*)io_night_mode\s*\=\s*([^;]*).*$)|^.*$/, "$1"); 
+    try {
+        if (night === "0") {
+            document.documentElement.classList.add("io-black-mode");
+            document.documentElement.classList.remove(default_c);
+        } else {
+            document.documentElement.classList.remove("io-black-mode");
+            document.documentElement.classList.add(default_c);
+        }
+    } catch (_) {}
+</script><meta charset="UTF-8">
+<meta name="renderer" content="webkit"/>
+<meta name="force-rendering" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>AI面试中最常被问的问题有哪些？一文看懂 | AI工具集</title>
+<meta name="theme-color" content="#f9f9f9" />
+<meta name="description" content="对于希望进入或在该领域发展的普通用户而言，了解AI面试的核心逻辑、常见问题类型以及有效的应对策略至关重要。本文系统性地梳理AI面试中最常被问到的问题，结合当前（2025年）的技术趋势，提供全面、可执行的应对与准备指南，帮助求职者在激烈的竞争中脱颖而出。" />
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ai-bot.cn/ai-interview-questions/"/> 
+<meta property="og:title" content="AI面试中最常被问的问题有哪些？一文看懂 | AI工具集">
+<meta property="og:description" content="对于希望进入或在该领域发展的普通用户而言，了解AI面试的核心逻辑、常见问题类型以及有效的应对策略至关重要。本文系统性地梳理AI面试中最常被问到的问题，结合当前（2025年）的技术趋势，提供全面、可执行的应对与准备指南，帮助求职者在激烈的竞争中脱颖而出。">
+<meta property="og:image" content="https://ai-bot.cn/wp-content/uploads/2025/08/ai-interview-questions-4.png">
+<meta property="og:site_name" content="AI工具集">
+<meta property="og:updated_time" content="2025-08-21T17:16:02+08:00">
+<meta property="article:published_time" content="2025-07-21T17:15:23+08:00">
+<meta property="article:modified_time" content="2025-08-21T17:16:02+08:00">
+<link rel="shortcut icon" href="../wp-content/uploads/2023/03/ai-bot-square-logo.png">
+<link href="../wp-content/uploads/2023/07/ai-bot-favicon.png" rel="icon" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../wp-content/uploads/2023/04/ai-bot-baidu-logo.png">
+<!--[if IE]><script src="https://ai-bot.cn/wp-content/themes/onenav/js/html5.min.js"></script><![endif]-->
+<meta name='robots' content='max-image-preview:large' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='../wp-includes/css/classic-themes.min.css%3Fver=6.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='iconfont-css' href='../wp-content/themes/onenav/css/iconfont.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css' href='../wp-content/themes/onenav/css/all.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome4-css' href='../wp-content/themes/onenav/css/v4-shims.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css' href='../wp-content/themes/onenav/css/bootstrap.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='lightbox-css' href='../wp-content/themes/onenav/css/jquery.fancybox.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css' href='../wp-content/themes/onenav/css/style.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-content/themes/onenav/js/jquery.min.js%3Fver=4.0331' id='jquery-js'></script>
+<script type='text/javascript' id='jquery-js-after'>
+/* <![CDATA[ */ 
+        function loadFunc(func) {if (document.all){window.attachEvent("onload",func);}else{window.addEventListener("load",func,false);}}   
+        /* ]]> */
+</script>
+<link rel="canonical" href="index.html" />
+<style>body:before {
+  content: '';
+  position: absolute;
+  top: 0 !important;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 550px;
+  background-image: url(../wp-content/uploads/2023/07/blury-shape-bg-light.png);
+  background-size: cover;
+  z-index: -1;
+}
+
+.io-black-mode body:before {
+	background-image: url(../wp-content/uploads/2024/01/blury-shape-bg-dark.png);
+}
+
+.page-header {
+	background: none !important;
+  position: absolute;
+}
+
+
+.io-black-mode .page-header {
+	background: rgba(44,46,47,0.7) !important;
+}
+
+.url-card .max .url-img {
+	width: 40px;
+  height: 40px;
+}
+
+.card-body .url-img img {
+	border: none !important;
+}
+
+.panel-body.single.mt-2 img {
+	border-radius: 6px;
+  border: 2px solid #eee;
+}
+
+.meta-media {
+  position: relative;
+  margin-bottom: 30px;
+  float: left;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+}
+.video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.table-bordered {
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+a.underline {
+    border-bottom: 3px solid #5961f9;
+}
+
+a.underline:hover {
+    border-bottom: 3px solid #ee9ae5;
+}
+
+.io-edit-post-card-content .mx-auto {
+	margin-left: 0!important;
+}
+
+.panel-body .url-card.shortcode-url .card {
+	background: white;
+}
+.io-black-mode .panel-body .url-card.shortcode-url .card {
+	background: #2c2e2f;
+}
+
+@media screen and (min-width: 768px) {
+  .header-big {
+		padding-top: 80px;
+	}
+}
+
+/* 快讯页面样式开始 */
+.news-content h2{
+  border: none;
+}
+.news-list .news-date {
+    padding: 32px 20px 12px 20px;
+    font-size: 20px;
+    line-height: 26px;
+    position: relative;
+    font-weight: 700;
+    color: #5961f9;
+}
+.news-list .news-item {
+    padding: 20px 0 5px 20px;
+}
+.news-list .news-date, .news-list .news-item {
+    position: relative;
+    margin-left: 15px;
+    border-left: 1px dashed #c3c8fe;
+}
+.news-list .news-time {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.news-list .news-hour {
+    position: relative;
+    display: block;
+    padding-top: 10px;
+    padding-left: 12px;
+    margin-left: 15px;
+    border-left: 1px dashed #c3c8fe;
+}
+.news-list .news-date:after, .news-list .news-date:before {
+    position: absolute;
+    left: -8px;
+    top: 38px;
+    width: 16px;
+    height: 16px;
+    content: "";
+    border-radius: 1px;
+    background: #5961f9;
+}
+.news-list .news-time:before {
+    border: 4px solid #5961f9;
+    opacity: 1;
+}
+.news-list .news-content h2 {
+    position: relative;
+    font-size: 18px;
+    line-height: 1.4;
+}
+.news-list .news-content p {
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.65;
+}
+.news-list h2:after, .news-list h2:before {
+    position: absolute;
+    left: -3.5px;
+    top: 10px;
+    width: 4px;
+    height: 4px;
+    border-radius: 6px;
+    border: 4px solid #5961f9;
+    box-sizing: initial;
+    background: #fff;
+    content: "";
+}
+.panel-body.single.mt-2 .news-time img {
+    border-radius: 2px;
+    border: none;
+}
+.panel-body.single.mt-2 img.news-banner {
+    border-radius: 0px;
+    border: none;
+}
+.panel-body .news-content h2 a:not(.no-c) {
+    color: #282a2d;
+}
+.io-black-mode .panel-body .news-content h2 a:not(.no-c) {
+    color: #c6c9cf;
+}
+.panel-body .news-content h2 a:not(.no-c):hover {
+    color: #5961f9;
+}
+.news-content .external:after {
+    content: "";
+}
+.news-content h2 .badge-danger {
+    background-color: #F1404B;
+}
+/* 快讯页面样式结束 */
+.tab-widget-content .img-post .media-content {
+    -webkit-transform: none;
+    transform: none;
+}
+.img-post .media-content {
+    -webkit-transform: none;
+    transform: none;
+}
+.io-black-mode .panel-body .table td {
+    color: #eee;
+}
+/* 滚动条 */
+@media screen and (min-width: 768px) {
+  .sidebar-nav-inner .flex-fill {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sidebar-nav-inner .flex-fill:hover {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+/* 备案查询页面黑暗模式颜色修改 */
+.io-black-mode .theme--light.v-application {
+    background: #2c2e2f;
+    color: white;
+}
+.io-black-mode .theme--light.v-sheet {
+    background-color: #2c2e2f;
+    border-color: #5e6063 !important;
+    color: white;
+}
+.io-black-mode .theme--light.v-label {
+    color: rgb(255 255 255 / 60%);
+}
+.io-black-mode .theme--light.v-icon {
+    color: rgb(255 255 255 / 60%);
+}
+.io-black-mode .theme--light.v-text-field>.v-input__control>.v-input__slot:before {
+    border-color: rgb(255 255 255 / 42%);
+}
+.io-black-mode .theme--light.v-data-table {
+		background-color: #2c2e2f;
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:last-child, .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:not(.v-data-table__mobile-row), .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>th:last-child, .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>th:not(.v-data-table__mobile-row), .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr:last-child>th {
+    border-bottom: thin solid rgb(255 255 255 / 12%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr:last-child>th {
+    border-bottom: thin solid rgb(255 255 255 / 12%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:not(.v-data-table__mobile-row) {
+		border-bottom: thin solid rgb(255 255 255 / 12%);
+}
+th.text-start, td.text-start {
+		border-left: none;
+  	border-right: none;
+}
+th.text-start {
+		border-top: none;
+}
+.io-black-mode .theme--light.v-data-table .v-data-table-header th.sortable:hover {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr>th {
+		color: rgba(255,255,255,.6);
+}
+.io-black-mode .theme--light.v-data-table .v-data-table-header th.sortable .v-data-table-header__icon {
+    color: rgb(255 255 255 / 58%);
+}
+.io-black-mode .theme--light.v-btn.v-btn--disabled, .theme--light.v-btn.v-btn--disabled .v-btn__loading, .theme--light.v-btn.v-btn--disabled .v-icon {
+    color: rgb(255 255 255 / 26%)!important;
+}
+.io-black-mode .v-btn>.v-btn__content .v-icon {
+    color: #fff;
+}
+.io-black-mode .theme--light.v-select .v-select__selections {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper) {
+    background: #222;
+}
+.io-black-mode .theme--light.v-input input {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table .v-data-table__empty-wrapper {
+    color: rgb(255 255 255 / 38%);
+}
+div.card-app > div.card-body {
+	padding: 0.8rem;
+}
+.app-rounded {
+	border-radius: 22% !important;
+}
+div.card-app.card {
+  border-radius: .45rem !important;
+}
+.screenshot-carousel .img_wrapper {
+	height: 360px !important;
+}
+.io-black-mode .enlighter-t-enlighter .enlighter-text {
+    color: #99a;
+}
+.site-content a img.alignnone {
+    border-radius: .3rem;
+    border: 1px solid #ddd;
+}.customize-width{max-width:1900px}.sidebar-nav{width:220px}@media (min-width: 768px){.main-content{margin-left:220px;}.main-content .page-header{left:220px;}}</style><meta name="redi-version" content="1.2.7" /><style>.panel-body a:not(.no-c){color:#5961f9}.panel-body a:not(.no-c):hover{color:#ee9ae5}a:hover,.io-grey-mode .sidebar-show,.io-grey-mode .sidebar-item>a:hover,.io-grey-mode .sidebar-item li>a:hover,.home-like:hover,
+        .io-grey-mode .sidebar-popup>div>ul>li>a:hover{color:#5961f9}
+        .header-mini-btn label:hover path{ stroke:#5961f9}
+        .url-card .max .tga a:not(.no-tag):hover,.card-app.card .tga a:not(.no-tag):hover{background:#5961f9}
+        .sidebar .url-card .card:hover{border: 1px solid #5961f9!important;}.tags i{color:#5961f9}.custom-piece_c_b{background:#5961f9!important}.custom-piece_c{color:#5961f9!important}.slider_menu[sliderTab] .anchor,.customize-menu .btn-edit,.badge-danger,.comment-list .rank,.sidebar .card-header:after{background:#5961f9}.badge-outline-primary{color:#5961f9;border:#5961f9 solid 1px}.posts-nav .page-numbers.current,.posts-nav .page-numbers:not(.dots):hover,#comments-navi>a:hover,#comments-navi>.current,.page-nav>a:hover span,.page-nav>.current span{background-color:#5961f9;box-shadow: 0px 5px 20px -3px rgba(89,97,249,.6);}     
+.custom-control-input:not(:disabled):active~.custom-control-label::before{background-color:rgba(89,97,249,.15);border-color:rgba(89,97,249,.15);}
+.custom-control-input:focus~.custom-control-label::before{box-shadow:0 0 0 .2rem rgba(89,97,249,.25)}
+.custom-control-input:focus:not(:checked)~.custom-control-label::before{border-color:#5961f9}
+.custom-control-input:checked~.custom-control-label::before{border-color:#5961f9;background-color:#5961f9}
+.btn-search:hover,.btn-search.current{background-color:#5961f9;box-shadow: 0 5px 20px -3px rgba(89,97,249,.6)}.btn-search.current:after{border-top-color:#5961f9}.panel-body h2,.panel-body h3 {border-color:#5961f9}.custom_btn-outline {color: #5961f9;background-color: transparent;border-color: #5961f9;}
+.custom_btn-outline:hover {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.custom_btn-outline:focus, .custom_btn-outline.focus {color: #14171B;box-shadow: 0 0 0 0 transparent!important;background-color: transparent;}
+.custom_btn-outline.disabled, .custom_btn-outline:disabled {color: #5961f9;background-color: transparent!important;}
+.custom_btn-outline:not(:disabled):not(.disabled):active, .custom_btn-outline:not(:disabled):not(.disabled).active,.show > .custom_btn-outline.dropdown-toggle {color: #fff;background-color: #5961f9;border-color: #5961f9;}
+.custom_btn-outline:not(:disabled):not(.disabled):active:focus, .custom_btn-outline:not(:disabled):not(.disabled).active:focus,.show > .custom_btn-outline.dropdown-toggle:focus {box-shadow: 0 0 0 0 transparent!important;}
+.custom_btn-d {color: #ffffff;background-color: #5961f9;border-color: #5961f9;}
+.custom_btn-d:hover {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.custom_btn-d:focus,.custom_btn-d.focus {color: #ffffff;background-color: #14171B;border-color: #14171B;box-shadow: 0 0 0 0 transparent!important;}
+.custom_btn-d.disabled,.custom_btn-d:disabled {color: #ffffff;background-color:#5961f9;border-color: #5961f9;}
+.custom_btn-d:not(:disabled):not(.disabled):active,.custom_btn-d:not(:disabled):not(.disabled).active{color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.custom_btn-d:not(:disabled):not(.disabled):active:focus,.custom_btn-d:not(:disabled):not(.disabled).active:focus{box-shadow: 0 0 0 0 transparent!important;}
+.btn.custom_btn-d {color: #ffffff;background-color: #5961f9;border-color: #5961f9;}
+.btn.custom_btn-d:hover {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.btn.custom_btn-d:focus,.btn.custom_btn-d.focus {color: #ffffff;background-color: #14171B;border-color: #14171B;box-shadow: 0 0 0 0 transparent!important;}
+.btn.custom_btn-d.disabled,.btn.custom_btn-d:disabled {color: #ffffff;background-color:#5961f9;border-color: #5961f9;}
+.btn.custom_btn-d:not(:disabled):not(.disabled):active,.btn.custom_btn-d:not(:disabled):not(.disabled).active,.show > .custom_btn-d.dropdown-toggle {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.btn.custom_btn-d:not(:disabled):not(.disabled):active:focus,.btn.custom_btn-d:not(:disabled):not(.disabled).active:focus,.show > .custom_btn-d.dropdown-toggle:focus {box-shadow: 0 0 0 0 transparent!important;}
+.btn-dark:hover{background-color:#5961f9;border-color:#5961f9}
+.sidebar .card .searchform input[type='submit']{border: 1px solid #5961f9;background-color:#5961f9}
+.sidebar .card .searchform input[type='submit']:hover{border: 1px solid #14171B;background-color:#14171B}</style><!-- 自定义代码 -->
+<meta name="baidu-site-verification" content="codeva-P9RvmeAUoM" />
+<meta name="msvalidate.01" content="92B2C43DC49DA55D7E2C4AE6B1CC1A81" />
+<meta name="sogou_site_verification" content="Zo3i06YCJh" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7941312752144276"
+     crossorigin="anonymous"></script>
+<script>
+(function(){
+var el = document.createElement("script");
+el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?555fccf68561b344c2292bef2655dc990da3031c125e7429fc5275c9527fda6e4a4d40de0dd5fa9b5c2c10f69a3b501dc430e831103b45ce33654fb9f95b006c";
+el.id = "ttzz";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(el, s);
+})(window)
+</script><!-- end 自定义代码 -->
+</head> 
+<body class="post-template-default single single-post postid-60491 single-format-standard sidebar_no">
+        <div id="sidebar" class="sticky sidebar-nav fade">
+            <div class="modal-dialog h-100  sidebar-nav-inner">
+                <div class="sidebar-logo border-bottom border-color">
+                    <!-- logo -->
+                    <div class="logo overflow-hidden">
+                                                <a href="../gpt-image-2/index.html" class="logo-expanded">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-black.png" height="40" class="logo-light" alt="AI工具集">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-white.png" height="40" class="logo-dark d-none" alt="AI工具集">
+                        </a>
+                        <a href="../gpt-image-2/index.html" class="logo-collapsed">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-square-logo.png" height="40" class="logo-light" alt="AI工具集">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-square-logo.png" height="40" class="logo-dark d-none" alt="AI工具集">
+                        </a>
+                    </div>
+                    <!-- logo end -->
+                </div>
+                <div class="sidebar-menu flex-fill">
+                    <div class="sidebar-scroll" >
+                        <div class="sidebar-menu-inner">
+                            <ul> 
+                                                                                                <li class="sidebar-item top-menu">
+                                    <a href="javascript:;" class="  change-href">
+                                        <i class="iconfont icon-category icon-fw icon-lg"></i>
+                                        <span>站点推荐</span>
+                                    </a>
+                                    <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                    <ul>
+                                        <li id="menu-item-55865" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-55865"><a href="../gpt-image-2/index.html">AI工具集</a>
+<ul class="sub-menu">
+	<li id="menu-item-55866" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55866"><a href="../favorites/ai-writing-tools/index.html">AI写作工具</a></li>
+	<li id="menu-item-55868" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55868"><a href="../favorites/ai-image-tools/index.html">AI图像工具</a></li>
+	<li id="menu-item-55869" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55869"><a href="../favorites/ai-video-tools/index.html">AI视频工具</a></li>
+	<li id="menu-item-55867" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55867"><a href="../favorites/ai-office-tools/index.html">AI办公工具</a></li>
+	<li id="menu-item-55870" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55870"><a href="../favorites/ai-agent/index.html">AI智能体</a></li>
+	<li id="menu-item-55871" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55871"><a href="../favorites/ai-chatbots/index.html">AI聊天助手</a></li>
+	<li id="menu-item-55872" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55872"><a href="../favorites/ai-programming-tools/index.html">AI编程工具</a></li>
+	<li id="menu-item-55873" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55873"><a href="../favorites/ai-design-tools/index.html">AI设计工具</a></li>
+	<li id="menu-item-55874" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55874"><a href="../favorites/ai-audio-tools/index.html">AI音频工具</a></li>
+	<li id="menu-item-55876" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55876"><a href="../favorites/ai-search-engines/index.html">AI搜索引擎</a></li>
+	<li id="menu-item-55875" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55875"><a href="../favorites/ai-frameworks/index.html">AI开发平台</a></li>
+	<li id="menu-item-55878" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55878"><a href="../favorites/websites-to-learn-ai/index.html">AI学习网站</a></li>
+	<li id="menu-item-55880" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55880"><a href="../favorites/ai-models/index.html">AI训练模型</a></li>
+	<li id="menu-item-67873" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-67873"><a href="../favorites/ai-content-detection-and-optimization-tools/index.html">AI内容检测</a></li>
+	<li id="menu-item-67442" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-67442"><a href="../favorites/ai-prompt-tools/index.html">AI提示指令</a></li>
+</ul>
+</li>
+<li id="menu-item-54113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54113"><a target="_blank" rel="noopener" href="../ai-app-store/index.html">
+        <i class="fab fa-app-store-ios icon-fw icon-lg"></i>
+                <span>AI应用集</span></a></li>
+<li id="menu-item-54115" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54115"><a target="_blank" rel="noopener" href="../daily-ai-news/index.html">
+        <i class="iconfont icon-chart-pc icon-fw icon-lg"></i>
+                <span>每日AI资讯</span></a></li>
+<li id="menu-item-54116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-54116"><a target="_blank" rel="noopener" href="../ai-project-20250614/index.html">最新AI项目</a>
+<ul class="sub-menu">
+	<li id="menu-item-54117" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54117"><a target="_blank" rel="noopener" href="../ai-tools/index.html">AI工具</a></li>
+	<li id="menu-item-54118" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54118"><a target="_blank" rel="noopener" href="../ai-research/index.html">AI项目和框架</a></li>
+</ul>
+</li>
+<li id="menu-item-54944" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-54944"><a target="_blank" rel="noopener" href="../ai-tutorials/index.html">AI教程资源</a>
+<ul class="sub-menu">
+	<li id="menu-item-54940" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54940"><a target="_blank" rel="noopener" href="../ai-column/index.html">AI专栏</a></li>
+	<li id="menu-item-56311" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-56311"><a target="_blank" rel="noopener" href="../ai-question-and-answer/index.html">AI问答</a></li>
+	<li id="menu-item-54119" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54119"><a target="_blank" rel="noopener" href="../ai-encyclopedia/index.html">AI百科</a></li>
+	<li id="menu-item-54122" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54122"><a target="_blank" rel="noopener" href="../ai-hall-of-fame/index.html">AI名人堂</a></li>
+</ul>
+</li>
+<li id="menu-item-54114" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54114"><a target="_blank" rel="noopener" href="../about-us/index.html">关于我们</a></li>
+                                    </ul>
+                                </li> 
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-7" class="">
+                                                <i class="fas fa-feather icon-fw icon-lg"></i>
+                                                <span>AI写作工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-2" class="" data-change="https://ai-bot.cn/#term-2">
+                                                <i class="fas fa-images icon-fw icon-lg"></i>
+                                                <span>AI图像工具</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-37" class=""><span>常用AI图像工具</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-33" class=""><span>AI图片插画生成</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-32" class=""><span>AI图片背景移除</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-35" class=""><span>AI图片物体抹除</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-34" class=""><span>AI图片无损放大</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-36" class=""><span>AI图片优化修复</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-78" class=""><span>AI商品图生成</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-83" class=""><span>AI 3D模型生成</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-4" class="">
+                                                <i class="fas fa-video icon-fw icon-lg"></i>
+                                                <span>AI视频工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-38" class="" data-change="https://ai-bot.cn/#term-38">
+                                                <i class="fas fa-folder-open icon-fw icon-lg"></i>
+                                                <span>AI办公工具</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-45" class=""><span>AI幻灯片和演示</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-46" class=""><span>AI表格数据处理</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-48" class=""><span>AI思维导图</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-47" class=""><span>AI文档工具</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-49" class=""><span>AI会议工具</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-85" class=""><span>AI招聘求职</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-77" class=""><span>AI法律助手</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-52" class=""><span>AI语言翻译</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-51" class=""><span>AI效率提升</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-16" class="">
+                                                <i class="fas fa-comments icon-fw icon-lg"></i>
+                                                <span>AI聊天助手</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-97" class="" data-change="https://ai-bot.cn/#term-97">
+                                                <i class="fas fa-brain icon-fw icon-lg"></i>
+                                                <span>AI智能体</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-97-86" class=""><span>AI智能体</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-97-96" class=""><span>插件与Skills</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-13" class="">
+                                                <i class="fas fa-code icon-fw icon-lg"></i>
+                                                <span>AI编程工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-15" class="">
+                                                <i class="fas fa-laptop-code icon-fw icon-lg"></i>
+                                                <span>AI开发平台</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-19" class="">
+                                                <i class="fas fa-palette icon-fw icon-lg"></i>
+                                                <span>AI设计工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-6" class="">
+                                                <i class="fas fa-music icon-fw icon-lg"></i>
+                                                <span>AI音频工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-61" class="">
+                                                <i class="fas fa-search icon-fw icon-lg"></i>
+                                                <span>AI搜索引擎</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-12" class="">
+                                                <i class="fas fa-graduation-cap icon-fw icon-lg"></i>
+                                                <span>AI学习网站</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-14" class="">
+                                                <i class="fas fa-cubes icon-fw icon-lg"></i>
+                                                <span>AI训练模型</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-56" class="">
+                                                <i class="fas fa-crown icon-fw icon-lg"></i>
+                                                <span>AI模型评测</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-95" class="" data-change="https://ai-bot.cn/#term-95">
+                                                <i class="iconfont icon-instructions icon-fw icon-lg"></i>
+                                                <span>AI内容检测</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-95-20" class=""><span>内容检测</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-95-94" class=""><span>降AI/AIGC率</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-42" class="">
+                                                <i class="fab fa-product-hunt icon-fw icon-lg"></i>
+                                                <span>AI提示指令</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-98" class="">
+                                                <i class="iconfont icon-related icon-fw icon-lg"></i>
+                                                <span>AI副业工具</span>
+                                            </a>
+                                        </li> 
+                                     
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top py-2 border-color">
+                    <div class="flex-bottom">
+                        <ul> 
+                             
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content flex-fill">    <div class=" header-nav">
+        <div id="header" class="page-header sticky">
+            <div class="navbar navbar-expand-md">
+                <div class="container-fluid p-0 position-relative">
+                    <div class="">
+                        <a href="../gpt-image-2/index.html" class="navbar-brand d-md-none m-0" title="AI工具集">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-black.png" class="logo-light" alt="AI工具集" height="30">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-white.png" class="logo-dark d-none" alt="AI工具集" height="30">
+                        </a>
+                    </div>
+                                        <div class="collapse navbar-collapse order-2 order-md-1">
+                        <div class="header-mini-btn">
+                            <label>
+                                <input id="mini-button" type="checkbox" checked="checked">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"> 
+                                    <path class="line--1" d="M0 40h62c18 0 18-20-17 5L31 55"></path>
+                                    <path class="line--2" d="M0 50h80"></path>
+                                    <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45"></path>
+                                </svg>
+                            </label>
+                        
+                        </div>
+                                                <ul class="navbar-nav navbar-top site-menu mr-4">
+                            <li id="menu-item-55865" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-55865"><a href="../gpt-image-2/index.html">AI工具集</a>
+<ul class="sub-menu">
+	<li id="menu-item-55866" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55866"><a href="../favorites/ai-writing-tools/index.html">AI写作工具</a></li>
+	<li id="menu-item-55868" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55868"><a href="../favorites/ai-image-tools/index.html">AI图像工具</a></li>
+	<li id="menu-item-55869" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55869"><a href="../favorites/ai-video-tools/index.html">AI视频工具</a></li>
+	<li id="menu-item-55867" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55867"><a href="../favorites/ai-office-tools/index.html">AI办公工具</a></li>
+	<li id="menu-item-55870" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55870"><a href="../favorites/ai-agent/index.html">AI智能体</a></li>
+	<li id="menu-item-55871" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55871"><a href="../favorites/ai-chatbots/index.html">AI聊天助手</a></li>
+	<li id="menu-item-55872" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55872"><a href="../favorites/ai-programming-tools/index.html">AI编程工具</a></li>
+	<li id="menu-item-55873" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55873"><a href="../favorites/ai-design-tools/index.html">AI设计工具</a></li>
+	<li id="menu-item-55874" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55874"><a href="../favorites/ai-audio-tools/index.html">AI音频工具</a></li>
+	<li id="menu-item-55876" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55876"><a href="../favorites/ai-search-engines/index.html">AI搜索引擎</a></li>
+	<li id="menu-item-55875" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55875"><a href="../favorites/ai-frameworks/index.html">AI开发平台</a></li>
+	<li id="menu-item-55878" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55878"><a href="../favorites/websites-to-learn-ai/index.html">AI学习网站</a></li>
+	<li id="menu-item-55880" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55880"><a href="../favorites/ai-models/index.html">AI训练模型</a></li>
+	<li id="menu-item-67873" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-67873"><a href="../favorites/ai-content-detection-and-optimization-tools/index.html">AI内容检测</a></li>
+	<li id="menu-item-67442" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-67442"><a href="../favorites/ai-prompt-tools/index.html">AI提示指令</a></li>
+</ul>
+</li>
+<li id="menu-item-54113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54113"><a target="_blank" rel="noopener" href="../ai-app-store/index.html">
+        <i class="fab fa-app-store-ios icon-fw icon-lg"></i>
+                <span>AI应用集</span></a></li>
+<li id="menu-item-54115" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54115"><a target="_blank" rel="noopener" href="../daily-ai-news/index.html">
+        <i class="iconfont icon-chart-pc icon-fw icon-lg"></i>
+                <span>每日AI资讯</span></a></li>
+<li id="menu-item-54116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-54116"><a target="_blank" rel="noopener" href="../ai-project-20250614/index.html">最新AI项目</a>
+<ul class="sub-menu">
+	<li id="menu-item-54117" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54117"><a target="_blank" rel="noopener" href="../ai-tools/index.html">AI工具</a></li>
+	<li id="menu-item-54118" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54118"><a target="_blank" rel="noopener" href="../ai-research/index.html">AI项目和框架</a></li>
+</ul>
+</li>
+<li id="menu-item-54944" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-54944"><a target="_blank" rel="noopener" href="../ai-tutorials/index.html">AI教程资源</a>
+<ul class="sub-menu">
+	<li id="menu-item-54940" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54940"><a target="_blank" rel="noopener" href="../ai-column/index.html">AI专栏</a></li>
+	<li id="menu-item-56311" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-56311"><a target="_blank" rel="noopener" href="../ai-question-and-answer/index.html">AI问答</a></li>
+	<li id="menu-item-54119" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54119"><a target="_blank" rel="noopener" href="../ai-encyclopedia/index.html">AI百科</a></li>
+	<li id="menu-item-54122" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54122"><a target="_blank" rel="noopener" href="../ai-hall-of-fame/index.html">AI名人堂</a></li>
+</ul>
+</li>
+<li id="menu-item-54114" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54114"><a target="_blank" rel="noopener" href="../about-us/index.html">关于我们</a></li>
+ 
+                        </ul>
+                    </div>
+                    <ul class="nav navbar-menu text-xs order-1 order-md-2 position-relative">
+                                                                                                <li class="nav-item d-md-none mobile-menu ml-3 ml-md-4"><a href="javascript:" id="sidebar-switch" data-toggle="modal" data-target="#sidebar"><i class="iconfont icon-classification icon-lg"></i></a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="placeholder"></div>
+            </div>
+  <div id="content" class="container my-3 my-md-4">
+    <nav class="text-xs mb-3 mb-md-4"  aria-label="breadcrumb"><i class="iconfont icon-home"></i> <a class="crumbs" href="../gpt-image-2/index.html">首页</a><i class="text-danger px-1">•</i><a href="../ai-question-and-answer/index.html" rel="category tag">AI问答</a><i class="text-danger px-1">•</i><span aria-current="page">正文</span></nav>    <main class="content" role="main">
+    <div class="content-wrap">
+        <div class="content-layout">
+                <div class="panel card">
+        <div class="card-body">
+        <div class="panel-header mb-4"><h1 class="h3 mb-3">AI面试中最常被问的问题有哪些？一文看懂</h1><div class="d-flex flex-fill text-muted text-sm pb-4 border-bottom border-t"><span class="mr-3 d-none d-sm-block"><a href="../ai-question-and-answer/index.html"><i class="iconfont icon-classification"></i> AI问答</a></span><span class="mr-3"><i class="iconfont icon-time"></i><span title="2025年7月21日 17:15发布">11个月前更新</span></span><span class="mr-3"><a href="https://ai-bot.cn/author/5/" title="AI小集"><i class="iconfont icon-user-circle"></i> AI小集</a></span><div class="flex-fill"></div><span class="mr-3"><a class="smooth-n" href="index.html#comments"> <i class="iconfont icon-comment"></i> 0</a></span>
+                <span class="mr-3"><a class="btn-like btn-link-like " href="javascript:;" data-action="post_like" data-id="60491"><i class="iconfont icon-like"></i> <span class="like-count">3</span></a></span></div></div>                <div class="panel-body single mt-2"> 
+                        <p>随着人工智能（AI）技术在各行各业的渗透，AI相关岗位的人才需求持续高涨。2025年，AI领域的招聘市场已相当成熟，面试流程也日趋标准化和专业化。对于希望进入或在该领域发展的普通用户而言，了解AI面试的核心逻辑、常见问题类型以及有效的应对策略至关重要。本文系统性地梳理AI面试中最常被问到的问题，结合当前（2025年）的技术趋势，提供全面、可执行的应对与准备指南，帮助求职者在激烈的竞争中脱颖而出。</p>
+<img decoding="async" class="wp-image-60514 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/08/ai-interview-questions-2.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="705" height="472" />
+<h2><strong>AI面试问题的核心分类与考察要点</strong></h2>
+<p>AI面试全面评估候选人的综合能力，问题可以归为四大类。理解这些分类有助于求职者从宏观上把握面试官的考察意图 。</p>
+<h3><strong>技术与知识性问题 (Technical &amp; Knowledge-based Questions)</strong></h3>
+<p>这类问题是AI面试的基石，主要考察候选人对AI基础理论、核心算法和相关工具的掌握程度 。面试官希望通过这些问题确认你的技术功底是否扎实。</p>
+<h4><strong>常见问题示例：</strong></h4>
+<ul>
+<li>“请解释一下<a href="../what-is-machine-learning/index.html" target="_blank" rel="noopener">什么是机器学习</a>？它和传统编程有什么区别？”</li>
+<li>“请描述<a href="../what-is-gradient-descent/index.html" target="_blank" rel="noopener">梯度下降（Gradient Descent）</a>的工作原理。”</li>
+<li>“什么是<a href="../what-is-overfitting/index.html" target="_blank" rel="noopener">过拟合（Overfitting）</a>和<a href="../what-is-underfitting/index.html" target="_blank" rel="noopener">欠拟合（Underfitting）</a>？有哪些方法可以解决这些问题？”</li>
+<li>“请解释<a href="../what-is-convolutional-neural-network/index.html" target="_blank" rel="noopener">卷积神经网络</a>（CNN）和<a href="../what-is-rnn/index.html" target="_blank" rel="noopener">循环神经网络</a>（RNN）的核心思想及其适用场景。”</li>
+<li>“你常用的模型评估指标有哪些（如准确率、精确率、召回率、F1分数、AUC-ROC）？它们各自的优缺点是什么？”</li>
+<li>“请解释一下L1和L2正则化的区别和作用。”</li>
+</ul>
+<h4><strong>应对策略与考察要点：</strong></h4>
+<ul>
+<li><strong>深度理解而非死记硬背：</strong> 不仅要能说出定义，更要能解释其背后的数学原理、应用场景和局限性 。例如，解释正则化时，最好能从数学上说明它是如何惩罚复杂模型的。</li>
+<li><strong>建立知识体系：</strong> 将零散的知识点（如不同算法、激活函数、损失函数）系统地串联起来，形成自己的知识框架。</li>
+<li><strong>保持知识更新：</strong> AI领域技术迭代迅速，需要对最新的研究和技术保持关注 。</li>
+</ul>
+<h3><strong>行为与情境性问题 (Behavioral &amp; Situational Questions)</strong></h3>
+<p>这类问题用于评估候选人的软技能，如解决问题的能力、团队协作、沟通技巧、领导力以及在压力下的表现 。面试官相信“过去的表现是未来行为的最佳预测” 。</p>
+<h4><strong>常见问题示例：</strong></h4>
+<ul>
+<li>“请描述一个你遇到的最困难的技术挑战，以及你是如何解决的？”</li>
+<li>“你如何与非技术背景的同事（如产品经理、设计师）沟通一个复杂的技术方案？”</li>
+<li>“当你的模型在生产环境中表现不如预期时，你会如何排查问题？”</li>
+<li>“描述一次你因为数据或模型结果与团队成员产生意见分歧的经历，你是如何处理的？”</li>
+<li>“你是如何保持对AI领域新技术、新趋势的学习的？”</li>
+</ul>
+<h4><strong>应对策略与考察要点：</strong></h4>
+<ul>
+<li><strong>STAR法则：</strong> 这是回答行为问题的黄金标准。你需要结构化地讲述一个完整的故事：
+<ul>
+<li><strong>S (Situation):</strong> 描述你所处的情境和背景。</li>
+<li><strong>T (Task):</strong> 说明你面临的具体任务或目标。</li>
+<li><strong>A (Action):</strong> 详细描述你采取了哪些具体行动，这是回答的核心，应突出你的个人贡献和思考过程 。</li>
+<li><strong>R (Result):</strong> 量化或清晰地展示你的行动带来了什么结果或你从中学到了什么 。</li>
+</ul>
+</li>
+<li><strong>提前准备故事库：</strong> 针对常见的行为问题，提前准备2-3个能体现你不同方面能力的项目经历或故事。</li>
+</ul>
+<h3><strong>项目经验与实践问题 (Project Experience &amp; Practical Questions)</strong></h3>
+<p>这类问题直接关联你的简历，深入挖掘你的实际动手能力和项目贡献 。面试官希望了解你不仅仅是“知道”，更是“做过”。</p>
+<h4><strong>常见问题示例：</strong></h4>
+<ul>
+<li>“请详细介绍一下你简历上的[某个项目]，你在其中扮演了什么角色？具体负责了哪些工作？”</li>
+<li>“在这个项目中，你们的数据是如何收集和预处理的？”</li>
+<li>“你为什么选择使用[某个特定模型或算法]？有没有考虑过其他替代方案？”</li>
+<li>“这个项目的最终效果如何？你是如何评估的？有没有进行A/B测试？”</li>
+<li>“项目中最具挑战性的部分是什么？你从中学到了什么？”</li>
+</ul>
+<h4><strong>应对策略与考察要点：</strong></h4>
+<ul>
+<li><strong>对自己项目了如指掌：</strong> 对项目的每一个细节，从数据源到模型部署，再到业务影响，都要有深入的理解。</li>
+<li><strong>突出个人贡献：</strong> 明确说明“我”做了什么，而不是“我们”做了什么。即使是团队项目，也要清晰地阐述自己的职责和贡献。</li>
+<li><strong>展现思考深度：</strong> 解释技术选型时，要说明决策背后的权衡（trade-offs），比如在模型精度、推理速度和开发成本之间的考量。这能体现你的工程思维和产品意识。</li>
+</ul>
+<h3><strong>开放性与前瞻性问题 (Open-ended &amp; Forward-looking Questions)</strong></h3>
+<p>这类问题考察你对AI行业的宏观认知、技术热情和批判性思维 。面试官想看到你是否对这个领域有持久的热情和独立的思考。</p>
+<h4><strong>常见问题示例：</strong></h4>
+<ul>
+<li>“你认为未来5年AI领域最重要的发展方向是什么？”</li>
+<li>“你如何看待AI伦理问题，比如数据隐私和算法偏见？”</li>
+<li>“最近有没有读到哪篇让你印象深刻的AI论文或看到哪个有趣的新技术？”</li>
+<li>“你认为我们公司的产品可以如何更好地利用AI技术？”</li>
+</ul>
+<h4><strong>应对策略与考察要点：</strong></h4>
+<ul>
+<li><strong>关注行业动态：</strong> 定期阅读顶级会议论文（如NeurIPS, ICML, CVPR）、技术博客和行业报告。</li>
+<li><strong>形成个人观点：</strong> 不要只复述别人的观点，要结合自己的理解和经验，提出独到的见解。</li>
+<li><strong>结合公司业务：</strong> 在回答“如何利用AI”这类问题时，要表现出你对公司业务的了解和思考，展现你的价值 。</li>
+</ul>
+<img decoding="async" class="wp-image-60515 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/08/ai-interview-questions-3.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="706" height="397" />
+<h2><strong>2025年面试热点：生成式AI与提示工程</strong></h2>
+<p>自2023年以来，<a href="../what-is-generative-ai/index.html" target="_blank" rel="noopener">生成式AI</a>（Generative AI）和大语言模型（LLM）的爆发式发展，已经深刻地改变了AI领域的面试格局。到了2025年，对生成式AI和<a href="../what-is-prompt-engineering/index.html" target="_blank" rel="noopener">提示工程（Prompt Engineering）</a>的理解和实践能力已成为许多AI岗位的必备要求 。</p>
+<h3><strong>常见热点问题示例</strong></h3>
+<h4><strong>“你如何理解提示工程（Prompt Engineering）？它为什么重要？”</strong></h4>
+<ul>
+<li><strong>考察要点：</strong> 考察你是否理解提示工程是与LLM高效沟通、引导其产生高质量输出的关键技术 。</li>
+<li><strong>应对策略：</strong> 回答时应包含：
+<ul>
+<li>1) 它的定义（一种设计和优化输入文本以指导AI模型生成特定输出的艺术和科学）；</li>
+<li>2) 它的重要性（直接影响模型输出的质量、相关性和安全性）；</li>
+<li>3) 提及一些关键技术，如思维链（Chain-of-Thought）、零样本/少样本提示（Zero/Few-Shot Prompting）、角色扮演等 。</li>
+</ul>
+</li>
+</ul>
+<h4><strong>“请设计一个Prompt，让AI模型扮演面试官，根据我的简历向我提问。”</strong></h4>
+<ul>
+<li><strong>考察要点：</strong> 考察你的实践能力和对Prompt结构化设计的理解 。</li>
+<li><strong>应对策略：</strong> 设计的Prompt应包含清晰的指令，如：
+<ul>
+<li>1) <strong>角色定义</strong>（“你是一位经验丰富的XX岗位技术面试官”）；</li>
+<li>2) <strong>任务描述</strong>（“根据以下简历内容，提出5个相关的技术问题和2个行为问题”）；</li>
+<li>3) <strong>上下文信息</strong>（在此处粘贴简历）；</li>
+<li>4) <strong>输出格式要求</strong>（“请以列表形式给出问题”）。</li>
+</ul>
+</li>
+</ul>
+<h4><strong>“你如何评估一个生成式AI模型的表现？”</strong></h4>
+<ul>
+<li><strong>考察要点：</strong> 生成式任务的评估比传统分类/回归任务更复杂。这考察你是否了解相关的评估方法。</li>
+<li><strong>应对策略：</strong> 可以从几个层面回答：
+<ul>
+<li>1) <strong>自动化指标</strong>（如用于文本生成的BLEU、ROUGE，但要指出其局限性）；</li>
+<li>2) <strong>基于模型的评估</strong>（使用更强的模型来评估生成内容的质量）；</li>
+<li>3) <strong>人类评估</strong>（这是黄金标准，可以从流畅度、相关性、准确性等方面进行打分）；</li>
+<li>4) 提及<strong>检索增强生成（RAG）系统</strong>的评估，需要同时评估检索和生成两个环节 。</li>
+</ul>
+</li>
+</ul>
+<h4><strong>“请解释一下<a href="../what-is-retrieval-augmented-generation-rag/index.html" target="_blank" rel="noopener">什么是检索增强生成</a>（RAG）及其工作原理。”</strong></h4>
+<ul>
+<li><strong>考察要点：</strong> RAG是当前企业应用LLM最主流的技术之一，考察你对前沿应用架构的理解。</li>
+<li><strong>应对策略：</strong> 描述其核心思想：结合了外部知识库的检索能力和LLM的生成能力。步骤包括：
+<ul>
+<li>1) 用户提问；</li>
+<li>2) 系统从知识库（如向量数据库）中检索最相关的文档片段；</li>
+<li>3) 将问题和检索到的文档片段一起作为上下文输入给LLM；</li>
+<li>4) LLM基于这些信息生成更准确、更可靠的回答。</li>
+</ul>
+</li>
+</ul>
+<h2><strong>不同AI岗位的面试侧重点与高频问题</strong></h2>
+<p>虽然问题类型有共性，但不同岗位的考察重点差异巨大。求职者需根据目标岗位进行针对性准备。</p>
+<h3><strong>机器学习工程师 (Machine Learning Engineer, MLE)</strong></h3>
+<ul>
+<li><strong>岗位核心：</strong> 侧重于将算法模型工程化、产品化，关注模型的性能、稳定性和可扩展性。</li>
+<li><strong>面试侧重点：</strong> 算法深度、编程能力、系统设计、MLOps 。</li>
+<li><strong>高频问题示例：</strong>
+<ul>
+<li><strong>编程与算法：</strong> “请在白板上实现K-Means算法。” / “解决这道关于数据结构的LeetCode难题。”</li>
+<li><strong>模型深度：</strong> “请从数学上推导支持向量机（SVM）的对偶问题。”</li>
+<li><strong>系统设计：</strong> “如何设计一个抖音的视频推荐系统？需要考虑哪些模块（如特征工程、召回、排序、线上A/B测试）？”</li>
+<li><strong>MLOps：</strong> “你如何对一个已经上线的模型进行监控和迭代？”</li>
+<li><strong>工程实践：</strong> “处理TB级的数据集进行模型训练时，你会遇到哪些挑战？如何解决？”</li>
+</ul>
+</li>
+</ul>
+<h3><strong>数据科学家 (Data Scientist, DS)</strong></h3>
+<ul>
+<li><strong>岗位核心：</strong> 侧重于从数据中发现洞见，通过分析和建模驱动业务决策。</li>
+<li><strong>面试侧重点：</strong> 统计学知识、数据分析能力、商业理解力、实验设计 。</li>
+<li><strong>高频问题示例：</strong>
+<ul>
+<li><strong>统计基础：</strong> “请解释P值的含义以及它在假设检验中的作用。”</li>
+<li><strong>实验设计：</strong> “我们想测试一个新的App功能，你会如何设计一个A/B测试？需要关注哪些指标？”</li>
+<li><strong>业务案例分析：</strong> “某电商平台的用户月活跃度下降了5%，你会如何分析这个问题？请给出你的分析框架和步骤。”</li>
+<li><strong>数据处理：</strong> “你如何处理数据中的缺失值和异常值？”</li>
+<li><strong>建模与解读：</strong> “你为一个业务问题建立了逻辑回归模型，如何向业务方解释模型中各个特征的权重（coefficients）？”</li>
+</ul>
+</li>
+</ul>
+<h3><strong>AI 产品经理 (AI Product Manager, AI PM)</strong></h3>
+<ul>
+<li><strong>岗位核心：</strong> 连接技术、用户和商业，定义AI产品的方向、功能和价值。</li>
+<li><strong>面试侧重点：</strong> 产品思维、用户洞察、技术理解力、商业敏感度、沟通协调能力 。</li>
+<li><strong>高频问题示例：</strong>
+<ul>
+<li><strong>产品定义：</strong> “你如何定义一个‘成功’的AI产品？你会用哪些指标来衡量？”</li>
+<li><strong>技术与商业平衡：</strong> “当算法团队告诉你某个功能的精度只能达到80%，但业务方要求95%时，你作为PM会怎么做？”</li>
+<li><strong>用户体验：</strong> “对于一个AI推荐系统，如何处理“信息茧房”问题，提升用户体验？”</li>
+<li><strong>伦理与风险：</strong> “在设计一个AI产品时，你会如何考虑数据隐私和算法公平性问题？”</li>
+<li><strong>需求与价值：</strong> “你最喜欢或最不喜欢的AI产品是什么？为什么？如果由你来负责，你会如何改进它？”</li>
+</ul>
+</li>
+</ul>
+<h3><strong>AI伦理与治理专家 (AI Ethics &amp; Governance Specialist)</strong></h3>
+<ul>
+<li><strong>岗位核心</strong>：确保AI系统的公平性、透明性、安全性及合规性，防范算法偏见与隐私风险。</li>
+<li><strong>行业需求背景</strong>：欧盟《AI法案》、中国《生成式AI服务管理暂行办法》等法规落地（2024-2025），企业亟需建立AI治理体系。</li>
+<li><strong>面试侧重点</strong>：
+<ul>
+<li><strong>伦理框架理解</strong>：熟悉主流AI伦理准则（如IEEE、欧盟ALTAI框架）；</li>
+<li><strong>技术风险评估</strong>：能分析模型偏见、可解释性漏洞、对抗攻击风险；</li>
+<li><strong>法规合规能力</strong>：掌握GDPR、CCPA及行业特定监管要求；</li>
+<li><strong>跨部门协作</strong>：推动技术、法务、业务团队达成治理共识。</li>
+</ul>
+</li>
+<li><strong>高频问题示例</strong>：
+<ul>
+<li><strong>偏见排查</strong>：“如何检测一个信贷风控模型是否存在性别偏见？请描述具体方法。”
+<ul>
+<li><strong><em>考察点</em></strong>：特征敏感性分析（如SHAP值）、公平性指标（ Demographic Parity, Equal Opportunity）、对抗样本测试。</li>
+</ul>
+</li>
+<li><strong>合规落地</strong>：“如果公司要上线一个医疗诊断AI，需满足哪些合规要求？如何设计审计流程？”
+<ul>
+<li><strong><em>考察点</em></strong>：数据匿名化、知情同意机制、算法备案、第三方审计流程设计。</li>
+</ul>
+</li>
+<li><strong>伦理冲突解决</strong>：“当模型精度提升需要更多用户数据，但用户拒绝授权时，如何权衡？”
+<ul>
+<li><strong><em>考察点</em></strong>：隐私增强技术（PETs）应用、联邦学习方案、业务价值与伦理的平衡逻辑。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><strong>AI系统工程师（MLOps方向） (AI Systems Engineer &#8211; MLOps)</strong></h3>
+<ul>
+<li><strong>岗位核心</strong>：搭建高可靠、可扩展的AI生产管线，实现模型从实验到部署的工业化落地。</li>
+<li><strong>面试侧重点</strong>：
+<ul>
+<li><strong>工程化能力</strong>：CI/CD流水线设计、容器化（Docker/K8s）、云平台（AWS SageMaker/GCP Vertex AI）；</li>
+<li><strong>性能优化</strong>：模型蒸馏、量化、服务延迟与吞吐量调优；</li>
+<li><strong>监控体系</strong>：数据漂移检测、模型衰减预警、自动化回滚机制；</li>
+<li><strong>成本控制</strong>：GPU资源调度、推理成本优化策略。</li>
+</ul>
+</li>
+<li><strong>高频问题示例</strong>：
+<ul>
+<li><strong>管线设计</strong>：“设计一个支持100个模型同时在线更新的MLOps架构，需包含版本控制、监控和灾备方案。”
+<ul>
+<li><strong><em>考察点</em></strong>：GitOps流程、模型注册中心（MLflow）、金丝雀发布、跨区域冗余部署。</li>
+</ul>
+</li>
+<li><strong>性能瓶颈</strong>：“实时推荐系统响应延迟从50ms升至200ms，如何定位问题？”
+<ul>
+<li><strong><em>考察点</em></strong>：分布式追踪（Jaeger/Prometheus）、计算图优化、批处理与流处理权衡。</li>
+</ul>
+</li>
+<li><strong>灾难恢复</strong>：“线上模型因数据漂移导致预测异常，如何自动触发回滚并通知团队？”
+<ul>
+<li><strong><em>考察点</em></strong>：监控指标阈值设定（PSI/Drift Score）、事件驱动架构（Kafka）、告警集成（PagerDuty/Slack）。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img decoding="async" class="wp-image-60513 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/08/ai-interview-questions-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="672" height="450" />
+<h2><strong>如何有效应对：STAR法则深度解析与应用</strong></h2>
+<p>STAR法是回答行为和项目类问题的利器。提供一个具体的AI项目示例，来展示如何运用STAR法则构建一个有说服力的回答。</p>
+<h4><strong>面试问题：“请描述一个你认为最有挑战性的AI项目。”</strong></h4>
+<ul>
+<li><strong>S (Situation &#8211; 情境):</strong> “在我上一家公司，我们是一个在线教育平台。我们发现，尽管内容优质，但学生的课程完成率普遍偏低，只有约30%，这严重影响了用户留存和续费率。”</li>
+<li><strong>T (Task &#8211; 任务):</strong> “我的任务是，作为项目的主要机器学习工程师，开发一个AI驱动的个性化学习路径推荐系统。目标是通过为每个学生推荐最适合他们当前水平和学习节奏的内容，将课程完成率提升15%。”</li>
+<li><strong>A (Action &#8211; 行动):</strong> “首先，我主导了数据分析阶段，通过分析学生的历史学习行为数据（如视频观看时长、练习题正确率、章节跳跃行为），我识别出了影响学习完成度的关键特征。其次，在技术选型上，我没有直接使用复杂的深度学习模型，而是对比了协同过滤、逻辑回归和梯度提升树（GBT）模型。考虑到我们数据的稀疏性和对模型可解释性的要求，我最终选择了GBT模型，因为它在效果和效率上取得了最佳平衡。我独立完成了特征工程、模型训练和调优的全部工作。为了验证效果，我与工程团队合作，设计并实施了一套严格的A/B测试框架，将10%的用户流量分配给我的新推荐系统。”</li>
+<li><strong>R (Result &#8211; 结果):</strong> “经过一个月的线上A/B测试，实验组的学生课程完成率达到了35%，相比对照组的30%提升了约16.7%，成功超过了我们15%的目标。这个系统的上线，不仅直接提升了核心业务指标，也为后续更复杂的AI教学应用（如AI助教）打下了坚实的数据和技术基础。这个项目最大的挑战在于平衡模型复杂度和工程实现的可行性，让我深刻理解到AI的价值最终体现在解决实际业务问题上。”</li>
+</ul>
+<h2><strong>终极备战指南：一份可执行的AI面试准备计划</strong></h2>
+<p>系统性的准备是成功的关键。以下是一个为期12周的备战计划建议，普通用户可以根据自身情况进行调整。</p>
+<h3><strong>第一阶段：基础巩固 (第1-4周)</strong></h3>
+<ul>
+<li><strong>学习：</strong> 系统学习或复习Python编程、线性代数、概率论和统计学基础。</li>
+<li><strong>课程：</strong> 跟随一门经典的在线课程，如Coursera上吴恩达的《机器学习》或《深度学习专项课程》 。</li>
+<li><strong>书籍：</strong> 阅读《统计学习方法》（李航）或“西瓜书”《机器学习》（周志华）等经典教材 。</li>
+<li><strong>刷题：</strong> 开始在LeetCode上刷与数据结构和算法相关的简单和中等难度的题目 。</li>
+</ul>
+<h3><strong>第二阶段：深度学习与项目实践 (第5-8周)</strong></h3>
+<ul>
+<li><strong>学习：</strong> 深入学习深度学习领域，如CNN、RNN、Transformer等。可以学习斯坦福的CS231n（计算机视觉）或CS224n（自然语言处理）课程 。</li>
+<li><strong>项目：</strong> 在<a href="../sites/21.html" target="_blank" rel="noopener">Kaggle</a>上参加一个入门级比赛，或者在GitHub上寻找一个感兴趣的开源项目进行复现和改进 。<strong>动手实践一个端到端的项目</strong>，例如，利用LangChain搭建一个简单的RAG问答机器人 ，并撰写详细的项目报告。</li>
+<li><strong>书籍：</strong> 阅读《深度学习》（花书）。</li>
+</ul>
+<h3><strong>第三阶段：冲刺与演练 (第9-12周)</strong></h3>
+<ul>
+<li><strong>刷题：</strong> 聚焦LeetCode上的高频面试题（Top 100 Liked Questions）和与AI相关的编程题 。</li>
+<li><strong>系统设计：</strong> 学习并练习机器学习系统设计问题，如设计推荐系统、广告系统等。</li>
+<li><strong>模拟面试：</strong> 这是最关键的环节。
+<ul>
+<li><strong>AI模拟面试平台：</strong> 使用AI驱动的平台进行高频次的问答演练，如Interviewsb.y.ai, Interview Master, AI-mock-Interview等，这些平台可以提供实时反馈 。</li>
+<li><strong>真人模拟面试：</strong> 与同学、朋友或通过Pramp、Interviewing.io等平台进行真人模拟面试，获得不同角度的反馈 。</li>
+</ul>
+</li>
+<li><strong>行为问题准备：</strong> 根据STAR法则，准备并反复演练3-5个核心项目故事 。</li>
+<li><strong>行业追踪：</strong> 关注最新的技术动态和论文，为开放性问题准备素材。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>准备维度</strong></th>
+<th><strong>具体行动</strong></th>
+<th><strong>资源推荐（2025最新）</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>知识体系</strong></td>
+<td>▶ 技术岗：精读《Generative AI in Action》（Manning 2025）<br />
+▶ 治理岗：研究NIST AI RMF框架（v2.0）</td>
+<td>免费课程：<a href="../sites/18.html" target="_blank" rel="noopener">DeepLearning.AI</a>《Prompt Engineering进阶》</td>
+</tr>
+<tr>
+<td><strong>实战验证</strong></td>
+<td>▶ 48小时内完成1个端到端项目（如：用LangChain+Fireworks AI搭建行业知识助手）<br />
+▶ 在Kaggle提交3个相关解决方案</td>
+<td>平台：Codalab（自动化MLOps沙盒环境）</td>
+</tr>
+<tr>
+<td><strong>差异化策略</strong></td>
+<td>▶ 技术岗：贡献1个GitHub千星项目核心模块<br />
+▶ 治理岗：发布1篇AI伦理合规解读文章（知乎/Medium）<br />
+▶ MLOps岗：优化某开源项目推理延迟≥30%（附性能报告）</td>
+<td>工具：<a href="../weights/index.html" target="_blank" rel="noopener">Weights</a> &amp; Biases（模型追踪神器）</td>
+</tr>
+<tr>
+<td><strong>临场应对</strong></td>
+<td>▶ 用AI模拟面试工具每日演练（推荐：InterviewMaster.ai）<br />
+▶ 针对目标岗位定制3个“杀手级案例”（STAR法则+量化结果）</td>
+<td>题库：Glassdoor实时面经（按公司筛选）</td>
+</tr>
+</tbody>
+</table>
+<p>AI面试的本质是<strong>用工程化思维解决人才筛选的不确定性</strong>。在2025年这个技术爆炸与监管成型的关键节点，胜出者永远是那些<strong>用技术能力创造商业价值，用伦理意识规避系统性风险</strong>的跨界人才。面试官期待的并非完美答案，而是你如何将复杂问题拆解为可执行路径的思维硬度——这正是AI无法替代的人类核心竞争力。未来十年仍是AI的黄金时代，但机会只留给有准备的架构者。</p>
+                    </div>
+        <div class="post-tags my-3"><i class="iconfont icon-tags mr-2"></i><a href="../ai-question-and-answer/index.html" class="btn vc-l-gray btn-sm text-xs text-height-xs m-1 rounded-pill"  rel="tag" title="查看更多文章"># AI问答</a></div><div class="text-xs text-muted"><div><span>©</span> 版权声明</div><div class="posts-copyright">本站文章版权归 <a href="../gpt-image-2/index.html" target="_blank" rel="noopener"><span style="color: #3366ff">AI工具集 </span></a>所有，未经允许禁止任何形式的转载。</div></div> 
+        <div class="post-apd"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7941312752144276"
+     crossorigin="anonymous"></script>
+<!-- 文章-底部-横幅 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7941312752144276"
+     data-ad-slot="7362582675"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>        </div>
+    </div>
+        <div class="near-navigation rounded mt-4 py-2">
+                        <div class="nav previous border-right border-color">
+            <a class="near-permalink" href="../model-memory/index.html">
+            <span>上一篇</span>
+            <h4 class="near-title">模型如何记住长期上下文？一文看懂</h4>
+            </a>
+        </div>
+                        <div class="nav next border-left border-color">
+            <a class="near-permalink" href="../how-does-prompt/index.html">
+            <span>下一篇</span>
+            <h4 class="near-title">如何写Prompt执行代码、数据分析或图表？一文看懂</h4>
+        </a>
+        </div>
+            </div>
+                <h4 class="text-gray text-lg my-4"><i class="site-tag iconfont icon-book icon-lg mr-1" ></i>相关文章</h4>
+            <div class="row mb-n4"> 
+                                <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../ai-style-simulation/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2025/08/ai-style-simulation.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../ai-style-simulation/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        如何让AI模拟不同的人格与语气风格？一文看懂                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/5/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='Avatar photo' src='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/5/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../ai-style-simulation/index.html"><i class="iconfont icon-heart mr-1"></i>4</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../what-is-artificial-neural-network/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2025/07/未命名_20250704092118-19.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../what-is-artificial-neural-network/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        什么是神经网络？一文看懂                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/7/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='' src='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/7/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../what-is-artificial-neural-network/index.html"><i class="iconfont icon-heart mr-1"></i>3</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../ai-replace-work/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2025/07/未命名_20250724193045.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../ai-replace-work/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        AI会取代哪些职业，如何应对就业冲击？一文看懂                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/7/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='' src='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/7/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../ai-replace-work/index.html"><i class="iconfont icon-heart mr-1"></i>2</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../analysis-of-ensemble-learning/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2025/11/Ensemble-Learning-website.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../analysis-of-ensemble-learning/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        什么是集成学习？一文看懂                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/7/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='' src='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/7/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../analysis-of-ensemble-learning/index.html"><i class="iconfont icon-heart mr-1"></i>2</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../ai-customer-service/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2025/11/AI-customer-service-1-1.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../ai-customer-service/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        AI会取代人类客服吗？一文看懂                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/5/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='Avatar photo' src='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/5/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../ai-customer-service/index.html"><i class="iconfont icon-heart mr-1"></i>2</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../what-is-aigc/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2025/07/AIGC-website-1-1.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../what-is-aigc/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        AIGC是什么？一文看懂                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/5/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='Avatar photo' src='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/5/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../what-is-aigc/index.html"><i class="iconfont icon-heart mr-1"></i>4</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                        </div>
+            
+<!-- comments -->
+<div class="post-apd mt-4"><a href="https://jimeng.jianying.com/ai-tool/home/?utm_medium=aitools&utm_source=aibot&utm_campaign=null&utm_content=hw_jm_aibot" rel="nofollow sponsored" target="_blank"><img class="rounded" src="../wp-content/uploads/2025/09/jimeng-ai-banner-0912.png" alt="即梦AI" /></a></div><div id="comments" class="comments">
+	<h2 id="comments-list-title" class="comments-title h5 mx-1 my-4">
+		<i class="iconfont icon-comment"></i>
+		<span class="noticom">
+			<a href="index.html#respond" class="comments-title" >暂无评论</a> 
+		</span>
+	</h2> 
+	<div class="card">
+		<div class="card-body"> 
+						<div id="respond_box">
+				<div id="respond" class="comment-respond">
+										<form id="commentform" class="text-sm mb-4">	
+						<div class="visitor-avatar d-flex flex-fill mb-2">
+														<img class="v-avatar rounded-circle" src="../wp-content/themes/onenav/images/gravatar.jpg">
+													</div> 
+						<div class="comment-textarea mb-3">
+							<textarea name="comment" id="comment" class="form-control" placeholder="输入评论内容..." tabindex="4" cols="50" rows="3"></textarea>
+						</div>
+							
+						<div id="comment-author-info" class="row  row-sm">
+							<div class="col-sm-6 col-lg-4 mb-3"><input type="text" name="author" id="author" class="form-control" value="" size="22" placeholder="昵称" tabindex="2"/></div>	
+							<div class="col-sm-6 col-lg-4 mb-3"><input type="text" name="email" id="email" class="form-control" value="" size="22" placeholder="邮箱" tabindex="3" /></div>
+							<div class="col-sm-12 col-lg-4 mb-3"><input type="text" name="url" id="url" class="form-control" value="" size="22"placeholder="网址"  tabindex="4" /></div>
+						</div>
+																		<div class="com-footer d-flex justify-content-end flex-wrap">
+							<input type="hidden" id="_wpnonce" name="_wpnonce" value="205d8d8222" /><input type="hidden" name="_wp_http_referer" value="/ai-interview-questions/" />							<a rel="nofollow" id="cancel-comment-reply-link" style="display: none;" href="javascript:;" class="btn btn-light custom_btn-outline mx-2">再想想</a>
+														<button class="btn btn-dark custom_btn-d ml-2" type="submit" id="submit">发表评论</button>
+							<input type="hidden" name="action" value="ajax_comment"/>
+							<input type='hidden' name='comment_post_ID' value='60491' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+						</div>
+					</form>
+					<div class="clear"></div>
+									</div>
+			</div>	
+						<div id="loading-comments"><span></span></div>
+						<div class="not-comment card"><div class="card-body nothing text-center color-d">暂无评论...</div></div>
+					
+		</div>	
+	</div>
+</div><!-- comments end -->
+        </div> 
+    </div> 
+        </main>
+</div>
+ 
+<div class="main-footer footer-stick container container-fluid customize-width pt-4 pb-3 footer-type-big">
+
+    <div class="footer-inner card rounded-xl m-0">
+        <div class="footer-text card-body text-muted text-center text-md-left">
+                        <div class="row my-4">
+                                <div class="col-12 col-md-4 mb-4 mb-md-0">
+                    <a class="footer-logo" href="../gpt-image-2/index.html" title="AI工具集">
+                        <img src="../wp-content/uploads/2023/03/ai-bot-logo-black.png" class="logo-light mb-3" alt="AI工具集" height="40">
+                        <img src="../wp-content/uploads/2023/03/ai-bot-logo-white.png" class="logo-dark d-none mb-3" alt="AI工具集" height="40">
+                    </a>
+                    <div class="text-sm">AI工具集导航收录了国内外数百个不同类型的AI工具，每日更新和添加最新AI工具，AI工具集还推荐了AI学习开发的常用网站、框架和模型，帮助你加入人工智能浪潮，自动化高效完成任务！
+
+Ctrl + D 或 ⌘ + D 收藏本站到浏览器书签栏。</div>
+                </div>
+                                <div class="col-12 col-md-5 mb-4 mb-md-0"> 
+                    <p class="footer-links text-sm mb-3"><a href="../gpt-image-2/index.html">AI工具集导航</a>
+<a href="../about-us/index.html" target="_blank">关于我们</a>
+<a href="../disclaimer/index.html" target="_blank">免责声明</a>
+<a href="../ai-project-20250614/index.html" target="_blank">最新AI项目</a>
+<a href="../ai-app-store/index.html" target="_blank">AI应用商店</a>
+<a href="https://www.ghxi.com/" target="_blank">果核剥壳</a>
+<a href="https://cakegrowth.cn/" target="_blank">CakeGrowth</a>
+<a href="../vipcheap-banner-0210/index.html" target="_blank">VipCheap</a>
+<a href="https://gongke.net/" target="_blank">攻壳智能体</a>
+<a href="https://www.yjpoo.com/" target="_blank">映技派</a>
+<a href="../sites/4189.html" target="_blank">豆包</a>
+<a href="../sites/6242.html" target="_blank">讯飞绘文</a>
+<a href="../sites/9195.html" target="_blank">绘蛙</a>
+<a href="../sites/17772.html" target="_blank">即梦</a>
+<a href="../sites/8204.html" target="_blank">蛙蛙写作</a>
+<a href="../sites/13065.html" target="_blank">白日梦</a>
+<a href="../sites/44612.html" target="_blank">咔片PPT</a>
+<a href="../sites/8516.html" target="_blank">办公小浣熊</a>
+<a href="../trae/index.html" target="_blank">TRAE</a>
+<a href="../codeflying/index.html" target="_blank">码上飞</a>
+<a href="../sites/5507.html" target="_blank">堆友AI</a>
+<a href="../sites/66771.html" target="_blank">LiblibAI</a>
+<a href="../xingliu-art/index.html" target="_blank">星流AI</a>
+<a href="../miaoda/index.html" target="_blank">秒哒</a>
+<a href="../updream/index.html" target="_blank">updream</a>
+<a href="../seko/index.html" target="_blank">Seko</a>
+<a href="../sites/73776.html" target="_blank">LibTV</a></p>                                        <div class="footer-social">
+                        <a class="rounded-circle bg-light" href="mailto:info@ai-bot.cn" target="_blank"  data-toggle="tooltip" data-placement="top" title="联系邮箱" rel="external noopener nofollow">
+                                    <i class="iconfont icon-email"></i>
+                                </a>                    </div>
+                </div>
+                            </div>
+                        <div class="footer-copyright text-xs">
+            Copyright © 2026 <a href="../gpt-image-2/index.html" title="AI工具集" class="" rel="home">AI工具集</a>&nbsp;<a href="https://beian.miit.gov.cn/" target="_blank" class="" rel="link noopener">蜀ICP备2022019184号-2</a>&nbsp; <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51010702003349" target="_blank" class="" rel="noopener"><img style="margin-bottom: 3px;" src="../wp-content/themes/onenav/images/gaba.png"> 川公网安备 51010702003349号</a>&nbsp;            </div>
+        </div>
+    </div>
+</div>
+</div><!-- main-content end -->
+
+<footer>
+    <div id="footer-tools" class="d-flex flex-column">
+        <a href="javascript:" id="go-to-up" class="btn rounded-circle go-up m-1" rel="go-top">
+            <i class="iconfont icon-to-up"></i>
+        </a>
+                                                <a href="javascript:" id="switch-mode" class="btn rounded-circle switch-dark-mode m-1" data-toggle="tooltip" data-placement="left" title="夜间模式">
+            <i class="mode-ico iconfont icon-light"></i>
+        </a>
+            </div>
+</footer>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/clipboard.min.js%3Fver=4.0331' id='clipboard-mini-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/popper.min.js%3Fver=4.0331' id='popper-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/bootstrap.min.js%3Fver=4.0331' id='bootstrap-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/theia-sticky-sidebar.js%3Fver=4.0331' id='sidebar-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/lazyload.min.js%3Fver=4.0331' id='lazyload-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/jquery.fancybox.min.js%3Fver=4.0331' id='lightbox-js-js'></script>
+<script type='text/javascript' id='appjs-js-extra'>
+/* <![CDATA[ */
+var theme = {"ajaxurl":"https:\/\/ai-bot.cn\/wp-admin\/admin-ajax.php","uri":"https:\/\/ai-bot.cn\/wp-content\/themes\/onenav","addico":"https:\/\/ai-bot.cn\/wp-content\/themes\/onenav\/images\/add.png","order":"asc","formpostion":"top","defaultclass":"io-grey-mode","isCustomize":"0","icourl":"https:\/\/besticon-demo.herokuapp.com\/icon?size=32..120..256&url=","icopng":"","urlformat":"1","customizemax":"10","newWindow":"1","lazyload":"1","minNav":"","loading":"","hotWords":"baidu","classColumns":" col-2a col-sm-2a col-md-2a col-lg-3a col-xl-6a col-xxl-6a ","apikey":"TWpBeU1USTJNemd4TWpZM0d6RS9oTVZCa2RqWk5aRGxtVG1jeGVEaHNVbW8zTnpCNGNGUldVVEZsYjNoTA==","isHome":"","version":"4.0331"};
+var localize = {"liked":"\u60a8\u5df2\u7ecf\u8d5e\u8fc7\u4e86!","like":"\u8c22\u8c22\u70b9\u8d5e!","networkerror":"\u7f51\u7edc\u9519\u8bef --.","selectCategory":"\u4e3a\u4ec0\u4e48\u4e0d\u9009\u5206\u7c7b\u3002","addSuccess":"\u6dfb\u52a0\u6210\u529f\u3002","timeout":"\u8bbf\u95ee\u8d85\u65f6\uff0c\u8bf7\u518d\u8bd5\u8bd5\uff0c\u6216\u8005\u624b\u52a8\u586b\u5199\u3002","lightMode":"\u65e5\u95f4\u6a21\u5f0f","nightMode":"\u591c\u95f4\u6a21\u5f0f","editBtn":"\u7f16\u8f91","okBtn":"\u786e\u5b9a","urlExist":"\u8be5\u7f51\u5740\u5df2\u7ecf\u5b58\u5728\u4e86 --.","cancelBtn":"\u53d6\u6d88","successAlert":"\u6210\u529f","infoAlert":"\u4fe1\u606f","warningAlert":"\u8b66\u544a","errorAlert":"\u9519\u8bef","extractionCode":"\u7f51\u76d8\u63d0\u53d6\u7801\u5df2\u590d\u5236\uff0c\u70b9\u201c\u786e\u5b9a\u201d\u8fdb\u5165\u4e0b\u8f7d\u9875\u9762\u3002","wait":"\u8bf7\u7a0d\u5019","loading":"\u6b63\u5728\u5904\u7406\u8bf7\u7a0d\u540e...","userAgreement":"\u8bf7\u5148\u9605\u8bfb\u5e76\u540c\u610f\u7528\u6237\u534f\u8bae","reSend":"\u79d2\u540e\u91cd\u65b0\u53d1\u9001","weChatPay":"\u5fae\u4fe1\u652f\u4ed8","alipay":"\u652f\u4ed8\u5b9d","scanQRPay":"\u8bf7\u626b\u7801\u652f\u4ed8","payGoto":"\u652f\u4ed8\u6210\u529f\uff0c\u9875\u9762\u8df3\u8f6c\u4e2d"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/app.min.js%3Fver=4.0331' id='appjs-js'></script>
+<script type='text/javascript' id='appjs-js-after'>
+/* <![CDATA[ */ 
+    $(document).ready(function(){if($("#search-text")[0]){$("#search-text").focus();}});
+    /* ]]> */
+</script>
+<script type='text/javascript' src='../wp-includes/js/comment-reply.min.js%3Fver=6.2' id='comment-reply-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/comments-ajax.js%3Fver=4.0331' id='comments-ajax-js'></script>
+<script type='text/javascript' id='wp-postviews-cache-js-extra'>
+/* <![CDATA[ */
+var viewsCacheL10n = {"admin_ajax_url":"https:\/\/ai-bot.cn\/wp-admin\/admin-ajax.php","post_id":"60491"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/themes/onenav/inc/postviews/postviews-cache.js%3Fver=6.2' id='wp-postviews-cache-js'></script>
+ 
+<!-- 自定义代码 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?55906d9c57011d694d405f963a90648b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KV0VT5CMJ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KV0VT5CMJ6');
+</script>
+<!-- end 自定义代码 -->
+</body>
+</html><!-- Cache Enabler by KeyCDN @ Thu, 16 Jul 2026 16:21:45 GMT (https-index.html) -->

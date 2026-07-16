@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="hidden-scroll-bar">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="https://maas.xfyun.cn/spark-icon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="expires" content="0">
+  <meta name="google" content="notranslate">
+  <title>讯飞星辰MaaS平台-官网</title>
+  <meta name="description" content="讯飞星辰 MaaS 平台是科大讯飞面向开发者打造的智能化模型精调服务平台，构建起贯穿 “数据 - 模型 - 服务” 全链路的工程化解决方案。平台提供数据增强处理、模型精调优化、效果量化评估及一键部署的的端到端开发能力；同时兼容主流开源模型生态，支持第三方模型托管。基于自研分布式训练架构与智能算力调度系统，结合 LoRA 等高效参数优化技术，平台实现大模型定制化开发的标准化、工程化，有效降低企业大模型相关业务开发成本与技术门槛，加速推动各行业智能化升级进程。">
+  <meta name="keywords" content="星辰MaaS, 讯飞星辰, AI大模型, 大模型精调, 大模型微调, 大模型训练, 大模型服务, MaaS, 模型托管, 大模型应用, 模型蒸馏, 开源大模型, MCP Server托管">
+  <script>
+    if (!window.t) {
+      window.t = () => {};
+    }
+  </script>
+  <!-- 开放平台sso登录需要引入 -->
+  <script src="https://sso.xfyun.cn/SSOService/login/getcookies"></script>
+  <script type="module" crossorigin src="https://maas.xfyun.cn/js/index-0c81be4a.js"></script>
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/@babel-f8ba29a3.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/react-b17e0a14.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/scheduler-765c72db.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/react-dom-854809a6.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/dayjs-3b885707.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/classnames-518a360a.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/react-is-e5978b8b.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-util-15dbbf95.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-pagination-961194da.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/resize-observer-polyfill-0f9f8adb.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-resize-observer-20b6856b.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-motion-29d78147.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/@rc-component-06683f33.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-overflow-8f9129e4.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-picker-e4ed2ccc.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/@emotion-c0b5c018.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/stylis-5efc5547.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/throttle-debounce-87e7e444.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/string-convert-c60507dd.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/json2mq-b38fcf25.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/@ctrl-fb5a5473.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/@ant-design-a552cca3.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/compute-scroll-into-view-e3f0ecc2.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/scroll-into-view-if-needed-582d6ca4.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-tooltip-0d6e6f0f.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-dropdown-b0640bc9.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-menu-977936dc.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-tabs-04167a96.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-virtual-list-39f9a5f3.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-select-9bc9b2df.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-tree-763dbda6.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-cascader-fab9e1bb.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-input-97c7c02a.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-input-number-73f1e295.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-drawer-7aa506ee.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/async-validator-dee29e8b.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-field-form-675950ab.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-dialog-04576e60.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-notification-c03a38f4.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-segmented-ec19ca62.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-slider-f10a60dd.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-switch-12dee392.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-table-7d618eae.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-checkbox-7ce0ce8c.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-textarea-991c13e1.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/toggle-selection-93f4ad84.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/copy-to-clipboard-56a53741.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-upload-24506adc.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/rc-progress-40dd15fa.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/antd-05ba85bc.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/i18next-45d9c377.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/querystring-81d6281a.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/js-base64-c45b522c.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/void-elements-d2cffb5e.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/html-parse-stringify-79b4c622.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/react-i18next-f47f2944.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/@remix-run-22c7a58b.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/react-router-249f42cb.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/react-router-dom-e3d92208.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/fflate-79449187.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/iobuffer-57f3551f.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/pako-d51e0120.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/fast-png-e349d887.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/jspdf-1be7d45e.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/recoil-17b8b543.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/axios-21b846bc.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/has-symbols-e8f3ca0e.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/has-proto-f7d0b240.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/function-bind-61637ca6.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/has-6793fb5d.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/get-intrinsic-e274f0e2.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/call-bind-76c9009c.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/crypto-js-6008bfaa.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/object-inspect-601fb1ad.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/side-channel-b1849335.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/qs-3b4820b1.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/lodash-42117357.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/@seagrass-439f47cf.js">
+  <link rel="modulepreload" crossorigin href="https://maas.xfyun.cn/js/react-error-boundary-7efd09fb.js">
+  <link rel="stylesheet" href="https://maas.xfyun.cn/css/index-755954db.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <!-- idata数据埋点需要引入 -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'itm.start':
+    new Date().getTime(),event:'itm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='ITM_dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://dt.xfyun.cn/itm.js/?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','ITM_dataLayer','ITM-5ad5f3a8');</script>
+  <script>
+    (function (w, d, s)
+    {
+      var l = 'IFlyCollector', f = d.getElementsByTagName(s)[0], j = d.createElement(s), w = window;
+      w[l] = {}; var c = w[l]; c._o = function (a) { return function () { (c._e = c._e || []).push([a, arguments]) } };
+      var e = ['init', 'onEvent', 'onError', 'bindUser', 'unbindUser', 'updateCustomConfig'];
+      for (var i = 0; i < e.length; i++) { c[e[i]] = c._o.call(null, e[i]) }
+      j.async = true; j.src = 'https://logconf.iflytek.com/entry.js?sdk_ver=1.4.0'; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script');
+  </script>
+  
+</body>
+
+</html>

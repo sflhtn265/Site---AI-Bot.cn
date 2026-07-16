@@ -1,0 +1,2560 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="io-grey-mode">
+<head> 
+<script>
+    var default_c = "io-grey-mode";
+    var night = document.cookie.replace(/(?:(?:^|.*;\s*)io_night_mode\s*\=\s*([^;]*).*$)|^.*$/, "$1"); 
+    try {
+        if (night === "0") {
+            document.documentElement.classList.add("io-black-mode");
+            document.documentElement.classList.remove(default_c);
+        } else {
+            document.documentElement.classList.remove("io-black-mode");
+            document.documentElement.classList.add(default_c);
+        }
+    } catch (_) {}
+</script><meta charset="UTF-8">
+<meta name="renderer" content="webkit"/>
+<meta name="force-rendering" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ChatGPT -OpenAI 推出的AI聊天机器人 | AI工具集</title>
+<meta name="theme-color" content="#f9f9f9" />
+<meta name="description" content="ChatGPT 全称为Chat Generative Pre-trained Transformer，是 OpenAI 推出的AI聊天机器人，基于 GPT 系列大语言模型，通过海量文本预训练与 RLHF 对齐优化，能进行自然流畅的多轮对话、回答问题、撰写文章、编写代码及执行各类语言任务。" />
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ai-bot.cn/sites/30.html"/> 
+<meta property="og:title" content="ChatGPT -OpenAI 推出的AI聊天机器人 | AI工具集">
+<meta property="og:description" content="ChatGPT 全称为Chat Generative Pre-trained Transformer，是 OpenAI 推出的AI聊天机器人，基于 GPT 系列大语言模型，通过海量文本预训练与 RLHF 对齐优化，能进行自然流畅的多轮对话、回答问题、撰写文章、编写代码及执行各类语言任务。">
+<meta property="og:image" content="https://ai-bot.cn/wp-content/uploads/2025/07/Chatgpt-logo.png">
+<meta property="og:site_name" content="AI工具集">
+<meta property="og:updated_time" content="2026-06-15T15:26:28+08:00">
+<meta property="article:published_time" content="2023-03-03T21:59:53+08:00">
+<meta property="article:modified_time" content="2026-06-15T15:26:28+08:00">
+<link rel="shortcut icon" href="../wp-content/uploads/2023/03/ai-bot-square-logo.png">
+<link href="../wp-content/uploads/2023/07/ai-bot-favicon.png" rel="icon" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../wp-content/uploads/2023/04/ai-bot-baidu-logo.png">
+<!--[if IE]><script src="https://ai-bot.cn/wp-content/themes/onenav/js/html5.min.js"></script><![endif]-->
+<meta name='robots' content='max-image-preview:large, noindex, follow' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='../wp-includes/css/classic-themes.min.css%3Fver=6.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='iconfont-css' href='../wp-content/themes/onenav/css/iconfont.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css' href='../wp-content/themes/onenav/css/all.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome4-css' href='../wp-content/themes/onenav/css/v4-shims.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css' href='../wp-content/themes/onenav/css/bootstrap.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='lightbox-css' href='../wp-content/themes/onenav/css/jquery.fancybox.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css' href='../wp-content/themes/onenav/css/style.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-content/themes/onenav/js/jquery.min.js%3Fver=4.0331' id='jquery-js'></script>
+<script type='text/javascript' id='jquery-js-after'>
+/* <![CDATA[ */ 
+        function loadFunc(func) {if (document.all){window.attachEvent("onload",func);}else{window.addEventListener("load",func,false);}}   
+        /* ]]> */
+</script>
+<link rel="canonical" href="30.html" />
+<style>body:before {
+  content: '';
+  position: absolute;
+  top: 0 !important;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 550px;
+  background-image: url(../wp-content/uploads/2023/07/blury-shape-bg-light.png);
+  background-size: cover;
+  z-index: -1;
+}
+
+.io-black-mode body:before {
+	background-image: url(../wp-content/uploads/2024/01/blury-shape-bg-dark.png);
+}
+
+.page-header {
+	background: none !important;
+  position: absolute;
+}
+
+
+.io-black-mode .page-header {
+	background: rgba(44,46,47,0.7) !important;
+}
+
+.url-card .max .url-img {
+	width: 40px;
+  height: 40px;
+}
+
+.card-body .url-img img {
+	border: none !important;
+}
+
+.panel-body.single.mt-2 img {
+	border-radius: 6px;
+  border: 2px solid #eee;
+}
+
+.meta-media {
+  position: relative;
+  margin-bottom: 30px;
+  float: left;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+}
+.video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.table-bordered {
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+a.underline {
+    border-bottom: 3px solid #5961f9;
+}
+
+a.underline:hover {
+    border-bottom: 3px solid #ee9ae5;
+}
+
+.io-edit-post-card-content .mx-auto {
+	margin-left: 0!important;
+}
+
+.panel-body .url-card.shortcode-url .card {
+	background: white;
+}
+.io-black-mode .panel-body .url-card.shortcode-url .card {
+	background: #2c2e2f;
+}
+
+@media screen and (min-width: 768px) {
+  .header-big {
+		padding-top: 80px;
+	}
+}
+
+/* 快讯页面样式开始 */
+.news-content h2{
+  border: none;
+}
+.news-list .news-date {
+    padding: 32px 20px 12px 20px;
+    font-size: 20px;
+    line-height: 26px;
+    position: relative;
+    font-weight: 700;
+    color: #5961f9;
+}
+.news-list .news-item {
+    padding: 20px 0 5px 20px;
+}
+.news-list .news-date, .news-list .news-item {
+    position: relative;
+    margin-left: 15px;
+    border-left: 1px dashed #c3c8fe;
+}
+.news-list .news-time {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.news-list .news-hour {
+    position: relative;
+    display: block;
+    padding-top: 10px;
+    padding-left: 12px;
+    margin-left: 15px;
+    border-left: 1px dashed #c3c8fe;
+}
+.news-list .news-date:after, .news-list .news-date:before {
+    position: absolute;
+    left: -8px;
+    top: 38px;
+    width: 16px;
+    height: 16px;
+    content: "";
+    border-radius: 1px;
+    background: #5961f9;
+}
+.news-list .news-time:before {
+    border: 4px solid #5961f9;
+    opacity: 1;
+}
+.news-list .news-content h2 {
+    position: relative;
+    font-size: 18px;
+    line-height: 1.4;
+}
+.news-list .news-content p {
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.65;
+}
+.news-list h2:after, .news-list h2:before {
+    position: absolute;
+    left: -3.5px;
+    top: 10px;
+    width: 4px;
+    height: 4px;
+    border-radius: 6px;
+    border: 4px solid #5961f9;
+    box-sizing: initial;
+    background: #fff;
+    content: "";
+}
+.panel-body.single.mt-2 .news-time img {
+    border-radius: 2px;
+    border: none;
+}
+.panel-body.single.mt-2 img.news-banner {
+    border-radius: 0px;
+    border: none;
+}
+.panel-body .news-content h2 a:not(.no-c) {
+    color: #282a2d;
+}
+.io-black-mode .panel-body .news-content h2 a:not(.no-c) {
+    color: #c6c9cf;
+}
+.panel-body .news-content h2 a:not(.no-c):hover {
+    color: #5961f9;
+}
+.news-content .external:after {
+    content: "";
+}
+.news-content h2 .badge-danger {
+    background-color: #F1404B;
+}
+/* 快讯页面样式结束 */
+.tab-widget-content .img-post .media-content {
+    -webkit-transform: none;
+    transform: none;
+}
+.img-post .media-content {
+    -webkit-transform: none;
+    transform: none;
+}
+.io-black-mode .panel-body .table td {
+    color: #eee;
+}
+/* 滚动条 */
+@media screen and (min-width: 768px) {
+  .sidebar-nav-inner .flex-fill {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sidebar-nav-inner .flex-fill:hover {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+/* 备案查询页面黑暗模式颜色修改 */
+.io-black-mode .theme--light.v-application {
+    background: #2c2e2f;
+    color: white;
+}
+.io-black-mode .theme--light.v-sheet {
+    background-color: #2c2e2f;
+    border-color: #5e6063 !important;
+    color: white;
+}
+.io-black-mode .theme--light.v-label {
+    color: rgb(255 255 255 / 60%);
+}
+.io-black-mode .theme--light.v-icon {
+    color: rgb(255 255 255 / 60%);
+}
+.io-black-mode .theme--light.v-text-field>.v-input__control>.v-input__slot:before {
+    border-color: rgb(255 255 255 / 42%);
+}
+.io-black-mode .theme--light.v-data-table {
+		background-color: #2c2e2f;
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:last-child, .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:not(.v-data-table__mobile-row), .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>th:last-child, .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>th:not(.v-data-table__mobile-row), .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr:last-child>th {
+    border-bottom: thin solid rgb(255 255 255 / 12%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr:last-child>th {
+    border-bottom: thin solid rgb(255 255 255 / 12%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:not(.v-data-table__mobile-row) {
+		border-bottom: thin solid rgb(255 255 255 / 12%);
+}
+th.text-start, td.text-start {
+		border-left: none;
+  	border-right: none;
+}
+th.text-start {
+		border-top: none;
+}
+.io-black-mode .theme--light.v-data-table .v-data-table-header th.sortable:hover {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr>th {
+		color: rgba(255,255,255,.6);
+}
+.io-black-mode .theme--light.v-data-table .v-data-table-header th.sortable .v-data-table-header__icon {
+    color: rgb(255 255 255 / 58%);
+}
+.io-black-mode .theme--light.v-btn.v-btn--disabled, .theme--light.v-btn.v-btn--disabled .v-btn__loading, .theme--light.v-btn.v-btn--disabled .v-icon {
+    color: rgb(255 255 255 / 26%)!important;
+}
+.io-black-mode .v-btn>.v-btn__content .v-icon {
+    color: #fff;
+}
+.io-black-mode .theme--light.v-select .v-select__selections {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper) {
+    background: #222;
+}
+.io-black-mode .theme--light.v-input input {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table .v-data-table__empty-wrapper {
+    color: rgb(255 255 255 / 38%);
+}
+div.card-app > div.card-body {
+	padding: 0.8rem;
+}
+.app-rounded {
+	border-radius: 22% !important;
+}
+div.card-app.card {
+  border-radius: .45rem !important;
+}
+.screenshot-carousel .img_wrapper {
+	height: 360px !important;
+}
+.io-black-mode .enlighter-t-enlighter .enlighter-text {
+    color: #99a;
+}
+.site-content a img.alignnone {
+    border-radius: .3rem;
+    border: 1px solid #ddd;
+}.customize-width{max-width:1900px}.sidebar-nav{width:220px}@media (min-width: 768px){.main-content{margin-left:220px;}.main-content .page-header{left:220px;}}</style><meta name="redi-version" content="1.2.7" /><style>.panel-body a:not(.no-c){color:#5961f9}.panel-body a:not(.no-c):hover{color:#ee9ae5}a:hover,.io-grey-mode .sidebar-show,.io-grey-mode .sidebar-item>a:hover,.io-grey-mode .sidebar-item li>a:hover,.home-like:hover,
+        .io-grey-mode .sidebar-popup>div>ul>li>a:hover{color:#5961f9}
+        .header-mini-btn label:hover path{ stroke:#5961f9}
+        .url-card .max .tga a:not(.no-tag):hover,.card-app.card .tga a:not(.no-tag):hover{background:#5961f9}
+        .sidebar .url-card .card:hover{border: 1px solid #5961f9!important;}.tags i{color:#5961f9}.custom-piece_c_b{background:#5961f9!important}.custom-piece_c{color:#5961f9!important}.slider_menu[sliderTab] .anchor,.customize-menu .btn-edit,.badge-danger,.comment-list .rank,.sidebar .card-header:after{background:#5961f9}.badge-outline-primary{color:#5961f9;border:#5961f9 solid 1px}.posts-nav .page-numbers.current,.posts-nav .page-numbers:not(.dots):hover,#comments-navi>a:hover,#comments-navi>.current,.page-nav>a:hover span,.page-nav>.current span{background-color:#5961f9;box-shadow: 0px 5px 20px -3px rgba(89,97,249,.6);}     
+.custom-control-input:not(:disabled):active~.custom-control-label::before{background-color:rgba(89,97,249,.15);border-color:rgba(89,97,249,.15);}
+.custom-control-input:focus~.custom-control-label::before{box-shadow:0 0 0 .2rem rgba(89,97,249,.25)}
+.custom-control-input:focus:not(:checked)~.custom-control-label::before{border-color:#5961f9}
+.custom-control-input:checked~.custom-control-label::before{border-color:#5961f9;background-color:#5961f9}
+.btn-search:hover,.btn-search.current{background-color:#5961f9;box-shadow: 0 5px 20px -3px rgba(89,97,249,.6)}.btn-search.current:after{border-top-color:#5961f9}.panel-body h2,.panel-body h3 {border-color:#5961f9}.custom_btn-outline {color: #5961f9;background-color: transparent;border-color: #5961f9;}
+.custom_btn-outline:hover {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.custom_btn-outline:focus, .custom_btn-outline.focus {color: #14171B;box-shadow: 0 0 0 0 transparent!important;background-color: transparent;}
+.custom_btn-outline.disabled, .custom_btn-outline:disabled {color: #5961f9;background-color: transparent!important;}
+.custom_btn-outline:not(:disabled):not(.disabled):active, .custom_btn-outline:not(:disabled):not(.disabled).active,.show > .custom_btn-outline.dropdown-toggle {color: #fff;background-color: #5961f9;border-color: #5961f9;}
+.custom_btn-outline:not(:disabled):not(.disabled):active:focus, .custom_btn-outline:not(:disabled):not(.disabled).active:focus,.show > .custom_btn-outline.dropdown-toggle:focus {box-shadow: 0 0 0 0 transparent!important;}
+.custom_btn-d {color: #ffffff;background-color: #5961f9;border-color: #5961f9;}
+.custom_btn-d:hover {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.custom_btn-d:focus,.custom_btn-d.focus {color: #ffffff;background-color: #14171B;border-color: #14171B;box-shadow: 0 0 0 0 transparent!important;}
+.custom_btn-d.disabled,.custom_btn-d:disabled {color: #ffffff;background-color:#5961f9;border-color: #5961f9;}
+.custom_btn-d:not(:disabled):not(.disabled):active,.custom_btn-d:not(:disabled):not(.disabled).active{color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.custom_btn-d:not(:disabled):not(.disabled):active:focus,.custom_btn-d:not(:disabled):not(.disabled).active:focus{box-shadow: 0 0 0 0 transparent!important;}
+.btn.custom_btn-d {color: #ffffff;background-color: #5961f9;border-color: #5961f9;}
+.btn.custom_btn-d:hover {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.btn.custom_btn-d:focus,.btn.custom_btn-d.focus {color: #ffffff;background-color: #14171B;border-color: #14171B;box-shadow: 0 0 0 0 transparent!important;}
+.btn.custom_btn-d.disabled,.btn.custom_btn-d:disabled {color: #ffffff;background-color:#5961f9;border-color: #5961f9;}
+.btn.custom_btn-d:not(:disabled):not(.disabled):active,.btn.custom_btn-d:not(:disabled):not(.disabled).active,.show > .custom_btn-d.dropdown-toggle {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.btn.custom_btn-d:not(:disabled):not(.disabled):active:focus,.btn.custom_btn-d:not(:disabled):not(.disabled).active:focus,.show > .custom_btn-d.dropdown-toggle:focus {box-shadow: 0 0 0 0 transparent!important;}
+.btn-dark:hover{background-color:#5961f9;border-color:#5961f9}
+.sidebar .card .searchform input[type='submit']{border: 1px solid #5961f9;background-color:#5961f9}
+.sidebar .card .searchform input[type='submit']:hover{border: 1px solid #14171B;background-color:#14171B}</style><!-- 自定义代码 -->
+<meta name="baidu-site-verification" content="codeva-P9RvmeAUoM" />
+<meta name="msvalidate.01" content="92B2C43DC49DA55D7E2C4AE6B1CC1A81" />
+<meta name="sogou_site_verification" content="Zo3i06YCJh" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7941312752144276"
+     crossorigin="anonymous"></script>
+<script>
+(function(){
+var el = document.createElement("script");
+el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?555fccf68561b344c2292bef2655dc990da3031c125e7429fc5275c9527fda6e4a4d40de0dd5fa9b5c2c10f69a3b501dc430e831103b45ce33654fb9f95b006c";
+el.id = "ttzz";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(el, s);
+})(window)
+</script><!-- end 自定义代码 -->
+</head> 
+<body class="sites-template-default single single-sites postid-30 sidebar_no sites">
+        <div id="sidebar" class="sticky sidebar-nav fade">
+            <div class="modal-dialog h-100  sidebar-nav-inner">
+                <div class="sidebar-logo border-bottom border-color">
+                    <!-- logo -->
+                    <div class="logo overflow-hidden">
+                                                <a href="../gpt-image-2/index.html" class="logo-expanded">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-black.png" height="40" class="logo-light" alt="AI工具集">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-white.png" height="40" class="logo-dark d-none" alt="AI工具集">
+                        </a>
+                        <a href="../gpt-image-2/index.html" class="logo-collapsed">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-square-logo.png" height="40" class="logo-light" alt="AI工具集">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-square-logo.png" height="40" class="logo-dark d-none" alt="AI工具集">
+                        </a>
+                    </div>
+                    <!-- logo end -->
+                </div>
+                <div class="sidebar-menu flex-fill">
+                    <div class="sidebar-scroll" >
+                        <div class="sidebar-menu-inner">
+                            <ul> 
+                                                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-7" class="">
+                                                <i class="fas fa-feather icon-fw icon-lg"></i>
+                                                <span>AI写作工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-2" class="" data-change="https://ai-bot.cn/#term-2">
+                                                <i class="fas fa-images icon-fw icon-lg"></i>
+                                                <span>AI图像工具</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-37" class=""><span>常用AI图像工具</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-33" class=""><span>AI图片插画生成</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-32" class=""><span>AI图片背景移除</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-35" class=""><span>AI图片物体抹除</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-34" class=""><span>AI图片无损放大</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-36" class=""><span>AI图片优化修复</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-78" class=""><span>AI商品图生成</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-83" class=""><span>AI 3D模型生成</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-4" class="">
+                                                <i class="fas fa-video icon-fw icon-lg"></i>
+                                                <span>AI视频工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-38" class="" data-change="https://ai-bot.cn/#term-38">
+                                                <i class="fas fa-folder-open icon-fw icon-lg"></i>
+                                                <span>AI办公工具</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-45" class=""><span>AI幻灯片和演示</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-46" class=""><span>AI表格数据处理</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-48" class=""><span>AI思维导图</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-47" class=""><span>AI文档工具</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-49" class=""><span>AI会议工具</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-85" class=""><span>AI招聘求职</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-77" class=""><span>AI法律助手</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-52" class=""><span>AI语言翻译</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-51" class=""><span>AI效率提升</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-16" class="">
+                                                <i class="fas fa-comments icon-fw icon-lg"></i>
+                                                <span>AI聊天助手</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-97" class="" data-change="https://ai-bot.cn/#term-97">
+                                                <i class="fas fa-brain icon-fw icon-lg"></i>
+                                                <span>AI智能体</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-97-86" class=""><span>AI智能体</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-97-96" class=""><span>插件与Skills</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-13" class="">
+                                                <i class="fas fa-code icon-fw icon-lg"></i>
+                                                <span>AI编程工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-15" class="">
+                                                <i class="fas fa-laptop-code icon-fw icon-lg"></i>
+                                                <span>AI开发平台</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-19" class="">
+                                                <i class="fas fa-palette icon-fw icon-lg"></i>
+                                                <span>AI设计工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-6" class="">
+                                                <i class="fas fa-music icon-fw icon-lg"></i>
+                                                <span>AI音频工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-61" class="">
+                                                <i class="fas fa-search icon-fw icon-lg"></i>
+                                                <span>AI搜索引擎</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-12" class="">
+                                                <i class="fas fa-graduation-cap icon-fw icon-lg"></i>
+                                                <span>AI学习网站</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-14" class="">
+                                                <i class="fas fa-cubes icon-fw icon-lg"></i>
+                                                <span>AI训练模型</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-56" class="">
+                                                <i class="fas fa-crown icon-fw icon-lg"></i>
+                                                <span>AI模型评测</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-95" class="" data-change="https://ai-bot.cn/#term-95">
+                                                <i class="iconfont icon-instructions icon-fw icon-lg"></i>
+                                                <span>AI内容检测</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-95-20" class=""><span>内容检测</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-95-94" class=""><span>降AI/AIGC率</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-42" class="">
+                                                <i class="fab fa-product-hunt icon-fw icon-lg"></i>
+                                                <span>AI提示指令</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-98" class="">
+                                                <i class="iconfont icon-related icon-fw icon-lg"></i>
+                                                <span>AI副业工具</span>
+                                            </a>
+                                        </li> 
+                                     
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top py-2 border-color">
+                    <div class="flex-bottom">
+                        <ul> 
+                             
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content flex-fill">    <div class=" header-nav">
+        <div id="header" class="page-header sticky">
+            <div class="navbar navbar-expand-md">
+                <div class="container-fluid p-0 position-relative">
+                    <div class="">
+                        <a href="../gpt-image-2/index.html" class="navbar-brand d-md-none m-0" title="AI工具集">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-black.png" class="logo-light" alt="AI工具集" height="30">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-white.png" class="logo-dark d-none" alt="AI工具集" height="30">
+                        </a>
+                    </div>
+                                        <div class="collapse navbar-collapse order-2 order-md-1">
+                        <div class="header-mini-btn">
+                            <label>
+                                <input id="mini-button" type="checkbox" checked="checked">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"> 
+                                    <path class="line--1" d="M0 40h62c18 0 18-20-17 5L31 55"></path>
+                                    <path class="line--2" d="M0 50h80"></path>
+                                    <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45"></path>
+                                </svg>
+                            </label>
+                        
+                        </div>
+                                                <ul class="navbar-nav navbar-top site-menu mr-4">
+                            <li id="menu-item-55865" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-55865"><a href="../gpt-image-2/index.html">AI工具集</a>
+<ul class="sub-menu">
+	<li id="menu-item-55866" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55866"><a href="../favorites/ai-writing-tools.html">AI写作工具</a></li>
+	<li id="menu-item-55868" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55868"><a href="../favorites/ai-image-tools.html">AI图像工具</a></li>
+	<li id="menu-item-55869" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55869"><a href="../favorites/ai-video-tools.html">AI视频工具</a></li>
+	<li id="menu-item-55867" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55867"><a href="../favorites/ai-office-tools.html">AI办公工具</a></li>
+	<li id="menu-item-55870" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55870"><a href="../favorites/ai-agent.html">AI智能体</a></li>
+	<li id="menu-item-55871" class="menu-item menu-item-type-taxonomy menu-item-object-favorites current-sites-ancestor current-menu-parent current-sites-parent menu-item-55871"><a href="../favorites/ai-chatbots.html">AI聊天助手</a></li>
+	<li id="menu-item-55872" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55872"><a href="../favorites/ai-programming-tools.html">AI编程工具</a></li>
+	<li id="menu-item-55873" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55873"><a href="../favorites/ai-design-tools.html">AI设计工具</a></li>
+	<li id="menu-item-55874" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55874"><a href="../favorites/ai-audio-tools.html">AI音频工具</a></li>
+	<li id="menu-item-55876" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55876"><a href="../favorites/ai-search-engines.html">AI搜索引擎</a></li>
+	<li id="menu-item-55875" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55875"><a href="../favorites/ai-frameworks.html">AI开发平台</a></li>
+	<li id="menu-item-55878" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55878"><a href="../favorites/websites-to-learn-ai.html">AI学习网站</a></li>
+	<li id="menu-item-55880" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55880"><a href="../favorites/ai-models.html">AI训练模型</a></li>
+	<li id="menu-item-67873" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-67873"><a href="../favorites/ai-content-detection-and-optimization-tools.html">AI内容检测</a></li>
+	<li id="menu-item-67442" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-67442"><a href="../favorites/ai-prompt-tools.html">AI提示指令</a></li>
+</ul>
+</li>
+<li id="menu-item-54113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54113"><a target="_blank" rel="noopener" href="../ai-app-store.html">
+        <i class="fab fa-app-store-ios icon-fw icon-lg"></i>
+                <span>AI应用集</span></a></li>
+<li id="menu-item-54115" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54115"><a target="_blank" rel="noopener" href="../daily-ai-news/index.html">
+        <i class="iconfont icon-chart-pc icon-fw icon-lg"></i>
+                <span>每日AI资讯</span></a></li>
+<li id="menu-item-54116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-54116"><a target="_blank" rel="noopener" href="../the-latest-ai-projects.html">最新AI项目</a>
+<ul class="sub-menu">
+	<li id="menu-item-54117" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54117"><a target="_blank" rel="noopener" href="../ai-tools.html">AI工具</a></li>
+	<li id="menu-item-54118" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54118"><a target="_blank" rel="noopener" href="../ai-research.html">AI项目和框架</a></li>
+</ul>
+</li>
+<li id="menu-item-54944" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-54944"><a target="_blank" rel="noopener" href="../ai-tutorials.html">AI教程资源</a>
+<ul class="sub-menu">
+	<li id="menu-item-54940" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54940"><a target="_blank" rel="noopener" href="../ai-column.html">AI专栏</a></li>
+	<li id="menu-item-56311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56311"><a target="_blank" rel="noopener" href="../ai-question-and-answer.html">AI问答</a></li>
+	<li id="menu-item-54119" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54119"><a target="_blank" rel="noopener" href="../ai-encyclopedia.html">AI百科</a></li>
+	<li id="menu-item-54122" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54122"><a target="_blank" rel="noopener" href="../ai-hall-of-fame.html">AI名人堂</a></li>
+</ul>
+</li>
+<li id="menu-item-54114" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54114"><a target="_blank" rel="noopener" href="../about-us.html">关于我们</a></li>
+ 
+                        </ul>
+                    </div>
+                    <ul class="nav navbar-menu text-xs order-1 order-md-2 position-relative">
+                                                                                                <li class="nav-item d-md-none mobile-menu ml-3 ml-md-4"><a href="javascript:" id="sidebar-switch" data-toggle="modal" data-target="#sidebar"><i class="iconfont icon-classification icon-lg"></i></a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="placeholder"></div>
+            </div>
+  <div id="content" class="container my-4 my-md-5">
+    <div class="background-fx"><img src="../wp-content/themes/onenav/images/fx/shape-01.svg" class="shape-01"><img src="../wp-content/themes/onenav/images/fx/shape-02.svg" class="shape-02"><img src="../wp-content/themes/onenav/images/fx/shape-03.svg" class="shape-03"><img src="../wp-content/themes/onenav/images/fx/shape-04.svg" class="shape-04"><img src="../wp-content/themes/onenav/images/fx/shape-05.svg" class="shape-05"><img src="../wp-content/themes/onenav/images/fx/shape-06.svg" class="shape-06"><img src="../wp-content/themes/onenav/images/fx/shape-07.svg" class="shape-07"><img src="../wp-content/themes/onenav/images/fx/shape-08.svg" class="shape-08"><img src="../wp-content/themes/onenav/images/fx/shape-09.svg" class="shape-09"><img src="../wp-content/themes/onenav/images/fx/shape-10.svg" class="shape-10"><img src="../wp-content/themes/onenav/images/fx/shape-11.svg" class="shape-11"></div><div class="row site-content py-4 py-md-5 mb-xl-5 mb-0 mx-xxxl-n5"><!-- 网址信息 --><div class="col-12 col-sm-5 col-md-4 col-lg-3"><div class="siteico"><img class="img-cover lazy unfancybox" src="../wp-content/themes/onenav/images/t.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/05/ChatGPT-website2.png"  height="auto" width="auto"  alt="ChatGPT"><div id="country" class="text-xs custom-piece_c_b country-piece loadcountry"><i class="iconfont icon-globe mr-1"></i>免费增值</div><div class="tool-actions text-center mt-md-4">
+                <a href="javascript:;" data-action="post_like" data-id="30" class=" btn btn-like btn-icon btn-light rounded-circle p-2 mx-3 mx-md-2 " data-toggle="tooltip" data-placement="top" title="点赞">
+                <span class="flex-column text-height-xs">
+                    <i class="icon-lg iconfont icon-like"></i>
+                    <small class="like-count text-xs mt-1">11879</small>
+                </span>
+                </a><a href="30.html%3Freplytocom=236.html#comments" class="btn-share-toggler btn btn-icon btn-light rounded-circle p-2 mx-3 mx-md-2" data-toggle="tooltip" data-placement="top" title="评论"><span class="flex-column text-height-xs"><i class="icon-lg iconfont icon-comment"></i><small class="share-count text-xs mt-1">58</small></span></a></div></div></div><div class="col mt-4 mt-sm-0"><div class="site-body text-sm"><a class='btn-cat custom_btn-d mr-1' href='../favorites/ai-chatbots.html'>AI聊天助手</a><h1 class="site-name h3 my-3">ChatGPT</h1><div class="mt-2"><p class="mb-2">OpenAI 推出的AI聊天机器人</p>标签：<span class="mr-2"><a href="../favorites/ai-chatbots.html" rel="tag">AI聊天助手</a><i class="iconfont icon-wailian text-ss"></i></span><div class="site-go mt-3"><div id="security_check_img"></div><span class="site-go-url"><a href="https://chatgpt.com/?utm_source=ai-bot.cn" title="ChatGPT" target="_blank" rel="noopener noreferrer nofollow" class="btn btn-arrow mr-2"><span>访问官网<i class="iconfont icon-arrow-r-m"></i></span></a></span><a href="javascript:" class="btn btn-primary qr-img tooltip-toggle rounded-lg" data-post_id="30" data-toggle="modal" data-placement="top" data-target="#report-sites-modal" title="反馈"><i class="iconfont icon-statement icon-lg"></i></a></div><div class="spare-site mb-3"><i class="iconfont icon-url"></i><span class="mr-3">相关链接:</span><a class="mb-2 mr-3" href="https://vipcheap.com/product/chatgpt-plus" title="" target="_blank" rel="noopener nofollow" style="white-space:nowrap"><span>ChatGPT会员代充值<i class="iconfont icon-wailian"></i></span></a><a class="mb-2 mr-3" href="../chatgpt-plus-recharge-on-behalf/index.html" title="" target="_blank" rel="noopener nofollow" style="white-space:nowrap"><span>ChatGPT会员代充值教程<i class="iconfont icon-wailian"></i></span></a></div></div></div></div><!-- 网址信息 end --><div class="col-12 col-md-12 col-lg-4 mt-4 mt-lg-0"><div class="apd apd-right"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7941312752144276"
+     crossorigin="anonymous"></script>
+<!-- 网址-详情页-右侧 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7941312752144276"
+     data-ad-slot="8951545259"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div></div></div>    <main class="content" role="main">
+        <div class="content-wrap">
+            <div class="content-layout">
+                    <div class="panel site-content card transparent"> 
+        <div class="card-body p-0">
+            <div class="apd-bg">
+                <div class="apd apd-right p-2"><a href="https://d.design/?from=ab14" rel="noopener sponsored" target="_blank" style="position: relative"><span style="position: absolute;left: 4px;color: white !important" class="text-md"><i class="fas fa-ad"></i></span><img class="rounded" src="../wp-content/uploads/2026/07/duiyou-banner-0701.png" width="750px" alt="堆友AI"></a></div>            </div> 
+            <div class="panel-body single my-4 ">
+                <h2>ChatGPT是什么</h2>
+<p>ChatGPT 全称为Chat Generative Pre-trained Transformer，是 OpenAI 推出的<a href="../best-free-ai-chatbots/index.html" target="_blank" rel="noopener">AI聊天机器人</a>，基于 GPT 系列大语言模型，通过海量文本<a href="../what-is-pre-training/index.html" target="_blank" rel="noopener">预训练</a>与 RLHF 对齐优化，能进行自然流畅的多轮对话、回答问题、撰写文章、编写代码及执行各类语言任务。2026 年 5 月默认模型已升级为 <a href="../gpt-5-5-instant/index.html" target="_blank" rel="noopener">GPT-5.5 Instant</a>，免费向所有用户开放，在保持极速响应的同时大幅降低幻觉率，新增记忆来源透明管理功能，适用智能客服、内容创作、教育辅助、编程调试等多元场景。</p>
+<blockquote><p>OpenAI是一家致力于确保<a href="../what-is-agi-artificial-general-intelligence/index.html" target="_blank" rel="noopener">通用人工智能（AGI）</a>能造福全人类的研究和部署公司，ChatGPT是其在该领域取得的一项重要成果，也是GPT（Generative Pre-trained Transformer）系列模型在对话系统领域的直接应用和重要里程碑。</p></blockquote>
+<img decoding="async" class="alignnone wp-image-76899" data-src="https://ai-bot.cn/wp-content/uploads/2026/05/ChatGPT-website.png" src="../wp-content/themes/onenav/images/t.png"  alt="ChatGPT" width="740" height="416" />
+<h2>名称含义解析：Chat与GPT</h2>
+<p>“<strong>Chat</strong>”，即“聊天”或“对话”，直接点明产品的主要交互形式和应用场景，作为一个能与用户进行自然语言对话的聊天机器人 。强调模型在理解和生成对话方面的能力，提供流畅、连贯且富有逻辑的交流体验，使用户感觉像是在与智能伙伴进行交谈 。</p>
+<div class="paragraph">“<strong>GPT</strong>”是“<strong>Generative Pre-trained Transformer</strong>”的缩写，分别概括模型的关键技术特性 。</div>
+<ul>
+<li>
+<div class="paragraph"><strong>Generative (生成式)</strong>：表明模型具有生成文本的能力。不仅是简单地检索或匹配已有的信息，是能基于学习到的语言规律和上下文信息，创造出全新的、符合语法和逻辑的文本内容 。使ChatGPT能完成诸如撰写文章、编写代码、创作诗歌等多种创造性任务 。</div>
+</li>
+<li>
+<div class="paragraph"><strong>Pre-trained (预训练)</strong>：是指模型在大量未标注的文本数据上进行了预先训练 。通过这个过程，模型能自动学习语言的结构、语法、语义以及世界知识，获得丰富的语言理解和生成能力 。使模型在面对下游具体任务时，只有少量标注数据甚至没有标注数据，也能表现出较好的性能。</div>
+</li>
+<li>
+<div class="paragraph"><strong><a href="../what-is-transformer/index.html" target="_blank" rel="noopener">Transformer</a> (转换器)</strong>：是深度学习模型的架构，由Google在2017年提出，在自然语言处理领域取得巨大成功 。Transformer架构的核心是<strong>自注意力机制（Self-Attention Mechanism）</strong>，能有效地捕捉文本序列中长距离的依赖关系，并行处理输入数据，大大提升了模型处理长文本和复杂语言结构的效率和效果 。</div>
+</li>
+</ul>
+<h2>ChatGPT的主要功能</h2>
+<ul>
+<li>
+<div class="paragraph"><strong>自然语言对话</strong>：支持多轮连续交流，理解上下文语义，提供流畅、逻辑清晰的对话体验。</div>
+</li>
+<li>
+<div class="paragraph"><strong>文本生成与创作</strong>：根据提示生成文章、故事、诗歌、广告文案，支持模仿特定写作风格。</div>
+</li>
+<li>
+<div class="paragraph"><strong>翻译与语言学习</strong>：实现多语言互译，提供语法解释和词汇辅助，帮助用户学习新语言。</div>
+</li>
+<li>
+<div class="paragraph"><strong>知识问答</strong>：覆盖历史、科学、技术等领域，回答各类知识性问题并总结复杂信息。</div>
+</li>
+<li>
+<div class="paragraph"><strong>代码编程与调试</strong>：编写、解释和调试多语言代码，辅助开发者理解复杂代码逻辑。</div>
+</li>
+<li>
+<div class="paragraph"><strong>多模态内容分析</strong>：支持上传照片、图表、手写公式和文档，进行视觉-语言联合推理与信息提取。</div>
+</li>
+<li>
+<div class="paragraph"><strong>记忆与个性化</strong>：自动记录用户偏好与历史信息，基于过往对话提供精准推荐，支持逐条查看与管理记忆来源。</div>
+</li>
+<li>
+<div class="paragraph"><strong>实时联网搜索</strong>：调用搜索工具获取最新网络信息，突破知识截止日期限制。</div>
+</li>
+</ul>
+<h2>ChatGPT的技术原理</h2>
+<div class="paragraph">
+<ul>
+<li>
+<div class="paragraph"><strong>Transformer 自注意力架构</strong>：基于 GPT 系列生成式预训练 Transformer 架构，通过自注意力机制捕捉文本序列中的长距离依赖关系，并行处理输入数据，实现对复杂语义的高效理解与生成。</div>
+</li>
+<li>
+<div class="paragraph"><strong>大规模预训练与 RLHF 对齐</strong>：在海量未标注文本上进行无监督预训练，学习语言结构与世界知识；通过人类反馈强化学习（RLHF）优化输出风格与安全性，使回复更符合人类偏好与价值观。</div>
+</li>
+<li>
+<div class="paragraph"><strong>上下文学习与记忆检索</strong>：将当前输入与多轮对话历史联合编码，用上下文学习保持对话连贯性；GPT-5.5 Instant 引入记忆来源技术，模型在生成时检索相关历史对话、上传文件及 Gmail 关联内容，在界面显式归因。</div>
+</li>
+<li>
+<div class="paragraph"><strong>自回归文本生成</strong>：采用自回归解码方式逐个预测输出标记，结合核采样与温度采样引入合理随机性，同时通过事实性对齐与幻觉抑制技术，在高风险领域将虚假陈述减少 52.5%。</div>
+</li>
+<li>
+<div class="paragraph"><strong>多模态联合推理</strong>：融合视觉-语言理解能力，对图像、科学图表、手写公式及复杂文档进行联合编码与推理，在 CharXiv、MMMU-Pro 等多模态基准上实现准确率显著提升。</div>
+</li>
+</ul>
+<h2>ChatGPT的核心优势</h2>
+<ul>
+<li>
+<div class="paragraph"><strong>幻觉率显著下降</strong>：在医疗、法律、金融等高风险领域，虚假陈述减少 52.5%，日常交互更可信可靠。</div>
+</li>
+<li>
+<div class="paragraph"><strong>推理与学术能力跃升</strong>：AIME 2025 数学测试达 81.2%，GPQA 博士级科学推理达 85.6%，STEM 问题解答大幅增强。</div>
+</li>
+<li>
+<div class="paragraph"><strong>表达自然简洁</strong>：通过风格后训练减少冗余格式与无意义表情符号，字数降低约 30% 的同时保留温暖语气。</div>
+</li>
+<li>
+<div class="paragraph"><strong>记忆可控透明</strong>：用户可查看、修正或删除影响回复的个人记忆条目，避免过时信息干扰，隐私自主可控。</div>
+</li>
+<li>
+<div class="paragraph"><strong>多模态与工具增强</strong>：支持照片、图表、文档解析及智能搜索调用，实现从纯文本到视觉-语言联合推理的跨越。</div>
+</li>
+<li>
+<div class="paragraph"><strong>生态与 API 完善</strong>：平台拥有庞大的自定义 GPTs 生态，API 支持 chat-latest 快速接入，开发者友好度高。</div>
+</li>
+</ul>
+<h2>ChatGPT的同类竞品对比</h2>
+<table data-v-e7c0e5f5="">
+<thead data-v-e7c0e5f5="">
+<tr data-v-e7c0e5f5="">
+<th align="left" data-v-e7c0e5f5="">对比维度</th>
+<th align="left" data-v-e7c0e5f5="">ChatGPT</th>
+<th align="left" data-v-e7c0e5f5=""><a href="5355.html" target="_blank" rel="noopener">Kimi 智能助手</a></th>
+<th align="left" data-v-e7c0e5f5=""><a href="460.html" target="_blank" rel="noopener">Claude</a></th>
+</tr>
+</thead>
+<tbody data-v-e7c0e5f5="">
+<tr data-v-e7c0e5f5="">
+<td align="left" data-v-e7c0e5f5="">核心定位</td>
+<td class="" align="left" data-v-e7c0e5f5="">AI 对话与内容生成，侧重深度推理与编程</td>
+<td align="left" data-v-e7c0e5f5="">长文本处理与智能搜索，侧重信息整合</td>
+<td align="left" data-v-e7c0e5f5="">安全可控的 AI 助手，侧重深度分析与长文本理解</td>
+</tr>
+<tr data-v-e7c0e5f5="">
+<td align="left" data-v-e7c0e5f5="">对话能力</td>
+<td align="left" data-v-e7c0e5f5="">多轮上下文连贯，支持复杂推理与代码调试</td>
+<td class="" align="left" data-v-e7c0e5f5="">支持 200 万字超长上下文，适合文献与报告分析</td>
+<td align="left" data-v-e7c0e5f5="">擅长深度推理与 nuanced 对话，长文本理解精准，适合学术与专业分析</td>
+</tr>
+<tr data-v-e7c0e5f5="">
+<td align="left" data-v-e7c0e5f5="">知识实时性</td>
+<td align="left" data-v-e7c0e5f5="">内置搜索工具，可主动获取实时网络信息</td>
+<td align="left" data-v-e7c0e5f5="">联网搜索能力强，实时信息整合与溯源</td>
+<td align="left" data-v-e7c0e5f5="">知识截止至训练日期，实时信息需通过搜索插件补充</td>
+</tr>
+<tr data-v-e7c0e5f5="">
+<td align="left" data-v-e7c0e5f5="">多模态能力</td>
+<td align="left" data-v-e7c0e5f5="">支持图片、图表、手写公式、PDF 解析与推理</td>
+<td class="" align="left" data-v-e7c0e5f5="">支持图片、PDF、网页、PPT 等多格式解析</td>
+<td align="left" data-v-e7c0e5f5="">支持图片、PDF、文档解析与视觉分析，多模态推理稳健</td>
+</tr>
+<tr data-v-e7c0e5f5="">
+<td align="left" data-v-e7c0e5f5="">记忆与个性化</td>
+<td align="left" data-v-e7c0e5f5="">新增「记忆来源」面板，可逐条查看、修正或删除</td>
+<td align="left" data-v-e7c0e5f5="">支持长期记忆，跨会话保持用户偏好</td>
+<td align="left" data-v-e7c0e5f5="">支持跨会话 Projects 与长期记忆，可上传文档建立专属知识库</td>
+</tr>
+<tr data-v-e7c0e5f5="">
+<td align="left" data-v-e7c0e5f5="">生态整合</td>
+<td align="left" data-v-e7c0e5f5="">自定义 GPTs 生态庞大，API 与第三方工具丰富</td>
+<td class="" align="left" data-v-e7c0e5f5="">支持微信小程序、浏览器插件、网页端全平台</td>
+<td class="" align="left" data-v-e7c0e5f5="">API 生态完善，与 Slack、Notion 等办公工具集成度高</td>
+</tr>
+<tr data-v-e7c0e5f5="">
+<td align="left" data-v-e7c0e5f5="">使用门槛</td>
+<td align="left" data-v-e7c0e5f5="">国内访问需网络环境，注册 OpenAI 账号</td>
+<td align="left" data-v-e7c0e5f5="">国内直接访问，支持免注册体验，手机号一键登录</td>
+<td align="left" data-v-e7c0e5f5="">国内访问需网络环境，注册 Anthropic 账号，部分地区受限</td>
+</tr>
+<tr data-v-e7c0e5f5="">
+<td class="" align="left" data-v-e7c0e5f5="">特色功能</td>
+<td align="left" data-v-e7c0e5f5="">代码生成、深度研究、自定义 GPT、多语言翻译</td>
+<td align="left" data-v-e7c0e5f5="">一键生成 PPT、思维导图、会议纪要、网页总结</td>
+<td align="left" data-v-e7c0e5f5="">Artifacts 实时预览、深度文档分析、安全性与可控性突出</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>ChatGPT的产品定价</h2>
+<div class="paragraph">
+<ul>
+<li class="paragraph"><strong>免费版（Free）</strong>：$0/月，提供核心模型访问，但消息发送、文件上传、图片生成和记忆功能均有严格额度限制，适合初次体验AI的基础用户。</li>
+<li class="paragraph"><strong>Go</strong>：$8/月，在免费版基础上提升消息、上传、图片生成、记忆和语音模式的额度，但仍使用核心模型且不包含高级功能，适合预算有限但需要更高频使用的轻度用户。</li>
+<li class="paragraph"><strong>Plus</strong>：$20/月（首月限时$0优惠，2026年6月9日起恢复原价），解锁高级模型、扩展消息与上传限额、Thinking高级图像创建、跨聊天记忆、Codex编码智能体、深度研究及自定义GPT，是大多数专业用户的主力选择。</li>
+<li class="paragraph"><strong>Pro</strong>：$100/月，包含Plus全部功能并提供5倍或20倍使用额度、Pro前沿模型、Codex最大访问权限、最高级别深度研究、无限制核心聊天与图片生成、全面记忆及实验性功能抢先体验，适合高频重度用户和专业人士。</li>
+</ul>
+</div>
+<img decoding="async" class="alignnone wp-image-76908" data-src="https://ai-bot.cn/wp-content/uploads/2026/05/ChatGPT-website3.png" src="../wp-content/themes/onenav/images/t.png"  alt="ChatGPT" width="740" height="416" />
+<h2>ChatGPT的应用场景</h2>
+<ul>
+<li>
+<div class="paragraph"><strong>智能客服与日常咨询</strong>：7×24 小时处理用户问题，理解意图并提供个性化解答，适用于电商、金融、政务等客服场景。</div>
+</li>
+<li>
+<div class="paragraph"><strong>营销与内容创作</strong>：协助撰写广告文案、社交媒体帖子、博客文章、邮件营销内容，帮助品牌高效触达目标受众。</div>
+</li>
+<li>
+<div class="paragraph"><strong>教育与科研辅助</strong>：为学生提供个性化辅导、解题思路与知识讲解；为研究者总结论文、分析数据图表、辅助学术写作。</div>
+</li>
+<li>
+<div class="paragraph"><strong>编程开发与调试</strong>：生成代码片段、解释复杂逻辑、排查 Bug，支持 Python、JavaScript、C++ 等多种语言。</div>
+</li>
+<li>
+<div class="paragraph"><strong>高风险专业咨询</strong>：在医疗症状解读、法律条款分析、金融数据核查等对准确性要求极高的场景中，依托幻觉率降低 52.5% 的优势提供可信参考。</div>
+</li>
+<li>
+<div class="paragraph"><strong>生活个性化推荐</strong>：基于历史记忆主动推荐餐厅、食谱、出行方案，无需用户重复交代饮食禁忌与偏好。</div>
+</li>
+</ul>
+<h2>ChatGPT的优势与局限性</h2>
+<p><strong>优势分析</strong></p>
+<ul>
+<li>
+<div class="paragraph"><strong>幻觉率显著下降</strong>：在医疗、法律、金融等高风险领域，虚假陈述减少 52.5%，日常交互更可信可靠。</div>
+</li>
+<li>
+<div class="paragraph"><strong>推理与学术能力跃升</strong>：AIME 2025 数学测试达 81.2%，GPQA 博士级科学推理达 85.6%，STEM 问题解答大幅增强。</div>
+</li>
+<li>
+<div class="paragraph"><strong>表达自然简洁</strong>：通过风格后训练减少冗余格式与无意义表情符号，字数降低约 30% 的同时保留温暖语气。</div>
+</li>
+<li>
+<div class="paragraph"><strong>记忆可控透明</strong>：用户可查看、修正或删除影响回复的个人记忆条目，避免过时信息干扰，隐私自主可控。</div>
+</li>
+<li>
+<div class="paragraph"><strong>多模态与工具增强</strong>：支持照片、图表、文档解析及智能搜索调用，实现从纯文本到视觉-语言联合推理的跨越。</div>
+</li>
+<li>
+<div class="paragraph"><strong>生态与 API 完善</strong>：平台拥有庞大的自定义 GPTs 生态，API 支持 chat-latest 快速接入，开发者友好度高。</div>
+</li>
+</ul>
+<p><strong>局限性及挑战</strong></p>
+<ul>
+<li>
+<div class="paragraph"><strong>知识截止与实时性不足</strong>：ChatGPT 基于海量历史文本预训练，知识库反映的是训练数据截止时期的世界状态。对于此后发生的新事件、新发现、新政策或动态变化的信息，无法提供准确答案，甚至给出基于过时信息的错误回答。</div>
+</li>
+<li>
+<div class="paragraph"><strong>可能产生错误信息与偏见</strong>：模型基于训练数据中的统计规律生成文本，不真正&#8221;理解&#8221;内容的真实含义，无法像人类一样进行事实核查。因此可能生成听起来合理但实际上不准确、不符合事实甚至完全虚构的内容（即&#8221;幻觉&#8221;），同时训练数据中存在的偏见可能被模型继承和放大。</div>
+</li>
+<li>
+<div class="paragraph"><strong>不具备真正的人类情感理解和同理心</strong>：ChatGPT 无法真正体验喜怒哀乐，无法深刻理解人类情感的复杂性和微妙之处。生成的&#8221;情感化&#8221;回应更多是基于训练数据中学习到的语言模式和常见情感表达方式，非发自内心的真实感受，因此不能替代专业的心理咨询或情感支持。</div>
+</li>
+</ul>
+            </div>
+        </div>
+    </div>
+                    <div class="alert alert-warning text-sm" style="max-width: 750px;">©️版权声明：若无特殊声明，本站所有文章版权均归<a href="../gpt-image-2/index.html" class="text-warning font-weight-bold">AI工具集</a>原创和所有，未经许可，任何个人、媒体、网站、团体不得转载、抄袭或以其他方式复制发表本站内容，或在非我站所属的服务器上建立镜像。否则，我站将依法保留追究相关法律责任的权利。</div>
+                <h2 class="text-gray text-lg my-4"><i class="site-tag iconfont icon-tag icon-lg mr-1" ></i>类似于ChatGPT的工具</h2>
+                <div class="row mb-n4"> 
+                                    <div class="url-card col-6 col-sm-6 col-md-4 ">
+                
+        <div class="url-body default ">    
+            <a href="6290.html" target="_blank"  data-id="6290" data-url="https://cloud.baidu.com/product/infoflow.html?ref=ai-bot.cn" class="card no-c  mb-4 site-6290" data-toggle="tooltip" data-placement="bottom"  title="百度智能云发布的基于文心一言的AI原生应用和Copilot“超级助理”">
+                <div class="card-body url-content d-flex align-items-center"> 
+                                        <div class="url-img rounded-circle mr-2 d-flex align-items-center justify-content-center">
+                        <img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2023/12/superagent-icon.png"  height="auto" width="auto"  alt="超级助理"> 
+                    </div>
+                                        <div class="url-info flex-fill">
+                        <div class="text-sm overflowClip_1">
+                        <strong>超级助理</strong>
+                        </div>
+                        <p class="overflowClip_1 m-0 text-muted text-xs">百度智能云发布的基于文心一言的AI原生应用和Copilot“超级助理”</p>
+                    </div>
+                </div> 
+            </a> 
+                    </div>
+                </div>
+                            <div class="url-card col-6 col-sm-6 col-md-4 ">
+                
+        <div class="url-body default ">    
+            <a href="4189.html" target="_blank"  data-id="4189" data-url="https://www.doubao.com/chat/?channel=hw_db_aibot&amp;source=hw_db_aibot" class="card no-c  mb-4 site-4189" data-toggle="tooltip" data-placement="bottom"  title="智能对话助手，办公创作全能！">
+                <div class="card-body url-content d-flex align-items-center"> 
+                                        <div class="url-img rounded-circle mr-2 d-flex align-items-center justify-content-center">
+                        <img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/03/doubao-icon.png"  height="auto" width="auto"  alt="豆包"> 
+                    </div>
+                                        <div class="url-info flex-fill">
+                        <div class="text-sm overflowClip_1">
+                        <strong>豆包</strong>
+                        </div>
+                        <p class="overflowClip_1 m-0 text-muted text-xs">智能对话助手，办公创作全能！</p>
+                    </div>
+                </div> 
+            </a> 
+                    </div>
+                </div>
+                            <div class="url-card col-6 col-sm-6 col-md-4 ">
+                
+        <div class="url-body default ">    
+            <a href="13251.html" target="_blank"  data-id="13251" data-url="https://chatwiz.cn/h5/feely?utm_source=ai-bot.cn" class="card no-c  mb-4 site-13251" data-toggle="tooltip" data-placement="bottom"  title="字节跳动旗下推出的AI虚拟交友聊天平台">
+                <div class="card-body url-content d-flex align-items-center"> 
+                                        <div class="url-img rounded-circle mr-2 d-flex align-items-center justify-content-center">
+                        <img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2024/06/chatwiz-icon.png"  height="auto" width="auto"  alt="小黄蕉"> 
+                    </div>
+                                        <div class="url-info flex-fill">
+                        <div class="text-sm overflowClip_1">
+                        <strong>小黄蕉</strong>
+                        </div>
+                        <p class="overflowClip_1 m-0 text-muted text-xs">字节跳动旗下推出的AI虚拟交友聊天平台</p>
+                    </div>
+                </div> 
+            </a> 
+                    </div>
+                </div>
+                            <div class="url-card col-6 col-sm-6 col-md-4 ">
+                
+        <div class="url-body default ">    
+            <a href="5368.html" target="_blank"  data-id="5368" data-url="https://grok.com" class="card no-c  mb-4 site-5368" data-toggle="tooltip" data-placement="bottom"  title="马斯克旗下xAI推出的人工智能助手">
+                <div class="card-body url-content d-flex align-items-center"> 
+                                        <div class="url-img rounded-circle mr-2 d-flex align-items-center justify-content-center">
+                        <img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2023/11/xai-icon.png"  height="auto" width="auto"  alt="Grok"> 
+                    </div>
+                                        <div class="url-info flex-fill">
+                        <div class="text-sm overflowClip_1">
+                        <strong>Grok</strong>
+                        </div>
+                        <p class="overflowClip_1 m-0 text-muted text-xs">马斯克旗下xAI推出的人工智能助手</p>
+                    </div>
+                </div> 
+            </a> 
+                    </div>
+                </div>
+                            <div class="url-card col-6 col-sm-6 col-md-4 ">
+                
+        <div class="url-body default ">    
+            <a href="4080.html" target="_blank"  data-id="4080" data-url="https://workspace.dingtalk.com/welcome?utm_source=ai-bot.cn" class="card no-c  mb-4 site-4080" data-toggle="tooltip" data-placement="bottom"  title="钉钉推出的个人版办公应用程序，内置AI智能助手，可进行AI创作、AI对话、AI绘画">
+                <div class="card-body url-content d-flex align-items-center"> 
+                                        <div class="url-img rounded-circle mr-2 d-flex align-items-center justify-content-center">
+                        <img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2023/08/dingtalk-personal-ai.png"  height="auto" width="auto"  alt="钉钉·个人版"> 
+                    </div>
+                                        <div class="url-info flex-fill">
+                        <div class="text-sm overflowClip_1">
+                        <strong>钉钉·个人版</strong>
+                        </div>
+                        <p class="overflowClip_1 m-0 text-muted text-xs">钉钉推出的个人版办公应用程序，内置AI智能助手，可进行AI创作、AI对话、AI绘画</p>
+                    </div>
+                </div> 
+            </a> 
+                    </div>
+                </div>
+                            <div class="url-card col-6 col-sm-6 col-md-4 ">
+                
+        <div class="url-body default ">    
+            <a href="1710.html" target="_blank"  data-id="1710" data-url="" class="card no-c  mb-4 site-1710" data-toggle="tooltip" data-placement="bottom"  title="开发和创建AI虚拟角色并与其互动">
+                <div class="card-body url-content d-flex align-items-center"> 
+                                        <div class="url-img rounded-circle mr-2 d-flex align-items-center justify-content-center">
+                        <img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2023/04/inworld-icon.png"  height="auto" width="auto"  alt="Inworld"> 
+                    </div>
+                                        <div class="url-info flex-fill">
+                        <div class="text-sm overflowClip_1">
+                        <strong>Inworld</strong>
+                        </div>
+                        <p class="overflowClip_1 m-0 text-muted text-xs">开发和创建AI虚拟角色并与其互动</p>
+                    </div>
+                </div> 
+            </a> 
+                    </div>
+                </div>
+                            </div>
+                
+<!-- comments -->
+<div class="post-apd mt-4"><a href="https://jimeng.jianying.com/ai-tool/home/?utm_medium=aitools&utm_source=aibot&utm_campaign=null&utm_content=hw_jm_aibot" rel="nofollow sponsored" target="_blank"><img class="rounded" src="../wp-content/uploads/2025/09/jimeng-ai-banner-0912.png" alt="即梦AI" /></a></div><div id="comments" class="comments">
+	<h2 id="comments-list-title" class="comments-title h5 mx-1 my-4">
+		<i class="iconfont icon-comment"></i>
+		<span class="noticom">
+			<a href="30.html#comments" class="comments-title" >58 条评论</a> 
+		</span>
+	</h2> 
+	<div class="card">
+		<div class="card-body"> 
+						<div id="respond_box">
+				<div id="respond" class="comment-respond">
+										<form id="commentform" class="text-sm mb-4">	
+						<div class="visitor-avatar d-flex flex-fill mb-2">
+														<img class="v-avatar rounded-circle" src="../wp-content/themes/onenav/images/gravatar.jpg">
+													</div> 
+						<div class="comment-textarea mb-3">
+							<textarea name="comment" id="comment" class="form-control" placeholder="输入评论内容..." tabindex="4" cols="50" rows="3"></textarea>
+						</div>
+							
+						<div id="comment-author-info" class="row  row-sm">
+							<div class="col-sm-6 col-lg-4 mb-3"><input type="text" name="author" id="author" class="form-control" value="" size="22" placeholder="昵称" tabindex="2"/></div>	
+							<div class="col-sm-6 col-lg-4 mb-3"><input type="text" name="email" id="email" class="form-control" value="" size="22" placeholder="邮箱" tabindex="3" /></div>
+							<div class="col-sm-12 col-lg-4 mb-3"><input type="text" name="url" id="url" class="form-control" value="" size="22"placeholder="网址"  tabindex="4" /></div>
+						</div>
+																		<div class="com-footer d-flex justify-content-end flex-wrap">
+							<input type="hidden" id="_wpnonce" name="_wpnonce" value="205d8d8222" /><input type="hidden" name="_wp_http_referer" value="/sites/30.html?replytocom=236" />							<a rel="nofollow" id="cancel-comment-reply-link" style="display: none;" href="javascript:;" class="btn btn-light custom_btn-outline mx-2">再想想</a>
+														<button class="btn btn-dark custom_btn-d ml-2" type="submit" id="submit">发表评论</button>
+							<input type="hidden" name="action" value="ajax_comment"/>
+							<input type='hidden' name='comment_post_ID' value='30' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='236' />
+						</div>
+					</form>
+					<div class="clear"></div>
+									</div>
+			</div>	
+						<div id="loading-comments"><span></span></div>
+						<ul class="comment-list">
+				        <li class="comment even thread-even depth-1 comment" id="li-comment-77">
+            <div id="comment-77" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='May' src='https://cravatar.cn/avatar/17e041350e3dd965923294bba82b0c56?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/17e041350e3dd965923294bba82b0c56?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">May                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>真的免费的吗</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-04-13T23:43:38+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=77.html#respond' data-commentid="77" data-postid="30" data-belowelement="comment-77" data-respondelement="respond" data-replyto="回复给May" aria-label='回复给May'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment byuser bypostauthor odd alt depth-2 comment" id="li-comment-81">
+            <div id="comment-81" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='AI工具集' src='../wp-content/uploads/2023/04/ai-bot-baidu-logo-96x96.png' srcset='../wp-content/uploads/2023/04/ai-bot-baidu-logo.png 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">AI工具集                        <span class="rank" title="头衔：管理员">管理员</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>官方的基于3.5版本是免费的</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-04-14T19:16:23+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=81.html#respond' data-commentid="81" data-postid="30" data-belowelement="comment-81" data-respondelement="respond" data-replyto="回复给AI工具集" aria-label='回复给AI工具集'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment even depth-3 comment" id="li-comment-83">
+            <div id="comment-83" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='l' src='https://cravatar.cn/avatar/4d0e1cb37feeaa0932138c12f0c86d48?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/4d0e1cb37feeaa0932138c12f0c86d48?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">l                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>怎么打不开链接</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-04-15T01:47:30+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=83.html#respond' data-commentid="83" data-postid="30" data-belowelement="comment-83" data-respondelement="respond" data-replyto="回复给l" aria-label='回复给l'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment odd alt depth-4 comment" id="li-comment-88">
+            <div id="comment-88" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='wsd' src='https://cravatar.cn/avatar/487f87505f619bf9ea08f26bb34f8118?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/487f87505f619bf9ea08f26bb34f8118?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">wsd                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>因为链接地址在国外</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-04-17T10:06:48+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=88.html#respond' data-commentid="88" data-postid="30" data-belowelement="comment-88" data-respondelement="respond" data-replyto="回复给wsd" aria-label='回复给wsd'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment even depth-5 comment" id="li-comment-110">
+            <div id="comment-110" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='ccckini' src='https://cravatar.cn/avatar/611208f9db025e518da2621363af7991?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/611208f9db025e518da2621363af7991?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">ccckini                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>用了翻还是显示访问被拒绝，是为啥？</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-04-26T14:08:57+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=110.html#respond' data-commentid="110" data-postid="30" data-belowelement="comment-110" data-respondelement="respond" data-replyto="回复给ccckini" aria-label='回复给ccckini'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment byuser bypostauthor odd alt depth-6 comment" id="li-comment-114">
+            <div id="comment-114" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='AI工具集' src='../wp-content/uploads/2023/04/ai-bot-baidu-logo-96x96.png' srcset='../wp-content/uploads/2023/04/ai-bot-baidu-logo.png 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">AI工具集                        <span class="rank" title="头衔：管理员">管理员</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>需要全局proxy，然后IP地址尽量在欧美地区</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-04-26T21:43:23+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=114.html#respond' data-commentid="114" data-postid="30" data-belowelement="comment-114" data-respondelement="respond" data-replyto="回复给AI工具集" aria-label='回复给AI工具集'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment even depth-7 comment" id="li-comment-118">
+            <div id="comment-118" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='nmmmm' src='https://cravatar.cn/avatar/94f215b75b21f975f762701aea284fbf?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/94f215b75b21f975f762701aea284fbf?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">nmmmm                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>怎么下载？</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-04-27T11:01:42+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=118.html#respond' data-commentid="118" data-postid="30" data-belowelement="comment-118" data-respondelement="respond" data-replyto="回复给nmmmm" aria-label='回复给nmmmm'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment odd alt depth-7 comment" id="li-comment-223">
+            <div id="comment-223" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='小叶' src='https://cravatar.cn/avatar/d631222d4691737bd7e6637f8faf1c0d?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/d631222d4691737bd7e6637f8faf1c0d?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">小叶                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>怎么弄这个呀？</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-05-25T12:12:33+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=223.html#respond' data-commentid="223" data-postid="30" data-belowelement="comment-223" data-respondelement="respond" data-replyto="回复给小叶" aria-label='回复给小叶'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment even depth-7 comment" id="li-comment-243">
+            <div id="comment-243" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='ceshi' src='https://cravatar.cn/avatar/8d74bc54a9f3c1f2b111093c3fb94de6?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/8d74bc54a9f3c1f2b111093c3fb94de6?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">ceshi                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>如何配置全局代理呢？</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-06-02T16:29:54+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=243.html#respond' data-commentid="243" data-postid="30" data-belowelement="comment-243" data-respondelement="respond" data-replyto="回复给ceshi" aria-label='回复给ceshi'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment odd alt depth-7 comment" id="li-comment-554">
+            <div id="comment-554" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='季' src='https://cravatar.cn/avatar/dca92447af282f5868590ad96eb0cf82?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/dca92447af282f5868590ad96eb0cf82?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">季                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>你好 全局proxy是什么意思 如何操作</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2024-02-06T23:22:08+08:00">2年前 (2024)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=554.html#respond' data-commentid="554" data-postid="30" data-belowelement="comment-554" data-respondelement="respond" data-replyto="回复给季" aria-label='回复给季'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even depth-6 comment" id="li-comment-176">
+            <div id="comment-176" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='赛普鲁斯' src='https://cravatar.cn/avatar/cdc2c08aef099182a66be25d62480e0f?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/cdc2c08aef099182a66be25d62480e0f?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">赛普鲁斯                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>节点有问题</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-05-13T20:21:02+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=176.html#respond' data-commentid="176" data-postid="30" data-belowelement="comment-176" data-respondelement="respond" data-replyto="回复给赛普鲁斯" aria-label='回复给赛普鲁斯'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment odd alt depth-6 comment" id="li-comment-238">
+            <div id="comment-238" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='出' src='https://cravatar.cn/avatar/dc4939a45d314327c0fe304c7d49bc59?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/dc4939a45d314327c0fe304c7d49bc59?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">出                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>魔法不对</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-06-01T16:50:18+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=238.html#respond' data-commentid="238" data-postid="30" data-belowelement="comment-238" data-respondelement="respond" data-replyto="回复给出" aria-label='回复给出'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even depth-5 comment" id="li-comment-501">
+            <div id="comment-501" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='awa' src='https://cravatar.cn/avatar/5bab51690c079a7be2b537857ab3714b?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/5bab51690c079a7be2b537857ab3714b?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">awa                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>能免费吗</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2024-01-01T15:41:53+08:00">3年前 (2024)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=501.html#respond' data-commentid="501" data-postid="30" data-belowelement="comment-501" data-respondelement="respond" data-replyto="回复给awa" aria-label='回复给awa'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment odd alt depth-4 comment" id="li-comment-129">
+            <div id="comment-129" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='ａｚ' src='https://cravatar.cn/avatar/7290c30299ad5ddda566083c1bd026f9?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/7290c30299ad5ddda566083c1bd026f9?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">ａｚ                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>可以用国内的镜像站呀</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-05-03T13:14:37+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=129.html#respond' data-commentid="129" data-postid="30" data-belowelement="comment-129" data-respondelement="respond" data-replyto="回复给ａｚ" aria-label='回复给ａｚ'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment even depth-5 comment" id="li-comment-137">
+            <div id="comment-137" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='DSAD' src='https://cravatar.cn/avatar/67b870e99c79263109ac769e06f25bb7?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/67b870e99c79263109ac769e06f25bb7?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">DSAD                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>什么是国内的镜像站，是干什么的<br />
+？？？</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-05-05T15:57:49+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=137.html#respond' data-commentid="137" data-postid="30" data-belowelement="comment-137" data-respondelement="respond" data-replyto="回复给DSAD" aria-label='回复给DSAD'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment odd alt depth-4 comment" id="li-comment-239">
+            <div id="comment-239" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='出' src='https://cravatar.cn/avatar/dc4939a45d314327c0fe304c7d49bc59?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/dc4939a45d314327c0fe304c7d49bc59?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">出                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>是的打不开</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-06-01T17:47:11+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=239.html#respond' data-commentid="239" data-postid="30" data-belowelement="comment-239" data-respondelement="respond" data-replyto="回复给出" aria-label='回复给出'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even depth-3 comment" id="li-comment-232">
+            <div id="comment-232" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='l' src='https://cravatar.cn/avatar/2b3779b9472cddf89283cb1a0c4b33c1?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/2b3779b9472cddf89283cb1a0c4b33c1?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">l                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>免费的</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-05-30T10:03:20+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=232.html#respond' data-commentid="232" data-postid="30" data-belowelement="comment-232" data-respondelement="respond" data-replyto="回复给l" aria-label='回复给l'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment odd alt depth-2 comment" id="li-comment-653">
+            <div id="comment-653" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='nikita' src='https://cravatar.cn/avatar/c0f344c617febe070b42b95f345be183?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/c0f344c617febe070b42b95f345be183?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">nikita                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>试一试就知道啦</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2024-03-17T00:31:13+08:00">2年前 (2024)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=653.html#respond' data-commentid="653" data-postid="30" data-belowelement="comment-653" data-respondelement="respond" data-replyto="回复给nikita" aria-label='回复给nikita'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1 comment" id="li-comment-120">
+            <div id="comment-120" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='m' src='https://cravatar.cn/avatar/d615d5793929e8c7d70eab5f00f7f5f1?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/d615d5793929e8c7d70eab5f00f7f5f1?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">m                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>不错</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-04-28T11:37:07+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=120.html#respond' data-commentid="120" data-postid="30" data-belowelement="comment-120" data-respondelement="respond" data-replyto="回复给m" aria-label='回复给m'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-even depth-1 comment" id="li-comment-162">
+            <div id="comment-162" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='大飞' src='https://cravatar.cn/avatar/a93ce47ad281d8fe3086844b96db1bee?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/a93ce47ad281d8fe3086844b96db1bee?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">大飞                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>官网怎么在国内打开，研究2星期搞不懂。</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-05-10T16:30:59+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=162.html#respond' data-commentid="162" data-postid="30" data-belowelement="comment-162" data-respondelement="respond" data-replyto="回复给大飞" aria-label='回复给大飞'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment even depth-2 comment" id="li-comment-416">
+            <div id="comment-416" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='卡卡' src='https://cravatar.cn/avatar/ef86f74958069fc83e016900d4107b59?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/ef86f74958069fc83e016900d4107b59?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">卡卡                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>研究明白了分享一下，大哥</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-10-11T22:23:20+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=416.html#respond' data-commentid="416" data-postid="30" data-belowelement="comment-416" data-respondelement="respond" data-replyto="回复给卡卡" aria-label='回复给卡卡'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment odd alt depth-3 comment" id="li-comment-454">
+            <div id="comment-454" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='未来' src='https://cravatar.cn/avatar/6dd31b2ce5a52a2e95468d6324c44875?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/6dd31b2ce5a52a2e95468d6324c44875?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">未来                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>3.5免费 4.2开始要收费了</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-11-27T17:05:43+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=454.html#respond' data-commentid="454" data-postid="30" data-belowelement="comment-454" data-respondelement="respond" data-replyto="回复给未来" aria-label='回复给未来'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1 comment" id="li-comment-228">
+            <div id="comment-228" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='w' src='https://cravatar.cn/avatar/487f87505f619bf9ea08f26bb34f8118?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/487f87505f619bf9ea08f26bb34f8118?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">w                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>是免费的魔法</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-05-29T10:01:49+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=228.html#respond' data-commentid="228" data-postid="30" data-belowelement="comment-228" data-respondelement="respond" data-replyto="回复给w" aria-label='回复给w'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-even depth-1 comment" id="li-comment-233">
+            <div id="comment-233" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='l' src='https://cravatar.cn/avatar/2b3779b9472cddf89283cb1a0c4b33c1?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/2b3779b9472cddf89283cb1a0c4b33c1?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">l                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>sdfs</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-05-30T11:49:50+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=233.html#respond' data-commentid="233" data-postid="30" data-belowelement="comment-233" data-respondelement="respond" data-replyto="回复给l" aria-label='回复给l'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1 comment" id="li-comment-236">
+            <div id="comment-236" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='出' src='https://cravatar.cn/avatar/dc4939a45d314327c0fe304c7d49bc59?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/dc4939a45d314327c0fe304c7d49bc59?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">出                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>免费</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-05-31T17:13:14+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=236.html#respond' data-commentid="236" data-postid="30" data-belowelement="comment-236" data-respondelement="respond" data-replyto="回复给出" aria-label='回复给出'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-even depth-1 comment" id="li-comment-251">
+            <div id="comment-251" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='小叭叭' src='https://cravatar.cn/avatar/9b761b507ad9042af75a188d75ecf23b?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/9b761b507ad9042af75a188d75ecf23b?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">小叭叭                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>有没有大佬出一下教程这么弄详细的保姆教程呀</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-06-05T22:58:13+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=251.html#respond' data-commentid="251" data-postid="30" data-belowelement="comment-251" data-respondelement="respond" data-replyto="回复给小叭叭" aria-label='回复给小叭叭'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment byuser bypostauthor even depth-2 comment" id="li-comment-252">
+            <div id="comment-252" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='AI工具集' src='../wp-content/uploads/2023/04/ai-bot-baidu-logo-96x96.png' srcset='../wp-content/uploads/2023/04/ai-bot-baidu-logo.png 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">AI工具集                        <span class="rank" title="头衔：管理员">管理员</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>网络上有很多相关教程，可进行搜索，由于该话题比较敏感，本站没有计划出教程。</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-06-05T23:31:56+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=252.html#respond' data-commentid="252" data-postid="30" data-belowelement="comment-252" data-respondelement="respond" data-replyto="回复给AI工具集" aria-label='回复给AI工具集'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1 comment" id="li-comment-264">
+            <div id="comment-264" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='M.' src='https://cravatar.cn/avatar/d11f018a0b595a9d56b7036cd6bca3aa?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/d11f018a0b595a9d56b7036cd6bca3aa?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">M.                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>真的免费吗</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-06-09T14:02:25+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=264.html#respond' data-commentid="264" data-postid="30" data-belowelement="comment-264" data-respondelement="respond" data-replyto="回复给M." aria-label='回复给M.'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1 comment" id="li-comment-277">
+            <div id="comment-277" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='Felix' src='https://cravatar.cn/avatar/b6a46fc4fd56add69909135a5327b416?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/b6a46fc4fd56add69909135a5327b416?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">Felix                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>第一段的简介中有错别字，自然语言处理是NLP，不是NPL。</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-06-13T15:23:35+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=277.html#respond' data-commentid="277" data-postid="30" data-belowelement="comment-277" data-respondelement="respond" data-replyto="回复给Felix" aria-label='回复给Felix'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment byuser bypostauthor odd alt depth-2 comment" id="li-comment-280">
+            <div id="comment-280" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='AI工具集' src='../wp-content/uploads/2023/04/ai-bot-baidu-logo-96x96.png' srcset='../wp-content/uploads/2023/04/ai-bot-baidu-logo.png 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">AI工具集                        <span class="rank" title="头衔：管理员">管理员</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>感谢反馈，打错单词顺序了</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-06-13T19:30:35+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=280.html#respond' data-commentid="280" data-postid="30" data-belowelement="comment-280" data-respondelement="respond" data-replyto="回复给AI工具集" aria-label='回复给AI工具集'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment even depth-2 comment" id="li-comment-582">
+            <div id="comment-582" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='王琳' src='https://cravatar.cn/avatar/a8168898920e9bfc497b66b9fdcd67de?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/a8168898920e9bfc497b66b9fdcd67de?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">王琳                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>Ai也会出错吗，那后果不堪设想</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2024-02-14T01:59:47+08:00">2年前 (2024)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=582.html#respond' data-commentid="582" data-postid="30" data-belowelement="comment-582" data-respondelement="respond" data-replyto="回复给王琳" aria-label='回复给王琳'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1 comment" id="li-comment-316">
+            <div id="comment-316" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='ooo' src='https://cravatar.cn/avatar/f4b5a320f898eb818d15cf249d72a740?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/f4b5a320f898eb818d15cf249d72a740?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">ooo                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>需要魔法上网，使用无痕浏览，确保自己的ip地址映射是国外的（比如魔法切换到全局代理就可以，登录后再切换成跳过大陆代理即可）</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-06-29T08:51:50+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=316.html#respond' data-commentid="316" data-postid="30" data-belowelement="comment-316" data-respondelement="respond" data-replyto="回复给ooo" aria-label='回复给ooo'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment even depth-2 comment" id="li-comment-338">
+            <div id="comment-338" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='333' src='https://cravatar.cn/avatar/3cc6a79f35f2cbfd33da47aee7ed0996?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/3cc6a79f35f2cbfd33da47aee7ed0996?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">333                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>谢谢</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-07-30T11:43:26+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=338.html#respond' data-commentid="338" data-postid="30" data-belowelement="comment-338" data-respondelement="respond" data-replyto="回复给333" aria-label='回复给333'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment odd alt depth-2 comment" id="li-comment-347">
+            <div id="comment-347" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='dd' src='https://cravatar.cn/avatar/bf2c07e7eafd9eb40bdb4c7713138324?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/bf2c07e7eafd9eb40bdb4c7713138324?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">dd                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>方便教教吗</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-08-05T17:08:17+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=347.html#respond' data-commentid="347" data-postid="30" data-belowelement="comment-347" data-respondelement="respond" data-replyto="回复给dd" aria-label='回复给dd'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1 comment" id="li-comment-339">
+            <div id="comment-339" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='lll' src='https://cravatar.cn/avatar/301d70f549ec0703e3c19e0317c8d997?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/301d70f549ec0703e3c19e0317c8d997?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">lll                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>不错</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-07-31T14:23:56+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=339.html#respond' data-commentid="339" data-postid="30" data-belowelement="comment-339" data-respondelement="respond" data-replyto="回复给lll" aria-label='回复给lll'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1 comment" id="li-comment-344">
+            <div id="comment-344" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='南京' src='https://cravatar.cn/avatar/a7e0bea7b2b606d2bf65de253d7ad340?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/a7e0bea7b2b606d2bf65de253d7ad340?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">南京                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>能不能来个下载入口啊  都不知道去哪下载</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-08-03T17:50:39+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=344.html#respond' data-commentid="344" data-postid="30" data-belowelement="comment-344" data-respondelement="respond" data-replyto="回复给南京" aria-label='回复给南京'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1 comment" id="li-comment-362">
+            <div id="comment-362" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='ting' src='https://cravatar.cn/avatar/ab6823402a591793d2cc2ff52b772a4c?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/ab6823402a591793d2cc2ff52b772a4c?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">ting                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>怎么注册啊，我也用了科学上网，也用了gmail邮箱，就是登录不进去，第一次需要手机号验证，结果中国手机号不行，第二次就再也进不去了，求指教，谢谢</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-08-29T18:14:11+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=362.html#respond' data-commentid="362" data-postid="30" data-belowelement="comment-362" data-respondelement="respond" data-replyto="回复给ting" aria-label='回复给ting'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment odd alt depth-2 comment" id="li-comment-363">
+            <div id="comment-363" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='ting' src='https://cravatar.cn/avatar/ab6823402a591793d2cc2ff52b772a4c?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/ab6823402a591793d2cc2ff52b772a4c?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">ting                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>您好，针对这个问题，我收到了一个邮件，但是我进不去，请问是什么原因，可以给我一个详细的下载教程吗，谢谢</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-08-30T14:37:12+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=363.html#respond' data-commentid="363" data-postid="30" data-belowelement="comment-363" data-respondelement="respond" data-replyto="回复给ting" aria-label='回复给ting'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment even depth-3 comment" id="li-comment-1093">
+            <div id="comment-1093" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='cola' src='https://cravatar.cn/avatar/a8b3a03996c48c0d03536af7b3044927?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/a8b3a03996c48c0d03536af7b3044927?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">cola                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>不能</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2024-07-12T23:34:06+08:00">2年前 (2024)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=1093.html#respond' data-commentid="1093" data-postid="30" data-belowelement="comment-1093" data-respondelement="respond" data-replyto="回复给cola" aria-label='回复给cola'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment odd alt depth-2 comment" id="li-comment-408">
+            <div id="comment-408" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='cola' src='https://cravatar.cn/avatar/07fdac5eb24c8912a0fc23e2339599d8?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/07fdac5eb24c8912a0fc23e2339599d8?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">cola                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>要用虚拟手机号</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-10-06T11:47:29+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=408.html#respond' data-commentid="408" data-postid="30" data-belowelement="comment-408" data-respondelement="respond" data-replyto="回复给cola" aria-label='回复给cola'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1 comment" id="li-comment-381">
+            <div id="comment-381" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='高速发展' src='https://cravatar.cn/avatar/136dc532986054043911a2c646c85e71?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/136dc532986054043911a2c646c85e71?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">高速发展                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>要充豆子</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-09-14T14:00:28+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=381.html#respond' data-commentid="381" data-postid="30" data-belowelement="comment-381" data-respondelement="respond" data-replyto="回复给高速发展" aria-label='回复给高速发展'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-even depth-1 comment" id="li-comment-385">
+            <div id="comment-385" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='Xxx' src='https://cravatar.cn/avatar/ecea5ef17efcde74348abb92411c6e3d?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/ecea5ef17efcde74348abb92411c6e3d?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">Xxx                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>这个是要怎么使用呢</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-09-16T10:01:34+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=385.html#respond' data-commentid="385" data-postid="30" data-belowelement="comment-385" data-respondelement="respond" data-replyto="回复给Xxx" aria-label='回复给Xxx'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1 comment" id="li-comment-391">
+            <div id="comment-391" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='Blue' src='https://cravatar.cn/avatar/487f87505f619bf9ea08f26bb34f8118?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/487f87505f619bf9ea08f26bb34f8118?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">Blue                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>不错，很详细</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-09-19T14:30:59+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=391.html#respond' data-commentid="391" data-postid="30" data-belowelement="comment-391" data-respondelement="respond" data-replyto="回复给Blue" aria-label='回复给Blue'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-even depth-1 comment" id="li-comment-393">
+            <div id="comment-393" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='米斯特@谢' src='https://cravatar.cn/avatar/fbf8f87656ded3460f8b09296a7f9706?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/fbf8f87656ded3460f8b09296a7f9706?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">米斯特@谢                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>地址在国外，那我们怎么使用呢？</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-09-20T23:04:47+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=393.html#respond' data-commentid="393" data-postid="30" data-belowelement="comment-393" data-respondelement="respond" data-replyto="回复给米斯特@谢" aria-label='回复给米斯特@谢'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1 comment" id="li-comment-463">
+            <div id="comment-463" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='大母猴' src='https://cravatar.cn/avatar/6b148289183d77a991b33bbe5d2c3d6f?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/6b148289183d77a991b33bbe5d2c3d6f?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">大母猴                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>链接为啥打不开啊</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-12-01T22:38:57+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=463.html#respond' data-commentid="463" data-postid="30" data-belowelement="comment-463" data-respondelement="respond" data-replyto="回复给大母猴" aria-label='回复给大母猴'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-even depth-1 comment" id="li-comment-493">
+            <div id="comment-493" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='1' src='https://cravatar.cn/avatar/0bf91df8a4db6d28f7f8adaec2f34dfc?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/0bf91df8a4db6d28f7f8adaec2f34dfc?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">1                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>说道底这个还是要改ip，等账号。</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2023-12-25T21:48:28+08:00">3年前 (2023)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=493.html#respond' data-commentid="493" data-postid="30" data-belowelement="comment-493" data-respondelement="respond" data-replyto="回复给1" aria-label='回复给1'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1 comment" id="li-comment-544">
+            <div id="comment-544" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='123' src='https://cravatar.cn/avatar/504258910092334fbc58e416ef85377c?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/504258910092334fbc58e416ef85377c?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">123                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>嘎嘎，好用，用了几个月了！</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2024-01-29T16:58:23+08:00">2年前 (2024)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=544.html#respond' data-commentid="544" data-postid="30" data-belowelement="comment-544" data-respondelement="respond" data-replyto="回复给123" aria-label='回复给123'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-even depth-1 comment" id="li-comment-557">
+            <div id="comment-557" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='小伙子' src='https://cravatar.cn/avatar/46cc3562ea0450d13a6a26f49ceef128?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/46cc3562ea0450d13a6a26f49ceef128?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">小伙子                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>好</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2024-02-07T14:01:21+08:00">2年前 (2024)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=557.html#respond' data-commentid="557" data-postid="30" data-belowelement="comment-557" data-respondelement="respond" data-replyto="回复给小伙子" aria-label='回复给小伙子'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1 comment" id="li-comment-639">
+            <div id="comment-639" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='李大爷' src='https://cravatar.cn/avatar/487f87505f619bf9ea08f26bb34f8118?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/487f87505f619bf9ea08f26bb34f8118?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">李大爷                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>挺好的</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2024-03-09T17:43:55+08:00">2年前 (2024)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=639.html#respond' data-commentid="639" data-postid="30" data-belowelement="comment-639" data-respondelement="respond" data-replyto="回复给李大爷" aria-label='回复给李大爷'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-even depth-1 comment" id="li-comment-667">
+            <div id="comment-667" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='rong' src='https://cravatar.cn/avatar/47c52d87fadc5d05856b01605ee6f4a4?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/47c52d87fadc5d05856b01605ee6f4a4?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">rong                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>这个工具很好用</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2024-03-25T15:19:05+08:00">2年前 (2024)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=667.html#respond' data-commentid="667" data-postid="30" data-belowelement="comment-667" data-respondelement="respond" data-replyto="回复给rong" aria-label='回复给rong'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment even thread-odd thread-alt depth-1 comment" id="li-comment-948">
+            <div id="comment-948" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='纤雨' src='https://cravatar.cn/avatar/f79d95dc6c1743bf5a1ad4ff63abbc7b?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/f79d95dc6c1743bf5a1ad4ff63abbc7b?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">纤雨                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>为什么我用visa信用卡订阅不了PLUS</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2024-05-21T17:07:33+08:00">2年前 (2024)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=948.html#respond' data-commentid="948" data-postid="30" data-belowelement="comment-948" data-respondelement="respond" data-replyto="回复给纤雨" aria-label='回复给纤雨'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment byuser bypostauthor odd alt depth-2 comment" id="li-comment-949">
+            <div id="comment-949" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='AI工具集' src='../wp-content/uploads/2023/04/ai-bot-baidu-logo-96x96.png' srcset='../wp-content/uploads/2023/04/ai-bot-baidu-logo.png 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">AI工具集                        <span class="rank" title="头衔：管理员">管理员</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>国内的卡不行哟</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2024-05-21T18:45:27+08:00">2年前 (2024)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=949.html#respond' data-commentid="949" data-postid="30" data-belowelement="comment-949" data-respondelement="respond" data-replyto="回复给AI工具集" aria-label='回复给AI工具集'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1 comment" id="li-comment-950">
+            <div id="comment-950" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='awdadw' src='https://cravatar.cn/avatar/84d434e29d7d8b562204c9e62ca36d85?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/84d434e29d7d8b562204c9e62ca36d85?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">awdadw                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>怎么打不开了呀q-q</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2024-05-22T14:58:42+08:00">2年前 (2024)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=950.html#respond' data-commentid="950" data-postid="30" data-belowelement="comment-950" data-respondelement="respond" data-replyto="回复给awdadw" aria-label='回复给awdadw'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1 comment" id="li-comment-962">
+            <div id="comment-962" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='A my' src='https://cravatar.cn/avatar/7eea169da24d1a893ff269d61c9d333b?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/7eea169da24d1a893ff269d61c9d333b?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">A my                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>好用吗？</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2024-05-25T09:45:50+08:00">2年前 (2024)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=962.html#respond' data-commentid="962" data-postid="30" data-belowelement="comment-962" data-respondelement="respond" data-replyto="回复给A my" aria-label='回复给A my'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1 comment" id="li-comment-993">
+            <div id="comment-993" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='ghy' src='https://cravatar.cn/avatar/42d96bbdd630418701de24ecb07cb1ef?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/42d96bbdd630418701de24ecb07cb1ef?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">ghy                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>怎么才能用上最新的版本？</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2024-06-11T13:50:41+08:00">2年前 (2024)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=993.html#respond' data-commentid="993" data-postid="30" data-belowelement="comment-993" data-respondelement="respond" data-replyto="回复给ghy" aria-label='回复给ghy'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1 comment" id="li-comment-1105">
+            <div id="comment-1105" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='晨miai9829' src='https://cravatar.cn/avatar/7f2ffedd57596bb39ae11b613309958d?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/7f2ffedd57596bb39ae11b613309958d?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">晨miai9829                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>我每天日常面对这些ai的确好用，</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2024-07-15T12:17:36+08:00">2年前 (2024)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=1105.html#respond' data-commentid="1105" data-postid="30" data-belowelement="comment-1105" data-respondelement="respond" data-replyto="回复给晨miai9829" aria-label='回复给晨miai9829'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1 comment" id="li-comment-1138">
+            <div id="comment-1138" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='MIKO' src='https://cravatar.cn/avatar/a27b73c63c067b1962a671ed7904345e?s=96&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/a27b73c63c067b1962a671ed7904345e?s=192&#038;d=mm&#038;r=g 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">MIKO                        <span class="rank" title="头衔：游客">游客</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>怎么打不开，用魔法也打不开。</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2024-07-25T23:09:33+08:00">2年前 (2024)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=1138.html#respond' data-commentid="1138" data-postid="30" data-belowelement="comment-1138" data-respondelement="respond" data-replyto="回复给MIKO" aria-label='回复给MIKO'>回复</a>                    </div>
+                </section>
+            </div>
+        <ul class="children">
+        <li class="comment byuser bypostauthor odd alt depth-2 comment" id="li-comment-1139">
+            <div id="comment-1139" class="comment_body d-flex flex-fill">    
+                <div class="profile mr-2 mr-md-3"> 
+                    <img alt='AI小集' src='../wp-content/uploads/2023/04/ai-bot-baidu-logo-96x96.png' srcset='../wp-content/uploads/2023/04/ai-bot-baidu-logo.png 2x' class='avatar avatar-96 photo' height='96' width='96' loading='lazy' decoding='async'/>                </div>                    
+                <section class="comment-text d-flex flex-fill flex-column">
+                    <div class="comment-info d-flex align-items-center mb-1">
+                        <div class="comment-author text-sm w-100">AI小集                        <span class="rank" title="头衔：管理员">管理员</span>                        </div>                                        
+                    </div>
+                    <div class="comment-content d-inline-block text-sm">
+                        <p>可能是魔法的问题，普通魔法不行呢～</p>
+ 
+                                            </div>
+                    <div class="d-flex flex-fill text-xs text-muted pt-2">
+                        <div class="comment-meta">
+                            <span class="info mr-2"><i class="iconfont icon-time mr-1"></i><time itemprop="datePublished" datetime="2024-07-26T06:35:45+08:00">2年前 (2024)</time></span>
+                                                    </div>
+                        <div class="flex-fill"></div>
+                        <a rel='nofollow' class='comment-reply-link' href='30.html%3Freplytocom=1139.html#respond' data-commentid="1139" data-postid="30" data-belowelement="comment-1139" data-respondelement="respond" data-replyto="回复给AI小集" aria-label='回复给AI小集'>回复</a>                    </div>
+                </section>
+            </div>
+        </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	
+			</ul>
+									
+		</div>	
+	</div>
+</div><!-- comments end -->
+            </div><!-- content-layout end -->
+        </div><!-- content-wrap end -->
+        </main>
+</div><!-- container end -->
+ 
+<div class="main-footer footer-stick container container-fluid customize-width pt-4 pb-3 footer-type-big">
+
+    <div class="footer-inner card rounded-xl m-0">
+        <div class="footer-text card-body text-muted text-center text-md-left">
+                        <div class="row my-4">
+                                <div class="col-12 col-md-4 mb-4 mb-md-0">
+                    <a class="footer-logo" href="../gpt-image-2/index.html" title="AI工具集">
+                        <img src="../wp-content/uploads/2023/03/ai-bot-logo-black.png" class="logo-light mb-3" alt="AI工具集" height="40">
+                        <img src="../wp-content/uploads/2023/03/ai-bot-logo-white.png" class="logo-dark d-none mb-3" alt="AI工具集" height="40">
+                    </a>
+                    <div class="text-sm">AI工具集导航收录了国内外数百个不同类型的AI工具，每日更新和添加最新AI工具，AI工具集还推荐了AI学习开发的常用网站、框架和模型，帮助你加入人工智能浪潮，自动化高效完成任务！
+
+Ctrl + D 或 ⌘ + D 收藏本站到浏览器书签栏。</div>
+                </div>
+                                <div class="col-12 col-md-5 mb-4 mb-md-0"> 
+                    <p class="footer-links text-sm mb-3"><a href="../gpt-image-2/index.html">AI工具集导航</a>
+<a href="../about-us/index.html" target="_blank">关于我们</a>
+<a href="../disclaimer/index.html" target="_blank">免责声明</a>
+<a href="../ai-project-20250614/index.html" target="_blank">最新AI项目</a>
+<a href="../ai-app-store/index.html" target="_blank">AI应用商店</a>
+<a href="https://www.ghxi.com/" target="_blank">果核剥壳</a>
+<a href="https://cakegrowth.cn/" target="_blank">CakeGrowth</a>
+<a href="../vipcheap-banner-0210/index.html" target="_blank">VipCheap</a>
+<a href="https://gongke.net/" target="_blank">攻壳智能体</a>
+<a href="https://www.yjpoo.com/" target="_blank">映技派</a>
+<a href="4189.html" target="_blank">豆包</a>
+<a href="6242.html" target="_blank">讯飞绘文</a>
+<a href="9195.html" target="_blank">绘蛙</a>
+<a href="17772.html" target="_blank">即梦</a>
+<a href="8204.html" target="_blank">蛙蛙写作</a>
+<a href="13065.html" target="_blank">白日梦</a>
+<a href="44612.html" target="_blank">咔片PPT</a>
+<a href="8516.html" target="_blank">办公小浣熊</a>
+<a href="../trae/index.html" target="_blank">TRAE</a>
+<a href="../codeflying/index.html" target="_blank">码上飞</a>
+<a href="5507.html" target="_blank">堆友AI</a>
+<a href="66771.html" target="_blank">LiblibAI</a>
+<a href="../xingliu-art/index.html" target="_blank">星流AI</a>
+<a href="../miaoda/index.html" target="_blank">秒哒</a>
+<a href="../updream/index.html" target="_blank">updream</a>
+<a href="../seko/index.html" target="_blank">Seko</a>
+<a href="73776.html" target="_blank">LibTV</a></p>                                        <div class="footer-social">
+                        <a class="rounded-circle bg-light" href="mailto:info@ai-bot.cn" target="_blank"  data-toggle="tooltip" data-placement="top" title="联系邮箱" rel="external noopener nofollow">
+                                    <i class="iconfont icon-email"></i>
+                                </a>                    </div>
+                </div>
+                                <div class="col-12 col-md-3 text-md-right mb-4 mb-md-0">
+                                </div>
+                            </div>
+                        <div class="footer-copyright text-xs">
+            Copyright © 2026 <a href="../gpt-image-2/index.html" title="AI工具集" class="" rel="home">AI工具集</a>&nbsp;<a href="https://beian.miit.gov.cn/" target="_blank" class="" rel="link noopener">蜀ICP备2022019184号-2</a>&nbsp; <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51010702003349" target="_blank" class="" rel="noopener"><img style="margin-bottom: 3px;" src="../wp-content/themes/onenav/images/gaba.png"> 川公网安备 51010702003349号</a>&nbsp;            </div>
+        </div>
+    </div>
+</div>
+</div><!-- main-content end -->
+
+<footer>
+    <div id="footer-tools" class="d-flex flex-column">
+        <a href="javascript:" id="go-to-up" class="btn rounded-circle go-up m-1" rel="go-top">
+            <i class="iconfont icon-to-up"></i>
+        </a>
+                                                <a href="javascript:" id="switch-mode" class="btn rounded-circle switch-dark-mode m-1" data-toggle="tooltip" data-placement="left" title="夜间模式">
+            <i class="mode-ico iconfont icon-light"></i>
+        </a>
+            </div>
+</footer>
+    <div class="modal fade add_new_sites_modal" id="report-sites-modal" tabindex="-1" role="dialog" aria-labelledby="report-sites-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-md" id="report-sites-title">反馈</h5>
+                    <button type="button" id="close-sites-modal" class="close io-close" data-dismiss="modal" aria-label="Close">
+                        <i aria-hidden="true" class="iconfont icon-close-circle text-xl"></i>
+                    </button>
+                </div>
+                <div class="modal-body"> 
+                    <div class="alert alert-info" role="alert">
+                    <i class="iconfont icon-statement "></i> 让我们一起共建文明社区！您的反馈至关重要！                    </div>
+                    <form id="report-form" method="post"> 
+                        <input type="hidden" name="post_id" value="30">
+                        <input type="hidden" name="action" value="report_site_content">
+                        <div class="form-row">
+                            <div class="col-6 py-1">
+                                <label><input type="radio" name="reason" class="reason-type-1" value="1" checked> 已失效</label>
+                            </div><div class="col-6 py-1">
+                                <label><input type="radio" name="reason" class="reason-type-2" value="2" > 重定向&变更</label>
+                            </div><div class="col-6 py-1">
+                                <label><input type="radio" name="reason" class="reason-type-3" value="3" > 已屏蔽</label>
+                            </div><div class="col-6 py-1">
+                                <label><input type="radio" name="reason" class="reason-type-4" value="4" > 敏感内容</label>
+                            </div><div class="col-6 py-1">
+                                <label><input type="radio" name="reason" class="reason-type-0" value="0" > 其他</label>
+                            </div>                        </div>
+                        <div class="form-group other-reason-input" style="display: none;">
+                            <input type="text" class="form-control other-reason" value="" placeholder="其它信息，可选">
+                        </div>  
+                        <div class="form-group redirect-url-input" style="display: none;">
+                            <input type="text" class="form-control redirect-url" value="" placeholder="重定向&变更后的地址">
+                        </div> 
+                        <div class=" text-center">
+                            <button type="submit" class="btn btn-danger">提交反馈</button>
+                        </div> 
+                    </form>
+                </div> 
+            </div>
+        </div>
+        <script>
+        $(function () {
+            $('.tooltip-toggle').tooltip();
+            $('input[type=radio][name=reason]').change(function() {
+                var t = $(this); 
+                var reason = $('.other-reason-input');
+                var url = $('.redirect-url-input');
+                reason.hide();
+                url.hide();
+                if(t.val()==='0'){
+                    reason.show();
+                }else if(t.val()==='2'){
+                    url.show();
+                }
+            }); 
+            $(document).on("submit",'#report-form', function(event){
+                event.preventDefault(); 
+                var t = $(this); 
+                var reason = t.find('input[name="reason"]:checked').val();
+                if(reason === "0"){
+                    reason = t.find('.other-reason').val();
+                    if(reason==""){
+                        showAlert(JSON.parse('{"status":4,"msg":"信息不能为空！"}'));
+                        return false;
+                    }
+                }
+                if(reason === "2"){
+                    if(t.find('.redirect-url').val()==""){
+                        showAlert(JSON.parse('{"status":4,"msg":"信息不能为空！"}'));
+                        return false;
+                    }
+                }
+                $.ajax({
+                    url: 'https://ai-bot.cn/wp-admin/admin-ajax.php',
+                    type: 'POST', 
+                    dataType: 'json',
+                    data: {
+                        action : t.find('input[name="action"]').val(),
+                        post_id : t.find('input[name="post_id"]').val(),
+                        reason : reason,
+                        redirect : t.find('.redirect-url').val(),
+                    },
+                })
+                .done(function(response) {   
+                    if(response.status == 1){
+                        $('#report-sites-modal').modal('hide');
+                    } 
+                    showAlert(response);
+                })
+                .fail(function() {  
+                    showAlert(JSON.parse('{"status":4,"msg":"网络错误 --."}'));
+                }); 
+                return false;
+            });
+        });
+        </script>
+    </div>
+    <script type='text/javascript' src='../wp-content/themes/onenav/js/clipboard.min.js%3Fver=4.0331' id='clipboard-mini-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/popper.min.js%3Fver=4.0331' id='popper-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/bootstrap.min.js%3Fver=4.0331' id='bootstrap-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/theia-sticky-sidebar.js%3Fver=4.0331' id='sidebar-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/lazyload.min.js%3Fver=4.0331' id='lazyload-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/jquery.fancybox.min.js%3Fver=4.0331' id='lightbox-js-js'></script>
+<script type='text/javascript' id='appjs-js-extra'>
+/* <![CDATA[ */
+var theme = {"ajaxurl":"https:\/\/ai-bot.cn\/wp-admin\/admin-ajax.php","uri":"https:\/\/ai-bot.cn\/wp-content\/themes\/onenav","addico":"https:\/\/ai-bot.cn\/wp-content\/themes\/onenav\/images\/add.png","order":"asc","formpostion":"top","defaultclass":"io-grey-mode","isCustomize":"0","icourl":"https:\/\/besticon-demo.herokuapp.com\/icon?size=32..120..256&url=","icopng":"","urlformat":"1","customizemax":"10","newWindow":"1","lazyload":"1","minNav":"","loading":"","hotWords":"baidu","classColumns":" col-2a col-sm-2a col-md-2a col-lg-3a col-xl-6a col-xxl-6a ","apikey":"TWpBeU1USTJNemd4TWpZM0d6RS9oTVZCa2RqWk5aRGxtVG1jeGVEaHNVbW8zTnpCNGNGUldVVEZsYjNoTA==","isHome":"","version":"4.0331"};
+var localize = {"liked":"\u60a8\u5df2\u7ecf\u8d5e\u8fc7\u4e86!","like":"\u8c22\u8c22\u70b9\u8d5e!","networkerror":"\u7f51\u7edc\u9519\u8bef --.","selectCategory":"\u4e3a\u4ec0\u4e48\u4e0d\u9009\u5206\u7c7b\u3002","addSuccess":"\u6dfb\u52a0\u6210\u529f\u3002","timeout":"\u8bbf\u95ee\u8d85\u65f6\uff0c\u8bf7\u518d\u8bd5\u8bd5\uff0c\u6216\u8005\u624b\u52a8\u586b\u5199\u3002","lightMode":"\u65e5\u95f4\u6a21\u5f0f","nightMode":"\u591c\u95f4\u6a21\u5f0f","editBtn":"\u7f16\u8f91","okBtn":"\u786e\u5b9a","urlExist":"\u8be5\u7f51\u5740\u5df2\u7ecf\u5b58\u5728\u4e86 --.","cancelBtn":"\u53d6\u6d88","successAlert":"\u6210\u529f","infoAlert":"\u4fe1\u606f","warningAlert":"\u8b66\u544a","errorAlert":"\u9519\u8bef","extractionCode":"\u7f51\u76d8\u63d0\u53d6\u7801\u5df2\u590d\u5236\uff0c\u70b9\u201c\u786e\u5b9a\u201d\u8fdb\u5165\u4e0b\u8f7d\u9875\u9762\u3002","wait":"\u8bf7\u7a0d\u5019","loading":"\u6b63\u5728\u5904\u7406\u8bf7\u7a0d\u540e...","userAgreement":"\u8bf7\u5148\u9605\u8bfb\u5e76\u540c\u610f\u7528\u6237\u534f\u8bae","reSend":"\u79d2\u540e\u91cd\u65b0\u53d1\u9001","weChatPay":"\u5fae\u4fe1\u652f\u4ed8","alipay":"\u652f\u4ed8\u5b9d","scanQRPay":"\u8bf7\u626b\u7801\u652f\u4ed8","payGoto":"\u652f\u4ed8\u6210\u529f\uff0c\u9875\u9762\u8df3\u8f6c\u4e2d"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/app.min.js%3Fver=4.0331' id='appjs-js'></script>
+<script type='text/javascript' id='appjs-js-after'>
+/* <![CDATA[ */ 
+    $(document).ready(function(){if($("#search-text")[0]){$("#search-text").focus();}});
+    /* ]]> */
+</script>
+<script type='text/javascript' src='../wp-includes/js/comment-reply.min.js%3Fver=6.2' id='comment-reply-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/comments-ajax.js%3Fver=4.0331' id='comments-ajax-js'></script>
+<script type='text/javascript' id='wp-postviews-cache-js-extra'>
+/* <![CDATA[ */
+var viewsCacheL10n = {"admin_ajax_url":"https:\/\/ai-bot.cn\/wp-admin\/admin-ajax.php","post_id":"30"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/themes/onenav/inc/postviews/postviews-cache.js%3Fver=6.2' id='wp-postviews-cache-js'></script>
+ 
+<!-- 自定义代码 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?55906d9c57011d694d405f963a90648b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KV0VT5CMJ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KV0VT5CMJ6');
+</script>
+<!-- end 自定义代码 -->
+</body>
+</html>

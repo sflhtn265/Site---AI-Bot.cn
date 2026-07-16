@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="io-grey-mode">
+<head> 
+<script>
+    var default_c = "io-grey-mode";
+    var night = document.cookie.replace(/(?:(?:^|.*;\s*)io_night_mode\s*\=\s*([^;]*).*$)|^.*$/, "$1"); 
+    try {
+        if (night === "0") {
+            document.documentElement.classList.add("io-black-mode");
+            document.documentElement.classList.remove(default_c);
+        } else {
+            document.documentElement.classList.remove("io-black-mode");
+            document.documentElement.classList.add(default_c);
+        }
+    } catch (_) {}
+</script><meta charset="UTF-8">
+<meta name="renderer" content="webkit"/>
+<meta name="force-rendering" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>普通用户如何进行后训练？一文看懂 | AI工具集</title>
+<meta name="theme-color" content="#f9f9f9" />
+<meta name="description" content="通过后训练，一个通用的语言模型可以被调优为一个专业的法律助手、医疗咨询师，或者一个能高效运行在手机等边缘设备上的轻量级应用。" />
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ai-bot.cn/how-does-post-training/"/> 
+<meta property="og:title" content="普通用户如何进行后训练？一文看懂 | AI工具集">
+<meta property="og:description" content="通过后训练，一个通用的语言模型可以被调优为一个专业的法律助手、医疗咨询师，或者一个能高效运行在手机等边缘设备上的轻量级应用。">
+<meta property="og:image" content="https://ai-bot.cn/wp-content/uploads/2025/07/Post-Training-webiste.png">
+<meta property="og:site_name" content="AI工具集">
+<meta property="og:updated_time" content="2025-07-18T13:48:41+08:00">
+<meta property="article:published_time" content="2025-05-18T13:45:52+08:00">
+<meta property="article:modified_time" content="2025-07-18T13:48:41+08:00">
+<link rel="shortcut icon" href="../wp-content/uploads/2023/03/ai-bot-square-logo.png">
+<link href="../wp-content/uploads/2023/07/ai-bot-favicon.png" rel="icon" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../wp-content/uploads/2023/04/ai-bot-baidu-logo.png">
+<!--[if IE]><script src="https://ai-bot.cn/wp-content/themes/onenav/js/html5.min.js"></script><![endif]-->
+<meta name='robots' content='max-image-preview:large' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='../wp-includes/css/classic-themes.min.css%3Fver=6.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='iconfont-css' href='../wp-content/themes/onenav/css/iconfont.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css' href='../wp-content/themes/onenav/css/all.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome4-css' href='../wp-content/themes/onenav/css/v4-shims.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css' href='../wp-content/themes/onenav/css/bootstrap.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='lightbox-css' href='../wp-content/themes/onenav/css/jquery.fancybox.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css' href='../wp-content/themes/onenav/css/style.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-content/themes/onenav/js/jquery.min.js%3Fver=4.0331' id='jquery-js'></script>
+<script type='text/javascript' id='jquery-js-after'>
+/* <![CDATA[ */ 
+        function loadFunc(func) {if (document.all){window.attachEvent("onload",func);}else{window.addEventListener("load",func,false);}}   
+        /* ]]> */
+</script>
+<link rel="canonical" href="index.html" />
+<style>body:before {
+  content: '';
+  position: absolute;
+  top: 0 !important;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 550px;
+  background-image: url(../wp-content/uploads/2023/07/blury-shape-bg-light.png);
+  background-size: cover;
+  z-index: -1;
+}
+
+.io-black-mode body:before {
+	background-image: url(../wp-content/uploads/2024/01/blury-shape-bg-dark.png);
+}
+
+.page-header {
+	background: none !important;
+  position: absolute;
+}
+
+
+.io-black-mode .page-header {
+	background: rgba(44,46,47,0.7) !important;
+}
+
+.url-card .max .url-img {
+	width: 40px;
+  height: 40px;
+}
+
+.card-body .url-img img {
+	border: none !important;
+}
+
+.panel-body.single.mt-2 img {
+	border-radius: 6px;
+  border: 2px solid #eee;
+}
+
+.meta-media {
+  position: relative;
+  margin-bottom: 30px;
+  float: left;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+}
+.video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.table-bordered {
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+a.underline {
+    border-bottom: 3px solid #5961f9;
+}
+
+a.underline:hover {
+    border-bottom: 3px solid #ee9ae5;
+}
+
+.io-edit-post-card-content .mx-auto {
+	margin-left: 0!important;
+}
+
+.panel-body .url-card.shortcode-url .card {
+	background: white;
+}
+.io-black-mode .panel-body .url-card.shortcode-url .card {
+	background: #2c2e2f;
+}
+
+@media screen and (min-width: 768px) {
+  .header-big {
+		padding-top: 80px;
+	}
+}
+
+/* 快讯页面样式开始 */
+.news-content h2{
+  border: none;
+}
+.news-list .news-date {
+    padding: 32px 20px 12px 20px;
+    font-size: 20px;
+    line-height: 26px;
+    position: relative;
+    font-weight: 700;
+    color: #5961f9;
+}
+.news-list .news-item {
+    padding: 20px 0 5px 20px;
+}
+.news-list .news-date, .news-list .news-item {
+    position: relative;
+    margin-left: 15px;
+    border-left: 1px dashed #c3c8fe;
+}
+.news-list .news-time {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.news-list .news-hour {
+    position: relative;
+    display: block;
+    padding-top: 10px;
+    padding-left: 12px;
+    margin-left: 15px;
+    border-left: 1px dashed #c3c8fe;
+}
+.news-list .news-date:after, .news-list .news-date:before {
+    position: absolute;
+    left: -8px;
+    top: 38px;
+    width: 16px;
+    height: 16px;
+    content: "";
+    border-radius: 1px;
+    background: #5961f9;
+}
+.news-list .news-time:before {
+    border: 4px solid #5961f9;
+    opacity: 1;
+}
+.news-list .news-content h2 {
+    position: relative;
+    font-size: 18px;
+    line-height: 1.4;
+}
+.news-list .news-content p {
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.65;
+}
+.news-list h2:after, .news-list h2:before {
+    position: absolute;
+    left: -3.5px;
+    top: 10px;
+    width: 4px;
+    height: 4px;
+    border-radius: 6px;
+    border: 4px solid #5961f9;
+    box-sizing: initial;
+    background: #fff;
+    content: "";
+}
+.panel-body.single.mt-2 .news-time img {
+    border-radius: 2px;
+    border: none;
+}
+.panel-body.single.mt-2 img.news-banner {
+    border-radius: 0px;
+    border: none;
+}
+.panel-body .news-content h2 a:not(.no-c) {
+    color: #282a2d;
+}
+.io-black-mode .panel-body .news-content h2 a:not(.no-c) {
+    color: #c6c9cf;
+}
+.panel-body .news-content h2 a:not(.no-c):hover {
+    color: #5961f9;
+}
+.news-content .external:after {
+    content: "";
+}
+.news-content h2 .badge-danger {
+    background-color: #F1404B;
+}
+/* 快讯页面样式结束 */
+.tab-widget-content .img-post .media-content {
+    -webkit-transform: none;
+    transform: none;
+}
+.img-post .media-content {
+    -webkit-transform: none;
+    transform: none;
+}
+.io-black-mode .panel-body .table td {
+    color: #eee;
+}
+/* 滚动条 */
+@media screen and (min-width: 768px) {
+  .sidebar-nav-inner .flex-fill {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sidebar-nav-inner .flex-fill:hover {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+/* 备案查询页面黑暗模式颜色修改 */
+.io-black-mode .theme--light.v-application {
+    background: #2c2e2f;
+    color: white;
+}
+.io-black-mode .theme--light.v-sheet {
+    background-color: #2c2e2f;
+    border-color: #5e6063 !important;
+    color: white;
+}
+.io-black-mode .theme--light.v-label {
+    color: rgb(255 255 255 / 60%);
+}
+.io-black-mode .theme--light.v-icon {
+    color: rgb(255 255 255 / 60%);
+}
+.io-black-mode .theme--light.v-text-field>.v-input__control>.v-input__slot:before {
+    border-color: rgb(255 255 255 / 42%);
+}
+.io-black-mode .theme--light.v-data-table {
+		background-color: #2c2e2f;
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:last-child, .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:not(.v-data-table__mobile-row), .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>th:last-child, .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>th:not(.v-data-table__mobile-row), .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr:last-child>th {
+    border-bottom: thin solid rgb(255 255 255 / 12%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr:last-child>th {
+    border-bottom: thin solid rgb(255 255 255 / 12%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:not(.v-data-table__mobile-row) {
+		border-bottom: thin solid rgb(255 255 255 / 12%);
+}
+th.text-start, td.text-start {
+		border-left: none;
+  	border-right: none;
+}
+th.text-start {
+		border-top: none;
+}
+.io-black-mode .theme--light.v-data-table .v-data-table-header th.sortable:hover {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr>th {
+		color: rgba(255,255,255,.6);
+}
+.io-black-mode .theme--light.v-data-table .v-data-table-header th.sortable .v-data-table-header__icon {
+    color: rgb(255 255 255 / 58%);
+}
+.io-black-mode .theme--light.v-btn.v-btn--disabled, .theme--light.v-btn.v-btn--disabled .v-btn__loading, .theme--light.v-btn.v-btn--disabled .v-icon {
+    color: rgb(255 255 255 / 26%)!important;
+}
+.io-black-mode .v-btn>.v-btn__content .v-icon {
+    color: #fff;
+}
+.io-black-mode .theme--light.v-select .v-select__selections {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper) {
+    background: #222;
+}
+.io-black-mode .theme--light.v-input input {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table .v-data-table__empty-wrapper {
+    color: rgb(255 255 255 / 38%);
+}
+div.card-app > div.card-body {
+	padding: 0.8rem;
+}
+.app-rounded {
+	border-radius: 22% !important;
+}
+div.card-app.card {
+  border-radius: .45rem !important;
+}
+.screenshot-carousel .img_wrapper {
+	height: 360px !important;
+}
+.io-black-mode .enlighter-t-enlighter .enlighter-text {
+    color: #99a;
+}
+.site-content a img.alignnone {
+    border-radius: .3rem;
+    border: 1px solid #ddd;
+}.customize-width{max-width:1900px}.sidebar-nav{width:220px}@media (min-width: 768px){.main-content{margin-left:220px;}.main-content .page-header{left:220px;}}</style><meta name="redi-version" content="1.2.7" /><style>.panel-body a:not(.no-c){color:#5961f9}.panel-body a:not(.no-c):hover{color:#ee9ae5}a:hover,.io-grey-mode .sidebar-show,.io-grey-mode .sidebar-item>a:hover,.io-grey-mode .sidebar-item li>a:hover,.home-like:hover,
+        .io-grey-mode .sidebar-popup>div>ul>li>a:hover{color:#5961f9}
+        .header-mini-btn label:hover path{ stroke:#5961f9}
+        .url-card .max .tga a:not(.no-tag):hover,.card-app.card .tga a:not(.no-tag):hover{background:#5961f9}
+        .sidebar .url-card .card:hover{border: 1px solid #5961f9!important;}.tags i{color:#5961f9}.custom-piece_c_b{background:#5961f9!important}.custom-piece_c{color:#5961f9!important}.slider_menu[sliderTab] .anchor,.customize-menu .btn-edit,.badge-danger,.comment-list .rank,.sidebar .card-header:after{background:#5961f9}.badge-outline-primary{color:#5961f9;border:#5961f9 solid 1px}.posts-nav .page-numbers.current,.posts-nav .page-numbers:not(.dots):hover,#comments-navi>a:hover,#comments-navi>.current,.page-nav>a:hover span,.page-nav>.current span{background-color:#5961f9;box-shadow: 0px 5px 20px -3px rgba(89,97,249,.6);}     
+.custom-control-input:not(:disabled):active~.custom-control-label::before{background-color:rgba(89,97,249,.15);border-color:rgba(89,97,249,.15);}
+.custom-control-input:focus~.custom-control-label::before{box-shadow:0 0 0 .2rem rgba(89,97,249,.25)}
+.custom-control-input:focus:not(:checked)~.custom-control-label::before{border-color:#5961f9}
+.custom-control-input:checked~.custom-control-label::before{border-color:#5961f9;background-color:#5961f9}
+.btn-search:hover,.btn-search.current{background-color:#5961f9;box-shadow: 0 5px 20px -3px rgba(89,97,249,.6)}.btn-search.current:after{border-top-color:#5961f9}.panel-body h2,.panel-body h3 {border-color:#5961f9}.custom_btn-outline {color: #5961f9;background-color: transparent;border-color: #5961f9;}
+.custom_btn-outline:hover {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.custom_btn-outline:focus, .custom_btn-outline.focus {color: #14171B;box-shadow: 0 0 0 0 transparent!important;background-color: transparent;}
+.custom_btn-outline.disabled, .custom_btn-outline:disabled {color: #5961f9;background-color: transparent!important;}
+.custom_btn-outline:not(:disabled):not(.disabled):active, .custom_btn-outline:not(:disabled):not(.disabled).active,.show > .custom_btn-outline.dropdown-toggle {color: #fff;background-color: #5961f9;border-color: #5961f9;}
+.custom_btn-outline:not(:disabled):not(.disabled):active:focus, .custom_btn-outline:not(:disabled):not(.disabled).active:focus,.show > .custom_btn-outline.dropdown-toggle:focus {box-shadow: 0 0 0 0 transparent!important;}
+.custom_btn-d {color: #ffffff;background-color: #5961f9;border-color: #5961f9;}
+.custom_btn-d:hover {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.custom_btn-d:focus,.custom_btn-d.focus {color: #ffffff;background-color: #14171B;border-color: #14171B;box-shadow: 0 0 0 0 transparent!important;}
+.custom_btn-d.disabled,.custom_btn-d:disabled {color: #ffffff;background-color:#5961f9;border-color: #5961f9;}
+.custom_btn-d:not(:disabled):not(.disabled):active,.custom_btn-d:not(:disabled):not(.disabled).active{color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.custom_btn-d:not(:disabled):not(.disabled):active:focus,.custom_btn-d:not(:disabled):not(.disabled).active:focus{box-shadow: 0 0 0 0 transparent!important;}
+.btn.custom_btn-d {color: #ffffff;background-color: #5961f9;border-color: #5961f9;}
+.btn.custom_btn-d:hover {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.btn.custom_btn-d:focus,.btn.custom_btn-d.focus {color: #ffffff;background-color: #14171B;border-color: #14171B;box-shadow: 0 0 0 0 transparent!important;}
+.btn.custom_btn-d.disabled,.btn.custom_btn-d:disabled {color: #ffffff;background-color:#5961f9;border-color: #5961f9;}
+.btn.custom_btn-d:not(:disabled):not(.disabled):active,.btn.custom_btn-d:not(:disabled):not(.disabled).active,.show > .custom_btn-d.dropdown-toggle {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.btn.custom_btn-d:not(:disabled):not(.disabled):active:focus,.btn.custom_btn-d:not(:disabled):not(.disabled).active:focus,.show > .custom_btn-d.dropdown-toggle:focus {box-shadow: 0 0 0 0 transparent!important;}
+.btn-dark:hover{background-color:#5961f9;border-color:#5961f9}
+.sidebar .card .searchform input[type='submit']{border: 1px solid #5961f9;background-color:#5961f9}
+.sidebar .card .searchform input[type='submit']:hover{border: 1px solid #14171B;background-color:#14171B}</style><!-- 自定义代码 -->
+<meta name="baidu-site-verification" content="codeva-P9RvmeAUoM" />
+<meta name="msvalidate.01" content="92B2C43DC49DA55D7E2C4AE6B1CC1A81" />
+<meta name="sogou_site_verification" content="Zo3i06YCJh" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7941312752144276"
+     crossorigin="anonymous"></script>
+<script>
+(function(){
+var el = document.createElement("script");
+el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?555fccf68561b344c2292bef2655dc990da3031c125e7429fc5275c9527fda6e4a4d40de0dd5fa9b5c2c10f69a3b501dc430e831103b45ce33654fb9f95b006c";
+el.id = "ttzz";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(el, s);
+})(window)
+</script><!-- end 自定义代码 -->
+</head> 
+<body class="post-template-default single single-post postid-57389 single-format-standard sidebar_right post">
+        <div id="sidebar" class="sticky sidebar-nav fade">
+            <div class="modal-dialog h-100  sidebar-nav-inner">
+                <div class="sidebar-logo border-bottom border-color">
+                    <!-- logo -->
+                    <div class="logo overflow-hidden">
+                                                <a href="../gpt-image-2/index.html" class="logo-expanded">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-black.png" height="40" class="logo-light" alt="AI工具集">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-white.png" height="40" class="logo-dark d-none" alt="AI工具集">
+                        </a>
+                        <a href="../gpt-image-2/index.html" class="logo-collapsed">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-square-logo.png" height="40" class="logo-light" alt="AI工具集">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-square-logo.png" height="40" class="logo-dark d-none" alt="AI工具集">
+                        </a>
+                    </div>
+                    <!-- logo end -->
+                </div>
+                <div class="sidebar-menu flex-fill">
+                    <div class="sidebar-scroll" >
+                        <div class="sidebar-menu-inner">
+                            <ul> 
+                                                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-7" class="">
+                                                <i class="fas fa-feather icon-fw icon-lg"></i>
+                                                <span>AI写作工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-2" class="" data-change="https://ai-bot.cn/#term-2">
+                                                <i class="fas fa-images icon-fw icon-lg"></i>
+                                                <span>AI图像工具</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-37" class=""><span>常用AI图像工具</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-33" class=""><span>AI图片插画生成</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-32" class=""><span>AI图片背景移除</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-35" class=""><span>AI图片物体抹除</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-34" class=""><span>AI图片无损放大</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-36" class=""><span>AI图片优化修复</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-78" class=""><span>AI商品图生成</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-83" class=""><span>AI 3D模型生成</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-4" class="">
+                                                <i class="fas fa-video icon-fw icon-lg"></i>
+                                                <span>AI视频工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-38" class="" data-change="https://ai-bot.cn/#term-38">
+                                                <i class="fas fa-folder-open icon-fw icon-lg"></i>
+                                                <span>AI办公工具</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-45" class=""><span>AI幻灯片和演示</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-46" class=""><span>AI表格数据处理</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-48" class=""><span>AI思维导图</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-47" class=""><span>AI文档工具</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-49" class=""><span>AI会议工具</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-85" class=""><span>AI招聘求职</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-77" class=""><span>AI法律助手</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-52" class=""><span>AI语言翻译</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-51" class=""><span>AI效率提升</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-16" class="">
+                                                <i class="fas fa-comments icon-fw icon-lg"></i>
+                                                <span>AI聊天助手</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-97" class="" data-change="https://ai-bot.cn/#term-97">
+                                                <i class="fas fa-brain icon-fw icon-lg"></i>
+                                                <span>AI智能体</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-97-86" class=""><span>AI智能体</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-97-96" class=""><span>插件与Skills</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-13" class="">
+                                                <i class="fas fa-code icon-fw icon-lg"></i>
+                                                <span>AI编程工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-15" class="">
+                                                <i class="fas fa-laptop-code icon-fw icon-lg"></i>
+                                                <span>AI开发平台</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-19" class="">
+                                                <i class="fas fa-palette icon-fw icon-lg"></i>
+                                                <span>AI设计工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-6" class="">
+                                                <i class="fas fa-music icon-fw icon-lg"></i>
+                                                <span>AI音频工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-61" class="">
+                                                <i class="fas fa-search icon-fw icon-lg"></i>
+                                                <span>AI搜索引擎</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-12" class="">
+                                                <i class="fas fa-graduation-cap icon-fw icon-lg"></i>
+                                                <span>AI学习网站</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-14" class="">
+                                                <i class="fas fa-cubes icon-fw icon-lg"></i>
+                                                <span>AI训练模型</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-56" class="">
+                                                <i class="fas fa-crown icon-fw icon-lg"></i>
+                                                <span>AI模型评测</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-95" class="" data-change="https://ai-bot.cn/#term-95">
+                                                <i class="iconfont icon-instructions icon-fw icon-lg"></i>
+                                                <span>AI内容检测</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-95-20" class=""><span>内容检测</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-95-94" class=""><span>降AI/AIGC率</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-42" class="">
+                                                <i class="fab fa-product-hunt icon-fw icon-lg"></i>
+                                                <span>AI提示指令</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-98" class="">
+                                                <i class="iconfont icon-related icon-fw icon-lg"></i>
+                                                <span>AI副业工具</span>
+                                            </a>
+                                        </li> 
+                                     
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top py-2 border-color">
+                    <div class="flex-bottom">
+                        <ul> 
+                             
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content flex-fill">    <div class=" header-nav">
+        <div id="header" class="page-header sticky">
+            <div class="navbar navbar-expand-md">
+                <div class="container-fluid p-0 position-relative">
+                    <div class="">
+                        <a href="../gpt-image-2/index.html" class="navbar-brand d-md-none m-0" title="AI工具集">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-black.png" class="logo-light" alt="AI工具集" height="30">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-white.png" class="logo-dark d-none" alt="AI工具集" height="30">
+                        </a>
+                    </div>
+                                        <div class="collapse navbar-collapse order-2 order-md-1">
+                        <div class="header-mini-btn">
+                            <label>
+                                <input id="mini-button" type="checkbox" checked="checked">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"> 
+                                    <path class="line--1" d="M0 40h62c18 0 18-20-17 5L31 55"></path>
+                                    <path class="line--2" d="M0 50h80"></path>
+                                    <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45"></path>
+                                </svg>
+                            </label>
+                        
+                        </div>
+                                                <ul class="navbar-nav navbar-top site-menu mr-4">
+                            <li id="menu-item-55865" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-55865"><a href="../gpt-image-2/index.html">AI工具集</a>
+<ul class="sub-menu">
+	<li id="menu-item-55866" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55866"><a href="../favorites/ai-writing-tools/index.html">AI写作工具</a></li>
+	<li id="menu-item-55868" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55868"><a href="../favorites/ai-image-tools/index.html">AI图像工具</a></li>
+	<li id="menu-item-55869" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55869"><a href="../favorites/ai-video-tools/index.html">AI视频工具</a></li>
+	<li id="menu-item-55867" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55867"><a href="../favorites/ai-office-tools/index.html">AI办公工具</a></li>
+	<li id="menu-item-55870" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55870"><a href="../favorites/ai-agent/index.html">AI智能体</a></li>
+	<li id="menu-item-55871" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55871"><a href="../favorites/ai-chatbots/index.html">AI聊天助手</a></li>
+	<li id="menu-item-55872" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55872"><a href="../favorites/ai-programming-tools/index.html">AI编程工具</a></li>
+	<li id="menu-item-55873" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55873"><a href="../favorites/ai-design-tools/index.html">AI设计工具</a></li>
+	<li id="menu-item-55874" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55874"><a href="../favorites/ai-audio-tools/index.html">AI音频工具</a></li>
+	<li id="menu-item-55876" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55876"><a href="../favorites/ai-search-engines/index.html">AI搜索引擎</a></li>
+	<li id="menu-item-55875" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55875"><a href="../favorites/ai-frameworks/index.html">AI开发平台</a></li>
+	<li id="menu-item-55878" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55878"><a href="../favorites/websites-to-learn-ai/index.html">AI学习网站</a></li>
+	<li id="menu-item-55880" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55880"><a href="../favorites/ai-models/index.html">AI训练模型</a></li>
+	<li id="menu-item-67873" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-67873"><a href="../favorites/ai-content-detection-and-optimization-tools/index.html">AI内容检测</a></li>
+	<li id="menu-item-67442" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-67442"><a href="../favorites/ai-prompt-tools/index.html">AI提示指令</a></li>
+</ul>
+</li>
+<li id="menu-item-54113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54113"><a target="_blank" rel="noopener" href="../ai-app-store/index.html">
+        <i class="fab fa-app-store-ios icon-fw icon-lg"></i>
+                <span>AI应用集</span></a></li>
+<li id="menu-item-54115" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54115"><a target="_blank" rel="noopener" href="../daily-ai-news/index.html">
+        <i class="iconfont icon-chart-pc icon-fw icon-lg"></i>
+                <span>每日AI资讯</span></a></li>
+<li id="menu-item-54116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-54116"><a target="_blank" rel="noopener" href="../ai-project-20250614/index.html">最新AI项目</a>
+<ul class="sub-menu">
+	<li id="menu-item-54117" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54117"><a target="_blank" rel="noopener" href="../ai-tools/index.html">AI工具</a></li>
+	<li id="menu-item-54118" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54118"><a target="_blank" rel="noopener" href="../ai-research/index.html">AI项目和框架</a></li>
+</ul>
+</li>
+<li id="menu-item-54944" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-54944"><a target="_blank" rel="noopener" href="../ai-tutorials/index.html">AI教程资源</a>
+<ul class="sub-menu">
+	<li id="menu-item-54940" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54940"><a target="_blank" rel="noopener" href="../ai-column/index.html">AI专栏</a></li>
+	<li id="menu-item-56311" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-56311"><a target="_blank" rel="noopener" href="../ai-question-and-answer/index.html">AI问答</a></li>
+	<li id="menu-item-54119" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54119"><a target="_blank" rel="noopener" href="../ai-encyclopedia/index.html">AI百科</a></li>
+	<li id="menu-item-54122" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54122"><a target="_blank" rel="noopener" href="../ai-hall-of-fame/index.html">AI名人堂</a></li>
+</ul>
+</li>
+<li id="menu-item-54114" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54114"><a target="_blank" rel="noopener" href="../about-us/index.html">关于我们</a></li>
+ 
+                        </ul>
+                    </div>
+                    <ul class="nav navbar-menu text-xs order-1 order-md-2 position-relative">
+                                                                                                <li class="nav-item d-md-none mobile-menu ml-3 ml-md-4"><a href="javascript:" id="sidebar-switch" data-toggle="modal" data-target="#sidebar"><i class="iconfont icon-classification icon-lg"></i></a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="placeholder"></div>
+            </div>
+  <div id="content" class="container my-3 my-md-4">
+    <nav class="text-xs mb-3 mb-md-4"  aria-label="breadcrumb"><i class="iconfont icon-home"></i> <a class="crumbs" href="../gpt-image-2/index.html">首页</a><i class="text-danger px-1">•</i><a href="../ai-question-and-answer/index.html" rel="category tag">AI问答</a><i class="text-danger px-1">•</i><span aria-current="page">普通用户如何进行后训练？一文看懂</span></nav>    <main class="content" role="main">
+    <div class="content-wrap">
+        <div class="content-layout">
+                <div class="panel card">
+        <div class="card-body">
+        <div class="panel-header mb-4"><h1 class="h3 mb-3">普通用户如何进行后训练？一文看懂</h1><div class="d-flex flex-fill text-muted text-sm pb-4 border-bottom border-t"><span class="mr-3 d-none d-sm-block"><a href="../ai-question-and-answer/index.html"><i class="iconfont icon-classification"></i> AI问答</a></span><span class="mr-3"><i class="iconfont icon-time"></i><span title="2025年5月18日 13:45发布">1年前 (2025)更新</span></span><span class="mr-3"><a href="https://ai-bot.cn/author/5/" title="AI小集"><i class="iconfont icon-user-circle"></i> AI小集</a></span><div class="flex-fill"></div><span class="mr-3"><a class="smooth-n" href="index.html#comments"> <i class="iconfont icon-comment"></i> 0</a></span>
+                <span class="mr-3"><a class="btn-like btn-link-like " href="javascript:;" data-action="post_like" data-id="57389"><i class="iconfont icon-like"></i> <span class="like-count">3</span></a></span></div></div>                <div class="panel-body single mt-2"> 
+                        <p>在人工智能领域，特别是大语言模型（LLM）的开发和部署过程中，虽然预训练（Pre-training）为模型提供了广泛的语言理解和生成能力，但后训练是真正将这些基础能力转化为特定任务和实际应用价值的关键步骤。<strong class="">后训练能显著提升模型的性能、安全性、可控性以及效率</strong>，更符合人类的期望和特定场景的需求。</p>
+<blockquote><p>通过后训练，一个通用的语言模型可以被调优为一个专业的法律助手、医疗咨询师，或者一个能高效运行在手机等边缘设备上的轻量级应用。</p></blockquote>
+<img decoding="async" class="wp-image-57418 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/07/Post-Training-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="731" height="234" />
+<h2 class="">什么是后训练？</h2>
+<h4><strong>定义</strong></h4>
+<p>后训练（Post-Training）是指在模型完成初步的预训练（Pre-training）之后，进行的一系列优化和调整过程。</p>
+<p>预训练是在海量的通用文本数据上进行的，目的是让模型学习到基本的语言规律、世界知识和一定的推理能力。预训练模型往往像一个“通才”，虽然知识面广，但在特定任务或特定领域的表现可能不够精准，或者其行为模式可能不完全符合人类的期望。</p>
+<p>后训练就是为了解决这些问题而存在的。通过在特定数据集上对预训练模型进行进一步的训练，使其适应特定的需求。</p>
+<blockquote><p>过程可以类比为，一个大学毕业生虽然掌握了专业知识，但进入具体工作岗位前，需要接受岗前培训，学习公司的规章制度、业务流程以及特定岗位的技能要求。</p></blockquote>
+<p><strong class="">后训练的目标是提升模型在特定任务上的性能，输出更符合人类的偏好，或者能在资源受限的环境下高效运行</strong>。</p>
+<p>后训练的核心在于“ refinement ”（精炼）和“ alignment ”（对齐）。</p>
+<p><strong>精炼：</strong>指的是通过特定数据让模型在某个方面的能力得到加强，比如代码生成、数学推理，或者对特定领域知识的掌握。</p>
+<p><strong>对齐：</strong>更侧重于让模型的输出与人类的价值观、偏好以及指令相一致，确保模型是安全、有用且无害的。</p>
+<h4><strong>后训练的时机与目的</strong></h4>
+<p>后训练的时机是在模型完成了大规模的预训练之后。当我们需要模型在以下几个方面有所提升时，就需要考虑进行后训练：</p>
+<ul>
+<li><strong class="">提升特定任务性能</strong>：当预训练模型在您关心的特定任务（如文本摘要、情感分析、代码生成、问答系统）上表现不佳，或者您希望它在某个垂直领域（如法律、医疗、金融）有更专业的表现时，就需要通过后训练来注入领域知识或优化任务相关能力。</li>
+<li><strong>对齐人类偏好与价值观</strong>：预训练模型可能会生成不准确、带有偏见、甚至有害的内容。后训练，特别是基于人类反馈的强化学习（RLHF）或直接偏好优化（DPO），可以帮助模型学习人类的偏好，使其输出更安全、更有帮助、更符合伦理规范 。Llama3的后训练目标就包括了奖励模型和语言模型，通过人类标注的偏好数据训练奖励模型，然后进行拒绝采样和DPO，以与人类偏好对齐 。</li>
+<li><strong class="">提高模型效率与部署便捷性</strong>：大型预训练模型参数量巨大，对计算资源和存储空间要求很高，难以在边缘设备或资源受限的环境下部署。后训练中的模型压缩技术，如量化、剪枝和知识蒸馏，可以显著减小模型体积、降低推理延迟，更容易部署 。例如，训练后量化可以将模型大小减小4倍，速度提升2-3倍 。</li>
+<li><strong class="">适应特定数据分布或格式</strong>：如果您的应用场景涉及到特定类型的数据（如特定格式的表格、代码）或需要模型遵循特定的输出格式（如JSON），后训练可以帮助模型更好地理解和处理这些数据 。Qwen2.5模型的后训练就显著提升了其在理解结构化数据（如表格）和生成结构化输出（尤其是JSON）方面的能力 。</li>
+<li><strong>迭代改进与持续学习</strong>：模型上线后，可能会遇到新的问题或用户反馈。后训练也可以作为一个持续的过程，根据新的数据和反馈不断优化模型，保持最佳性能并适应变化的需求 。</li>
+</ul>
+<p><strong class="">后训练的目的是将一个通用的、原始的预训练模型，转化为一个更专业、更安全、更高效、更能满足特定应用需求的定制化模型</strong>。是模型开发生命周期中不可或缺的一环，直接决定了模型在实际应用中的表现和价值。</p>
+<div>
+<h2 class="">后训练的主要技术</h2>
+<h4><strong>针对大语言模型（LLM）的后训练技术</strong></h4>
+<p>针对大语言模型（LLM）的后训练技术，核心目标是提升模型在特定任务上的表现，输出更符合人类偏好，增强在特定领域的知识和能力。技术可以分为几大类：</p>
+</div>
+<ul>
+<li><strong>监督微调（Supervised Fine-Tuning, SFT）</strong>：这是最基础也是最常用的后训练方法。通过在高质量的、人工标注的（输入，输出）数据对上进行训练，来教会模型如何执行特定任务或遵循特定指令 。例如，为了让模型学会进行多轮对话，SFT数据会包含用户和助手之间的对话历史，以及期望的助手回复 。Llama3的后训练就包含了多轮的SFT，使用人类注释数据和合成数据 。SFT的目标是让模型学会“模仿”标注数据中的理想回答。</li>
+<li><strong>偏好对齐（Preference Alignment）</strong>：SFT后的模型虽然能回答问题，但答案的质量、安全性或有用性可能仍有不足。偏好对齐技术旨在解决这个问题，通过让模型学习区分“好”答案和“坏”答案，使其更倾向于生成人类偏好的回答。常见的技术包括：
+<ul>
+<li><strong>基于人类反馈的强化学习（Reinforcement Learning from Human Feedback, RLHF）</strong>：是一种复杂但效果显著的技术。首先收集人类对模型不同输出的排序或评分，然后训练一个奖励模型（Reward Model, RM）来预测人类偏好，最后使用强化学习算法（如PPO）来优化语言模型，使其生成能获得更高奖励（即更符合人类偏好）的文本 。Llama3和GLM-4的后训练都应用了RLHF或类似的RL技术 。</li>
+<li><strong>直接偏好优化（Direct Preference Optimization, DPO）</strong>：DPO是一种比RLHF更简单、更高效的偏好对齐方法。不需要显式地训练奖励模型，是直接利用偏好数据优化语言模型，学会区分被选中的（chosen）和被拒绝的（rejected）回答。DPO在训练速度、成本和调参难度上通常优于PPO，因此在实践中越来越受欢迎。</li>
+</ul>
+</li>
+<li><strong>高效微调技术（Parameter-Efficient Fine-Tuning, PEFT）</strong>：由于LLM参数量巨大，全参数微调（Full Fine-Tuning）需要巨大的计算资源和显存。PEFT技术通过仅微调模型的一小部分参数或添加少量可训练参数来实现模型适配，大幅降低计算成本。常见的PEFT方法包括：
+<ul>
+<li><strong>LoRA（Low-Rank Adaptation）</strong>：LoRA在模型的注意力权重矩阵旁边添加低秩分解矩阵进行微调，不是直接更新原始的大权重矩阵 。</li>
+<li><strong>QLoRA（Quantized LoRA）</strong>：QLoRA结合了量化和LoRA，先将基础模型量化为低精度（如4-bit），然后在量化后的模型上应用LoRA进行微调，进一步降低了显存需求，使得在单个GPU上微调大型模型成为可能。</li>
+<li><strong>Adapter</strong>：Adapter在Transformer层的中间插入小型神经网络模块进行微调，而保持预训练模型的主干参数不变 。</li>
+</ul>
+</li>
+<li><strong>模型融合（Model Merging）</strong>：是一种将多个同结构、同大小的已训练模型（例如，多个针对不同任务微调的Llama 3 8B模型）的参数通过某种方式（如加权平均）合并起来，得到一个可能能力更强的新模型的技术 。常用的模型融合技术包括TIES、DARE和SLERP等。</li>
+</ul>
+<table data-v-0909cf3c="">
+<thead data-v-0909cf3c="">
+<tr data-v-0909cf3c="">
+<th align="left" data-v-0909cf3c="">技术类别</th>
+<th align="left" data-v-0909cf3c="">核心思想</th>
+<th align="left" data-v-0909cf3c="">主要方法举例</th>
+<th align="left" data-v-0909cf3c="">应用目标</th>
+</tr>
+</thead>
+<tbody data-v-0909cf3c="">
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">监督微调 (SFT)</td>
+<td align="left" data-v-0909cf3c="">使用特定任务数据继续训练预训练模型，调整模型参数</td>
+<td align="left" data-v-0909cf3c="">指令微调, 自适应微调, 基于提示的微调</td>
+<td align="left" data-v-0909cf3c="">提升模型在特定任务或领域的性能，增强指令遵循能力</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">偏好对齐</td>
+<td align="left" data-v-0909cf3c="">通过人类反馈优化模型，使其输出更符合人类偏好</td>
+<td align="left" data-v-0909cf3c="">基于人类反馈的强化学习 (RLHF), 直接偏好优化 (DPO)</td>
+<td align="left" data-v-0909cf3c="">对齐人类偏好，提升模型输出的安全性、有用性和无害性，增强对话质量</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">高效微调 (PEFT)</td>
+<td align="left" data-v-0909cf3c="">仅微调模型的一小部分参数或添加少量可训练参数，降低计算成本</td>
+<td align="left" data-v-0909cf3c="">LoRA, QLoRA, Adapter</td>
+<td align="left" data-v-0909cf3c="">在资源有限的情况下适配大型模型</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">模型融合</td>
+<td align="left" data-v-0909cf3c="">将多个已训练模型的参数合并，得到能力更强的新模型</td>
+<td align="left" data-v-0909cf3c="">TIES, DARE, SLERP</td>
+<td align="left" data-v-0909cf3c="">结合不同模型的优势，提升整体性能</td>
+</tr>
+</tbody>
+</table>
+<h4><strong>针对模型压缩与优化的后训练技术</strong></h4>
+<p>当大型预训练模型需要在资源受限的环境（如移动设备、嵌入式系统）中部署，或者需要降低推理成本时，<strong>模型压缩与优化技术就显得尤为重要</strong>。这些技术通常在模型训练完成后应用，属于后训练的一部分，减小模型体积、降低计算复杂度和内存占用，尽可能保持模型的性能。主要的模型压缩与优化后训练技术包括：</p>
+<ul>
+<li><strong>训练后量化（Post-Training Quantization, PTQ）</strong>：量化是将模型中的权重和/或激活值从高精度表示（如32位浮点数，FP32）转换为低精度表示（如16位浮点数FP16、8位整数INT8，甚至4位整数INT4）的过程 。PTQ是在模型训练完成后直接进行量化，无需重新训练或仅需少量校准数据。Google AI Edge提供的PTQ选项包括动态范围量化（更小4倍，速度提升2-3倍，适用于CPU）、完整整数量化（更小4倍，速度提升3倍以上，适用于CPU、Edge TPU、微控制器）和Float16量化（更小2倍，GPU加速，适用于CPU、GPU）。英特尔也提供了用于PTQ的INCQuantizer类 。量化可以显著减小模型大小和加速推理，但可能会导致一定的精度损失，需要仔细选择量化方法和校准数据来权衡。</li>
+<li><strong>训练后剪枝（Post-Training Pruning, PTP）</strong>：剪枝是通过移除模型中不重要的权重或神经元（甚至整个层或注意力头）来减小模型大小和计算量的技术 。基于幅度的剪枝是一种常见方法，它认为绝对值较小的权重对模型输出的贡献较小，可以移除。剪枝后，模型通常需要进行微调（re-training）以恢复损失的精度 。剪枝可以分为权重剪枝（删除单个连接）、神经元剪枝（删除整个神经元）和结构化剪枝（删除更大的结构，如滤波器或层）。剪枝的目标是得到一个更稀疏、更紧凑的模型。</li>
+<li><strong>知识蒸馏（Knowledge Distillation, KD）</strong>：知识蒸馏是一种模型压缩技术，核心思想是让一个小型模型（学生模型）去学习一个大型、高性能模型（教师模型）的行为和知识 。在后训练阶段，教师模型（通常是经过充分训练的大型LLM）的“软标签”（soft labels，即输出概率分布）或中间层特征被用来指导学生模型的训练。学生模型通过学习模仿教师模型的输出，可以在参数量远小于教师模型的情况下，达到接近甚至超越教师模型的性能。例如，DeepSeek-RI模型就作为教师模型，将其先进的推理能力迁移到更小的模型架构上 。知识蒸馏不仅可以压缩模型，有时还能提升学生模型的泛化能力。</li>
+</ul>
+<table data-v-0909cf3c="">
+<thead data-v-0909cf3c="">
+<tr data-v-0909cf3c="">
+<th align="left" data-v-0909cf3c="">技术类别</th>
+<th align="left" data-v-0909cf3c="">核心思想</th>
+<th align="left" data-v-0909cf3c="">主要方法/特点</th>
+<th align="left" data-v-0909cf3c="">应用目标</th>
+</tr>
+</thead>
+<tbody data-v-0909cf3c="">
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">训练后量化 (PTQ)</td>
+<td align="left" data-v-0909cf3c="">降低模型参数的数值精度</td>
+<td align="left" data-v-0909cf3c="">将float32权重转换为int8等低精度格式，使用校准数据集优化量化过程</td>
+<td align="left" data-v-0909cf3c="">减小模型大小，加速推理，降低功耗，便于边缘设备部署</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">训练后剪枝 (PTP)</td>
+<td align="left" data-v-0909cf3c="">移除模型中不重要的参数（权重、神经元等）</td>
+<td align="left" data-v-0909cf3c="">根据参数重要性进行剪枝，可能需要剪枝后重新训练以恢复性能</td>
+<td align="left" data-v-0909cf3c="">减少模型参数数量和计算量，提高推理速度，适用于资源受限环境</td>
+</tr>
+<tr data-v-0909cf3c="">
+<td align="left" data-v-0909cf3c="">知识蒸馏</td>
+<td align="left" data-v-0909cf3c="">用大型教师模型指导小型学生模型训练，迁移知识</td>
+<td align="left" data-v-0909cf3c="">学生模型学习教师模型的软标签或特征表示</td>
+<td align="left" data-v-0909cf3c="">压缩模型大小，提升小型模型的性能和泛化能力</td>
+</tr>
+</tbody>
+</table>
+<h2>常见的后训练技术</h2>
+<h4><strong>监督微调（SFT）</strong></h4>
+<p>监督微调（Supervised Fine-Tuning, SFT）是大语言模型后训练中最基础且核心的一环。核心思想非常简单：使用高质量的、人工标注的（输入，输出）数据对来进一步训练预训练模型，使其适应特定任务或学会遵循特定指令 。可以将SFT想象成给模型提供一本“标准答案”手册，让它学习在特定情境下应该给出什么样的回应。这些标注数据由领域专家或经过培训的标注员精心构建，确保其准确性和有用性。例如，在构建一个客服聊天机器人时，SFT数据可能包含大量的用户提问和对应的理想客服回答。在Llama3的后训练中，SFT数据主要由人类注释收集的提示及其通过拒绝采样得到的响应、针对特定能力的合成数据以及少量人类策划的数据组成 。</p>
+<p>SFT的实施过程如下：</p>
+<ul>
+<li><strong>准备数据集</strong>：收集或构建一个高质量的、与目标任务相关的标注数据集。每个样本包含一个输入（例如，用户的问题、指令）和一个期望的输出（例如，模型的理想回答、执行结果）。数据的质量和多样性对SFT的效果至关重要 。</li>
+<li><strong>选择基础模型</strong>：选择一个合适的预训练语言模型作为SFT的起点。这个基础模型应该已经具备较好的语言理解和生成能力。</li>
+<li><strong>配置训练参数</strong>：设置训练的超参数，如学习率、批次大小、训练轮数（epochs）等。这些参数的选择会影响训练的速度和最终模型的性能 。例如，Llama3最大的模型在SFT时学习率设为1e-5，训练步数在8.5k到9k之间 。</li>
+<li><strong>执行训练</strong>：在准备好的数据集上对基础模型进行微调。训练过程中，模型会尝试预测给定输入下的输出，并将其预测与标注的真实输出进行比较，计算损失（loss），然后通过反向传播算法更新模型的参数，以最小化损失。</li>
+<li><strong>评估与迭代</strong>：训练完成后，在独立的验证集或测试集上评估模型的性能。如果效果不理想，可能需要调整数据集、超参数或训练策略，并进行多轮迭代。</li>
+</ul>
+<p><strong>SFT的优点在于其概念简单、易于实现，并且对于提升模型在特定任务上的表现非常有效</strong> 。可以帮助模型学会新的技能，如代码生成、文本摘要，或者使其更好地遵循指令格式，例如学习特定的对话模板。</p>
+<p>SFT也有一些局限性，<strong>高度依赖标注数据的质量</strong>，如果数据中存在偏见或错误，模型也会学习这些不好的模式。标准的SFT不直接优化模型以符合人类的广泛偏好（例如，生成更有趣或更安全的回答），需要后续的偏好对齐步骤（如RLHF或DPO）来完成 。全参数SFT的计算成本较高，对于非常大的模型，可能需要高效的微调技术（如LoRA）来降低资源消耗 。</p>
+<h4><strong>直接偏好优化（DPO）</strong></h4>
+<p>直接偏好优化（Direct Preference Optimization, DPO）是一种新兴且日益流行的后训练技术，用于对齐大语言模型与人类的偏好。与基于人类反馈的强化学习（RLHF）相比，DPO提供了一种更简单、计算成本更低且通常更容易调优的方法来达到类似的目标 。RLHF涉及训练一个独立的奖励模型来预测人类偏好，然后使用强化学习算法（如PPO）来优化语言模型以最大化这个奖励。而DPO的核心思想是直接利用包含偏好信息的数据集来优化语言模型本身，无需显式地训练奖励模型。</p>
+<p>DPO的工作原理概括为以下几个步骤：</p>
+<ul>
+<li><strong>准备偏好数据集</strong>：构建一个数据集，其中每个样本包含一个提示（prompt），以及针对该提示的至少两个模型生成的回答：一个是被人类标注者“偏好”或“选中”的回答（chosen response），另一个是被“拒绝”或认为较差的回答（rejected response）。Llama3在收集偏好数据时，甚至引入了第三个“编辑过的响应”（edited response），其偏好顺序为 edited &gt; chosen &gt; rejected 。</li>
+<li><strong>定义损失函数</strong>：DPO通过一个精心设计的损失函数来优化语言模型。这个损失函数鼓励模型为“偏好”的回答分配更高的概率，而为“拒绝”的回答分配更低的概率。巧妙地利用了Bradley-Terry模型等成对比较模型的理论，将偏好学习问题转化为一个监督学习问题。</li>
+<li><strong>优化语言模型</strong>：使用标准的梯度下降方法，通过最小化DPO损失函数来更新语言模型的参数。这个过程直接调整模型的策略，使其更倾向于生成人类偏好的文本。</li>
+</ul>
+<p>DPO相较于RLHF的主要优势在于：</p>
+<ul>
+<li><strong>更简单</strong>：DPO避免了RLHF中训练奖励模型和使用复杂强化学习算法的步骤，实现起来更直接。</li>
+<li><strong>更高效</strong>：由于不需要额外的奖励模型和RL循环，DPO的训练通常更快，计算资源消耗更少 。可能只需要加载一个（或两个，如果使用参考模型）语言模型，而PPO可能需要同时加载原始模型、训练中的模型和奖励模型 。</li>
+<li><strong>更稳定，更容易调参</strong>：RLHF中的PPO算法 notoriously 难以调参，对超参数非常敏感。DPO作为一个监督学习问题，其训练过程通常更稳定，超参数调整也相对简单 。</li>
+<li><strong>效果相当甚至更好</strong>：在许多实验中，DPO在偏好对齐任务上取得了与PPO相当甚至更好的效果，尤其是在资源有限的情况下，DPO的简单性使其成为一个更具吸引力的选择 。</li>
+</ul>
+<h4><strong>强化学习（RL）</strong></h4>
+<p><strong>强化学习（Reinforcement Learning, RL）在大型语言模型的后训练中扮演着至关重要的角色</strong>，尤其是在对齐模型行为与人类偏好、提升模型在复杂交互任务中的表现方面。与监督学习不同，强化学习并非通过提供“标准答案”来训练模型，而是<strong>让模型通过与环境的交互来学习最优策略，以最大化累积奖励</strong>。在后训练语境下，环境可以是用户提出的问题或指令，模型的行动是生成文本，奖励则反映了生成文本的质量（例如，是否准确、有帮助、无害、流畅等）。</p>
+<p>基于人类反馈的强化学习（Reinforcement Learning from Human Feedback, RLHF）是RL在后训练中包含以下关键步骤：</p>
+<ul>
+<li><strong>收集人类偏好数据</strong>：首先，需要收集一个数据集，其中包含人类对不同模型生成响应的偏好排序或评分。例如，给定一个提示，标注者可能会看到几个不同的模型输出，被要求将它们从最好到最差进行排序，或者对每个输出进行打分 。</li>
+<li><strong>训练奖励模型（Reward Model, RM）</strong>：利用收集到的人类偏好数据来训练一个奖励模型。这个奖励模型的任务是，给定一个提示和模型生成的响应，预测人类对该响应的偏好程度（即给出一个标量奖励值）。Llama3在训练奖励模型时，会移除边际项，并过滤掉相似响应样本，同时使用所有偏好数据进行训练 。</li>
+<li><strong>使用RL算法优化语言模型（Policy Model）</strong>：在奖励模型训练完成后，将其作为优化语言模型的信号。语言模型（策略模型）通过强化学习算法（如近端策略优化 Proximal Policy Optimization, PPO）进行微调，目标是生成能够从奖励模型获得更高奖励的响应 。为了防止模型过度优化奖励模型而偏离原始语言模型太远（例如，生成无意义但能骗过奖励模型的文本），通常会加入一个KL散度惩罚项，约束策略模型与原始预训练模型之间的差异 。</li>
+</ul>
+<p><strong>强化学习的优势是能处理复杂的、序列性的决策问题</strong>，可以通过设计合适的奖励函数来引导模型学习特定的行为模式。RL也存在一些挑战：</p>
+<ul>
+<li><strong>奖励函数设计困难</strong>：设计一个能准确、全面地反映人类偏好的奖励函数非常困难。不完善的奖励函数可能导致模型学习到 unintended 的行为（奖励黑客，reward hacking）。</li>
+<li><strong>样本效率低，训练不稳定</strong>：RL需要大量的交互数据才能学习到有效的策略，训练过程可能不稳定，对超参数敏感 。</li>
+<li><strong>计算成本高</strong>：RLHF等涉及多个模型（策略模型、奖励模型、参考模型）和复杂优化过程的方法，计算成本通常较高。</li>
+</ul>
+<h4><strong>训练后量化（PTQ）</strong></h4>
+<p>训练后量化（Post-Training Quantization, PTQ）是一种重要的模型优化技术，减小模型的大小并加速推理速度，尽可能减少对模型准确率的负面影响。在模型完成训练后进行，无需或仅需少量未标注的校准数据，因此被称为“训练后”量化。核心思想是将模型中的权重（weights）和/或激活值（activations）从高精度的浮点数表示（例如32位浮点数，FP32）转换为低精度的表示，例如16位浮点数（FP16或BF16）、8位整数（INT8），甚至4位整数（INT4）或2位整数（INT2）。</p>
+<p>关键好处：<strong>模型占用的存储空间显著减小，内存带宽需求降低，以及在某些硬件（如支持低精度运算的CPU、GPU或专用加速器如Edge TPU）上可以实现更快的计算速度</strong>。</p>
+<p>Google AI Edge提供了一些常见的PTQ选项及其优势 ：</p>
+<ul>
+<li><strong>动态范围量化（Dynamic Range Quantization）</strong>：这是最简单的PTQ形式，仅将权重从FP32转换为INT8，而激活值在推理时动态量化和反量化。这种方法可以将模型大小减小约4倍，CPU延迟提升2-3倍，且通常对准确率影响较小。</li>
+<li><strong>完整整数量化（Full Integer Quantization）</strong>：这种方法不仅量化权重，还将激活值也转换为INT8（或其他整数格式）。这需要一个小型的代表性校准数据集来确定激活值的动态范围。完整整数量化可以实现约4倍的模型压缩和3倍以上的速度提升，并且模型可以完全在仅支持整数的硬件（如微控制器、Edge TPU）上运行。</li>
+<li><strong>Float16量化（Float16 Quantization）</strong>：将权重和/或激活值转换为16位浮点数（FP16或BF16）。这可以将模型大小减小约2倍，并且在支持FP16运算的GPU上可以获得显著的加速。</li>
+</ul>
+<p>PTQ的过程包括以下步骤：</p>
+<ul>
+<li><strong>选择量化方案</strong>：确定要量化的部分（仅权重，还是权重和激活值）、目标精度（如INT8, FP16）以及量化的粒度（如逐层量化、逐通道量化）。</li>
+<li><strong>校准（对于完整整数量化）</strong>：如果量化激活值，通常需要一个小的、具有代表性的校准数据集。模型在推理这些校准数据时，会收集激活值的统计信息（如最小值和最大值），用于确定量化参数（如缩放因子和零点）。</li>
+<li><strong>转换与部署</strong>：根据选择的量化方案和校准得到的参数，将原始FP32模型转换为量化模型。转换后的模型可以部署到目标硬件上运行。</li>
+</ul>
+<h4><strong>训练后剪枝（PTP）</strong></h4>
+<p>训练后剪枝（Post-Training Pruning, PTP）是一种模型压缩技术，目标是通过移除神经网络中不重要的参数（权重）或结构单元（如神经元、通道、甚至整个层），来减小模型的大小、降低计算复杂度并加速推理，尽可能保持模型的性能。与量化不同，剪枝是通过减少模型中的连接数量或单元数量来实现压缩的。可以将剪枝想象成给模型“瘦身”，去掉那些对最终输出贡献不大的“赘肉”。剪枝在模型训练完成后进行，因此属于后训练优化的一部分。</p>
+<p>PTP的过程包括以下几个步骤：</p>
+<ul>
+<li><strong>重要性评估</strong>：首先，需要评估模型中每个参数或结构单元的重要性。常用的评估方法包括：
+<ul>
+<li><strong>基于幅度的剪枝（Magnitude-based Pruning）</strong>：这是最简单也最常用的方法。它认为权重绝对值越小的参数，对模型输出的贡献越小，因此可以优先被剪枝 。</li>
+<li><strong>基于灵敏度的剪枝（Sensitivity-based Pruning）</strong>：分析移除某个参数或单元对模型损失函数或准确率的影响程度，影响越小的被认为越不重要。</li>
+<li><strong>基于梯度的剪枝</strong>：利用梯度信息来判断参数的重要性。</li>
+</ul>
+</li>
+<li><strong>剪枝策略</strong>：根据重要性评估结果，选择要移除的参数或单元。剪枝可以有不同的粒度：
+<ul>
+<li><strong>非结构化剪枝（Unstructured Pruning）</strong>：也称为权重剪枝，逐个移除单个权重。这种方法可以达到很高的稀疏度，但剪枝后的模型通常是不规则的，难以在通用硬件上获得实际的加速，除非有专门的稀疏计算库支持 。</li>
+<li><strong>结构化剪枝（Structured Pruning）</strong>：移除整个结构单元，如神经元、通道（filters）、注意力头或甚至整个层。这种方法产生的模型仍然是规则的，可以直接在现有硬件上获得加速，但可能比非结构化剪枝更难保持精度 。</li>
+</ul>
+</li>
+<li><strong>剪枝执行</strong>：按照选定的策略和剪枝比例（例如，移除20%的权重）移除不重要的参数或单元。</li>
+<li><strong>微调（Fine-tuning / Re-training）</strong>：剪枝操作不可避免地会导致模型性能的下降。因此，在剪枝之后，通常需要对模型进行微调，在剩余的参数上重新训练一段时间，以恢复损失的精度 。这个微调过程使用的学习率通常较小。</li>
+</ul>
+<p>剪枝技术对于减小模型体积和计算量非常有效，尤其是在资源受限的设备上部署模型时。例如，在计算机视觉领域，通过剪枝可以显著减小深度神经网络的大小和计算需求 。对于大型语言模型，剪枝也是一个重要的研究方向，尽管由于其巨大的参数量和复杂的结构，LLM的剪枝面临更大的挑战。</p>
+<p>对于非技术人员而言，理解PTP的关键在于它是一种通过“去掉模型中不重要的部分”来使模型变得更小、更快的方法。选择合适的剪枝策略和剪枝比例，在剪枝后进行充分的微调，是保证模型性能的关键。与量化类似，剪枝也需要在模型压缩率和性能保持之间进行权衡。</p>
+<h4><strong>知识蒸馏</strong></h4>
+<p>知识蒸馏（Knowledge Distillation, KD）是一种模型压缩和性能提升技术，核心思想是将一个大型、高性能、复杂的模型（称为教师模型，Teacher Model）所学习到的“知识”迁移到一个小型、轻量级的模型（称为学生模型，Student Model）中。这种方法使学生模型能在参数量远小于教师模型的情况下，达到接近甚至有时超越教师模型的性能。知识蒸馏在模型训练完成后进行，属于后训练优化的一部分，创建一个更小、更高效的模型，保留大型模型的强大能力。例如，DeepSeek-RI模型就作为教师模型，将其先进的推理能力迁移到更小的模型架构上 。</p>
+<p>知识蒸馏的过程涉及以下步骤：</p>
+<ul>
+<li><strong>训练教师模型</strong>：首先，需要一个在目标任务上表现优异的、大型的教师模型。这个模型通常参数量较大，训练成本较高。</li>
+<li><strong>定义学生模型</strong>：设计一个小型的学生模型，其结构更简单，参数量更少，计算复杂度更低。</li>
+<li><strong>迁移知识</strong>：学生模型的训练目标是模仿教师模型的行为。通过两种方式实现：
+<ul>
+<li><strong>软标签学习（Soft Target Learning）</strong>：教师模型在训练数据上会产生“软标签”，即输出概率分布（例如，对于一张猫的图片，教师模型可能输出“猫: 0.9, 狗: 0.05, 狐狸: 0.05”）。这些软标签包含了比“硬标签”（例如，“猫: 1”）更丰富的信息，反映了类别间的相似性。学生模型在学习真实标签的同时，也学习拟合教师模型的软标签。</li>
+<li><strong>特征表示学习（Feature Representation Learning）</strong>：学生模型也可以学习模仿教师模型中间层的特征表示，学习到更鲁棒的特征提取能力。</li>
+</ul>
+</li>
+<li><strong>学生模型训练</strong>：学生模型通过最小化一个组合损失函数进行训练。这个损失函数通常包含两部分：一部分是学生模型预测与真实硬标签之间的标准损失（如交叉熵损失），另一部分是学生模型预测与教师模型软标签（或特征）之间的蒸馏损失（如KL散度）。</li>
+</ul>
+<p><strong>知识蒸馏的优势在于，能压缩模型，有时还能提升学生模型的泛化能力和鲁棒性</strong>。是因为学生模型从教师模型那里学习到了更平滑、更丰富的知识表示。对于非技术人员而言，可以将知识蒸馏理解为一种“师徒传承”的过程，小模型（学生）通过向大模型（老师）学习，快速掌握复杂技能。</p>
+<h2>如何判断是否需要后训练？</h2>
+<p>判断一个模型是否需要后训练，需要综合考虑模型在当前应用场景下的表现以及部署环境的限制。以下是一些常见的信号，表明可能需要对模型进行后训练：</p>
+<ul>
+<li><strong>模型在新应用或领域表现不佳，需要适应新数据/任务</strong>：如果一个预训练模型被直接应用于一个新的、与预训练数据分布不同的领域或任务时，其性能可能会显著下降。例如，一个在通用语料上训练的语言模型，在处理特定行业的专业文本（如法律文书、医学报告）时，可能无法准确理解专业术语或行业规范，导致生成的内容质量不高或出现错误。这种情况下，就需要通过后训练（如监督微调SFT），使用该特定领域的数据对模型进行优化，使其适应新的数据特点和任务需求。</li>
+<li><strong>需要在资源受限的移动设备或嵌入式系统上部署模型，要求更小更高效</strong>：许多先进的深度学习模型参数量巨大，计算复杂度高，难以直接部署到存储空间有限、计算能力较弱的移动设备（如智能手机、平板电脑）或嵌入式系统（如智能摄像头、可穿戴设备）上。如果直接部署，可能会导致应用运行缓慢、耗电量高，甚至无法运行。此时，就需要采用模型压缩的后训练技术，如训练后量化（PTQ）或训练后剪枝（PTP），来减小模型体积、降低计算量，使其满足部署环境的资源限制。</li>
+<li><strong>模型推理耗时过长，影响用户体验，需要加速模型</strong>：在某些实时性要求较高的应用场景中，如在线翻译、实时语音识别、交互式对话系统等，模型的推理速度至关重要。如果模型推理耗时过长，用户可能需要等待较长时间才能得到结果，这会严重影响用户体验。通过后训练技术，如量化、剪枝或知识蒸馏，可以优化模型结构，减少计算量，从而显著提升模型的推理速度，满足实时性要求。</li>
+<li><strong>模型输出不符合特定要求或偏好</strong>：有时，模型虽然能够完成任务，但其输出风格、语气或内容可能不符合特定的应用需求或用户偏好。例如，一个通用的文本生成模型可能生成的内容过于通用，缺乏特定领域的专业性，或者其语气不够友好、正式。在这种情况下，可以通过基于人类反馈的强化学习（RLHF）或直接偏好优化（DPO）等后训练技术，利用人类偏好数据对模型进行调整，使其输出更符合期望。</li>
+<li><strong>模型存在偏见或安全问题</strong>：预训练模型可能会从训练数据中学习到一些社会偏见（如性别、种族偏见）或产生不安全、不道德的输出。如果发现模型存在此类问题，可以通过后训练，使用经过筛选和修正的数据对模型进行微调，或者引入特定的约束和惩罚项，以减少偏见，提升模型的安全性和可靠性。</li>
+</ul>
+<h2>如何选择合适的后训练技术？</h2>
+<p><strong>考虑优化目标和计算资源</strong>：首先，需要明确后训练的主要目标是什么。</p>
+<p>如果目标是提升模型在特定任务上的准确率或使其适应新的领域，那么可以选择监督微调（SFT）或直接偏好优化（DPO）。</p>
+<p>如果目标是缩小模型体积、加速推理以在资源受限的设备上部署，那么训练后量化（PTQ）、训练后剪枝（PTP）或知识蒸馏是更合适的选择 。</p>
+<p>需要评估可用的计算资源，例如，SFT和知识蒸馏通常需要较多的计算资源和时间进行训练，而PTQ和PTP（尤其是PTQ）的实施成本相对较低。</p>
+<div class="paragraph"><strong>具体场景与技术的匹配</strong>：</div>
+<ul>
+<li>
+<div class="paragraph"><strong>希望中文模型适应法律领域</strong>：这种情况下，目标是提升模型在特定专业领域的理解和生成能力。可以选择<strong>监督微调（SFT）</strong>。首先，需要收集或构建一个包含大量法律相关文本（如法律法规、案例、合同）及其对应标签或期望输出的数据集。然后，使用这个数据集对预训练的中文语言模型进行SFT。通过微调，模型能学习法律领域的专业术语、表达习惯和逻辑结构，从而在回答法律咨询、分析法律文书等任务上表现更专业。</div>
+</li>
+<li>
+<div class="paragraph"><strong>在手机端部署CNN图像分类模型</strong>：手机端部署对模型的大小和推理速度有严格要求。训练后量化（PTQ）是一个非常有效且相对简单的压缩方法 。PTQ可以将CNN模型的权重和激活值从FP32转换为INT8，显著减小模型体积（约减小4倍）并加速推理（在支持INT8运算的硬件上），只需要一个小的校准数据集，无需重新训练，部署成本较低。</div>
+</li>
+<li>
+<div class="paragraph"><strong>已有预训练模型但无GPU资源进行大规模训练</strong>：如果计算资源有限，但仍希望对模型进行压缩和优化，可以考虑<strong>训练后剪枝（PTP）</strong>。PTP可以在CPU上完成，通过移除模型中不重要的权重或神经元来减少参数量。剪枝后的模型虽然可能需要进行微调以恢复性能，但微调所需的计算量通常远小于从头训练。选择合适的剪枝率和剪枝策略，可以在模型大小、速度和精度之间取得平衡。</div>
+</li>
+<li>
+<div class="paragraph"><strong>部署小型模型到边缘设备，且希望保持较高性能</strong>：当需要在计算能力和存储空间都非常有限的边缘设备上部署模型时，<strong>知识蒸馏</strong>是一个很好的选择。可以训练一个大型的教师模型（在云端或高性能服务器上），然后使用知识蒸馏技术将其知识迁移到一个小型的学生模型中。学生模型结构简单、参数量少，适合在边缘设备上运行，同时又能从教师模型那里学习到丰富的知识，从而保持较高的性能。</div>
+</li>
+<li>
+<div class="paragraph"><strong>希望模型输出更符合人类偏好或特定风格</strong>：如果对模型的输出风格、创造性或安全性有特定要求，可以考虑使用<strong>直接偏好优化（DPO）或基于人类反馈的强化学习（RLHF）</strong>。这些技术利用人类对模型不同输出的偏好数据来指导模型训练，生成更符合期望的文本。例如，可以用于优化聊天机器人的对话质量，使其回复更自然、更有帮助。</div>
+</li>
+</ul>
+<h2>后训练的实施步骤</h2>
+<ul>
+<li>
+<div class="paragraph"><strong>评估模型当前性能，判断是否需要后训练</strong>：这是后训练流程的起点。首先，需要在目标数据集或实际应用场景中对预训练模型或现有模型的性能进行全面评估。评估指标应根据具体任务而定，例如，对于分类任务可以是准确率、精确率、召回率；对于生成任务可以是BLEU、ROUGE等；对于部署场景，需要关注模型的推理速度、内存占用等。通过评估，明确模型当前存在的问题，例如推理速度太慢、准确率不够高、模型体积过大等。只有明确了问题，才能决定是否需要以及如何进行后训练。</div>
+</li>
+<li>
+<div class="paragraph"><strong>根据优化目标和模型类型，选择合适的后训练技术</strong>：在确定需要进行后训练后，下一步是根据第一步评估中发现的问题（即优化目标）以及模型的类型（例如，是LLM还是CNN）来选择合适的后训练技术。如果目标是提升LLM在特定任务上的表现，可以考虑SFT或DPO 。如果目标是压缩CNN模型以便在手机端部署，PTQ或PTP可能是更好的选择 。选择技术时还需考虑其复杂性、所需资源以及预期的效果。</div>
+</li>
+<li>
+<div class="paragraph"><strong>准备必要的资源，包括数据（如微调数据、校准数据）和计算资源</strong>：不同的后训练技术对数据的需求不同。例如，SFT需要特定任务的有标签数据；PTQ需要少量无标签的校准数据来收集激活值的统计信息；知识蒸馏则需要训练数据以及教师模型生成的软标签。需要根据所选技术准备相应的数据集。后训练过程（尤其是SFT、RL、知识蒸馏）可能需要一定的计算资源，如GPU，也需要提前规划和准备。</div>
+</li>
+<li>
+<div class="paragraph"><strong>应用选定的后训练技术，调整参数以观察效果</strong>：在准备好数据和资源后，就可以开始应用选定的后训练技术。例如，如果选择SFT，就需要设置学习率、批次大小、训练轮数等超参数，并在微调数据集上训练模型。如果选择PTQ，需要选择合适的量化算法和校准方法。在实施过程中，可能需要尝试不同的参数配置，并观察模型在验证集上的表现，以找到最优的设置。</div>
+</li>
+<li>
+<div class="paragraph"><strong>在验证集上评估后训练模型的性能（准确率、速度、大小等）</strong>：完成一轮后训练后，必须对优化后的模型进行严格的评估。使用一个独立的验证集（与训练集和测试集不重叠）来评估模型在目标任务上的性能，包括主要的评估指标（如准确率）以及相关的效率指标（如推理速度、模型大小）。与原始模型进行对比，判断后训练是否达到了预期的效果。</div>
+</li>
+<li>
+<div class="paragraph"><strong>分析结果，若未达到预期，调整后训练方法或参数，重复过程</strong>：如果后训练的效果未达到预期，例如性能提升不明显，或者精度损失过大，就需要分析原因。可能是所选技术不适用，参数设置不当，或者数据质量不高。根据分析结果，调整后训练的方法（例如，从PTQ切换到PTP）或参数（例如，调整学习率、剪枝率），然后重复步骤4和步骤5，进行迭代优化。这个过程可能需要多次尝试才能找到最佳方案。</div>
+</li>
+<li>
+<div class="paragraph"><strong>完成优化后，将后训练模型部署到目标环境，享受提升的性能</strong>：当后训练模型在验证集上达到满意的性能后，就可以将其部署到实际的目标环境中进行应用。在部署后，还需要持续监控模型在实际运行中的表现，收集用户反馈，以便在必要时进行进一步的调整和优化。成功部署后，用户将能够体验到模型性能或效率的提升所带来的益处。</div>
+</li>
+</ul>
+<img decoding="async" class=" wp-image-57419 aligncenter" data-src="https://ai-bot.cn/wp-content/uploads/2025/07/Post-Training-2.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="422" height="1228" />
+<h2>后训练的应用案例</h2>
+<p><strong>案例1：某医疗领域的大型语言模型，经SFT后对领域术语的理解准确度提高了20%，问答响应更专业。</strong></p>
+<p>在这个案例中，一个通用的大型语言模型被应用于医疗健康领域，用于回答用户关于疾病、药物、治疗方案等方面的咨询。然而，初始模型在处理医疗专业术语、理解复杂病历描述以及提供符合医学规范的答案方面表现不佳。为了提高模型在该领域的专业性，研发团队收集了大量医疗文献、临床指南、电子病历以及医患问答数据，对这些数据进行了清洗和标注。采用监督微调（SFT）的方法，使用这些医疗领域数据对预训练的语言模型进行了进一步的训练。<strong>经过SFT后，模型对医疗术语的理解准确度提升了约20%</strong>，能更准确地把握用户咨询的意图，生成更专业、更可靠的回答。</p>
+<p><strong>案例2：一个在云端训练的深度CNN模型，经PTQ压缩后大小减小4倍，推理速度提升3倍，成功部署于手机应用。</strong></p>
+<p>一家公司开发了一个基于深度卷积神经网络（CNN）的图像识别应用，模型在云端服务器上训练，能高精度地识别数千种物体。为了将该功能集成到其手机应用程序中，供用户离线使用，面临着模型体积过大和推理速度过慢的挑战。原始的FP32模型大小约为200MB，在高端手机上单张图片的推理时间也需要数秒，无法满足移动应用的实时性和存储限制要求。为了解决这个问题，采用了训练后量化（PTQ）技术。通过PTQ，他们将模型的权重和激活值从FP32转换为INT8精度。这个过程仅需一个包含少量代表性图像的小型校准数据集，无需重新训练模型。<strong>量化后的模型大小减小到了约50MB（减小了4倍），并且在支持INT8运算的移动处理器上，推理速度提升了近3倍</strong>，达到了每秒处理多张图片的水平。</p>
+<h2>后训练的价值与展望</h2>
+<p>后训练作为模型开发流程中的重要环节，价值在于能显著提升模型在特定场景的表现和效率，最大化模型的实用价值。通过后训练，通用的预训练模型可以被“雕琢”成适应特定任务的“利器”，</p>
+<p>随着深度学习模型的不断增大和应用的日益广泛，后训练技术将持续扮演关键角色。一方面，针对大语言模型的后训练技术将更加注重对齐人类意图、提升生成内容的安全性、减少偏见，并探索更高效、更稳定的训练方法。另一方面，模型压缩技术将朝着更高压缩比、更低精度、更强硬件适应性的方向发展，以满足日益增长的端侧智能需求。自动化的后训练流程、可解释的后训练效果评估以及针对特定硬件平台的后训练优化也将是重要的研究方向。理解后训练的原理和技术，根据实际需求合理选择和应用这些方法，对于开发者和企业来说，是提升AI产品竞争力和推动AI技术落地应用的关键。</p>
+                    </div>
+        <div class="post-tags my-3"><i class="iconfont icon-tags mr-2"></i><a href="../ai-question-and-answer/index.html" class="btn vc-l-violet btn-sm text-xs text-height-xs m-1 rounded-pill"  rel="tag" title="查看更多文章"># AI问答</a></div><div class="text-xs text-muted"><div><span>©</span> 版权声明</div><div class="posts-copyright">本站文章版权归 <a href="../gpt-image-2/index.html" target="_blank" rel="noopener"><span style="color: #3366ff">AI工具集 </span></a>所有，未经允许禁止任何形式的转载。</div></div> 
+        <div class="post-apd"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7941312752144276"
+     crossorigin="anonymous"></script>
+<!-- 文章-底部-横幅 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7941312752144276"
+     data-ad-slot="7362582675"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>        </div>
+    </div>
+        <div class="near-navigation rounded mt-4 py-2">
+                        <div class="nav previous border-right border-color">
+            <a class="near-permalink" href="../what-is-artificial-neural-network/index.html">
+            <span>上一篇</span>
+            <h4 class="near-title">什么是神经网络？一文看懂</h4>
+            </a>
+        </div>
+                        <div class="nav next border-left border-color">
+            <a class="near-permalink" href="../ai-and-computer-differences/index.html">
+            <span>下一篇</span>
+            <h4 class="near-title">人工智能与计算机程序有什么不同？一文看懂</h4>
+        </a>
+        </div>
+            </div>
+                <h4 class="text-gray text-lg my-4"><i class="site-tag iconfont icon-book icon-lg mr-1" ></i>相关文章</h4>
+            <div class="row mb-n4"> 
+                                <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../ai-generated-infringement/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2025/08/ai-generated-infringement-website.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../ai-generated-infringement/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        AI生成的艺术是否侵犯版权？一文看懂                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/7/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='' src='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/7/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../ai-generated-infringement/index.html"><i class="iconfont icon-heart mr-1"></i>3</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../ai-and-computer-differences/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2025/08/ai-and-computer-differences-website.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../ai-and-computer-differences/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        人工智能与计算机程序有什么不同？一文看懂                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/5/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='Avatar photo' src='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/5/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../ai-and-computer-differences/index.html"><i class="iconfont icon-heart mr-1"></i>3</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../ai-style-simulation/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2025/08/ai-style-simulation.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../ai-style-simulation/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        如何让AI模拟不同的人格与语气风格？一文看懂                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/5/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='Avatar photo' src='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/5/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../ai-style-simulation/index.html"><i class="iconfont icon-heart mr-1"></i>4</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../waht-is-react/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2025/09/ReAct-website.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../waht-is-react/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        ReAct是什么？一文看懂                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/5/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='Avatar photo' src='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/5/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../waht-is-react/index.html"><i class="iconfont icon-heart mr-1"></i>3</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../vipcheap-banner-0210/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2026/02/vipcheap-banner-0210.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../vipcheap-banner-0210/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        <span class="badge vc-red text-ss mr-1" title="新">新</span>ChatGPT Plus 和 Claude Pro 会员代充值 &#8211; 支持支付宝                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/1/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='Avatar photo' src='https://cravatar.cn/avatar/cb9589e040b634c184e7322391597cee?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/cb9589e040b634c184e7322391597cee?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/1/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../vipcheap-banner-0210/index.html"><i class="iconfont icon-heart mr-1"></i>0</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../the-future-of-ai/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2025/11/The-Future-of-AI.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../the-future-of-ai/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        AI领域未来5年的重要发展方向？一文看懂                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/5/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='Avatar photo' src='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/5/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../the-future-of-ai/index.html"><i class="iconfont icon-heart mr-1"></i>2</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                        </div>
+            
+<!-- comments -->
+<div class="post-apd mt-4"><a href="https://jimeng.jianying.com/ai-tool/home/?utm_medium=aitools&utm_source=aibot&utm_campaign=null&utm_content=hw_jm_aibot" rel="nofollow sponsored" target="_blank"><img class="rounded" src="../wp-content/uploads/2025/09/jimeng-ai-banner-0912.png" alt="即梦AI" /></a></div><div id="comments" class="comments">
+	<h2 id="comments-list-title" class="comments-title h5 mx-1 my-4">
+		<i class="iconfont icon-comment"></i>
+		<span class="noticom">
+			<a href="index.html#respond" class="comments-title" >暂无评论</a> 
+		</span>
+	</h2> 
+	<div class="card">
+		<div class="card-body"> 
+						<div id="respond_box">
+				<div id="respond" class="comment-respond">
+										<form id="commentform" class="text-sm mb-4">	
+						<div class="visitor-avatar d-flex flex-fill mb-2">
+														<img class="v-avatar rounded-circle" src="../wp-content/themes/onenav/images/gravatar.jpg">
+													</div> 
+						<div class="comment-textarea mb-3">
+							<textarea name="comment" id="comment" class="form-control" placeholder="输入评论内容..." tabindex="4" cols="50" rows="3"></textarea>
+						</div>
+							
+						<div id="comment-author-info" class="row  row-sm">
+							<div class="col-sm-6 col-lg-4 mb-3"><input type="text" name="author" id="author" class="form-control" value="" size="22" placeholder="昵称" tabindex="2"/></div>	
+							<div class="col-sm-6 col-lg-4 mb-3"><input type="text" name="email" id="email" class="form-control" value="" size="22" placeholder="邮箱" tabindex="3" /></div>
+							<div class="col-sm-12 col-lg-4 mb-3"><input type="text" name="url" id="url" class="form-control" value="" size="22"placeholder="网址"  tabindex="4" /></div>
+						</div>
+																		<div class="com-footer d-flex justify-content-end flex-wrap">
+							<input type="hidden" id="_wpnonce" name="_wpnonce" value="205d8d8222" /><input type="hidden" name="_wp_http_referer" value="/how-does-post-training/" />							<a rel="nofollow" id="cancel-comment-reply-link" style="display: none;" href="javascript:;" class="btn btn-light custom_btn-outline mx-2">再想想</a>
+														<button class="btn btn-dark custom_btn-d ml-2" type="submit" id="submit">发表评论</button>
+							<input type="hidden" name="action" value="ajax_comment"/>
+							<input type='hidden' name='comment_post_ID' value='57389' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+						</div>
+					</form>
+					<div class="clear"></div>
+									</div>
+			</div>	
+						<div id="loading-comments"><span></span></div>
+						<div class="not-comment card"><div class="card-body nothing text-center color-d">暂无评论...</div></div>
+					
+		</div>	
+	</div>
+</div><!-- comments end -->
+        </div> 
+    </div> 
+    <div class="sidebar sidebar-tools d-none d-lg-block">
+				<div id="advert-8" class="card io-sidebar-widget advert">
+        <div id="advert_widget">
+        <div class="p-2 rounded"><a href="https://updream.cgref.cn/aibotbanner" target="_blank" rel="nofollow sponsored"><img src="../wp-content/uploads/2026/07/updream-banner.jpg" alt="updream" width="100%" class="rounded" /></a></div>    </div>
+    
+    </div><div id="advert-3" class="card io-sidebar-widget advert">
+        <div id="advert_widget">
+        <div class="p-2 rounded"><a href="https://itab.link/?ref=aibot" target="_blank" rel="nofollow sponsored"><img src="../wp-content/uploads/2024/07/itab-detail-ad3.png.png" alt="iTab广告" width="100%" class="rounded" /></a></div>    </div>
+    
+    </div><div id="ranking_post-3" class="card io-sidebar-widget io-widget-ranking-list"><div class="d-flex sidebar-header"><div class="card-header widget-header"><h3 class="text-md mb-0"><i class="mr-2 fas fa-fire"></i>热门工具</h3></div></div><div class="card-body"><div class="row row-sm my-n1"><div class="url-card col-6  my-1"><a href="../sites/4189.html" target='_blank'  class="card post-min m-0" data-url="https://www.doubao.com/chat/?channel=hw_db_aibot&amp;source=hw_db_aibot" data-id="4189"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/03/doubao-icon.png"  height="auto" width="auto"  alt="豆包"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">豆包</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/73776.html" target='_blank'  class="card post-min m-0" data-url="https://libtv.cgref.cn/aibot" data-id="73776"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/04/libtv-icon.png"  height="auto" width="auto"  alt="LibTV"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">LibTV</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/9195.html" target='_blank'  class="card post-min m-0" data-url="https://ihuiwa.paluai.com/aibot" data-id="9195"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2024/03/ihuiwa-icon.png"  height="auto" width="auto"  alt="绘蛙AI"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">绘蛙AI</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/2644.html" target='_blank'  class="card post-min m-0" data-url="https://www.aippt.cn/?utm_type=Navweb&amp;utm_source=ai-bot&amp;utm_page=aippt&amp;utm_plan=ppt&amp;utm_unit=AIPPT&amp;utm_keyword=50608" data-id="2644"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/06/AiPPT-logo.png"  height="auto" width="auto"  alt="AiPPT"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">AiPPT</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/9499.html" target='_blank'  class="card post-min m-0" data-url="https://metaso.cn/?s=aibot1&amp;referrer_s=aibot1" data-id="9499"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2024/06/metaso-ai-search-icon.png"  height="auto" width="auto"  alt="秘塔AI搜索"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">秘塔AI搜索</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/39108.html" target='_blank'  class="card post-min m-0" data-url="https://ai-bot.cn/sites/65814.html" data-id="39108"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2025/07/trae.ai-logo.png"  height="auto" width="auto"  alt="TRAE编程"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">TRAE编程</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/5507.html" target='_blank'  class="card post-min m-0" data-url="https://d.design/agent?from=ab13" data-id="5507"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/04/duiyou-icon-1.png"  height="auto" width="auto"  alt="堆友Agent"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">堆友Agent</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/2400.html" target='_blank'  class="card post-min m-0" data-url="https://www.designkit.cn/?channel=10026" data-id="2400"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2023/04/meitu-ai-ppt.jpg"  height="auto" width="auto"  alt="美图设计室"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">美图设计室</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../seko/index.html" target='_blank'  class="card post-min m-0" data-url="https://seko.cgref.cn/s/1oe7lzgn23" data-id="58360"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2025/07/Seko-logo-1.png"  height="auto" width="auto"  alt="Seko"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">Seko</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../updream/index.html" target='_blank'  class="card post-min m-0" data-url="https://updream.cgref.cn/s/1oe71vme23" data-id="80357"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/06/updream-logo1.png"  height="auto" width="auto"  alt="updream"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">updream</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../miaoda/index.html" target='_blank'  class="card post-min m-0" data-url="https://www.miaoda.cn/?invitecode=user-1pb0xv8cighs" data-id="65909"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2025/02/miaoda-logo.png"  height="auto" width="auto"  alt="秒哒"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">秒哒</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/8516.html" target='_blank'  class="card post-min m-0" data-url="https://www.xiaohuanxiong.com/login?utm_source=blmay1" data-id="8516"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2023/12/sensetime-raccoon-code-icon.png"  height="auto" width="auto"  alt="办公小浣熊"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">办公小浣熊</div></div></div></div></a></div></div></div></div><div id="hot_sites-6" class="card io-sidebar-widget io-widget-sites-list"><div class="card-header widget-header"><h3 class="text-md mb-0"><i class="mr-2 iconfont icon-chart-pc"></i>最新收录</h3></div><div class="card-body"><div class="row row-sm my-n1"><div class="url-card col-6  my-1"><a href="../sites/81968.html" target='_blank'  class="card post-min m-0" data-url="https://paopaoai.art/?utm_source=aibot" data-id="81968"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/paopaoai-logo.png"  height="auto" width="auto"  alt="泡泡AI"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">泡泡AI</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/81942.html" target='_blank'  class="card post-min m-0" data-url="https://xiangpiai.cn/workspace?from=gjjxiangpi" data-id="81942"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/xiangpiai-logo.png"  height="auto" width="auto"  alt="小橡皮"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">小橡皮</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/81921.html" target='_blank'  class="card post-min m-0" data-url="https://waclaw.ihuiwa.com/workspace?huiwaInviteCode=IZD5VL&amp;target=waclaw" data-id="81921"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2024/03/ihuiwa-icon.png"  height="auto" width="auto"  alt="WaClaw"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">WaClaw</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/81881.html" target='_blank'  class="card post-min m-0" data-url="https://learningbuddy.tencent.com/?utm_source=ai-bot.cn" data-id="81881"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/LearnBuddy-logo.png"  height="auto" width="auto"  alt="LearnBuddy"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">LearnBuddy</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/81764.html" target='_blank'  class="card post-min m-0" data-url="https://agnes-ai.com/agnescode?utm_source=ai-bot.cn" data-id="81764"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2025/08/Agnes-AI-logo.png"  height="auto" width="auto"  alt="AgnesCode"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">AgnesCode</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/81535.html" target='_blank'  class="card post-min m-0" data-url="https://jobright.ai/?utm_source=ai-bot.cn" data-id="81535"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/Jobright-logo.png"  height="auto" width="auto"  alt="Jobright"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">Jobright</div></div></div></div></a></div></div></div></div><div id="new_cat-2" class="card io-sidebar-widget new_cat"><div class="card-header widget-header"><h3 class="text-md mb-0"><i class="mr-2 iconfont icon-category"></i>最新文章</h3></div> 
+    <div class="card-body"> 
+        <div class="list-grid list-rounded my-n2">
+                                    <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../vipcheap-banner-0210/index.html" target='_blank' title="ChatGPT Plus 和 Claude Pro 会员代充值 &#8211; 支持支付宝" data-src="https://ai-bot.cn/wp-content/uploads/2026/02/vipcheap-banner-0210.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../vipcheap-banner-0210/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">ChatGPT Plus 和 Claude Pro 会员代充值 &#8211; 支持支付宝</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">6分钟前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../inkling/index.html" target='_blank' title="Inkling &#8211; Thinking Machines Lab 推出的多模态基础模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/Inkling-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../inkling/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">Inkling &#8211; Thinking Machines Lab 推出的多模态基础模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">5小时前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../edu-360/index.html" target='_blank' title="备果 &#8211; 360旗下推出的K12中小学教师 AI 备课平台" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/edu.360-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../edu-360/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">备果 &#8211; 360旗下推出的K12中小学教师 AI 备课平台</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">5小时前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../colibri/index.html" target='_blank' title="Colibrì &#8211; 开源的轻量级本地推理引擎，分层存储推理" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/Colibri-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../colibri/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">Colibrì &#8211; 开源的轻量级本地推理引擎，分层存储推理</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">10小时前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../minimax-code/index.html" target='_blank' title="MiniMax Code &#8211; MiniMax 推出的桌面端 AI Agent 编程工具" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/MiniMax-Code-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../minimax-code/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">MiniMax Code &#8211; MiniMax 推出的桌面端 AI Agent 编程工具</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">10小时前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../qwen-audio-3-0-realtime/index.html" target='_blank' title="Qwen-Audio-3.0-Realtime &#8211; 阿里推出的实时语音交互模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/Qwen-Audio-3.0-Realtime-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../qwen-audio-3-0-realtime/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">Qwen-Audio-3.0-Realtime &#8211; 阿里推出的实时语音交互模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">1天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../x2-0/index.html" target='_blank' title="X2.0 &#8211; Xmax AI 推出的全球首个实时交互视频生成模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/X2.0-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../x2-0/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">X2.0 &#8211; Xmax AI 推出的全球首个实时交互视频生成模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">1天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../xiaomi-robotics-u0/index.html" target='_blank' title="Xiaomi-Robotics-U0 &#8211; 小米推出的统一具身合成模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/Xiaomi-Robotics-U0-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../xiaomi-robotics-u0/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">Xiaomi-Robotics-U0 &#8211; 小米推出的统一具身合成模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">1天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../moss-vl-realtime/index.html" target='_blank' title="MOSS-VL-Realtime &#8211; OpenMOSS 开源的视觉语言模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/MOSS-VL-Realtime-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../moss-vl-realtime/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">MOSS-VL-Realtime &#8211; OpenMOSS 开源的视觉语言模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">1天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../ovisocr2/index.html" target='_blank' title="OvisOCR2 &#8211; 阿里ATH-MaaS团队推出的端到端文档解析模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/OvisOCR2-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../ovisocr2/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">OvisOCR2 &#8211; 阿里ATH-MaaS团队推出的端到端文档解析模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">1天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../abot-world-studio/index.html" target='_blank' title="ABot-World Studio &#8211; 高德推出的通用世界模型工坊" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/ABot-World-Studio-website1.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../abot-world-studio/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">ABot-World Studio &#8211; 高德推出的通用世界模型工坊</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">1天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../anysearch/index.html" target='_blank' title="AnySearch &#8211; 专为 AI Agent 推出的实时结构化搜索引擎" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/AnySearch-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../anysearch/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">AnySearch &#8211; 专为 AI Agent 推出的实时结构化搜索引擎</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">2天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../stepamoo/index.html" target='_blank' title="StepAmoo &#8211; 阶跃星辰推出的新一代个人智能体" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/StepAmoo-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../stepamoo/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">StepAmoo &#8211; 阶跃星辰推出的新一代个人智能体</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">2天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../wan-dancer/index.html" target='_blank' title="Wan-Dancer &#8211; 阿里通义开源的人像舞蹈视频生成模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/Wan-Dancer-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../wan-dancer/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">Wan-Dancer &#8211; 阿里通义开源的人像舞蹈视频生成模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">2天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../libtv-agent/index.html" target='_blank' title="LibTV Agent &#8211; LibTV 推出的专业级视频创作智能体" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/LibTV-Agent-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../libtv-agent/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">LibTV Agent &#8211; LibTV 推出的专业级视频创作智能体</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">2天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                                </div>
+    </div>
+
+    </div>	
+	
+	</div>
+    </main>
+</div>
+ 
+<div class="main-footer footer-stick container container-fluid customize-width pt-4 pb-3 footer-type-big">
+
+    <div class="footer-inner card rounded-xl m-0">
+        <div class="footer-text card-body text-muted text-center text-md-left">
+                        <div class="row my-4">
+                                <div class="col-12 col-md-4 mb-4 mb-md-0">
+                    <a class="footer-logo" href="../gpt-image-2/index.html" title="AI工具集">
+                        <img src="../wp-content/uploads/2023/03/ai-bot-logo-black.png" class="logo-light mb-3" alt="AI工具集" height="40">
+                        <img src="../wp-content/uploads/2023/03/ai-bot-logo-white.png" class="logo-dark d-none mb-3" alt="AI工具集" height="40">
+                    </a>
+                    <div class="text-sm">AI工具集导航收录了国内外数百个不同类型的AI工具，每日更新和添加最新AI工具，AI工具集还推荐了AI学习开发的常用网站、框架和模型，帮助你加入人工智能浪潮，自动化高效完成任务！
+
+Ctrl + D 或 ⌘ + D 收藏本站到浏览器书签栏。</div>
+                </div>
+                                <div class="col-12 col-md-5 mb-4 mb-md-0"> 
+                    <p class="footer-links text-sm mb-3"><a href="../gpt-image-2/index.html">AI工具集导航</a>
+<a href="../about-us/index.html" target="_blank">关于我们</a>
+<a href="../disclaimer/index.html" target="_blank">免责声明</a>
+<a href="../ai-project-20250614/index.html" target="_blank">最新AI项目</a>
+<a href="../ai-app-store/index.html" target="_blank">AI应用商店</a>
+<a href="https://www.ghxi.com/" target="_blank">果核剥壳</a>
+<a href="https://cakegrowth.cn/" target="_blank">CakeGrowth</a>
+<a href="../vipcheap-banner-0210/index.html" target="_blank">VipCheap</a>
+<a href="https://gongke.net/" target="_blank">攻壳智能体</a>
+<a href="https://www.yjpoo.com/" target="_blank">映技派</a>
+<a href="../sites/4189.html" target="_blank">豆包</a>
+<a href="../sites/6242.html" target="_blank">讯飞绘文</a>
+<a href="../sites/9195.html" target="_blank">绘蛙</a>
+<a href="../sites/17772.html" target="_blank">即梦</a>
+<a href="../sites/8204.html" target="_blank">蛙蛙写作</a>
+<a href="../sites/13065.html" target="_blank">白日梦</a>
+<a href="../sites/44612.html" target="_blank">咔片PPT</a>
+<a href="../sites/8516.html" target="_blank">办公小浣熊</a>
+<a href="../trae/index.html" target="_blank">TRAE</a>
+<a href="../codeflying/index.html" target="_blank">码上飞</a>
+<a href="../sites/5507.html" target="_blank">堆友AI</a>
+<a href="../sites/66771.html" target="_blank">LiblibAI</a>
+<a href="../xingliu-art/index.html" target="_blank">星流AI</a>
+<a href="../miaoda/index.html" target="_blank">秒哒</a>
+<a href="../updream/index.html" target="_blank">updream</a>
+<a href="../seko/index.html" target="_blank">Seko</a>
+<a href="../sites/73776.html" target="_blank">LibTV</a></p>                                        <div class="footer-social">
+                        <a class="rounded-circle bg-light" href="mailto:info@ai-bot.cn" target="_blank"  data-toggle="tooltip" data-placement="top" title="联系邮箱" rel="external noopener nofollow">
+                                    <i class="iconfont icon-email"></i>
+                                </a>                    </div>
+                </div>
+                                <div class="col-12 col-md-3 text-md-right mb-4 mb-md-0">
+                                </div>
+                            </div>
+                        <div class="footer-copyright text-xs">
+            Copyright © 2026 <a href="../gpt-image-2/index.html" title="AI工具集" class="" rel="home">AI工具集</a>&nbsp;<a href="https://beian.miit.gov.cn/" target="_blank" class="" rel="link noopener">蜀ICP备2022019184号-2</a>&nbsp; <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51010702003349" target="_blank" class="" rel="noopener"><img style="margin-bottom: 3px;" src="../wp-content/themes/onenav/images/gaba.png"> 川公网安备 51010702003349号</a>&nbsp;            </div>
+        </div>
+    </div>
+</div>
+</div><!-- main-content end -->
+
+<footer>
+    <div id="footer-tools" class="d-flex flex-column">
+        <a href="javascript:" id="go-to-up" class="btn rounded-circle go-up m-1" rel="go-top">
+            <i class="iconfont icon-to-up"></i>
+        </a>
+                                                <a href="javascript:" id="switch-mode" class="btn rounded-circle switch-dark-mode m-1" data-toggle="tooltip" data-placement="left" title="夜间模式">
+            <i class="mode-ico iconfont icon-light"></i>
+        </a>
+            </div>
+</footer>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/clipboard.min.js%3Fver=4.0331' id='clipboard-mini-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/popper.min.js%3Fver=4.0331' id='popper-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/bootstrap.min.js%3Fver=4.0331' id='bootstrap-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/theia-sticky-sidebar.js%3Fver=4.0331' id='sidebar-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/lazyload.min.js%3Fver=4.0331' id='lazyload-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/jquery.fancybox.min.js%3Fver=4.0331' id='lightbox-js-js'></script>
+<script type='text/javascript' id='appjs-js-extra'>
+/* <![CDATA[ */
+var theme = {"ajaxurl":"https:\/\/ai-bot.cn\/wp-admin\/admin-ajax.php","uri":"https:\/\/ai-bot.cn\/wp-content\/themes\/onenav","addico":"https:\/\/ai-bot.cn\/wp-content\/themes\/onenav\/images\/add.png","order":"asc","formpostion":"top","defaultclass":"io-grey-mode","isCustomize":"0","icourl":"https:\/\/besticon-demo.herokuapp.com\/icon?size=32..120..256&url=","icopng":"","urlformat":"1","customizemax":"10","newWindow":"1","lazyload":"1","minNav":"","loading":"","hotWords":"baidu","classColumns":" col-2a col-sm-2a col-md-2a col-lg-3a col-xl-6a col-xxl-6a ","apikey":"TWpBeU1USTJNemd4TWpZM0d6RS9oTVZCa2RqWk5aRGxtVG1jeGVEaHNVbW8zTnpCNGNGUldVVEZsYjNoTA==","isHome":"","version":"4.0331"};
+var localize = {"liked":"\u60a8\u5df2\u7ecf\u8d5e\u8fc7\u4e86!","like":"\u8c22\u8c22\u70b9\u8d5e!","networkerror":"\u7f51\u7edc\u9519\u8bef --.","selectCategory":"\u4e3a\u4ec0\u4e48\u4e0d\u9009\u5206\u7c7b\u3002","addSuccess":"\u6dfb\u52a0\u6210\u529f\u3002","timeout":"\u8bbf\u95ee\u8d85\u65f6\uff0c\u8bf7\u518d\u8bd5\u8bd5\uff0c\u6216\u8005\u624b\u52a8\u586b\u5199\u3002","lightMode":"\u65e5\u95f4\u6a21\u5f0f","nightMode":"\u591c\u95f4\u6a21\u5f0f","editBtn":"\u7f16\u8f91","okBtn":"\u786e\u5b9a","urlExist":"\u8be5\u7f51\u5740\u5df2\u7ecf\u5b58\u5728\u4e86 --.","cancelBtn":"\u53d6\u6d88","successAlert":"\u6210\u529f","infoAlert":"\u4fe1\u606f","warningAlert":"\u8b66\u544a","errorAlert":"\u9519\u8bef","extractionCode":"\u7f51\u76d8\u63d0\u53d6\u7801\u5df2\u590d\u5236\uff0c\u70b9\u201c\u786e\u5b9a\u201d\u8fdb\u5165\u4e0b\u8f7d\u9875\u9762\u3002","wait":"\u8bf7\u7a0d\u5019","loading":"\u6b63\u5728\u5904\u7406\u8bf7\u7a0d\u540e...","userAgreement":"\u8bf7\u5148\u9605\u8bfb\u5e76\u540c\u610f\u7528\u6237\u534f\u8bae","reSend":"\u79d2\u540e\u91cd\u65b0\u53d1\u9001","weChatPay":"\u5fae\u4fe1\u652f\u4ed8","alipay":"\u652f\u4ed8\u5b9d","scanQRPay":"\u8bf7\u626b\u7801\u652f\u4ed8","payGoto":"\u652f\u4ed8\u6210\u529f\uff0c\u9875\u9762\u8df3\u8f6c\u4e2d"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/app.min.js%3Fver=4.0331' id='appjs-js'></script>
+<script type='text/javascript' id='appjs-js-after'>
+/* <![CDATA[ */ 
+    $(document).ready(function(){if($("#search-text")[0]){$("#search-text").focus();}});
+    /* ]]> */
+</script>
+<script type='text/javascript' src='../wp-includes/js/comment-reply.min.js%3Fver=6.2' id='comment-reply-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/comments-ajax.js%3Fver=4.0331' id='comments-ajax-js'></script>
+<script type='text/javascript' id='wp-postviews-cache-js-extra'>
+/* <![CDATA[ */
+var viewsCacheL10n = {"admin_ajax_url":"https:\/\/ai-bot.cn\/wp-admin\/admin-ajax.php","post_id":"57389"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/themes/onenav/inc/postviews/postviews-cache.js%3Fver=6.2' id='wp-postviews-cache-js'></script>
+ 
+<!-- 自定义代码 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?55906d9c57011d694d405f963a90648b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KV0VT5CMJ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KV0VT5CMJ6');
+</script>
+<!-- end 自定义代码 -->
+</body>
+</html>

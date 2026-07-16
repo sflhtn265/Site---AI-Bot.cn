@@ -1,0 +1,1944 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="io-grey-mode">
+<head> 
+<script>
+    var default_c = "io-grey-mode";
+    var night = document.cookie.replace(/(?:(?:^|.*;\s*)io_night_mode\s*\=\s*([^;]*).*$)|^.*$/, "$1"); 
+    try {
+        if (night === "0") {
+            document.documentElement.classList.add("io-black-mode");
+            document.documentElement.classList.remove(default_c);
+        } else {
+            document.documentElement.classList.remove("io-black-mode");
+            document.documentElement.classList.add(default_c);
+        }
+    } catch (_) {}
+</script><meta charset="UTF-8">
+<meta name="renderer" content="webkit"/>
+<meta name="force-rendering" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Sora2提示词指南 - OpenAI发布Sora 2官方提示词指南 | AI工具集</title>
+<meta name="theme-color" content="#f9f9f9" />
+<meta name="description" content="OpenAI推出的Sora 2提示词指南，能帮助用户更好地理解如何使用 Sora 2 进行有效的提示和交互。通过提供具体的提示技巧和示例，指导用户如何构建更有效的输入，获得更准确、更符合需求的输出结果。" />
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ai-bot.cn/openai-sora2-prompting-guide/"/> 
+<meta property="og:title" content="Sora2提示词指南 - OpenAI发布Sora 2官方提示词指南 | AI工具集">
+<meta property="og:description" content="OpenAI推出的Sora 2提示词指南，能帮助用户更好地理解如何使用 Sora 2 进行有效的提示和交互。通过提供具体的提示技巧和示例，指导用户如何构建更有效的输入，获得更准确、更符合需求的输出结果。">
+<meta property="og:image" content="https://ai-bot.cn/wp-content/uploads/2025/10/未命名-18.png">
+<meta property="og:site_name" content="AI工具集">
+<meta property="og:updated_time" content="2025-10-09T16:42:17+08:00">
+<meta property="article:published_time" content="2025-10-09T15:55:20+08:00">
+<meta property="article:modified_time" content="2025-10-09T16:42:17+08:00">
+<link rel="shortcut icon" href="../wp-content/uploads/2023/03/ai-bot-square-logo.png">
+<link href="../wp-content/uploads/2023/07/ai-bot-favicon.png" rel="icon" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../wp-content/uploads/2023/04/ai-bot-baidu-logo.png">
+<!--[if IE]><script src="https://ai-bot.cn/wp-content/themes/onenav/js/html5.min.js"></script><![endif]-->
+<meta name='robots' content='max-image-preview:large' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='../wp-includes/css/classic-themes.min.css%3Fver=6.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='enlighterjs-css' href='../wp-content/plugins/io-code-highlight/assets/css/enlighterjs.min.css%3Fver=2.0.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='iconfont-css' href='../wp-content/themes/onenav/css/iconfont.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-css' href='../wp-content/themes/onenav/css/all.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome4-css' href='../wp-content/themes/onenav/css/v4-shims.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css' href='../wp-content/themes/onenav/css/bootstrap.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='lightbox-css' href='../wp-content/themes/onenav/css/jquery.fancybox.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css' href='../wp-content/themes/onenav/css/style.min.css%3Fver=4.0331.css' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-content/themes/onenav/js/jquery.min.js%3Fver=4.0331' id='jquery-js'></script>
+<script type='text/javascript' id='jquery-js-after'>
+/* <![CDATA[ */ 
+        function loadFunc(func) {if (document.all){window.attachEvent("onload",func);}else{window.addEventListener("load",func,false);}}   
+        /* ]]> */
+</script>
+<link rel="canonical" href="index.html" />
+<style>body:before {
+  content: '';
+  position: absolute;
+  top: 0 !important;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 550px;
+  background-image: url(../wp-content/uploads/2023/07/blury-shape-bg-light.png);
+  background-size: cover;
+  z-index: -1;
+}
+
+.io-black-mode body:before {
+	background-image: url(../wp-content/uploads/2024/01/blury-shape-bg-dark.png);
+}
+
+.page-header {
+	background: none !important;
+  position: absolute;
+}
+
+
+.io-black-mode .page-header {
+	background: rgba(44,46,47,0.7) !important;
+}
+
+.url-card .max .url-img {
+	width: 40px;
+  height: 40px;
+}
+
+.card-body .url-img img {
+	border: none !important;
+}
+
+.panel-body.single.mt-2 img {
+	border-radius: 6px;
+  border: 2px solid #eee;
+}
+
+.meta-media {
+  position: relative;
+  margin-bottom: 30px;
+  float: left;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+}
+.video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.table-bordered {
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+a.underline {
+    border-bottom: 3px solid #5961f9;
+}
+
+a.underline:hover {
+    border-bottom: 3px solid #ee9ae5;
+}
+
+.io-edit-post-card-content .mx-auto {
+	margin-left: 0!important;
+}
+
+.panel-body .url-card.shortcode-url .card {
+	background: white;
+}
+.io-black-mode .panel-body .url-card.shortcode-url .card {
+	background: #2c2e2f;
+}
+
+@media screen and (min-width: 768px) {
+  .header-big {
+		padding-top: 80px;
+	}
+}
+
+/* 快讯页面样式开始 */
+.news-content h2{
+  border: none;
+}
+.news-list .news-date {
+    padding: 32px 20px 12px 20px;
+    font-size: 20px;
+    line-height: 26px;
+    position: relative;
+    font-weight: 700;
+    color: #5961f9;
+}
+.news-list .news-item {
+    padding: 20px 0 5px 20px;
+}
+.news-list .news-date, .news-list .news-item {
+    position: relative;
+    margin-left: 15px;
+    border-left: 1px dashed #c3c8fe;
+}
+.news-list .news-time {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.news-list .news-hour {
+    position: relative;
+    display: block;
+    padding-top: 10px;
+    padding-left: 12px;
+    margin-left: 15px;
+    border-left: 1px dashed #c3c8fe;
+}
+.news-list .news-date:after, .news-list .news-date:before {
+    position: absolute;
+    left: -8px;
+    top: 38px;
+    width: 16px;
+    height: 16px;
+    content: "";
+    border-radius: 1px;
+    background: #5961f9;
+}
+.news-list .news-time:before {
+    border: 4px solid #5961f9;
+    opacity: 1;
+}
+.news-list .news-content h2 {
+    position: relative;
+    font-size: 18px;
+    line-height: 1.4;
+}
+.news-list .news-content p {
+    font-size: 15px;
+    margin: 0;
+    line-height: 1.65;
+}
+.news-list h2:after, .news-list h2:before {
+    position: absolute;
+    left: -3.5px;
+    top: 10px;
+    width: 4px;
+    height: 4px;
+    border-radius: 6px;
+    border: 4px solid #5961f9;
+    box-sizing: initial;
+    background: #fff;
+    content: "";
+}
+.panel-body.single.mt-2 .news-time img {
+    border-radius: 2px;
+    border: none;
+}
+.panel-body.single.mt-2 img.news-banner {
+    border-radius: 0px;
+    border: none;
+}
+.panel-body .news-content h2 a:not(.no-c) {
+    color: #282a2d;
+}
+.io-black-mode .panel-body .news-content h2 a:not(.no-c) {
+    color: #c6c9cf;
+}
+.panel-body .news-content h2 a:not(.no-c):hover {
+    color: #5961f9;
+}
+.news-content .external:after {
+    content: "";
+}
+.news-content h2 .badge-danger {
+    background-color: #F1404B;
+}
+/* 快讯页面样式结束 */
+.tab-widget-content .img-post .media-content {
+    -webkit-transform: none;
+    transform: none;
+}
+.img-post .media-content {
+    -webkit-transform: none;
+    transform: none;
+}
+.io-black-mode .panel-body .table td {
+    color: #eee;
+}
+/* 滚动条 */
+@media screen and (min-width: 768px) {
+  .sidebar-nav-inner .flex-fill {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sidebar-nav-inner .flex-fill:hover {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+/* 备案查询页面黑暗模式颜色修改 */
+.io-black-mode .theme--light.v-application {
+    background: #2c2e2f;
+    color: white;
+}
+.io-black-mode .theme--light.v-sheet {
+    background-color: #2c2e2f;
+    border-color: #5e6063 !important;
+    color: white;
+}
+.io-black-mode .theme--light.v-label {
+    color: rgb(255 255 255 / 60%);
+}
+.io-black-mode .theme--light.v-icon {
+    color: rgb(255 255 255 / 60%);
+}
+.io-black-mode .theme--light.v-text-field>.v-input__control>.v-input__slot:before {
+    border-color: rgb(255 255 255 / 42%);
+}
+.io-black-mode .theme--light.v-data-table {
+		background-color: #2c2e2f;
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:last-child, .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:not(.v-data-table__mobile-row), .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>th:last-child, .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>th:not(.v-data-table__mobile-row), .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr:last-child>th {
+    border-bottom: thin solid rgb(255 255 255 / 12%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr:last-child>th {
+    border-bottom: thin solid rgb(255 255 255 / 12%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:not(:last-child)>td:not(.v-data-table__mobile-row) {
+		border-bottom: thin solid rgb(255 255 255 / 12%);
+}
+th.text-start, td.text-start {
+		border-left: none;
+  	border-right: none;
+}
+th.text-start {
+		border-top: none;
+}
+.io-black-mode .theme--light.v-data-table .v-data-table-header th.sortable:hover {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>thead>tr>th {
+		color: rgba(255,255,255,.6);
+}
+.io-black-mode .theme--light.v-data-table .v-data-table-header th.sortable .v-data-table-header__icon {
+    color: rgb(255 255 255 / 58%);
+}
+.io-black-mode .theme--light.v-btn.v-btn--disabled, .theme--light.v-btn.v-btn--disabled .v-btn__loading, .theme--light.v-btn.v-btn--disabled .v-icon {
+    color: rgb(255 255 255 / 26%)!important;
+}
+.io-black-mode .v-btn>.v-btn__content .v-icon {
+    color: #fff;
+}
+.io-black-mode .theme--light.v-select .v-select__selections {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled) {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table>.v-data-table__wrapper>table>tbody>tr:hover:not(.v-data-table__expanded__content):not(.v-data-table__empty-wrapper) {
+    background: #222;
+}
+.io-black-mode .theme--light.v-input input {
+    color: rgb(255 255 255 / 87%);
+}
+.io-black-mode .theme--light.v-data-table .v-data-table__empty-wrapper {
+    color: rgb(255 255 255 / 38%);
+}
+div.card-app > div.card-body {
+	padding: 0.8rem;
+}
+.app-rounded {
+	border-radius: 22% !important;
+}
+div.card-app.card {
+  border-radius: .45rem !important;
+}
+.screenshot-carousel .img_wrapper {
+	height: 360px !important;
+}
+.io-black-mode .enlighter-t-enlighter .enlighter-text {
+    color: #99a;
+}
+.site-content a img.alignnone {
+    border-radius: .3rem;
+    border: 1px solid #ddd;
+}.customize-width{max-width:1900px}.sidebar-nav{width:220px}@media (min-width: 768px){.main-content{margin-left:220px;}.main-content .page-header{left:220px;}}</style><meta name="redi-version" content="1.2.7" /><style>.panel-body a:not(.no-c){color:#5961f9}.panel-body a:not(.no-c):hover{color:#ee9ae5}a:hover,.io-grey-mode .sidebar-show,.io-grey-mode .sidebar-item>a:hover,.io-grey-mode .sidebar-item li>a:hover,.home-like:hover,
+        .io-grey-mode .sidebar-popup>div>ul>li>a:hover{color:#5961f9}
+        .header-mini-btn label:hover path{ stroke:#5961f9}
+        .url-card .max .tga a:not(.no-tag):hover,.card-app.card .tga a:not(.no-tag):hover{background:#5961f9}
+        .sidebar .url-card .card:hover{border: 1px solid #5961f9!important;}.tags i{color:#5961f9}.custom-piece_c_b{background:#5961f9!important}.custom-piece_c{color:#5961f9!important}.slider_menu[sliderTab] .anchor,.customize-menu .btn-edit,.badge-danger,.comment-list .rank,.sidebar .card-header:after{background:#5961f9}.badge-outline-primary{color:#5961f9;border:#5961f9 solid 1px}.posts-nav .page-numbers.current,.posts-nav .page-numbers:not(.dots):hover,#comments-navi>a:hover,#comments-navi>.current,.page-nav>a:hover span,.page-nav>.current span{background-color:#5961f9;box-shadow: 0px 5px 20px -3px rgba(89,97,249,.6);}     
+.custom-control-input:not(:disabled):active~.custom-control-label::before{background-color:rgba(89,97,249,.15);border-color:rgba(89,97,249,.15);}
+.custom-control-input:focus~.custom-control-label::before{box-shadow:0 0 0 .2rem rgba(89,97,249,.25)}
+.custom-control-input:focus:not(:checked)~.custom-control-label::before{border-color:#5961f9}
+.custom-control-input:checked~.custom-control-label::before{border-color:#5961f9;background-color:#5961f9}
+.btn-search:hover,.btn-search.current{background-color:#5961f9;box-shadow: 0 5px 20px -3px rgba(89,97,249,.6)}.btn-search.current:after{border-top-color:#5961f9}.panel-body h2,.panel-body h3 {border-color:#5961f9}.custom_btn-outline {color: #5961f9;background-color: transparent;border-color: #5961f9;}
+.custom_btn-outline:hover {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.custom_btn-outline:focus, .custom_btn-outline.focus {color: #14171B;box-shadow: 0 0 0 0 transparent!important;background-color: transparent;}
+.custom_btn-outline.disabled, .custom_btn-outline:disabled {color: #5961f9;background-color: transparent!important;}
+.custom_btn-outline:not(:disabled):not(.disabled):active, .custom_btn-outline:not(:disabled):not(.disabled).active,.show > .custom_btn-outline.dropdown-toggle {color: #fff;background-color: #5961f9;border-color: #5961f9;}
+.custom_btn-outline:not(:disabled):not(.disabled):active:focus, .custom_btn-outline:not(:disabled):not(.disabled).active:focus,.show > .custom_btn-outline.dropdown-toggle:focus {box-shadow: 0 0 0 0 transparent!important;}
+.custom_btn-d {color: #ffffff;background-color: #5961f9;border-color: #5961f9;}
+.custom_btn-d:hover {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.custom_btn-d:focus,.custom_btn-d.focus {color: #ffffff;background-color: #14171B;border-color: #14171B;box-shadow: 0 0 0 0 transparent!important;}
+.custom_btn-d.disabled,.custom_btn-d:disabled {color: #ffffff;background-color:#5961f9;border-color: #5961f9;}
+.custom_btn-d:not(:disabled):not(.disabled):active,.custom_btn-d:not(:disabled):not(.disabled).active{color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.custom_btn-d:not(:disabled):not(.disabled):active:focus,.custom_btn-d:not(:disabled):not(.disabled).active:focus{box-shadow: 0 0 0 0 transparent!important;}
+.btn.custom_btn-d {color: #ffffff;background-color: #5961f9;border-color: #5961f9;}
+.btn.custom_btn-d:hover {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.btn.custom_btn-d:focus,.btn.custom_btn-d.focus {color: #ffffff;background-color: #14171B;border-color: #14171B;box-shadow: 0 0 0 0 transparent!important;}
+.btn.custom_btn-d.disabled,.btn.custom_btn-d:disabled {color: #ffffff;background-color:#5961f9;border-color: #5961f9;}
+.btn.custom_btn-d:not(:disabled):not(.disabled):active,.btn.custom_btn-d:not(:disabled):not(.disabled).active,.show > .custom_btn-d.dropdown-toggle {color: #ffffff;background-color: #14171B;border-color: #14171B;}
+.btn.custom_btn-d:not(:disabled):not(.disabled):active:focus,.btn.custom_btn-d:not(:disabled):not(.disabled).active:focus,.show > .custom_btn-d.dropdown-toggle:focus {box-shadow: 0 0 0 0 transparent!important;}
+.btn-dark:hover{background-color:#5961f9;border-color:#5961f9}
+.sidebar .card .searchform input[type='submit']{border: 1px solid #5961f9;background-color:#5961f9}
+.sidebar .card .searchform input[type='submit']:hover{border: 1px solid #14171B;background-color:#14171B}</style><!-- 自定义代码 -->
+<meta name="baidu-site-verification" content="codeva-P9RvmeAUoM" />
+<meta name="msvalidate.01" content="92B2C43DC49DA55D7E2C4AE6B1CC1A81" />
+<meta name="sogou_site_verification" content="Zo3i06YCJh" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7941312752144276"
+     crossorigin="anonymous"></script>
+<script>
+(function(){
+var el = document.createElement("script");
+el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?555fccf68561b344c2292bef2655dc990da3031c125e7429fc5275c9527fda6e4a4d40de0dd5fa9b5c2c10f69a3b501dc430e831103b45ce33654fb9f95b006c";
+el.id = "ttzz";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(el, s);
+})(window)
+</script><!-- end 自定义代码 -->
+</head> 
+<body class="post-template-default single single-post postid-64240 single-format-standard sidebar_right post">
+        <div id="sidebar" class="sticky sidebar-nav fade">
+            <div class="modal-dialog h-100  sidebar-nav-inner">
+                <div class="sidebar-logo border-bottom border-color">
+                    <!-- logo -->
+                    <div class="logo overflow-hidden">
+                                                <a href="../gpt-image-2/index.html" class="logo-expanded">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-black.png" height="40" class="logo-light" alt="AI工具集">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-white.png" height="40" class="logo-dark d-none" alt="AI工具集">
+                        </a>
+                        <a href="../gpt-image-2/index.html" class="logo-collapsed">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-square-logo.png" height="40" class="logo-light" alt="AI工具集">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-square-logo.png" height="40" class="logo-dark d-none" alt="AI工具集">
+                        </a>
+                    </div>
+                    <!-- logo end -->
+                </div>
+                <div class="sidebar-menu flex-fill">
+                    <div class="sidebar-scroll" >
+                        <div class="sidebar-menu-inner">
+                            <ul> 
+                                                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-7" class="">
+                                                <i class="fas fa-feather icon-fw icon-lg"></i>
+                                                <span>AI写作工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-2" class="" data-change="https://ai-bot.cn/#term-2">
+                                                <i class="fas fa-images icon-fw icon-lg"></i>
+                                                <span>AI图像工具</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-37" class=""><span>常用AI图像工具</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-33" class=""><span>AI图片插画生成</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-32" class=""><span>AI图片背景移除</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-35" class=""><span>AI图片物体抹除</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-34" class=""><span>AI图片无损放大</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-36" class=""><span>AI图片优化修复</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-78" class=""><span>AI商品图生成</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-2-83" class=""><span>AI 3D模型生成</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-4" class="">
+                                                <i class="fas fa-video icon-fw icon-lg"></i>
+                                                <span>AI视频工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-38" class="" data-change="https://ai-bot.cn/#term-38">
+                                                <i class="fas fa-folder-open icon-fw icon-lg"></i>
+                                                <span>AI办公工具</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-45" class=""><span>AI幻灯片和演示</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-46" class=""><span>AI表格数据处理</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-48" class=""><span>AI思维导图</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-47" class=""><span>AI文档工具</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-49" class=""><span>AI会议工具</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-85" class=""><span>AI招聘求职</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-77" class=""><span>AI法律助手</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-52" class=""><span>AI语言翻译</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-38-51" class=""><span>AI效率提升</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-16" class="">
+                                                <i class="fas fa-comments icon-fw icon-lg"></i>
+                                                <span>AI聊天助手</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-97" class="" data-change="https://ai-bot.cn/#term-97">
+                                                <i class="fas fa-brain icon-fw icon-lg"></i>
+                                                <span>AI智能体</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-97-86" class=""><span>AI智能体</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-97-96" class=""><span>插件与Skills</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-13" class="">
+                                                <i class="fas fa-code icon-fw icon-lg"></i>
+                                                <span>AI编程工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-15" class="">
+                                                <i class="fas fa-laptop-code icon-fw icon-lg"></i>
+                                                <span>AI开发平台</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-19" class="">
+                                                <i class="fas fa-palette icon-fw icon-lg"></i>
+                                                <span>AI设计工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-6" class="">
+                                                <i class="fas fa-music icon-fw icon-lg"></i>
+                                                <span>AI音频工具</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-61" class="">
+                                                <i class="fas fa-search icon-fw icon-lg"></i>
+                                                <span>AI搜索引擎</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-12" class="">
+                                                <i class="fas fa-graduation-cap icon-fw icon-lg"></i>
+                                                <span>AI学习网站</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-14" class="">
+                                                <i class="fas fa-cubes icon-fw icon-lg"></i>
+                                                <span>AI训练模型</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-56" class="">
+                                                <i class="fas fa-crown icon-fw icon-lg"></i>
+                                                <span>AI模型评测</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                                                                        <a href="../gpt-image-2/index.html#term-95" class="" data-change="https://ai-bot.cn/#term-95">
+                                                <i class="iconfont icon-instructions icon-fw icon-lg"></i>
+                                                <span>AI内容检测</span>
+                                            </a>
+                                            <i class="iconfont icon-arrow-r-m sidebar-more text-sm"></i>
+                                            <ul >
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-95-20" class=""><span>内容检测</span></a>
+                                                </li>
+                                             
+                                                <li>
+                                                    <a href="../gpt-image-2/index.html#term-95-94" class=""><span>降AI/AIGC率</span></a>
+                                                </li>
+                                                                                        </ul>
+                                        </li>
+                                                                        <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-42" class="">
+                                                <i class="fab fa-product-hunt icon-fw icon-lg"></i>
+                                                <span>AI提示指令</span>
+                                            </a>
+                                        </li> 
+                                                                            <li class="sidebar-item">
+                                            <a href="../gpt-image-2/index.html#term-98" class="">
+                                                <i class="iconfont icon-related icon-fw icon-lg"></i>
+                                                <span>AI副业工具</span>
+                                            </a>
+                                        </li> 
+                                     
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-top py-2 border-color">
+                    <div class="flex-bottom">
+                        <ul> 
+                             
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content flex-fill">    <div class=" header-nav">
+        <div id="header" class="page-header sticky">
+            <div class="navbar navbar-expand-md">
+                <div class="container-fluid p-0 position-relative">
+                    <div class="">
+                        <a href="../gpt-image-2/index.html" class="navbar-brand d-md-none m-0" title="AI工具集">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-black.png" class="logo-light" alt="AI工具集" height="30">
+                            <img src="../wp-content/uploads/2023/03/ai-bot-logo-white.png" class="logo-dark d-none" alt="AI工具集" height="30">
+                        </a>
+                    </div>
+                                        <div class="collapse navbar-collapse order-2 order-md-1">
+                        <div class="header-mini-btn">
+                            <label>
+                                <input id="mini-button" type="checkbox" checked="checked">
+                                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"> 
+                                    <path class="line--1" d="M0 40h62c18 0 18-20-17 5L31 55"></path>
+                                    <path class="line--2" d="M0 50h80"></path>
+                                    <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45"></path>
+                                </svg>
+                            </label>
+                        
+                        </div>
+                                                <ul class="navbar-nav navbar-top site-menu mr-4">
+                            <li id="menu-item-55865" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-55865"><a href="../gpt-image-2/index.html">AI工具集</a>
+<ul class="sub-menu">
+	<li id="menu-item-55866" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55866"><a href="../favorites/ai-writing-tools/index.html">AI写作工具</a></li>
+	<li id="menu-item-55868" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55868"><a href="../favorites/ai-image-tools/index.html">AI图像工具</a></li>
+	<li id="menu-item-55869" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55869"><a href="../favorites/ai-video-tools/index.html">AI视频工具</a></li>
+	<li id="menu-item-55867" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55867"><a href="../favorites/ai-office-tools/index.html">AI办公工具</a></li>
+	<li id="menu-item-55870" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55870"><a href="../favorites/ai-agent/index.html">AI智能体</a></li>
+	<li id="menu-item-55871" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55871"><a href="../favorites/ai-chatbots/index.html">AI聊天助手</a></li>
+	<li id="menu-item-55872" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55872"><a href="../favorites/ai-programming-tools/index.html">AI编程工具</a></li>
+	<li id="menu-item-55873" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55873"><a href="../favorites/ai-design-tools/index.html">AI设计工具</a></li>
+	<li id="menu-item-55874" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55874"><a href="../favorites/ai-audio-tools/index.html">AI音频工具</a></li>
+	<li id="menu-item-55876" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55876"><a href="../favorites/ai-search-engines/index.html">AI搜索引擎</a></li>
+	<li id="menu-item-55875" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55875"><a href="../favorites/ai-frameworks/index.html">AI开发平台</a></li>
+	<li id="menu-item-55878" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55878"><a href="../favorites/websites-to-learn-ai/index.html">AI学习网站</a></li>
+	<li id="menu-item-55880" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-55880"><a href="../favorites/ai-models/index.html">AI训练模型</a></li>
+	<li id="menu-item-67873" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-67873"><a href="../favorites/ai-content-detection-and-optimization-tools/index.html">AI内容检测</a></li>
+	<li id="menu-item-67442" class="menu-item menu-item-type-taxonomy menu-item-object-favorites menu-item-67442"><a href="../favorites/ai-prompt-tools/index.html">AI提示指令</a></li>
+</ul>
+</li>
+<li id="menu-item-54113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54113"><a target="_blank" rel="noopener" href="../ai-app-store/index.html">
+        <i class="fab fa-app-store-ios icon-fw icon-lg"></i>
+                <span>AI应用集</span></a></li>
+<li id="menu-item-54115" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54115"><a target="_blank" rel="noopener" href="../daily-ai-news/index.html">
+        <i class="iconfont icon-chart-pc icon-fw icon-lg"></i>
+                <span>每日AI资讯</span></a></li>
+<li id="menu-item-54116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-54116"><a target="_blank" rel="noopener" href="../ai-project-20250614/index.html">最新AI项目</a>
+<ul class="sub-menu">
+	<li id="menu-item-54117" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54117"><a target="_blank" rel="noopener" href="../ai-tools/index.html">AI工具</a></li>
+	<li id="menu-item-54118" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54118"><a target="_blank" rel="noopener" href="../ai-research/index.html">AI项目和框架</a></li>
+</ul>
+</li>
+<li id="menu-item-54944" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-54944"><a target="_blank" rel="noopener" href="../ai-tutorials/index.html">AI教程资源</a>
+<ul class="sub-menu">
+	<li id="menu-item-54940" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-54940"><a target="_blank" rel="noopener" href="../ai-column/index.html">AI专栏</a></li>
+	<li id="menu-item-56311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-56311"><a target="_blank" rel="noopener" href="../ai-question-and-answer/index.html">AI问答</a></li>
+	<li id="menu-item-54119" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54119"><a target="_blank" rel="noopener" href="../ai-encyclopedia/index.html">AI百科</a></li>
+	<li id="menu-item-54122" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-54122"><a target="_blank" rel="noopener" href="../ai-hall-of-fame/index.html">AI名人堂</a></li>
+</ul>
+</li>
+<li id="menu-item-54114" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54114"><a target="_blank" rel="noopener" href="../about-us/index.html">关于我们</a></li>
+ 
+                        </ul>
+                    </div>
+                    <ul class="nav navbar-menu text-xs order-1 order-md-2 position-relative">
+                                                                                                <li class="nav-item d-md-none mobile-menu ml-3 ml-md-4"><a href="javascript:" id="sidebar-switch" data-toggle="modal" data-target="#sidebar"><i class="iconfont icon-classification icon-lg"></i></a></li>                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="placeholder"></div>
+            </div>
+  <div id="content" class="container my-3 my-md-4">
+    <nav class="text-xs mb-3 mb-md-4"  aria-label="breadcrumb"><i class="iconfont icon-home"></i> <a class="crumbs" href="../gpt-image-2/index.html">首页</a><i class="text-danger px-1">•</i><a href="../ai-column/index.html" rel="category tag">AI专栏</a><i class="text-danger px-1">•</i><a href="../ai-tutorials/index.html" rel="category tag">AI教程</a><i class="text-danger px-1">•</i><span aria-current="page">Sora2提示词指南 &#8211; OpenAI发布Sora 2官方提示词指南</span></nav>    <main class="content" role="main">
+    <div class="content-wrap">
+        <div class="content-layout">
+                <div class="panel card">
+        <div class="card-body">
+        <div class="panel-header mb-4"><h1 class="h3 mb-3">Sora2提示词指南 &#8211; OpenAI发布Sora 2官方提示词指南</h1><div class="d-flex flex-fill text-muted text-sm pb-4 border-bottom border-t"><span class="mr-3 d-none d-sm-block"><a href="../ai-column/index.html"><i class="iconfont icon-classification"></i> AI专栏</a></span><span class="mr-3"><i class="iconfont icon-time"></i><span title="2025年10月9日 15:55发布">9个月前更新</span></span><span class="mr-3"><a href="https://ai-bot.cn/author/7/" title="AI小集"><i class="iconfont icon-user-circle"></i> AI小集</a></span><div class="flex-fill"></div><span class="mr-3"><a class="smooth-n" href="index.html#comments"> <i class="iconfont icon-comment"></i> 0</a></span>
+                <span class="mr-3"><a class="btn-like btn-link-like " href="javascript:;" data-action="post_like" data-id="64240"><i class="iconfont icon-like"></i> <span class="like-count">8</span></a></span></div></div>                <div class="panel-body single mt-2"> 
+                        <p>OpenAI推出的<a href="../sora-2/index.html" target="_blank" rel="noopener">Sora 2</a>提示词指南，能帮助用户更好地理解如何使用 Sora 2 进行有效的提示和交互。通过提供具体的提示技巧和示例，指导用户如何构建更有效的输入，获得更准确、更符合需求的输出结果。对于开发者和使用者，是非常实用的参考资源，能提升与 Sora 2 交互的效率和质量。</p>
+<img decoding="async" class="alignnone size-full wp-image-64249" data-src="https://ai-bot.cn/wp-content/uploads/2025/10/未命名-18.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="1200" height="675" />
+<h2 class="ds-markdown-paragraph">如何打造一个成功的视频提示</h2>
+<h4 class="ds-markdown-paragraph"><strong>构思提示词</strong></h4>
+<p class="ds-markdown-paragraph">请将设计提示的过程视为给一位从未看过你故事板的分镜师做简报。如果遗漏了细节，他们会即兴发挥——你可能就得不到想要的结果。通过具体说明“镜头”应实现的效果，能赋予模型更多控制权与一致性，使模型更好地工作。</p>
+<p class="ds-markdown-paragraph">保留一些开放的细节同样有效。赋予模型更多创作自由，能带来意想不到的变化和意想不到的生成效果。以下两种方法都有效：详细的提示能让你掌控画面、保持一致性，简略的提示为创意结果开辟了空间。如何平衡取决于你的目标和期望达成的效果。请将你的提示视为一份创意愿望清单，而非硬性约定。与使用<a href="../sites/30.html" target="_blank" rel="noopener">ChatGPT</a>时类似，多次使用相同的提示会产生不同的结果——这是特性，而非缺陷。每一次生成都是全新的演绎，有时第二或第三个版本反而效果更好。</p>
+<p class="ds-markdown-paragraph">最重要的是，要做好反复调整的准备。对镜头、灯光或动作的细微改动，都可能极大地改变最终效果。与模型协同创作：你负责提供方向，模型负责输出富有创意的变体。</p>
+<p class="ds-markdown-paragraph">这并非一门精确的学科——请将以下指南视为我们通过使用模型所总结出的实用建议。</p>
+<h4 class="ds-markdown-paragraph"><strong>API 参数</strong></h4>
+<p class="ds-markdown-paragraph">提示词用于控制视频内容，但部分属性仅能通过API参数进行设定。你无法通过文字描述请求，必须在 API 调用中显式设置：</p>
+<ul>
+<li class="ds-markdown-paragraph">model：sora-2 或 sora-2-pro</li>
+<li class="ds-markdown-paragraph">size：格式为 {宽度}x{高度} 的字符串。支持的分辨率取决于所选模型：
+<ul>
+<li class="ds-markdown-paragraph">sora-2
+<ul>
+<li class="ds-markdown-paragraph">1280&#215;720、720&#215;1280</li>
+</ul>
+</li>
+<li class="ds-markdown-paragraph">sora-2-pro
+<ul>
+<li class="ds-markdown-paragraph">1280&#215;720、720&#215;1280</li>
+<li class="ds-markdown-paragraph">1024&#215;1792、1792&#215;1024</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="ds-markdown-paragraph">seconds：片段时长，支持取值：&#8221;4&#8243;、&#8221;8&#8243;、&#8221;12&#8243;。默认值为&#8221;4&#8243;</li>
+</ul>
+<p class="ds-markdown-paragraph">这些参数构成了视频的容器——分辨率、时长和品质不会因&#8221;延长片段&#8221;等文字描述而改变。请通过 API 调用显式设置这些参数；提示词用在控制其他所有要素（主体、动态、光影、风格）。</p>
+<p class="ds-markdown-paragraph"><strong>视频分辨率</strong></p>
+<p class="ds-markdown-paragraph">视频分辨率直接决定 Sora 生成的视觉保真度与运动连贯性。更高分辨率能更精确地呈现细节、纹理和光影过渡，较低分辨率会压缩视觉信息，导致画面柔化或出现伪影。</p>
+<p class="ds-markdown-paragraph"><strong>视频时长</strong></p>
+<p class="ds-markdown-paragraph">模型通常在短片中更能可靠地遵循指令。为获得最佳效果，建议采用简洁的镜头语言。如果项目允许，通过剪辑拼接两段 4 秒片段比直接生成 8 秒片段会获得更好的效果。</p>
+<h4 class="ds-markdown-paragraph"><strong>有效的提示词构成要素</strong></h4>
+<p class="ds-markdown-paragraph">清晰的提示词描述镜头时，就像在故事板上画草图一样。需明确说明取景构图、标注景深效果、以节奏单元描述动作，且设定光影与色调。用几个鲜明细节锚定主体使其易于辨识，单一合理的动作会让镜头更易于理解。</p>
+<p class="ds-markdown-paragraph">若需呈现连续序列，在单条提示词中描述多个镜头同样可行。采用这种方式时，请保持每个镜头单元的独立性：每次仅设定一个机位、一个主体动作、一种光影配方。这样能根据项目需求，灵活生成独立短片或连贯的长镜头。</p>
+<ul>
+<li class="ds-markdown-paragraph">简短提示词赋予模型更多创作自由。可期待出乎意料的效果。</li>
+<li class="ds-markdown-paragraph">详尽冗长的提示词会限制模型的创造力。模型将尝试遵循你的指引，执行效果未必始终稳定可靠。</li>
+</ul>
+<p>以下是一则简短提示词示例：</p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">In a 90s documentary-style interview, an old Swedish man sits in a study and says, "I still remember when I was young."
+在一部90年代纪录片风格的访谈中，一位瑞典老人坐在书房里说道："我依然记得年轻时的日子。"</code></pre>
+<p class="ds-markdown-paragraph">这条提示词可能生成效果更好：</p>
+<ul>
+<li class="ds-markdown-paragraph"><strong>&#8220;90年代纪录片&#8221;</strong> 设定了视频风格。模型将据此选择摄像机镜头、光影和调色等变量。</li>
+<li class="ds-markdown-paragraph"><strong>&#8220;瑞典老人坐在书房里&#8221;</strong> 用简练笔触勾勒主体与场景，赋予模型对人物与环境具体形象的创作自由度。</li>
+<li class="ds-markdown-paragraph"><strong>&#8220;说道：&#8217;我依然记得年轻时的日子。'&#8221;</strong> 描述了具体对白。Sora大概率会精准呈现这段台词。</li>
+</ul>
+<p class="ds-markdown-paragraph">这条提示词能稳定生成符合要求的视频。但由于诸多细节留白，成品未必完全契合你的具体构想。例如提示词未说明昼夜时段、天气状况、服装搭配、叙事基调、角色相貌年龄、摄像机角度、剪辑节奏、场景陈设等要素。除非你明确描述这些细节，否则Sora将自动补全。</p>
+<p class="ds-markdown-paragraph"><strong>超详细提示词指南</strong></p>
+<p class="ds-markdown-paragraph">对于复杂的电影级镜头，你可以突破标准提示结构，用专业制片术语明确指定视觉风格、机位设置、色彩分级、声景设计甚至镜头叙事逻辑。好比导演向摄制组或特效团队进行技术交底。对镜头焦距、滤光片、光影效果、色调处理与运动轨迹的细致指引，能帮助模型精准锁定特定美学风格。</p>
+<p class="ds-markdown-paragraph">例如，描述观众最先注意的视觉焦点、拍摄设备与镜头型号、光线入射角度、色彩组合方案、材质肌理表现、剧情内声源以及镜头时长。当需要复刻真实摄影风格（如IMAX空中摄制、35毫米手持拍摄、复古16毫米纪录片）或保持严格镜头连贯性时，这种方法非常有效。</p>
+<p>例子：</p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">Format &amp; Look
+Duration 4s; 180° shutter; digital capture emulating 65 mm photochemical contrast; fine grain; subtle halation on speculars; no gate weave.
+
+Lenses &amp; Filtration
+32 mm / 50 mm spherical primes; Black Pro-Mist 1/4; slight CPL rotation to manage glass reflections on train windows.
+
+Grade / Palette
+Highlights: clean morning sunlight with amber lift.
+Mids: balanced neutrals with slight teal cast in shadows.
+Blacks: soft, neutral with mild lift for haze retention.
+
+Lighting &amp; Atmosphere
+Natural sunlight from camera left, low angle (07:30 AM).
+Bounce: 4×4 ultrabounce silver from trackside.
+Negative fill from opposite wall.
+Practical: sodium platform lights on dim fade.
+Atmos: gentle mist; train exhaust drift through light beam.
+
+Location &amp; Framing
+Urban commuter platform, dawn.
+Foreground: yellow safety line, coffee cup on bench.
+Midground: waiting passengers silhouetted in haze.
+Background: arriving train braking to a stop.
+Avoid signage or corporate branding.
+
+Wardrobe / Props / Extras
+Main subject: mid-30s traveler, navy coat, backpack slung on one shoulder, holding phone loosely at side.
+Extras: commuters in muted tones; one cyclist pushing bike.
+Props: paper coffee cup, rolling luggage, LED departure board (generic destinations).
+
+Sound
+Diegetic only: faint rail screech, train brakes hiss, distant announcement muffled (-20 LUFS), low ambient hum.
+Footsteps and paper rustle; no score or added foley.
+
+Optimized Shot List (2 shots / 4 s total)
+0.00–2.40 — “Arrival Drift” (32 mm, shoulder-mounted slow dolly left)
+Camera slides past platform signage edge; shallow focus reveals traveler mid-frame looking down tracks. Morning light blooms across lens; train headlights flare softly through mist. Purpose: establish setting and tone, hint anticipation.
+
+2.40–4.00 — “Turn and Pause” (50 mm, slow arc in)
+Cut to tighter over-shoulder arc as train halts; traveler turns slightly toward camera, catching sunlight rim across cheek and phone screen reflection. Eyes flick up toward something unseen. Purpose: create human focal moment with minimal motion.
+
+Camera Notes (Why It Reads)
+Keep eyeline low and close to lens axis for intimacy.
+Allow micro flares from train glass as aesthetic texture.
+Preserve subtle handheld imperfection for realism.
+Do not break silhouette clarity with overexposed flare; retain skin highlight roll-off.
+
+Finishing
+Fine-grain overlay with mild chroma noise for realism; restrained halation on practicals; warm-cool LUT for morning split tone.
+Mix: prioritize train and ambient detail over footstep transients.
+Poster frame: traveler mid-turn, golden rim light, arriving train soft-focus in background haze.
+
+格式与视觉
+时长4秒；180°快门；模拟65毫米胶片化学对比度的数字采集；细颗粒度；高光区微妙光晕；无胶片门晃动。
+
+镜头与滤光
+32毫米/50毫米球面定焦镜；Black Pro-Mist 1/4柔光镜；轻微CPL旋转以控制列车窗玻璃反光。
+
+调色/色调
+高光：干净的晨光配合琥珀色提亮
+中间调：平衡的中性色，阴影处微带青绿调
+黑场：柔和中性，轻微提亮以保留雾霾质感
+
+光影与氛围
+自然日光从摄像机左侧低角度入射（早晨7:30）
+补光：轨道侧4×4银面反光板
+遮光：对向墙面形成的负补光区
+实景光源：月台钠灯渐暗调光
+氛围：薄雾轻笼；列车废气在光束中飘散
+
+场景与构图
+都市通勤月台，黎明时分
+前景：黄色安全线，长椅上的咖啡杯
+中景：等待的乘客在雾霭中呈现剪影
+背景：进站列车缓缓制动
+避免出现标识或商业品牌
+
+服装/道具/群演
+主角：35岁左右旅客，海军蓝外套，单肩背包，手机松握垂于身侧
+群演：穿着素雅色调的通勤者；推自行车的骑手
+道具：纸质咖啡杯，滚轮行李箱，LED发车屏（显示通用目的地）
+
+音效
+仅剧情声源：微弱铁轨摩擦声，列车制动嘶鸣，模糊的远处广播（-20 LUFS），低频环境底噪
+脚步声与纸制品窸窣声；禁用配乐或附加拟音
+
+优化分镜（2镜头/总4秒）
+0.00-2.40——《到站推移》（32毫米，肩扛慢速左移轨）
+摄像机滑过月台标识边缘；浅景深凸显轨道尽头张望的旅人。晨光在镜面晕染，列车头灯透过薄雾柔化泛光。用途：建立场景基调，暗示期待。
+
+2.40-4.00——《转身顿息》（50毫米，慢速弧线推进）
+切至列车停稳时的紧凑过肩弧移镜头；旅人微转向镜头，脸颊与手机屏掠过阳光轮廓。目光轻抬望向画外未知物。用途：以极简动态创造人物焦点时刻。
+
+拍摄注记（视觉逻辑依据）
+保持视平线贴近镜头轴线以强化亲密感
+保留列车玻璃产生的微光斑作为美学肌理
+维持细微手持瑕疵增强真实感
+避免过度曝光破坏剪影清晰度，保留皮肤高光渐变
+
+后期精制
+叠加细颗粒与轻度色度噪点增强真实感；实景光源克制使用光晕；应用冷暖调LUT营造晨光分色
+混音：优先突出列车与环境细节，弱化脚步瞬态音
+海报帧：旅人转身中途，金色轮廓光，到站列车在背景薄雾中柔焦呈现</code></pre>
+<h4 class="ds-markdown-paragraph"><strong>视觉引导线索</strong></h4>
+<p class="ds-markdown-paragraph">在撰写提示时，风格是引导模型实现预期效果最有效的手段之一。描述整体美学风格——例如&#8221;1970年代胶片质感&#8221;、&#8221;IMAX级史诗场景&#8221;或&#8221;16毫米黑白胶片&#8221;，能奠定视觉基调，统领所有后续选择。建议在提示起始就确立风格，使模型能始终保持一致的视觉表达。</p>
+<p class="ds-markdown-paragraph">相同的场景细节会因风格设定产生截然不同的呈现：无论是精致的好莱坞剧情片、手持智能手机拍摄片段，还是颗粒感的复古广告片。当整体基调确立后，再逐层添加镜头、动作和光影的具体描述。</p>
+<p class="ds-markdown-paragraph">精准表述至关重要，避免使用&#8221;一条美丽的街道&#8221;这类模糊描述，应具体说明&#8221;湿润的沥青路面、斑马线、霓虹招牌倒影&#8221;。</p>
+<p class="ds-markdown-paragraph">用&#8221;慢跑三步停在路边&#8221;替代&#8221;快速移动&#8221;这类抽象表述。</p>
+<p class="ds-markdown-paragraph">指向可见结果的动词和名词，总能带来更清晰、更稳定的输出效果。</p>
+<table>
+<thead>
+<tr>
+<th><strong><span dir="auto">模糊提示</span></strong></th>
+<th><strong><span dir="auto">精确提示</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span dir="auto">“夜晚的街道很美”</span></td>
+<td><span dir="auto">“湿漉漉的沥青路面、斑马线、水坑里倒映的霓虹灯”</span></td>
+</tr>
+<tr>
+<td><span dir="auto">“人动作很快”</span></td>
+<td><span dir="auto">“骑车人踩了三次踏板，刹车，然后停在人行横道上”</span></td>
+</tr>
+<tr>
+<td><span dir="auto">“电影般的观感”</span></td>
+<td><span dir="auto">“变形 2.0x 镜头，浅景深，体积光”</span></td>
+</tr>
+</tbody>
+</table>
+<p class="ds-markdown-paragraph">镜头调度与构图决定画面情绪，俯拍广角镜头强调空间纵深感与环境语境，平视特写则聚焦情感表达。景深运用增添叙事层次：浅景深使主体在虚化背景中脱颖而出，深景深保持前后景同样锐利。光影设计同样具有决定性作用：柔和的暖调主光营造温馨氛围，带有冷调边缘的单一硬光强化戏剧张力。</p>
+<p class="ds-markdown-paragraph">引入人物时需预判可变性——措辞的细微调整可能改变角色身份、姿态或场景焦点。保持各镜头间描述的一致性，复用关键短语确保连贯，避免使用相互冲突的特征描述。</p>
+<p>模糊提示：</p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">Camera shot: cinematic look
+镜头风格：电影感画面</code></pre>
+<p>精确提示：</p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">Camera shot: wide shot, low angle
+Depth of field: shallow (sharp on subject, blurred background)
+Lighting + palette: warm backlight with soft rim
+
+镜头构图：广角低机位
+景深控制：浅景深（主体清晰，背景虚化）
+光影色调：暖调逆光配合柔和轮廓光</code></pre>
+<p class="ds-markdown-paragraph">以下是优质构图指令示例：</p>
+<ul>
+<li class="ds-markdown-paragraph">广角定场镜头，平视视角</li>
+<li class="ds-markdown-paragraph">广角镜头，随冲锋动作从左至右横移</li>
+<li class="ds-markdown-paragraph">空中广角镜头，轻微俯拍角度</li>
+<li class="ds-markdown-paragraph">中近景镜头，侧后方微角度取景</li>
+</ul>
+<p class="ds-markdown-paragraph">以下是优质运镜指令示例：</p>
+<ul>
+<li class="ds-markdown-paragraph">缓慢倾斜摄像机</li>
+<li class="ds-markdown-paragraph">手持工程摄像机拍摄</li>
+</ul>
+<h4 class="ds-markdown-paragraph"><strong>控制动态与节奏</strong></h4>
+<p class="ds-markdown-paragraph">动态呈现是最难精准掌控的环节，因此务必化繁为简。每个镜头应包含一个明确的摄像机运动和一个清晰的主体动作。以节拍或计数单位描述动作效果最佳——如细微步幅、手势变换或停顿间隙——这样才能建立真实的时间维度。</p>
+<p class="ds-markdown-paragraph">&#8220;演员穿过房间&#8221;的表述缺乏可操作性。而&#8221;演员四步走至窗边，微顿，最后一秒拉动窗帘&#8221;这样的描述，使时间节奏变得精确且可实现。</p>
+<p>模糊提示：</p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">Actor walks across the room.
+演员穿过房间。</code></pre>
+<p>精确提示：</p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">Actor takes four steps to the window, pauses, and pulls the curtain in the final second.
+演员四步走至窗边，微顿，最后一秒拉动窗帘。</code></pre>
+<h4 class="ds-markdown-paragraph"><strong>光影与色彩的一致性</strong></h4>
+<p class="ds-markdown-paragraph">光线对情绪的塑造力不亚于动作与场景。均匀漫射的光线营造宁静中性的氛围，单一强光源能制造强烈对比与紧张感。当需要拼接多个片段时，保持光影逻辑的一致性是实现无缝剪辑的关键。</p>
+<p class="ds-markdown-paragraph">应同时描述光线质感与强化氛围的基准色系。避免用&#8221;光线明亮的房间&#8221;这类宽泛表述，具体说明：&#8221;柔和窗光配合暖调台灯补光，走廊投射冷调轮廓光&#8221;。明确三至五种主色调有助于维持多镜头间的色彩体系稳定。</p>
+<p>模糊提示：</p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">Lighting + palette: brightly lit room
+光影色调：光线明亮的房间</code></pre>
+<p>精确提示：</p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">Lighting + palette: soft window light with warm lamp fill, cool rim from hallway
+Palette anchors: amber, cream, walnut brown
+
+光影配置：柔和窗光配合暖调台灯补光，走廊投射冷调轮廓光
+基准色系：琥珀色，奶油白，胡桃棕</code></pre>
+<h4 class="ds-markdown-paragraph"><strong>使用图像输入以增强控制</strong></h4>
+<p class="ds-markdown-paragraph">若需对镜头构图与风格实现更精细的掌控，可将图像作为视觉参考输入。您可使用照片、数字艺术作品或AI生成图像。这种方法能锁定角色设计、服装造型、场景布置或整体美学风格等要素。模型会将图像作为首帧锚点，文本提示词用在定义后续动态发展。</p>
+<p class="ds-markdown-paragraph"><strong>操作指南</strong></p>
+<p class="ds-markdown-paragraph">在POST /videos请求中包含input_reference参数并上传图像文件：</p>
+<ul>
+<li class="ds-markdown-paragraph">图像分辨率需与目标视频规格（size）匹配</li>
+<li class="ds-markdown-paragraph">支持文件格式：image/jpeg, image/png, image/webp</li>
+</ul>
+<p>提示词：“She turns around and smiles, then slowly walks out of the frame.”（“她转过身，微笑，然后慢慢走出画面。”）</p>
+<img decoding="async" class="aligncenter wp-image-64243" data-src="https://ai-bot.cn/wp-content/uploads/2025/10/未命名-15-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="678" height="218" />
+<p>提示词：“The fridge door opens. A cute, chubby purple monster comes out of it.”（“冰箱门打开了。一个可爱、胖乎乎的紫色怪物从里面出来。”）</p>
+<img decoding="async" class="aligncenter wp-image-64244" data-src="https://ai-bot.cn/wp-content/uploads/2025/10/未命名-14-1-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="678" height="214" />
+<p><strong>生成技巧</strong></p>
+<p>如果没有现成视觉素材，可借助OpenAI图像生成模型快速创建。您能快速生成场景环境与构图设计，随后将其作为参考输入Sora。这是一种测试美学效果并为视频生成精美起点的好方法。</p>
+<h4 class="ds-markdown-paragraph"><strong>对白与音效设计</strong></h4>
+<p class="ds-markdown-paragraph">对白内容需直接在提示词中明确描述。请将其置于文本描述后的独立模块，使模型能清晰区分视觉描述与台词内容。保持台词简洁自然，尽量将对话控制在少量语句内，确保时长与视频片段匹配。多角色场景中，需统一标注说话者并采用交替对话模式，有助于模型将每句台词与对应角色的神态动作准确关联。</p>
+<p class="ds-markdown-paragraph">需特别注意节奏与时序规划：4秒镜头通常容纳1-2组简短对话，8秒片段可支持稍多对白。冗长复杂的独白很难实现音画同步，且易破坏节奏。</p>
+<p class="ds-markdown-paragraph">若拍摄无声镜头，可通过细微环境声暗示节奏，例如&#8221;远处车流嘶鸣声&#8221;或&#8221;清脆响指声&#8221;。此时应将其视为节奏提示而非完整音轨设计。</p>
+<p class="ds-markdown-paragraph">含对白的提示词示例：</p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">A cramped, windowless room with walls the color of old ash. A single bare bulb dangles from the ceiling, its light pooling onto the scarred metal table at the center. Two chairs face each other across it. On one side sits the Detective, trench coat draped across the back of his chair, eyes sharp and unblinking. Across from him, the Suspect slouches, cigarette smoke curling lazily toward the ceiling. The silence presses in, broken only by the faint hum of the overhead light.
+Dialogue:
+- Detective: "You’re lying. I can hear it in your silence."
+- Suspect: "Or maybe I’m just tired of talking."
+- Detective: "Either way, you’ll talk before the night’s over."
+
+场景描述
+一间无窗的狭促房间，墙壁是灰烬般的陈旧色调。孤零零的灯泡从天花板垂落，昏黄的光晕聚在中央布满划痕的金属桌面上。两把椅子隔桌相对。侦探坐在一侧，风衣搭在椅背，眼神锐利如鹰隼。对面的嫌疑人佝偻着身子，香烟的雾气慵懒地盘旋升向顶棚。压抑的寂静笼罩四周，唯有顶灯发出持续的微弱嗡鸣。
+
+对话设计
+侦探：“你在说谎。我能从你的沉默里听出来。”
+嫌疑人：“或许我只是厌倦了空谈。”
+侦探：“无论如何，天亮前你都会开口。”</code></pre>
+<p class="ds-markdown-paragraph">背景音效示例描述：</p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">The hum of espresso machines and the murmur of voices form the background.
+意式咖啡机的嗡鸣与人群低语交织成环境背景音。</code></pre>
+<h4 class="ds-markdown-paragraph"><strong>运用混音功能进行迭代优化</strong></h4>
+<p class="ds-markdown-paragraph">混音功能用在精细调整而非盲目试错。通过它实现可控改动——每次仅调整单一参数——明确说明修改内容：&#8221;相同镜头，切换至85毫米焦距&#8221;或&#8221;保持布光，更新色调：青灰、沙褐、锈红&#8221;。当效果接近预期时，将其固定为参考基准，仅描述需要微调的要素。如此能保留所有已生效的设定。</p>
+<p class="ds-markdown-paragraph">若某镜头持续表现不佳，应进行要素简化：固定摄像机位，精简动作设计，清理背景元素。待基础版本生效后，再逐步叠加复杂层次。</p>
+<p>提示词：“Change the color of the monster to orange”（“将怪物的颜色改为橙色”）</p>
+<img decoding="async" class="aligncenter wp-image-64245" data-src="https://ai-bot.cn/wp-content/uploads/2025/10/未命名-16-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="678" height="218" />
+<p>提示词：“A second monster comes out right after”（“第二个怪物紧接着出现”）</p>
+<img decoding="async" class="aligncenter wp-image-64246" data-src="https://ai-bot.cn/wp-content/uploads/2025/10/未命名-17-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="678" height="218" />
+<h2 class="ds-markdown-paragraph">提示词模板与示例</h2>
+<h4 class="ds-markdown-paragraph"><strong>提示词结构设计</strong></h4>
+<p class="ds-markdown-paragraph">有效的提示词撰写方法是将不同类别的信息进行分层表述。这并非唯一的成功法则，但能提供清晰框架并提升一致性。无需囊括所有细节——若某些要素对镜头无关紧要，尽可省略。</p>
+<p class="ds-markdown-paragraph">实际上保留适当的开放维度能激发模型的创造力。对视觉元素的限制越宽松，模型就越能通过诠释带来惊喜，往往产生意想不到的精彩变体。高度描述性提示词带来更稳定可控的结果，简练的提示能开启充满想象力的全新可能。描述型提示词模板：</p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">[Prose scene description in plain language. Describe characters, costumes, scenery, weather and other details. Be as descriptive to generate a video that matches your vision.]
+Cinematography:
+Camera shot: [framing and angle, e.g. wide establishing shot, eye level]
+Mood: [overall tone, e.g. cinematic and tense, playful and suspenseful, luxurious anticipation]
+Actions:
+- [Action 1: a clear, specific beat or gesture]
+- [Action 2: another distinct beat within the clip]
+- [Action 3: another action or dialogue line]
+Dialogue:
+[If the shot has dialogue, add short natural lines here or as part of the actions list. Keep them brief so they match the clip length.]
+
+[场景描述]
+（请用平实的语言描写场景。需包含人物、服装、环境、天气及其他细节。通过具体细腻的描述，生成符合您构想的视频画面）
+
+[摄影指导]
+镜头构图：[请填写景别与角度，示例：广角定场镜头，平视视角]
+情绪基调：[请定义整体氛围，示例：电影级紧张感，俏皮中带着悬疑，奢华期待氛围]
+
+[动作设计]
+[动作1：请描述一个明确具体的节奏单元或手势]
+[动作2：请描述片段内另一个独立的节奏单元]
+[动作3：请描述附加动作或对白语句]
+
+[对白配置]
+（若镜头包含对白，请在此处或动作列表中添加简短自然的台词。注意控制长度以确保与片段时长匹配）</code></pre>
+<h4><strong>提示示例</strong></h4>
+<p><strong>示例一</strong></p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">Style: Hand-painted 2D/3D hybrid animation with soft brush textures, warm tungsten lighting, and a tactile, stop-motion feel. The aesthetic evokes mid-2000s storybook animation — cozy, imperfect, full of mechanical charm. Subtle watercolor wash and painterly textures; warm–cool balance in grade; filmic motion blur for animated realism.
+Inside a cluttered workshop, shelves overflow with gears, bolts, and yellowing blueprints. At the center, a small round robot sits on a wooden bench, its dented body patched with mismatched plates and old paint layers. Its large glowing eyes flicker pale blue as it fiddles nervously with a humming light bulb. The air hums with quiet mechanical whirs, rain patters on the window, and the clock ticks steadily in the background.
+Cinematography:
+Camera: medium close-up, slow push-in with gentle parallax from hanging tools
+Lens: 35 mm virtual lens; shallow depth of field to soften background clutter
+Lighting: warm key from overhead practical; cool spill from window for contrast
+Mood: gentle, whimsical, a touch of suspense
+Actions:
+- The robot taps the bulb; sparks crackle.
+- It flinches, dropping the bulb, eyes widening.
+- The bulb tumbles in slow motion; it catches it just in time.
+- A puff of steam escapes its chest — relief and pride.
+- Robot says quietly: "Almost lost it… but I got it!"
+Background Sound:
+Rain, ticking clock, soft mechanical hum, faint bulb sizzle.
+
+视觉风格
+手绘2D/3D混合动画，带有柔和笔刷肌理、暖调钨丝灯光效以及触感十足的定格动画质感。美学风格复现2000年代中期绘本动画特征——温馨质朴、留有手工痕迹，充满机械装置特有的魅力。运用微妙的水彩晕染与绘画肌理，调色保持冷暖平衡，通过电影级动态模糊增强动画真实感。
+
+场景描述
+杂乱的作坊内，货架堆满齿轮、螺栓和泛黄的蓝图。中央木凳上坐着圆形小机器人，凹陷的外壳打满不同规格的补丁，覆盖着斑驳的旧漆层。当它紧张摆弄嗡嗡发光的灯泡时，大眼睛闪烁淡蓝色光芒。空气中萦绕着机械运转的轻鸣，雨点敲打窗棂，背景传来时钟稳健的滴答声。
+
+摄影指导
+镜头运动：中近景慢推，利用悬挂工具产生轻柔视差
+镜头参数：35毫米虚拟镜头；浅景深虚化背景杂物
+光影设计：顶棚实景灯具的暖主光，配合窗外冷调漫射光形成对比
+情绪基调：温柔奇幻中略带悬疑感
+
+动作设计
+机器人轻敲灯泡，迸发零星电火花
+受惊退缩失手掉落，光学镜头瞬间放大
+灯泡慢速翻滚坠落，被机械爪及时接住
+胸腔排出蒸汽烟缕——释然与自豪交织
+机器人轻声自语：“差点就摔碎了…还好接住了！”
+
+环境音效
+雨声、钟表滴答、柔和机械嗡鸣、微弱电流滋滋声</code></pre>
+<p><strong>示例二</strong></p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">Style: 1970s romantic drama, shot on 35 mm film with natural flares, soft focus, and warm halation. Slight gate weave and handheld micro-shake evoke vintage intimacy. Warm Kodak-inspired grade; light halation on bulbs; film grain and soft vignette for period authenticity.
+At golden hour, a brick tenement rooftop transforms into a small stage. Laundry lines strung with white sheets sway in the wind, catching the last rays of sunlight. Strings of mismatched fairy bulbs hum faintly overhead. A young woman in a flowing red silk dress dances barefoot, curls glowing in the fading light. Her partner — sleeves rolled, suspenders loose — claps along, his smile wide and unguarded. Below, the city hums with car horns, subway tremors, and distant laughter.
+Cinematography:
+Camera: medium-wide shot, slow dolly-in from eye level
+Lens: 40 mm spherical; shallow focus to isolate the couple from skyline
+Lighting: golden natural key with tungsten bounce; edge from fairy bulbs
+Mood: nostalgic, tender, cinematic
+Actions:
+- She spins; her dress flares, catching sunlight.
+- Woman (laughing): "See? Even the city dances with us tonight."
+- He steps in, catches her hand, and dips her into shadow.
+- Man (smiling): "Only because you lead."
+- Sheets drift across frame, briefly veiling the skyline before parting again.
+Background Sound:
+Natural ambience only: faint wind, fabric flutter, street noise, muffled music. No added score.
+
+视觉风格
+1970年代爱情剧情片质感，采用35毫米胶片拍摄，呈现自然光晕、柔焦效果与温暖泛光。轻微的胶片门晃动与手持微颤营造复古私密感。柯达风格的暖色调调色；灯泡处的轻柔光晕；通过胶片颗粒与柔和暗角强化时代真实感。
+
+场景描述
+金色时刻，砖砌公寓屋顶化作一方小小舞台。晾衣绳上的白床单随风摇曳，轻拢着夕阳最后的光芒。头顶参差的仙女灯串发出微弱嗡鸣。一位年轻女子身着流动的红绸裙赤足起舞，发卷在暮色中泛着微光。她的舞伴——袖口卷起、背带松垂——含笑击掌，笑容舒展而毫无保留。城市在下方低吟：车流鸣笛、地铁震颤与远方欢笑交织成背景音。
+
+摄影指导
+镜头运动：中广角镜头，眼平高度慢速轨道推进
+镜头参数：40毫米球面镜；浅景深分离情侣与城市天际线
+光影设计：金色自然主光结合钨丝灯反射光；仙女灯勾勒轮廓光
+情绪基调：怀旧温情，电影叙事感
+
+动作设计
+她旋转时裙裾绽开，捕捉落日余晖
+女子（轻笑）：“看，连城市都在今夜与我们共舞”
+他趋步上前握住她的手，将她倾入阴影之中
+男子（含笑）：“只因由你领舞”
+床单飘过画面，短暂掩去天际线后又缓缓散开
+
+环境音效
+仅保留自然环境声：微风、织物拂动、街道杂响、隐约乐声。不添加额外配乐。</code></pre>
+<blockquote>
+<p style="text-align: left;"><strong>英文原文</strong></p>
+</blockquote>
+<h2>Crafting a successful video prompt</h2>
+<h4 id="_rht_toaster"><strong>Before you prompt</strong></h4>
+<p>Think of prompting like briefing a cinematographer who has never seen your storyboard. If you leave out details, they’ll improvise – and you may not get what you envisioned. By being specific about what the “shot” should achieve, you give the model more control and consistency to work with.</p>
+<p>But leaving some details open can be just as powerful. Giving the model more creative freedom can lead to surprising variations and unexpected, beautiful interpretations. Both approaches are valid: <strong>detailed prompts give you control and consistency, while lighter prompts open space for creative outcomes.</strong> The right balance depends on your goals and the result you’re aiming for. Treat your prompt as a creative wish list, not a contract. Like with ChatGPT, using <strong>the same prompt multiple times will lead to different results</strong> – this is a feature, not a bug. Each generation is a fresh take, and sometimes the second or third option is better.</p>
+<p>Most importantly, be prepared to iterate. Small changes to camera, lighting, or action can shift the outcome dramatically. Collaborate with the model: you provide direction, and the model delivers creative variations.</p>
+<p>This isn’t an exact science—think of the guidance below as helpful suggestions we’ve learned from working with the model.</p>
+<h4><strong>API Parameters</strong></h4>
+<p>The prompt controls the content of the video, but certain attributes are governed only by API parameters. You cannot request them in prose, they must be set explicitly in your API call:</p>
+<ul>
+<li><strong>model</strong>: <code>sora-2</code> or <code>sora-2-pro</code>.</li>
+<li><strong>size</strong>: a string in the form {width}x{height}. Supported resolutions are dependent on the model selection:
+<ul>
+<li>sora-2
+<ul>
+<li>1280&#215;720, 720&#215;1280</li>
+</ul>
+</li>
+<li>sora-2-pro
+<ul>
+<li>1280&#215;720, 720&#215;1280</li>
+<li>1024&#215;1792, 1792&#215;1024</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>seconds</strong>: the clip length, supported values: “4”, “8”, “12”. Default value is “4”.</li>
+</ul>
+<p>These parameters are the video’s container – resolution, duration, and quality will not change based on prose like “make it longer.” Set them explicitly in the API call; your prompt controls everything else (subject, motion, lighting, style).</p>
+<h4><strong>Video Resolution</strong></h4>
+<p>Video resolution directly influences visual fidelity and motion consistency in Sora. Higher resolutions generate detail, texture, and lighting transitions more accurately, while lower resolutions compress visual information, often introducing softness or artifacts.</p>
+<p>Video Length</p>
+<p>The model generally follows instructions more reliably in shorter clips. For best results, aim for concise shots. If your project allows, you may see better results by stitching together two 4 second clips in editing instead of generating a single 8 second clip.</p>
+<h4><strong>Prompt anatomy that works</strong></h4>
+<p>A clear prompt describes a shot as if you were sketching it onto a storyboard. State the camera framing, note depth of field, describe the action in beats, and set the lighting and palette. Anchoring your subject with a few distinctive details keeps it recognizable, while a single, plausible action makes the shot easier to follow.</p>
+<p>Describing multiple shots in a single prompt is also valid if you need to cover a sequence. When you do this, keep each shot block distinct: one camera setup, one subject action, and one lighting recipe at a time. This gives you flexibility to generate short standalone clips or longer, continuous moments, depending on your project. Treat each shot as a creative unit, and you can either stitch them together in an edit or let them play out as a sequence in one go.</p>
+<ul>
+<li>Shorter prompts give the model more creative freedom. Expect surprising results.</li>
+<li>Longer, more detailed prompts restrict the model&#8217;s creativity. It will try to follow your guidance, but might not always do so reliably.</li>
+</ul>
+<p>Here&#8217;s an example for a short prompt:</p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">In a 90s documentary-style interview, an old Swedish man sits in a study and says, "I still remember when I was young."</code></pre>
+<p><span style="font-size: 1rem;">This prompt will likely work well:</span></p>
+<ul>
+<li><code>90s documentary</code> sets the style of the video. The model will choose variables like camera lens, lighting and color grade accordingly.</li>
+<li><code>an old Swedish man sits in a study</code> describes subject and setting in minor detail, letting the model take creative liberties in what the person and setting should look like.</li>
+<li><code>and says, "I still remember when I was young."</code> describes the dialogue. Sora will likely be able to follow this exactly.</li>
+</ul>
+<p>This prompt will reliably produce videos that match these requirements. However, it might not match your vision exactly as many details are left open. For example, the prompt does not describe the time of day, weather, outfits, tone, look and age of the character, camera angles, cuts, set design and many other factors. Unless you describe these details, Sora will make them up.</p>
+<p>Going Ultra-Detailed</p>
+<p>For complex, cinematic shots, you can go beyond the standard prompt structure and specify the look, camera setup, grading, soundscape, and even shot rationale in professional production terms. This is similar to how a director briefs a camera crew or VFX team. Detailed cues for lensing, filtration, lighting, grading, and motion help the model lock onto a very specific aesthetic.</p>
+<p>For example, you might describe <strong>what the viewer notices first</strong>, the <strong>camera platform and lens</strong>, <strong>lighting direction</strong>, <strong>color palette</strong>, <strong>texture qualities</strong>, <strong>diegetic sound</strong>, and <strong>shot timing</strong>. This approach works well when you want to match real cinematography styles (e.g., IMAX aerials, 35mm handheld, vintage 16mm documentary) or maintain strict continuity across shots.</p>
+<p>Example</p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">Format &amp; Look
+Duration 4s; 180° shutter; digital capture emulating 65 mm photochemical contrast; fine grain; subtle halation on speculars; no gate weave.
+
+Lenses &amp; Filtration
+32 mm / 50 mm spherical primes; Black Pro-Mist 1/4; slight CPL rotation to manage glass reflections on train windows.
+
+Grade / Palette
+Highlights: clean morning sunlight with amber lift.
+Mids: balanced neutrals with slight teal cast in shadows.
+Blacks: soft, neutral with mild lift for haze retention.
+
+Lighting &amp; Atmosphere
+Natural sunlight from camera left, low angle (07:30 AM).
+Bounce: 4×4 ultrabounce silver from trackside.
+Negative fill from opposite wall.
+Practical: sodium platform lights on dim fade.
+Atmos: gentle mist; train exhaust drift through light beam.
+
+Location &amp; Framing
+Urban commuter platform, dawn.
+Foreground: yellow safety line, coffee cup on bench.
+Midground: waiting passengers silhouetted in haze.
+Background: arriving train braking to a stop.
+Avoid signage or corporate branding.
+
+Wardrobe / Props / Extras
+Main subject: mid-30s traveler, navy coat, backpack slung on one shoulder, holding phone loosely at side.
+Extras: commuters in muted tones; one cyclist pushing bike.
+Props: paper coffee cup, rolling luggage, LED departure board (generic destinations).
+
+Sound
+Diegetic only: faint rail screech, train brakes hiss, distant announcement muffled (-20 LUFS), low ambient hum.
+Footsteps and paper rustle; no score or added foley.
+
+Optimized Shot List (2 shots / 4 s total)
+
+0.00–2.40 — “Arrival Drift” (32 mm, shoulder-mounted slow dolly left)
+Camera slides past platform signage edge; shallow focus reveals traveler mid-frame looking down tracks. Morning light blooms across lens; train headlights flare softly through mist. Purpose: establish setting and tone, hint anticipation.
+
+2.40–4.00 — “Turn and Pause” (50 mm, slow arc in)
+Cut to tighter over-shoulder arc as train halts; traveler turns slightly toward camera, catching sunlight rim across cheek and phone screen reflection. Eyes flick up toward something unseen. Purpose: create human focal moment with minimal motion.
+
+Camera Notes (Why It Reads)
+Keep eyeline low and close to lens axis for intimacy.
+Allow micro flares from train glass as aesthetic texture.
+Preserve subtle handheld imperfection for realism.
+Do not break silhouette clarity with overexposed flare; retain skin highlight roll-off.
+
+Finishing
+Fine-grain overlay with mild chroma noise for realism; restrained halation on practicals; warm-cool LUT for morning split tone.
+Mix: prioritize train and ambient detail over footstep transients.
+Poster frame: traveler mid-turn, golden rim light, arriving train soft-focus in background haze.</code></pre>
+<h4><strong>Visual cues that steer the look</strong></h4>
+<p>When writing prompts, <strong>style is one of the most powerful levers for guiding the model</strong> toward your desired outcome. Describing the overall aesthetic – for example, <em>“1970s film,”</em> <em>“epic, IMAX-scale scene,”</em> or <em>“16mm black-and-white film”</em> – sets a visual tone that frames all other choices. Establish this style early so the model can carry it through consistently.</p>
+<p>The same details will read very differently depending on whether you call for a polished Hollywood drama, a handheld smartphone clip, or a grainy vintage commercial. Once the tone is set, layer in specifics with shot, action, and light.</p>
+<p>Clarity wins. Instead of vague cues like <em>“a beautiful street,”</em> write <em>“wet asphalt, zebra crosswalk, neon sign reflection.”</em> Instead of <em>“moves quickly,”</em> specify <em>“jogs three steps and stops at the curb.”</em> Verbs and nouns that point to visible results will always give you a clearer, more consistent output.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Weak prompt</strong></th>
+<th><strong>Strong prompt</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“A beautiful street at night”</td>
+<td>“Wet asphalt, zebra crosswalk, neon signs reflecting in puddles”</td>
+</tr>
+<tr>
+<td>“Person moves quickly”</td>
+<td>“Cyclist pedals three times, brakes, and stops at crosswalk”</td>
+</tr>
+<tr>
+<td>“Cinematic look”</td>
+<td>“Anamorphic 2.0x lens, shallow DOF, volumetric light”</td>
+</tr>
+</tbody>
+</table>
+<p>Camera direction and framing shape how a shot feels. A wide shot from above will emphasize space and context, while a close-up at eye level will focus attention on emotion. Depth of field adds another layer: shallow focus can make a subject stand out against a blurred background, while deep focus keeps both foreground and background sharp. Lighting sets tone just as strongly. A soft, warm key creates something inviting, while a single hard light with cool edges pushes toward drama.</p>
+<p>When introducing characters, expect some unpredictability—small changes in phrasing can alter identity, pose, or the focus of the scene itself. Keep descriptions consistent across shots, reuse phrasing for continuity, and avoid mixing traits that may compete.</p>
+<p>Weak</p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">Camera shot: cinematic look</code></pre>
+<p><span style="font-size: 1rem;">Strong</span></p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">Camera shot: wide shot, low angle
+Depth of field: shallow (sharp on subject, blurred background)
+Lighting + palette: warm backlight with soft rim</code></pre>
+<p><span style="font-size: 1rem;">Some examples for good framing instructions:</span></p>
+<ul>
+<li>wide establishing shot, eye level</li>
+<li>wide shot, tracking left to right with the charge</li>
+<li>aerial wide shot, slight downward angle</li>
+<li>medium close-up shot, slight angle from behind</li>
+</ul>
+<p>Some examples for good camera motion instructions:</p>
+<ul>
+<li>slowly tilting camera</li>
+<li>handheld eng camera</li>
+</ul>
+<h4><strong>Control motion and timing</strong></h4>
+<p>Movement is often the hardest part to get right, so keep it simple. Each shot should have one clear camera move and one clear subject action. Actions work best when described in beats or counts – small steps, gestures, or pauses – so they feel grounded in time.</p>
+<p>“Actor walks across the room” doesn’t give much to work with. A line like “Actor takes four steps to the window, pauses, and pulls the curtain in the final second” makes the timing precise and achievable.</p>
+<p>Weak</p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">Actor walks across the room.</code></pre>
+<p><span style="font-size: 1rem;">Strong</span></p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">Actor takes four steps to the window, pauses, and pulls the curtain in the final second.</code></pre>
+<h4><strong style="font-size: 1rem;">Lighting and color consistency</strong></h4>
+<p>Light determines mood as much as action or setting. Diffuse light across the frame feels calm and neutral, while a single strong source creates sharp contrast and tension. When you want to cut multiple clips together, keeping lighting logic consistent is what makes the edit seamless.</p>
+<p>Describe both the quality of the light and the color anchors that reinforce it. Instead of a broad note like “brightly lit room,” specify the mix of sources and tones: “soft window light with a warm lamp fill and a cool edge from the hallway.” Naming three to five colors helps keep the palette stable across shots.</p>
+<p>Weak</p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">Lighting + palette: brightly lit room</code></pre>
+<p><span style="font-size: 1rem;">Strong</span></p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">Lighting + palette: soft window light with warm lamp fill, cool rim from hallway
+Palette anchors: amber, cream, walnut brown</code></pre>
+<h4><strong style="font-size: 1rem;">Use image input for more control</strong></h4>
+<p>For even more fine-grained control over the <strong>composition and style</strong> of a shot, you can use an <strong>image input</strong> as a visual reference. You can use photos, digital artwork or AI generated visuals. This locks in elements like character design, wardrobe, set dressing, or overall aesthetic. The model uses the image as an anchor for the first frame, while your text prompt defines what happens next.</p>
+<p><strong>How to use it</strong></p>
+<p>Include an image file as the input_reference parameter in your POST /videos request.</p>
+<ul>
+<li>The image must match the target video’s resolution (size).</li>
+<li>Supported file formats are: <code>image/jpeg</code>, <code>image/png</code>, and <code>image/webp</code>.</li>
+</ul>
+<p>Prompt: “She turns around and smiles, then slowly walks out of the frame.”</p>
+<img decoding="async" class="aligncenter wp-image-64243" data-src="https://ai-bot.cn/wp-content/uploads/2025/10/未命名-15-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="678" height="218" />
+<p>Prompt: “The fridge door opens. A cute, chubby purple monster comes out of it.”</p>
+<img decoding="async" class="aligncenter wp-image-64244" data-src="https://ai-bot.cn/wp-content/uploads/2025/10/未命名-14-1-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="678" height="214" />
+<p>Experimentation tip</p>
+<p>If you don’t already have visual references, OpenAI’s image generation model is a powerful way to create them. You can quickly produce environments and scene designs and then pass them into Sora as references. This is a great way to test aesthetics and generate beautiful starting points for your videos.</p>
+<h4><strong>Dialogue and Audio</strong></h4>
+<p>Dialogue must be described directly in your prompt. Place it in a block below your prose description so the model clearly distinguishes visual description from spoken lines. Keep lines concise and natural, and try to limit exchanges to a handful of sentences so the timing can match your clip length. For multi-character scenes, label speakers consistently and use alternating turns; this helps the model associate each line with the correct character’s gestures and expressions.</p>
+<p>You should also think about rhythm and timing: a 4-second shot will usually accommodate one or two short exchanges, while an 8-second clip can support a few more. Long, complex speeches are unlikely to sync well and may break pacing.</p>
+<p>If your shot is silent, you can still suggest pacing with one small sound, such as “distant traffic hiss” or “a crisp snap.” Think of it as a rhythm cue rather than a full soundtrack.</p>
+<p>Example prompt with dialogue：</p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">A cramped, windowless room with walls the color of old ash. A single bare bulb dangles from the ceiling, its light pooling onto the scarred metal table at the center. Two chairs face each other across it. On one side sits the Detective, trench coat draped across the back of his chair, eyes sharp and unblinking. Across from him, the Suspect slouches, cigarette smoke curling lazily toward the ceiling. The silence presses in, broken only by the faint hum of the overhead light.
+Dialogue:
+- Detective: "You’re lying. I can hear it in your silence."
+- Suspect: "Or maybe I’m just tired of talking."
+- Detective: "Either way, you’ll talk before the night’s over."</code></pre>
+<p>Example description of background sound：</p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">The hum of espresso machines and the murmur of voices form the background.</code></pre>
+<h4><strong style="font-size: 1rem;">Iterate with the remix functionality</strong></h4>
+<p>Remix is for nudging, not gambling. Use it to make controlled changes – one at a time – and say what you’re changing: “same shot, switch to 85 mm,” or “same lighting, new palette: teal, sand, rust.” When a result is close, pin it as a reference and describe only the tweak. That way, everything that already works stays locked.</p>
+<p>If a shot keeps misfiring, strip it back: freeze the camera, simplify the action, clear the background. Once it works, layer additional complexity step by step.</p>
+<p>Prompt: “Change the color of the monster to orange”</p>
+<img decoding="async" class="aligncenter wp-image-64245" data-src="https://ai-bot.cn/wp-content/uploads/2025/10/未命名-16-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="678" height="218" />
+<p>Prompt: “A second monster comes out right after”</p>
+<img decoding="async" class="aligncenter wp-image-64246" data-src="https://ai-bot.cn/wp-content/uploads/2025/10/未命名-17-1.png" src="../wp-content/themes/onenav/images/t.png"  alt="" width="678" height="218" />
+<h2>Prompt Templates and Examples</h2>
+<h4><strong>Prompt Structure</strong></h4>
+<pre class="language-" data-v-efb858b9=""><code class="language-">[Prose scene description in plain language. Describe characters, costumes, scenery, weather and other details. Be as descriptive to generate a video that matches your vision.]
+Cinematography:
+Camera shot: [framing and angle, e.g. wide establishing shot, eye level]
+Mood: [overall tone, e.g. cinematic and tense, playful and suspenseful, luxurious anticipation]
+Actions:
+- [Action 1: a clear, specific beat or gesture]
+- [Action 2: another distinct beat within the clip]
+- [Action 3: another action or dialogue line]
+Dialogue:
+[If the shot has dialogue, add short natural lines here or as part of the actions list. Keep them brief so they match the clip length.]</code></pre>
+<h4><strong>Prompt Examples</strong></h4>
+<p><strong>Example 1</strong></p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">Style: Hand-painted 2D/3D hybrid animation with soft brush textures, warm tungsten lighting, and a tactile, stop-motion feel. The aesthetic evokes mid-2000s storybook animation — cozy, imperfect, full of mechanical charm. Subtle watercolor wash and painterly textures; warm–cool balance in grade; filmic motion blur for animated realism.
+Inside a cluttered workshop, shelves overflow with gears, bolts, and yellowing blueprints. At the center, a small round robot sits on a wooden bench, its dented body patched with mismatched plates and old paint layers. Its large glowing eyes flicker pale blue as it fiddles nervously with a humming light bulb. The air hums with quiet mechanical whirs, rain patters on the window, and the clock ticks steadily in the background.
+Cinematography:
+Camera: medium close-up, slow push-in with gentle parallax from hanging tools
+Lens: 35 mm virtual lens; shallow depth of field to soften background clutter
+Lighting: warm key from overhead practical; cool spill from window for contrast
+Mood: gentle, whimsical, a touch of suspense
+Actions:
+- The robot taps the bulb; sparks crackle.
+- It flinches, dropping the bulb, eyes widening.
+- The bulb tumbles in slow motion; it catches it just in time.
+- A puff of steam escapes its chest — relief and pride.
+- Robot says quietly: "Almost lost it… but I got it!"
+Background Sound:
+Rain, ticking clock, soft mechanical hum, faint bulb sizzle.</code></pre>
+<p><strong>Example 2</strong></p>
+<pre class="language-" data-v-efb858b9=""><code class="language-">Style: 1970s romantic drama, shot on 35 mm film with natural flares, soft focus, and warm halation. Slight gate weave and handheld micro-shake evoke vintage intimacy. Warm Kodak-inspired grade; light halation on bulbs; film grain and soft vignette for period authenticity.
+At golden hour, a brick tenement rooftop transforms into a small stage. Laundry lines strung with white sheets sway in the wind, catching the last rays of sunlight. Strings of mismatched fairy bulbs hum faintly overhead. A young woman in a flowing red silk dress dances barefoot, curls glowing in the fading light. Her partner — sleeves rolled, suspenders loose — claps along, his smile wide and unguarded. Below, the city hums with car horns, subway tremors, and distant laughter.
+Cinematography:
+Camera: medium-wide shot, slow dolly-in from eye level
+Lens: 40 mm spherical; shallow focus to isolate the couple from skyline
+Lighting: golden natural key with tungsten bounce; edge from fairy bulbs
+Mood: nostalgic, tender, cinematic
+Actions:
+- She spins; her dress flares, catching sunlight.
+- Woman (laughing): "See? Even the city dances with us tonight."
+- He steps in, catches her hand, and dips her into shadow.
+- Man (smiling): "Only because you lead."
+- Sheets drift across frame, briefly veiling the skyline before parting again.
+Background Sound:
+Natural ambience only: faint wind, fabric flutter, street noise, muffled music. No added score.</code></pre>
+                    </div>
+        <div class="post-tags my-3"><i class="iconfont icon-tags mr-2"></i><a href="../ai-column/index.html" class="btn vc-l-red btn-sm text-xs text-height-xs m-1 rounded-pill"  rel="tag" title="查看更多文章"># AI专栏</a><a href="../ai-tutorials/index.html" class="btn vc-l-gray btn-sm text-xs text-height-xs m-1 rounded-pill"  rel="tag" title="查看更多文章"># AI教程</a></div><div class="text-xs text-muted"><div><span>©</span> 版权声明</div><div class="posts-copyright">本站文章版权归 <a href="../gpt-image-2/index.html" target="_blank" rel="noopener"><span style="color: #3366ff">AI工具集 </span></a>所有，未经允许禁止任何形式的转载。</div></div> 
+        <div class="post-apd"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7941312752144276"
+     crossorigin="anonymous"></script>
+<!-- 文章-底部-横幅 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7941312752144276"
+     data-ad-slot="7362582675"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>        </div>
+    </div>
+        <div class="near-navigation rounded mt-4 py-2">
+                        <div class="nav previous border-right border-color">
+            <a class="near-permalink" href="../sora2-hot-videos-and-prompt-words/index.html">
+            <span>上一篇</span>
+            <h4 class="near-title">Sora2教程玩法合集，附20个热门视频提示词</h4>
+            </a>
+        </div>
+                        <div class="nav next border-left border-color">
+            <a class="near-permalink" href="../ai-tutorials-2025100902/index.html">
+            <span>下一篇</span>
+            <h4 class="near-title">怎么用Sora制作AI带货视频，2步解决人物一致性问题</h4>
+        </a>
+        </div>
+            </div>
+                <h4 class="text-gray text-lg my-4"><i class="site-tag iconfont icon-book icon-lg mr-1" ></i>相关文章</h4>
+            <div class="row mb-n4"> 
+                                <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../global-ai-application-industry-quarterly-report-2025/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/Xsignal-website.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../global-ai-application-industry-quarterly-report-2025/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        2025全球AI应用行业季度报告（PDF文件） &#8211; AI教程资料                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/5/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='Avatar photo' src='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/5/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../global-ai-application-industry-quarterly-report-2025/index.html"><i class="iconfont icon-heart mr-1"></i>3</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../wan2-1-local-deployment-guide/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/Wan2.1-website.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../wan2-1-local-deployment-guide/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        阿里 Wan2.1 本地部署教程 &#8211; 8G 显存可文生视频                         </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/7/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='' src='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/cbf38db9dcd0c0309b84c7a1963309ed?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/7/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../wan2-1-local-deployment-guide/index.html"><i class="iconfont icon-heart mr-1"></i>3</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../ai-weekly-5-25/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2025/05/AI-Weekly-1-1.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../ai-weekly-5-25/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        AI周刊丨本周不可错过的AI行业动态（5.19-5.25）                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/5/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='Avatar photo' src='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/5/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../ai-weekly-5-25/index.html"><i class="iconfont icon-heart mr-1"></i>3</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../ai-tutorials-2026010701/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2026/01/baiduwenku-1-1.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../ai-tutorials-2026010701/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        实测百度文库AI PPT制作，一键排版美化生成专业PPT                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/5/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='Avatar photo' src='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/5/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../ai-tutorials-2026010701/index.html"><i class="iconfont icon-heart mr-1"></i>4</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../ai-tutorials-deepseek-instruction-manual/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2025/02/deepseek-instruction-manual1.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../ai-tutorials-deepseek-instruction-manual/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        DeepSeek教程指南大全，含具体步骤、实战演练、避坑建议                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/5/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='Avatar photo' src='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/5/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../ai-tutorials-deepseek-instruction-manual/index.html"><i class="iconfont icon-heart mr-1"></i>15</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                            <div class="col-6 col-md-4">
+                            <div class="card-post list-item">
+                <div class="media media-16x9 p-0 rounded">
+                                        <a class="media-content" href="../ai-tutorials-2025100902/index.html" target="_blank" data-src="https://ai-bot.cn/wp-content/uploads/2025/10/Sora-video-4-1.png"></a>
+                                    </div>
+                <div class="list-content">
+                    <div class="list-body">
+                        <a href="../ai-tutorials-2025100902/index.html" target="_blank" class="list-title text-md overflowClip_2">
+                        怎么用Sora制作AI带货视频，2步解决人物一致性问题                        </a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill align-items-center">
+                            <a href="https://ai-bot.cn/author/5/" class="flex-avatar mr-1" target="_blank">
+                            <img alt='Avatar photo' src='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=20&#038;d=mm&#038;r=g' srcset='https://cravatar.cn/avatar/4d962898fa2b7c5675c406269fc6c121?s=40&#038;d=mm&#038;r=g 2x' class='avatar avatar-20 photo' height='20' width='20' loading='lazy' decoding='async'/>               
+                            </a>
+                            <a href="https://ai-bot.cn/author/5/" class="d-none d-md-inline-block text-xs" target="_blank">AI小集</a>
+                            <div class="flex-fill"></div>
+                            <div class="text-muted text-xs">
+                                                                                                <a href="../ai-tutorials-2025100902/index.html"><i class="iconfont icon-heart mr-1"></i>3</a>
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                
+
+                </div>
+                        </div>
+            
+<!-- comments -->
+<div class="post-apd mt-4"><a href="https://jimeng.jianying.com/ai-tool/home/?utm_medium=aitools&utm_source=aibot&utm_campaign=null&utm_content=hw_jm_aibot" rel="nofollow sponsored" target="_blank"><img class="rounded" src="../wp-content/uploads/2025/09/jimeng-ai-banner-0912.png" alt="即梦AI" /></a></div><div id="comments" class="comments">
+	<h2 id="comments-list-title" class="comments-title h5 mx-1 my-4">
+		<i class="iconfont icon-comment"></i>
+		<span class="noticom">
+			<a href="index.html#respond" class="comments-title" >暂无评论</a> 
+		</span>
+	</h2> 
+	<div class="card">
+		<div class="card-body"> 
+						<div id="respond_box">
+				<div id="respond" class="comment-respond">
+										<form id="commentform" class="text-sm mb-4">	
+						<div class="visitor-avatar d-flex flex-fill mb-2">
+														<img class="v-avatar rounded-circle" src="../wp-content/themes/onenav/images/gravatar.jpg">
+													</div> 
+						<div class="comment-textarea mb-3">
+							<textarea name="comment" id="comment" class="form-control" placeholder="输入评论内容..." tabindex="4" cols="50" rows="3"></textarea>
+						</div>
+							
+						<div id="comment-author-info" class="row  row-sm">
+							<div class="col-sm-6 col-lg-4 mb-3"><input type="text" name="author" id="author" class="form-control" value="" size="22" placeholder="昵称" tabindex="2"/></div>	
+							<div class="col-sm-6 col-lg-4 mb-3"><input type="text" name="email" id="email" class="form-control" value="" size="22" placeholder="邮箱" tabindex="3" /></div>
+							<div class="col-sm-12 col-lg-4 mb-3"><input type="text" name="url" id="url" class="form-control" value="" size="22"placeholder="网址"  tabindex="4" /></div>
+						</div>
+																		<div class="com-footer d-flex justify-content-end flex-wrap">
+							<input type="hidden" id="_wpnonce" name="_wpnonce" value="205d8d8222" /><input type="hidden" name="_wp_http_referer" value="/openai-sora2-prompting-guide/" />							<a rel="nofollow" id="cancel-comment-reply-link" style="display: none;" href="javascript:;" class="btn btn-light custom_btn-outline mx-2">再想想</a>
+														<button class="btn btn-dark custom_btn-d ml-2" type="submit" id="submit">发表评论</button>
+							<input type="hidden" name="action" value="ajax_comment"/>
+							<input type='hidden' name='comment_post_ID' value='64240' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+						</div>
+					</form>
+					<div class="clear"></div>
+									</div>
+			</div>	
+						<div id="loading-comments"><span></span></div>
+						<div class="not-comment card"><div class="card-body nothing text-center color-d">暂无评论...</div></div>
+					
+		</div>	
+	</div>
+</div><!-- comments end -->
+        </div> 
+    </div> 
+    <div class="sidebar sidebar-tools d-none d-lg-block">
+				<div id="advert-8" class="card io-sidebar-widget advert">
+        <div id="advert_widget">
+        <div class="p-2 rounded"><a href="https://updream.cgref.cn/aibotbanner" target="_blank" rel="nofollow sponsored"><img src="../wp-content/uploads/2026/07/updream-banner.jpg" alt="updream" width="100%" class="rounded" /></a></div>    </div>
+    
+    </div><div id="advert-3" class="card io-sidebar-widget advert">
+        <div id="advert_widget">
+        <div class="p-2 rounded"><a href="https://itab.link/?ref=aibot" target="_blank" rel="nofollow sponsored"><img src="../wp-content/uploads/2024/07/itab-detail-ad3.png.png" alt="iTab广告" width="100%" class="rounded" /></a></div>    </div>
+    
+    </div><div id="ranking_post-3" class="card io-sidebar-widget io-widget-ranking-list"><div class="d-flex sidebar-header"><div class="card-header widget-header"><h3 class="text-md mb-0"><i class="mr-2 fas fa-fire"></i>热门工具</h3></div></div><div class="card-body"><div class="row row-sm my-n1"><div class="url-card col-6  my-1"><a href="../sites/4189.html" target='_blank'  class="card post-min m-0" data-url="https://www.doubao.com/chat/?channel=hw_db_aibot&amp;source=hw_db_aibot" data-id="4189"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/03/doubao-icon.png"  height="auto" width="auto"  alt="豆包"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">豆包</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/73776.html" target='_blank'  class="card post-min m-0" data-url="https://libtv.cgref.cn/aibot" data-id="73776"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/04/libtv-icon.png"  height="auto" width="auto"  alt="LibTV"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">LibTV</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/9195.html" target='_blank'  class="card post-min m-0" data-url="https://ihuiwa.paluai.com/aibot" data-id="9195"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2024/03/ihuiwa-icon.png"  height="auto" width="auto"  alt="绘蛙AI"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">绘蛙AI</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/2644.html" target='_blank'  class="card post-min m-0" data-url="https://www.aippt.cn/?utm_type=Navweb&amp;utm_source=ai-bot&amp;utm_page=aippt&amp;utm_plan=ppt&amp;utm_unit=AIPPT&amp;utm_keyword=50608" data-id="2644"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/06/AiPPT-logo.png"  height="auto" width="auto"  alt="AiPPT"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">AiPPT</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/9499.html" target='_blank'  class="card post-min m-0" data-url="https://metaso.cn/?s=aibot1&amp;referrer_s=aibot1" data-id="9499"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2024/06/metaso-ai-search-icon.png"  height="auto" width="auto"  alt="秘塔AI搜索"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">秘塔AI搜索</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/39108.html" target='_blank'  class="card post-min m-0" data-url="https://ai-bot.cn/sites/65814.html" data-id="39108"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2025/07/trae.ai-logo.png"  height="auto" width="auto"  alt="TRAE编程"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">TRAE编程</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/5507.html" target='_blank'  class="card post-min m-0" data-url="https://d.design/agent?from=ab13" data-id="5507"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/04/duiyou-icon-1.png"  height="auto" width="auto"  alt="堆友Agent"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">堆友Agent</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/2400.html" target='_blank'  class="card post-min m-0" data-url="https://www.designkit.cn/?channel=10026" data-id="2400"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2023/04/meitu-ai-ppt.jpg"  height="auto" width="auto"  alt="美图设计室"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">美图设计室</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../seko/index.html" target='_blank'  class="card post-min m-0" data-url="https://seko.cgref.cn/s/1oe7lzgn23" data-id="58360"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2025/07/Seko-logo-1.png"  height="auto" width="auto"  alt="Seko"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">Seko</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../updream/index.html" target='_blank'  class="card post-min m-0" data-url="https://updream.cgref.cn/s/1oe71vme23" data-id="80357"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/06/updream-logo1.png"  height="auto" width="auto"  alt="updream"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">updream</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../miaoda/index.html" target='_blank'  class="card post-min m-0" data-url="https://www.miaoda.cn/?invitecode=user-1pb0xv8cighs" data-id="65909"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2025/02/miaoda-logo.png"  height="auto" width="auto"  alt="秒哒"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">秒哒</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/8516.html" target='_blank'  class="card post-min m-0" data-url="https://www.xiaohuanxiong.com/login?utm_source=blmay1" data-id="8516"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2023/12/sensetime-raccoon-code-icon.png"  height="auto" width="auto"  alt="办公小浣熊"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">办公小浣熊</div></div></div></div></a></div></div></div></div><div id="hot_sites-6" class="card io-sidebar-widget io-widget-sites-list"><div class="card-header widget-header"><h3 class="text-md mb-0"><i class="mr-2 iconfont icon-chart-pc"></i>最新收录</h3></div><div class="card-body"><div class="row row-sm my-n1"><div class="url-card col-6  my-1"><a href="../sites/81968.html" target='_blank'  class="card post-min m-0" data-url="https://paopaoai.art/?utm_source=aibot" data-id="81968"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/paopaoai-logo.png"  height="auto" width="auto"  alt="泡泡AI"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">泡泡AI</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/81942.html" target='_blank'  class="card post-min m-0" data-url="https://xiangpiai.cn/workspace?from=gjjxiangpi" data-id="81942"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/xiangpiai-logo.png"  height="auto" width="auto"  alt="小橡皮"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">小橡皮</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/81921.html" target='_blank'  class="card post-min m-0" data-url="https://waclaw.ihuiwa.com/workspace?huiwaInviteCode=IZD5VL&amp;target=waclaw" data-id="81921"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2024/03/ihuiwa-icon.png"  height="auto" width="auto"  alt="WaClaw"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">WaClaw</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/81881.html" target='_blank'  class="card post-min m-0" data-url="https://learningbuddy.tencent.com/?utm_source=ai-bot.cn" data-id="81881"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/LearnBuddy-logo.png"  height="auto" width="auto"  alt="LearnBuddy"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">LearnBuddy</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/81764.html" target='_blank'  class="card post-min m-0" data-url="https://agnes-ai.com/agnescode?utm_source=ai-bot.cn" data-id="81764"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2025/08/Agnes-AI-logo.png"  height="auto" width="auto"  alt="AgnesCode"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">AgnesCode</div></div></div></div></a></div><div class="url-card col-6  my-1"><a href="../sites/81535.html" target='_blank'  class="card post-min m-0" data-url="https://jobright.ai/?utm_source=ai-bot.cn" data-id="81535"><div class="card-body" style="padding:0.3rem 0.5rem;"><div class="url-content d-flex align-items-center"><div class="url-img rounded-circle"><img class=" lazy unfancybox" src="../wp-content/themes/onenav/images/favicon.png" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/Jobright-logo.png"  height="auto" width="auto"  alt="Jobright"></div><div class="url-info pl-1 flex-fill"><div class="text-xs overflowClip_1">Jobright</div></div></div></div></a></div></div></div></div><div id="new_cat-2" class="card io-sidebar-widget new_cat"><div class="card-header widget-header"><h3 class="text-md mb-0"><i class="mr-2 iconfont icon-category"></i>最新文章</h3></div> 
+    <div class="card-body"> 
+        <div class="list-grid list-rounded my-n2">
+                                    <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../vipcheap-banner-0210/index.html" target='_blank' title="ChatGPT Plus 和 Claude Pro 会员代充值 &#8211; 支持支付宝" data-src="https://ai-bot.cn/wp-content/uploads/2026/02/vipcheap-banner-0210.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../vipcheap-banner-0210/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">ChatGPT Plus 和 Claude Pro 会员代充值 &#8211; 支持支付宝</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">5分钟前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../inkling/index.html" target='_blank' title="Inkling &#8211; Thinking Machines Lab 推出的多模态基础模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/Inkling-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../inkling/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">Inkling &#8211; Thinking Machines Lab 推出的多模态基础模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">5小时前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../edu-360/index.html" target='_blank' title="备果 &#8211; 360旗下推出的K12中小学教师 AI 备课平台" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/edu.360-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../edu-360/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">备果 &#8211; 360旗下推出的K12中小学教师 AI 备课平台</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">5小时前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../colibri/index.html" target='_blank' title="Colibrì &#8211; 开源的轻量级本地推理引擎，分层存储推理" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/Colibri-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../colibri/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">Colibrì &#8211; 开源的轻量级本地推理引擎，分层存储推理</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">10小时前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../minimax-code/index.html" target='_blank' title="MiniMax Code &#8211; MiniMax 推出的桌面端 AI Agent 编程工具" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/MiniMax-Code-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../minimax-code/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">MiniMax Code &#8211; MiniMax 推出的桌面端 AI Agent 编程工具</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">10小时前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../qwen-audio-3-0-realtime/index.html" target='_blank' title="Qwen-Audio-3.0-Realtime &#8211; 阿里推出的实时语音交互模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/Qwen-Audio-3.0-Realtime-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../qwen-audio-3-0-realtime/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">Qwen-Audio-3.0-Realtime &#8211; 阿里推出的实时语音交互模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">1天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../x2-0/index.html" target='_blank' title="X2.0 &#8211; Xmax AI 推出的全球首个实时交互视频生成模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/X2.0-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../x2-0/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">X2.0 &#8211; Xmax AI 推出的全球首个实时交互视频生成模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">1天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../xiaomi-robotics-u0/index.html" target='_blank' title="Xiaomi-Robotics-U0 &#8211; 小米推出的统一具身合成模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/Xiaomi-Robotics-U0-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../xiaomi-robotics-u0/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">Xiaomi-Robotics-U0 &#8211; 小米推出的统一具身合成模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">1天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../moss-vl-realtime/index.html" target='_blank' title="MOSS-VL-Realtime &#8211; OpenMOSS 开源的视觉语言模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/MOSS-VL-Realtime-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../moss-vl-realtime/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">MOSS-VL-Realtime &#8211; OpenMOSS 开源的视觉语言模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">1天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../ovisocr2/index.html" target='_blank' title="OvisOCR2 &#8211; 阿里ATH-MaaS团队推出的端到端文档解析模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/OvisOCR2-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../ovisocr2/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">OvisOCR2 &#8211; 阿里ATH-MaaS团队推出的端到端文档解析模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">1天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../abot-world-studio/index.html" target='_blank' title="ABot-World Studio &#8211; 高德推出的通用世界模型工坊" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/ABot-World-Studio-website1.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../abot-world-studio/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">ABot-World Studio &#8211; 高德推出的通用世界模型工坊</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">1天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../anysearch/index.html" target='_blank' title="AnySearch &#8211; 专为 AI Agent 推出的实时结构化搜索引擎" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/AnySearch-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../anysearch/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">AnySearch &#8211; 专为 AI Agent 推出的实时结构化搜索引擎</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">2天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../stepamoo/index.html" target='_blank' title="StepAmoo &#8211; 阶跃星辰推出的新一代个人智能体" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/StepAmoo-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../stepamoo/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">StepAmoo &#8211; 阶跃星辰推出的新一代个人智能体</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">2天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../wan-dancer/index.html" target='_blank' title="Wan-Dancer &#8211; 阿里通义开源的人像舞蹈视频生成模型" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/Wan-Dancer-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../wan-dancer/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">Wan-Dancer &#8211; 阿里通义开源的人像舞蹈视频生成模型</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">2天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                        <div class="list-item py-2">
+                                <div class="media media-3x2 rounded col-4 mr-3">
+                                        <a class="media-content" href="../libtv-agent/index.html" target='_blank' title="LibTV Agent &#8211; LibTV 推出的专业级视频创作智能体" data-src="https://ai-bot.cn/wp-content/uploads/2026/07/LibTV-Agent-website.png"></a>
+                                    </div>
+                                <div class="list-content py-0">
+                    <div class="list-body">
+                        <a href="../libtv-agent/index.html" class="list-title overflowClip_2" target='_blank' rel="bookmark">LibTV Agent &#8211; LibTV 推出的专业级视频创作智能体</a>
+                    </div>
+                    <div class="list-footer">
+                        <div class="d-flex flex-fill text-muted text-xs">
+                            <time class="d-inline-block">2天前</time>
+                            <div class="flex-fill"></div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                                </div>
+    </div>
+
+    </div>	
+	
+	</div>
+    </main>
+</div>
+ 
+<div class="main-footer footer-stick container container-fluid customize-width pt-4 pb-3 footer-type-big">
+
+    <div class="footer-inner card rounded-xl m-0">
+        <div class="footer-text card-body text-muted text-center text-md-left">
+                        <div class="row my-4">
+                                <div class="col-12 col-md-4 mb-4 mb-md-0">
+                    <a class="footer-logo" href="../gpt-image-2/index.html" title="AI工具集">
+                        <img src="../wp-content/uploads/2023/03/ai-bot-logo-black.png" class="logo-light mb-3" alt="AI工具集" height="40">
+                        <img src="../wp-content/uploads/2023/03/ai-bot-logo-white.png" class="logo-dark d-none mb-3" alt="AI工具集" height="40">
+                    </a>
+                    <div class="text-sm">AI工具集导航收录了国内外数百个不同类型的AI工具，每日更新和添加最新AI工具，AI工具集还推荐了AI学习开发的常用网站、框架和模型，帮助你加入人工智能浪潮，自动化高效完成任务！
+
+Ctrl + D 或 ⌘ + D 收藏本站到浏览器书签栏。</div>
+                </div>
+                                <div class="col-12 col-md-5 mb-4 mb-md-0"> 
+                    <p class="footer-links text-sm mb-3"><a href="../gpt-image-2/index.html">AI工具集导航</a>
+<a href="../about-us/index.html" target="_blank">关于我们</a>
+<a href="../disclaimer/index.html" target="_blank">免责声明</a>
+<a href="../ai-project-20250614/index.html" target="_blank">最新AI项目</a>
+<a href="../ai-app-store/index.html" target="_blank">AI应用商店</a>
+<a href="https://www.ghxi.com/" target="_blank">果核剥壳</a>
+<a href="https://cakegrowth.cn/" target="_blank">CakeGrowth</a>
+<a href="../vipcheap-banner-0210/index.html" target="_blank">VipCheap</a>
+<a href="https://gongke.net/" target="_blank">攻壳智能体</a>
+<a href="https://www.yjpoo.com/" target="_blank">映技派</a>
+<a href="../sites/4189.html" target="_blank">豆包</a>
+<a href="../sites/6242.html" target="_blank">讯飞绘文</a>
+<a href="../sites/9195.html" target="_blank">绘蛙</a>
+<a href="../sites/17772.html" target="_blank">即梦</a>
+<a href="../sites/8204.html" target="_blank">蛙蛙写作</a>
+<a href="../sites/13065.html" target="_blank">白日梦</a>
+<a href="../sites/44612.html" target="_blank">咔片PPT</a>
+<a href="../sites/8516.html" target="_blank">办公小浣熊</a>
+<a href="../trae/index.html" target="_blank">TRAE</a>
+<a href="../codeflying/index.html" target="_blank">码上飞</a>
+<a href="../sites/5507.html" target="_blank">堆友AI</a>
+<a href="../sites/66771.html" target="_blank">LiblibAI</a>
+<a href="../xingliu-art/index.html" target="_blank">星流AI</a>
+<a href="../miaoda/index.html" target="_blank">秒哒</a>
+<a href="../updream/index.html" target="_blank">updream</a>
+<a href="../seko/index.html" target="_blank">Seko</a>
+<a href="../sites/73776.html" target="_blank">LibTV</a></p>                                        <div class="footer-social">
+                        <a class="rounded-circle bg-light" href="mailto:info@ai-bot.cn" target="_blank"  data-toggle="tooltip" data-placement="top" title="联系邮箱" rel="external noopener nofollow">
+                                    <i class="iconfont icon-email"></i>
+                                </a>                    </div>
+                </div>
+                                <div class="col-12 col-md-3 text-md-right mb-4 mb-md-0">
+                                </div>
+                            </div>
+                        <div class="footer-copyright text-xs">
+            Copyright © 2026 <a href="../gpt-image-2/index.html" title="AI工具集" class="" rel="home">AI工具集</a>&nbsp;<a href="https://beian.miit.gov.cn/" target="_blank" class="" rel="link noopener">蜀ICP备2022019184号-2</a>&nbsp; <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51010702003349" target="_blank" class="" rel="noopener"><img style="margin-bottom: 3px;" src="../wp-content/themes/onenav/images/gaba.png"> 川公网安备 51010702003349号</a>&nbsp;            </div>
+        </div>
+    </div>
+</div>
+</div><!-- main-content end -->
+
+<footer>
+    <div id="footer-tools" class="d-flex flex-column">
+        <a href="javascript:" id="go-to-up" class="btn rounded-circle go-up m-1" rel="go-top">
+            <i class="iconfont icon-to-up"></i>
+        </a>
+                                                <a href="javascript:" id="switch-mode" class="btn rounded-circle switch-dark-mode m-1" data-toggle="tooltip" data-placement="left" title="夜间模式">
+            <i class="mode-ico iconfont icon-light"></i>
+        </a>
+            </div>
+</footer>
+<script type='text/javascript' id='enlighterjs-js-extra'>
+/* <![CDATA[ */
+var io_code_settings = {"pre_c":"\u00a9 AI\u5de5\u5177\u96c6"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/plugins/io-code-highlight/assets/js/enlighterjs.min.js%3Fver=2.0.1' id='enlighterjs-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/clipboard.min.js%3Fver=4.0331' id='clipboard-mini-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/popper.min.js%3Fver=4.0331' id='popper-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/bootstrap.min.js%3Fver=4.0331' id='bootstrap-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/theia-sticky-sidebar.js%3Fver=4.0331' id='sidebar-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/lazyload.min.js%3Fver=4.0331' id='lazyload-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/jquery.fancybox.min.js%3Fver=4.0331' id='lightbox-js-js'></script>
+<script type='text/javascript' id='appjs-js-extra'>
+/* <![CDATA[ */
+var theme = {"ajaxurl":"https:\/\/ai-bot.cn\/wp-admin\/admin-ajax.php","uri":"https:\/\/ai-bot.cn\/wp-content\/themes\/onenav","addico":"https:\/\/ai-bot.cn\/wp-content\/themes\/onenav\/images\/add.png","order":"asc","formpostion":"top","defaultclass":"io-grey-mode","isCustomize":"0","icourl":"https:\/\/besticon-demo.herokuapp.com\/icon?size=32..120..256&url=","icopng":"","urlformat":"1","customizemax":"10","newWindow":"1","lazyload":"1","minNav":"","loading":"","hotWords":"baidu","classColumns":" col-2a col-sm-2a col-md-2a col-lg-3a col-xl-6a col-xxl-6a ","apikey":"TWpBeU1USTJNemd4TWpZM0d6RS9oTVZCa2RqWk5aRGxtVG1jeGVEaHNVbW8zTnpCNGNGUldVVEZsYjNoTA==","isHome":"","version":"4.0331"};
+var localize = {"liked":"\u60a8\u5df2\u7ecf\u8d5e\u8fc7\u4e86!","like":"\u8c22\u8c22\u70b9\u8d5e!","networkerror":"\u7f51\u7edc\u9519\u8bef --.","selectCategory":"\u4e3a\u4ec0\u4e48\u4e0d\u9009\u5206\u7c7b\u3002","addSuccess":"\u6dfb\u52a0\u6210\u529f\u3002","timeout":"\u8bbf\u95ee\u8d85\u65f6\uff0c\u8bf7\u518d\u8bd5\u8bd5\uff0c\u6216\u8005\u624b\u52a8\u586b\u5199\u3002","lightMode":"\u65e5\u95f4\u6a21\u5f0f","nightMode":"\u591c\u95f4\u6a21\u5f0f","editBtn":"\u7f16\u8f91","okBtn":"\u786e\u5b9a","urlExist":"\u8be5\u7f51\u5740\u5df2\u7ecf\u5b58\u5728\u4e86 --.","cancelBtn":"\u53d6\u6d88","successAlert":"\u6210\u529f","infoAlert":"\u4fe1\u606f","warningAlert":"\u8b66\u544a","errorAlert":"\u9519\u8bef","extractionCode":"\u7f51\u76d8\u63d0\u53d6\u7801\u5df2\u590d\u5236\uff0c\u70b9\u201c\u786e\u5b9a\u201d\u8fdb\u5165\u4e0b\u8f7d\u9875\u9762\u3002","wait":"\u8bf7\u7a0d\u5019","loading":"\u6b63\u5728\u5904\u7406\u8bf7\u7a0d\u540e...","userAgreement":"\u8bf7\u5148\u9605\u8bfb\u5e76\u540c\u610f\u7528\u6237\u534f\u8bae","reSend":"\u79d2\u540e\u91cd\u65b0\u53d1\u9001","weChatPay":"\u5fae\u4fe1\u652f\u4ed8","alipay":"\u652f\u4ed8\u5b9d","scanQRPay":"\u8bf7\u626b\u7801\u652f\u4ed8","payGoto":"\u652f\u4ed8\u6210\u529f\uff0c\u9875\u9762\u8df3\u8f6c\u4e2d"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/app.min.js%3Fver=4.0331' id='appjs-js'></script>
+<script type='text/javascript' id='appjs-js-after'>
+/* <![CDATA[ */ 
+    $(document).ready(function(){if($("#search-text")[0]){$("#search-text").focus();}});
+    /* ]]> */
+</script>
+<script type='text/javascript' src='../wp-includes/js/comment-reply.min.js%3Fver=6.2' id='comment-reply-js'></script>
+<script type='text/javascript' src='../wp-content/themes/onenav/js/comments-ajax.js%3Fver=4.0331' id='comments-ajax-js'></script>
+<script type='text/javascript' id='wp-postviews-cache-js-extra'>
+/* <![CDATA[ */
+var viewsCacheL10n = {"admin_ajax_url":"https:\/\/ai-bot.cn\/wp-admin\/admin-ajax.php","post_id":"64240"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../wp-content/themes/onenav/inc/postviews/postviews-cache.js%3Fver=6.2' id='wp-postviews-cache-js'></script>
+ 
+<!-- 自定义代码 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?55906d9c57011d694d405f963a90648b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KV0VT5CMJ6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KV0VT5CMJ6');
+</script>
+<!-- end 自定义代码 -->
+</body>
+</html>
